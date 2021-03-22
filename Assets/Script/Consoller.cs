@@ -9,6 +9,7 @@ public class Consoller : MonoBehaviour
     float deltaX, deltaY;
     Rigidbody2D rb;
     Vector2 vector;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,5 +29,10 @@ public class Consoller : MonoBehaviour
             vector = new Vector2(deltaX / 2, deltaY / 2);
             //transform.Translate(deltaX / 2, deltaY / 2, 0);
         }
+    }
+    //Movemos al jugador en el fixedUpdate ya que se trata de un movimiento físico
+    private void FixedUpdate()
+    {
+        rb.velocity = vector;
     }
 }
