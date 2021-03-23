@@ -20,6 +20,7 @@ public class Consoller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //velocity = GameManager.GetInstance().playerSpeed;
         //Obtenemos el input de la direccion y lo multiplicamos por la velocidad
         deltaX = Input.GetAxis("Horizontal") * velocity;
         deltaY = Input.GetAxis("Vertical") * velocity;
