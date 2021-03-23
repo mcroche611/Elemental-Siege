@@ -7,7 +7,7 @@ public class AtaqueFisico : MonoBehaviour
 
     //hacemos una variable de cooldown visible desde el editor de momento. Pasar a privado después
     public int cooldown = 2;
-
+    public GameObject espada;
     void Start()
     {
         
@@ -22,11 +22,12 @@ public class AtaqueFisico : MonoBehaviour
         Vector3 mouseProbar = new Vector3();
         mouseProbar = 
         mousePosition = Input.mousePosition;
-        mouseDir = (mousePosition-transform.position).normalized;
+        mouseDir = (mousePosition).normalized;
         
         if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("ataque" + mouseDir);
+            Instantiate<GameObject>(espada, transform.position, espada.transform.rotation);
         }
     }
 
