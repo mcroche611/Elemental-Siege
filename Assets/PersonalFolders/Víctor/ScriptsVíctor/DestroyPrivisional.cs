@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DestroyPrivisional : MonoBehaviour
 {
-    private void OnCollisionEnter()
+    private void OnCollisionEnter2D()
     {
         Destroy(this.gameObject);
     }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ElementalAtack : MonoBehaviour
 {
-    public GameObject fuego, agua, electricidad;
     float cont = 0;
     string[] elementos = new string[3] { "Agua", "Fuego",  "Electricidad" };
     int elementoActual = 1;

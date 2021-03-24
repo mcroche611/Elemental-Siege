@@ -1,7 +1,115 @@
 fileFormatVersion: 2
 guid: 099f59d2d0088ff40931f7285c53af89
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -7664374285949147048
+    second: BODY_Epic_armors_Golden_0
+  - first:
+      213: -6564985551618725983
+    second: BODY_Epic_armors_Golden_1
+  - first:
+      213: 5020099977131477198
+    second: BODY_Epic_armors_Golden_2
+  - first:
+      213: 2618354047757424028
+    second: BODY_Epic_armors_Golden_3
+  - first:
+      213: -3151946094406455799
+    second: BODY_Epic_armors_Golden_4
+  - first:
+      213: -6809311701183537367
+    second: BODY_Epic_armors_Golden_5
+  - first:
+      213: -7647223627204922323
+    second: BODY_Epic_armors_Golden_6
+  - first:
+      213: 1235126676934273467
+    second: BODY_Epic_armors_Golden_7
+  - first:
+      213: 629194114908005141
+    second: BODY_Epic_armors_Golden_8
+  - first:
+      213: -5811101853113656120
+    second: BODY_Epic_armors_Golden_9
+  - first:
+      213: 5346099319419979594
+    second: BODY_Epic_armors_Golden_10
+  - first:
+      213: -470339245441530759
+    second: BODY_Epic_armors_Golden_11
+  - first:
+      213: -6030560947187443174
+    second: BODY_Epic_armors_Golden_12
+  - first:
+      213: 7734608075510062044
+    second: BODY_Epic_armors_Golden_13
+  - first:
+      213: 7564559329686531472
+    second: BODY_Epic_armors_Golden_14
+  - first:
+      213: 1600581191196130009
+    second: BODY_Epic_armors_Golden_15
+  - first:
+      213: 1294640093714824416
+    second: BODY_Epic_armors_Golden_16
+  - first:
+      213: 8789745364360342310
+    second: BODY_Epic_armors_Golden_17
+  - first:
+      213: -5335191898352440981
+    second: BODY_Epic_armors_Golden_18
+  - first:
+      213: 3090723820388865825
+    second: BODY_Epic_armors_Golden_19
+  - first:
+      213: 392161447685506464
+    second: BODY_Epic_armors_Golden_20
+  - first:
+      213: 7271009851789703193
+    second: BODY_Epic_armors_Golden_21
+  - first:
+      213: -4100273513131708353
+    second: BODY_Epic_armors_Golden_22
+  - first:
+      213: -827494398444275230
+    second: BODY_Epic_armors_Golden_23
+  - first:
+      213: 4328748050771376028
+    second: BODY_Epic_armors_Golden_24
+  - first:
+      213: -3361728832067565850
+    second: BODY_Epic_armors_Golden_25
+  - first:
+      213: 6606296654080005301
+    second: BODY_Epic_armors_Golden_26
+  - first:
+      213: 529613456556653970
+    second: BODY_Epic_armors_Golden_27
+  - first:
+      213: 2418086761844967470
+    second: BODY_Epic_armors_Golden_28
+  - first:
+      213: 1701419166311166388
+    second: BODY_Epic_armors_Golden_29
+  - first:
+      213: -741781668261806309
+    second: BODY_Epic_armors_Golden_30
+  - first:
+      213: 5409988796217520482
+    second: BODY_Epic_armors_Golden_31
+  - first:
+      213: 4772671044323417546
+    second: BODY_Epic_armors_Golden_32
+  - first:
+      213: -4037686922936567881
+    second: BODY_Epic_armors_Golden_33
+  - first:
+      213: 3414010980153983892
+    second: BODY_Epic_armors_Golden_34
+  - first:
+      213: -422605705832244835
+    second: BODY_Epic_armors_Golden_35
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -40,7 +148,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -71,9 +179,777 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: BODY_Epic_armors_Golden_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 195
+        width: 34
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 858ec5cc13ca2a590800000000000000
+      internalID: -7664374285949147048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BODY_Epic_armors_Golden_1
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 195
+        width: 34
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a7a1307c6c74e4a0800000000000000
+      internalID: -6564985551618725983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BODY_Epic_armors_Golden_2
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 194
+        width: 34
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec84ed1e45afaa540800000000000000
+      internalID: 5020099977131477198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BODY_Epic_armors_Golden_3
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 193
+        width: 33
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9599c04223465420800000000000000
+      internalID: 2618354047757424028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BODY_Epic_armors_Golden_4
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 194
+        width: 34
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90e29b31ab90244d0800000000000000
+      internalID: -3151946094406455799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BODY_Epic_armors_Golden_5
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 195
+        width: 34
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92f5b06c5177081a0800000000000000
+      internalID: -6809311701183537367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BODY_Epic_armors_Golden_6
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 194
+        width: 34
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d24f976b0aa9fd590800000000000000
+      internalID: -7647223627204922323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BODY_Epic_armors_Golden_7
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 193
+        width: 33
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb9a64f2b2d042110800000000000000
+      internalID: 1235126676934273467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BODY_Epic_armors_Golden_8
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 194
+        width: 34
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 513abd1c6b85bb800800000000000000
+      internalID: 629194114908005141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BODY_Epic_armors_Golden_9
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 129
+        width: 25
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ccdb8337a1da5fa0800000000000000
+      internalID: -5811101853113656120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BODY_Epic_armors_Golden_10
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 130
+        width: 28
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a474cf39109213a40800000000000000
+      internalID: 5346099319419979594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BODY_Epic_armors_Golden_11
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 131
+        width: 26
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 974488fb2f40979f0800000000000000
+      internalID: -470339245441530759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BODY_Epic_armors_Golden_12
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 131
+        width: 25
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1a9c8215c42f4ca0800000000000000
+      internalID: -6030560947187443174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BODY_Epic_armors_Golden_13
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 130
+        width: 25
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdb15a1a019d65b60800000000000000
+      internalID: 7734608075510062044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BODY_Epic_armors_Golden_14
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 130
+        width: 28
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09d2550b1a6baf860800000000000000
+      internalID: 7564559329686531472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BODY_Epic_armors_Golden_15
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 130
+        width: 26
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9daba67fc18663610800000000000000
+      internalID: 1600581191196130009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BODY_Epic_armors_Golden_16
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 130
+        width: 26
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ecb9d15e4c77f110800000000000000
+      internalID: 1294640093714824416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BODY_Epic_armors_Golden_17
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 130
+        width: 25
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62ba5dcb6d27bf970800000000000000
+      internalID: 8789745364360342310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BODY_Epic_armors_Golden_18
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 64
+        width: 34
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b69292a4c3795f5b0800000000000000
+      internalID: -5335191898352440981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BODY_Epic_armors_Golden_19
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 64
+        width: 34
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 127dd1570f474ea20800000000000000
+      internalID: 3090723820388865825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BODY_Epic_armors_Golden_20
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 65
+        width: 34
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a5c5e742cc317500800000000000000
+      internalID: 392161447685506464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BODY_Epic_armors_Golden_21
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 65
+        width: 33
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9187a4ecfe0d7e460800000000000000
+      internalID: 7271009851789703193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BODY_Epic_armors_Golden_22
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 64
+        width: 34
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3077d7c6f6e817c0800000000000000
+      internalID: -4100273513131708353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BODY_Epic_armors_Golden_23
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 64
+        width: 34
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e97a179a362484f0800000000000000
+      internalID: -827494398444275230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BODY_Epic_armors_Golden_24
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 65
+        width: 34
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c977460ea6dc21c30800000000000000
+      internalID: 4328748050771376028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BODY_Epic_armors_Golden_25
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 65
+        width: 33
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e68c6d307db851d0800000000000000
+      internalID: -3361728832067565850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BODY_Epic_armors_Golden_26
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 64
+        width: 34
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b45a432ec74eab50800000000000000
+      internalID: 6606296654080005301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BODY_Epic_armors_Golden_27
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 1
+        width: 25
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29d735af1a0995700800000000000000
+      internalID: 529613456556653970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BODY_Epic_armors_Golden_28
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 2
+        width: 28
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2808db2915ce8120800000000000000
+      internalID: 2418086761844967470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BODY_Epic_armors_Golden_29
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 3
+        width: 26
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b1b40e97b7ac9710800000000000000
+      internalID: 1701419166311166388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BODY_Epic_armors_Golden_30
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 3
+        width: 25
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1fbb5ab089a4b5f0800000000000000
+      internalID: -741781668261806309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BODY_Epic_armors_Golden_31
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 2
+        width: 25
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26173659524241b40800000000000000
+      internalID: 5409988796217520482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BODY_Epic_armors_Golden_32
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 2
+        width: 28
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acd90b2370feb3240800000000000000
+      internalID: 4772671044323417546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BODY_Epic_armors_Golden_33
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 2
+        width: 26
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b7302cd22147f7c0800000000000000
+      internalID: -4037686922936567881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BODY_Epic_armors_Golden_34
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 2
+        width: 26
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4938c53f5e0016f20800000000000000
+      internalID: 3414010980153983892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BODY_Epic_armors_Golden_35
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 2
+        width: 25
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d99d0df795a922af0800000000000000
+      internalID: -422605705832244835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
