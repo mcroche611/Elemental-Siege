@@ -13,9 +13,12 @@ public class Knockback : MonoBehaviour
             Debug.Log("colision espada enemigo");
             Rigidbody2D rbEnemy = col.GetComponent<Rigidbody2D>(); //accedemos al rb enemigo porque es lo que colisiona con la espada
             Vector2 direction = (rbEnemy.transform.position - transform.position).normalized; //al restar dos puntos nos da su vector de dirección
-            //rbEnemy.AddForce(direction * knock, ForceMode2D.Impulse);  //usando la masa del objeto genera una fuerza
-            rbEnemy.velocity = direction * knock;
-            knock = -knock;
+            rbEnemy.AddForce(direction * knock, ForceMode2D.Impulse);  //usando la masa del objeto genera una fuerza
+
+
+
+            //rbEnemy.velocity = direction * knock; Así no funciona tampoco
+            //knock = -knock;
 
             //el problema es que manda al enemigo sin pausa a dios sabe dónde
             //aunque los enemigos se supone que van a estar persiguiéndote, eso de por sí generaría otra fuerza mayor
