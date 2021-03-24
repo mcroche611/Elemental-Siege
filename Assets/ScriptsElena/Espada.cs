@@ -8,7 +8,6 @@ public class Espada : MonoBehaviour
     void Start()
     {
         Destroy(gameObject, 0.5f); //destruirlo despues de crearlo
-
     }
 
     // Update is called once per frame

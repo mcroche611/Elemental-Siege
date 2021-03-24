@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Knockback : MonoBehaviour
 {
-    public float knock = 0.0002f; //no es una velocidad realmente, es una fuerza en sí creo
+    public float knock = 0.0002f; //no es una velocidad realmente, es una fuerza en sí 
 
     void OnTriggerEnter2D(Collider2D col)
     {
