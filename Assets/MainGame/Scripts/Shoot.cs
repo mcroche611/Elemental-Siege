@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DispararProvisional : MonoBehaviour
+public class Shoot : MonoBehaviour
 {
     public GameObject fuego, agua, electricidad;
     float cont = 0;
@@ -15,23 +15,16 @@ public class DispararProvisional : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (cont <= 0)
+        if (cont <= 0 && Input.GetButton("Jump"))
         {
-            if (Input.GetKey("q"))
-            {
+            string elementoActual = GetComponent<ElementalAtack>().ElementoActual();
+            if (elementoActual == "Fuego")
                 Instantiate<GameObject>(fuego, transform.position, fuego.transform.rotation);
-                cont = 2;
-            }
-            else if (Input.GetKey("w"))
-            {
-                Instantiate<GameObject>(agua, transform.position, fuego.transform.rotation);
-                cont = 2;
-            }
-            else if (Input.GetKey("e"))
-            {
+            else if (elementoActual == "Electricidad")
                 Instantiate<GameObject>(electricidad, transform.position, fuego.transform.rotation);
-                cont = 2;
-            }
+            else
+                Instantiate<GameObject>(agua, transform.position, fuego.transform.rotation);
+            cont = 0.5f;
         }       
         cont -= Time.deltaTime;
     }

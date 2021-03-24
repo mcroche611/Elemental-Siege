@@ -9,7 +9,7 @@ public class Mojado : MonoBehaviour
     private void OnEnable()
     {
         Debug.Log("Estado actual del enemigo: Mojado");
-        Instantiate<GameObject>(icono, new Vector3(transform.position.x, transform.position.y + transform.localScale.y / 2 + 1f, transform.position.z), icono.transform.rotation, transform);
+        Instantiate<GameObject>(icono, new Vector3(transform.position.x, transform.position.y + transform.localScale.y / 2 + 0.5f, transform.position.z), icono.transform.rotation, transform);
     }
 
     private void OnDisable()
