@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ElementalAtack : MonoBehaviour
+public class ElementChanger : MonoBehaviour
 {
     float cont = 0;
     string[] elementos = new string[3] { "Agua", "Fuego",  "Electricidad" };
