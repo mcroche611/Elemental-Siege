@@ -21,13 +21,11 @@ public class Consoller : MonoBehaviour
     void Update()
     {
         //Obtenemos el input de la direccion y lo multiplicamos por la velocidad
-        deltaX = Input.GetAxis("Horizontal") * velocity;
-        deltaY = Input.GetAxis("Vertical") * velocity;
+        vector = new Vector2(Input.GetAxis("Horizontal") * velocity, Input.GetAxis("Vertical") * velocity);
         //Movimiento diagonal
         if(deltaX!=0 && deltaY != 0)
         {
-            vector = new Vector2(deltaX / 2, deltaY / 2);
-            //transform.Translate(deltaX / 2, deltaY / 2, 0);
+            vector = new Vector2(Input.GetAxis("Horizontal") * velocity / 2, Input.GetAxis("Vertical") * velocity / 2);
         }
     }
     //Movemos al jugador en el fixedUpdate ya que se trata de un movimiento físico
