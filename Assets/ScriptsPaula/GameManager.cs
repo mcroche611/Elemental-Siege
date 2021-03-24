@@ -12,16 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private int health;
 
-    [SerializeField]
-    private int maxMana;
-    private float mana;
-
-    [SerializeField]
-    private float manaRegSpeed;
-
-    public float playerSpeed; //PREGUNTAR A GUILLERMO VARIABLE PUBLICA?
-    //velocity = GameManager.GetInstance().playerSpeed; añadir a script de movimiento Consoller
-
+    //Mover a scrit de ataque
     [SerializeField]
     private int damageBonus;
 
@@ -43,7 +34,7 @@ public class GameManager : MonoBehaviour
             //Si ya existe un gameobject con un componente instancia de esta clase (es decir ya hay un GM) no necesitamos uno nuevo
             Destroy(this.gameObject);
         }
-        mana = maxMana;  
+        
             
     }
     public static GameManager GetInstance() //Para conseguir la referencia a game maager haciendo gameManager.getInstance()
@@ -54,24 +45,8 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (mana < maxMana)
-        {
-            mana += manaRegSpeed * Time.deltaTime;
-        }
-        else mana = maxMana;
-        /*if (Input.GetKeyDown("space"))
-        {
-            RestaMana(30);
-        }
-        Debug.Log(mana);*/
-    }
-    
-    public void RestaMana(int cantidad) //Se invoca al realizar una habilidad elemental
-    {
-        if (mana>=cantidad)
-        {
-            mana -= cantidad;
-        }
         
     }
+    
+    
 }

@@ -4,15 +4,38 @@ using UnityEngine;
 
 public class Mana : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private int maxMana;
+    private float mana;
+
+    [SerializeField]
+    private float manaRegSpeed;
+
+    void Awake()
     {
-        
+        mana = maxMana;
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        
+        if (mana < maxMana)
+        {
+            mana += manaRegSpeed * Time.deltaTime;
+        }
+        else mana = maxMana;
+        /*if (Input.GetKeyDown("space"))
+        {
+            RestaMana(30);
+        }
+        Debug.Log(mana);*/
+    }
+    public void RestaMana(int cantidad) //Se invoca al realizar una habilidad elemental
+    {
+        if (mana >= cantidad)
+        {
+            mana -= cantidad;
+        }
+
     }
 }
