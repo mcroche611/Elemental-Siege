@@ -4,29 +4,23 @@ using UnityEngine;
 
 public class Knockback : MonoBehaviour
 {
-    Vector3 mouseDir = new Vector3();
-    int velocidadKnock = 2;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        Vector3 mousePosition = new Vector3();
-        
-        mousePosition = Input.mousePosition;
-        mouseDir = (mousePosition).normalized;
-    }
+    public float knock = 0.0002f; //no es una velocidad realmente, es una fuerza en sí creo
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.GetComponent<Enemy>() != null) //miramos a ver si se choca con el enemigo, el unico que tiene el script
+        if (col.GetComponent<Enemy>() != null) //miramos a ver si se choca con la espada, lo unico que tiene el script
         {
+            Debug.Log("colision espada enemigo");
             Rigidbody2D rbEnemy = col.GetComponent<Rigidbody2D>(); //accedemos al rb enemigo porque es lo que colisiona con la espada
-            rbEnemy.velocity = mouseDir * velocidadKnock;
+            Vector2 direction = (rbEnemy.transform.position - transform.position).normalized; //al restar dos puntos nos da su vector de dirección
+            //rbEnemy.AddForce(direction * knock, ForceMode2D.Impulse);  //usando la masa del objeto genera una fuerza
+            rbEnemy.velocity = direction * knock;
+            knock = -knock;
+
+            //el problema es que manda al enemigo sin pausa a dios sabe dónde
+            //aunque los enemigos se supone que van a estar persiguiéndote, eso de por sí generaría otra fuerza mayor
+            //Aparte, cómo solucionar que el rigidbody del enemigo y el jugador colisionen? haciendo que las layers no colisionen entre si? pero molaria que tampoco pudieras pasar entre enemigos
+            //o hacer un bucle con un contador de segundos y que el knockback solo ocurriera durante un par. creo que no funciona así, la fuerza ya está aplicada.
 
         }
 
