@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6495425175435944774}
   - component: {fileID: 6495425175435944773}
   - component: {fileID: 6495425175435944772}
+  - component: {fileID: 1205922430129367519}
   m_Layer: 0
   m_Name: Espada
   m_TagString: Untagged
@@ -26,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6495425175435944771}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.4535, y: -1.1408, z: -8.974026}
-  m_LocalScale: {x: 0.21114063, y: 0.39257863, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4693223793722828118}
   m_Father: {fileID: 0}
@@ -71,6 +72,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa4c3c09321b7544c8d63bdfc47018b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1205922430129367519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6495425175435944771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8cc3f9a6ac4b044e9b82dd3454df327, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knock: 0.0002
 --- !u!1 &8920702103279750147
 GameObject:
   m_ObjectHideFlags: 0
