@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Consoller : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     //Declarar las variables
     public float velocity;
@@ -22,15 +22,13 @@ public class Consoller : MonoBehaviour
     {
         //velocity = GameManager.GetInstance().playerSpeed;
         //Obtenemos el input de la direccion y lo multiplicamos por la velocidad
-                vector = new Vector2 (Input.GetAxis("Horizontal") * velocity, Input.GetAxis("Vertical") * velocity);
+        vector = new Vector2(Input.GetAxis("Horizontal") * velocity, Input.GetAxis("Vertical") * velocity);
 
         //Movimiento diagonal
-        if(deltaX!=0 && deltaY != 0)
+        if (deltaX != 0 && deltaY != 0)
         {
             vector = new Vector2(Input.GetAxis("Horizontal") * velocity / 2, Input.GetAxis("Vertical") * velocity / 2);
-            //transform.Translate(deltaX / 2, deltaY / 2, 0);
         }
-        
     }
     //Movemos al jugador en el fixedUpdate ya que se trata de un movimiento físico
     private void FixedUpdate()
