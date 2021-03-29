@@ -1140,10 +1140,10 @@ TextureImporter:
       name: Spritesheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 240
-        width: 16
-        height: 16
+        x: 1
+        y: 241
+        width: 13
+        height: 11
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1308,10 +1308,10 @@ TextureImporter:
       name: Spritesheet_8
       rect:
         serializedVersion: 2
-        x: 128
-        y: 240
-        width: 16
-        height: 16
+        x: 129
+        y: 241
+        width: 13
+        height: 11
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5088,10 +5088,10 @@ TextureImporter:
       name: Spritesheet_188
       rect:
         serializedVersion: 2
-        x: 128
-        y: 112
-        width: 16
-        height: 16
+        x: 129
+        y: 113
+        width: 13
+        height: 11
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

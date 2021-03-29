@@ -6,7 +6,7 @@ public class ActivateElementOnCollision : MonoBehaviour
 {
     public string element;
 
-    void OnCollisionEnter(Collision info)
+    void OnCollisionEnter2D(Collision2D info)
     {       
         GameObject other = info.gameObject;
 
