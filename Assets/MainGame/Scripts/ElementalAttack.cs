@@ -4,10 +4,24 @@ using UnityEngine;
 
 public class ElementalAttack : MonoBehaviour
 {
+    //Variables accesibles desde el editor
     public GameObject fuego, agua, electricidad;
     float cont = 0;
+    Mana quitaMana;
+    [SerializeField]
+    int manaAgua;
+    [SerializeField]
+    int manaFuego;
+    [SerializeField]
+    int manaElectro;
 
-    void Update()
+    private void Awake()
+    {
+           
+    }
+
+
+    private void Update()
     {
         if (cont <= 0 && Input.GetButton("Jump"))
         {
