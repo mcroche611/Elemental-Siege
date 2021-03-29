@@ -24,7 +24,7 @@ public class StateManager : MonoBehaviour
         }
         else if (currentState != element_state)
         {
-            Debug.Log("Se ha producido una Reacción Elemental");
+            //Debug.Log("Se ha producido una Reacción Elemental");
             CancelInvoke("StateTimeOut");
             currentState.enabled = false;
             currentState = null;
