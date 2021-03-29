@@ -15,9 +15,10 @@ public class ElementalAttack : MonoBehaviour
     [SerializeField]
     int manaElectro;
 
-    private void Awake()
+   
+    private void Start()
     {
-           
+        quitaMana = GetComponent<Mana>();
     }
 
 
@@ -25,17 +26,13 @@ public class ElementalAttack : MonoBehaviour
     {
         if (cont <= 0 && Input.GetButton("Jump"))
         {
-            //(Input.mousePosition.x - 8) / 16 - 
-            float coorX = Input.mousePosition.x/16 - 24;
-            float coorY = Input.mousePosition.y/16 - 15;
-            float rotation = Mathf.Atan(coorY / coorX);
-            Debug.Log(rotation);
             string elementoActual = GetComponent<ElementChanger>().ElementoActual();
-            if (elementoActual == "Fuego")
-                Instantiate<GameObject>(fuego, transform.position, new Quaternion(fuego.transform.rotation.x, fuego.transform.rotation.y, rotation, 0f));
-            else if (elementoActual == "Electricidad")
+
+            if (elementoActual == "Fuego" && quitaMana.RestaMana(manaFuego))
+                Instantiate<GameObject>(fuego, transform.position, fuego.transform.rotation);
+            else if (elementoActual == "Electricidad" && quitaMana.RestaMana(manaElectro))
                 Instantiate<GameObject>(electricidad, transform.position, fuego.transform.rotation);
-            else
+            else if (quitaMana.RestaMana(manaAgua))
                 Instantiate<GameObject>(agua, transform.position, fuego.transform.rotation);
             cont = 0.5f;
         }       
