@@ -27,15 +27,20 @@ public class Mana : MonoBehaviour
         /*if (Input.GetKeyDown("space"))
         {
             RestaMana(30);
-        }
-        Debug.Log(mana);*/
+        }*/
+        //Debug.Log(mana);
     }
-    public void RestaMana(int cantidad) //Se invoca al realizar una habilidad elemental
+    public bool RestaMana(int cantidad) //Se invoca al realizar una habilidad elemental, comprueba si se puede realizar el ataque
     {
-        if (mana >= cantidad)
+        bool manaSuficiente= (mana>=cantidad);
+
+        if (manaSuficiente)
         {
             mana -= cantidad;
         }
-
+        Debug.Log(mana);
+        return manaSuficiente;
+        
     }
+    
 }
