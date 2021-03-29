@@ -6,9 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     //Declarar las variables
     public float velocity;
-    float deltaX, deltaY;
     Rigidbody2D rb;
-    Vector2 vector;
 
     // Start is called before the first frame update
     void Start()
@@ -20,19 +18,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //velocity = GameManager.GetInstance().playerSpeed;
-        //Obtenemos el input de la direccion y lo multiplicamos por la velocidad
-        vector = new Vector2(Input.GetAxis("Horizontal") * velocity, Input.GetAxis("Vertical") * velocity);
-
-        //Movimiento diagonal
-        if (deltaX != 0 && deltaY != 0)
-        {
-            vector = new Vector2(Input.GetAxis("Horizontal") * velocity / 2, Input.GetAxis("Vertical") * velocity / 2);
-        }
-    }
-    //Movemos al jugador en el fixedUpdate ya que se trata de un movimiento físico
-    private void FixedUpdate()
-    {
-        rb.velocity = vector;
+        Vector2 vel = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
+        rb.velocity = new Vector2(vel.x * velocity, vel.y * velocity);
     }
 }
