@@ -29,7 +29,7 @@ public class ElementalAttack : MonoBehaviour
             string elementoActual = GetComponent<ElementChanger>().ElementoActual();
 
             if (elementoActual == "Fuego" && quitaMana.RestaMana(manaFuego))
-                Instantiate<GameObject>(fuego, transform.position, fuego.transform.rotation);
+                Instantiate<GameObject>(fuego, transform.position, fuego.transform.rotation);        
             else if (elementoActual == "Electricidad" && quitaMana.RestaMana(manaElectro))
                 Instantiate<GameObject>(electricidad, transform.position, fuego.transform.rotation);
             else if (quitaMana.RestaMana(manaAgua))
