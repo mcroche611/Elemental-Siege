@@ -38,7 +38,7 @@ public class Mana : MonoBehaviour
         {
             mana -= cantidad;
         }
-        Debug.Log(mana);
+        //Debug.Log(mana);
         return manaSuficiente;
         
     }

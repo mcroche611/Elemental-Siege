@@ -4,24 +4,20 @@ using UnityEngine;
 
 public class ActivateElementOnCollision : MonoBehaviour
 {
-    public string element;
+    [SerializeField] string element;
 
     void OnCollisionEnter2D(Collision2D info)
     {       
         GameObject other = info.gameObject;
-
-        other.GetComponent<StateManager>().NewElement(element);
-
-        /*
-        if (other.layer != LayerMask.NameToLayer("Enemy"))
-        {
-            Debug.Log("La bola ha chocado contra un NO enemigo");
-            return;
-        }
-        else
+                
+        if (other.layer == LayerMask.NameToLayer("Enemy"))
         {
             other.GetComponent<StateManager>().NewElement(element);
-        } 
-        */
+        }
+    }
+
+    public bool EsAgua()
+    {
+        return element == "Agua_Mojado";
     }
 }
