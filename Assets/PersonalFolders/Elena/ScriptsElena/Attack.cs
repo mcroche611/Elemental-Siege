@@ -25,7 +25,7 @@ public class Attack : MonoBehaviour
         mouseDir.z = 0;
         Vector3 swordPosition = new Vector3();
 
-        swordPosition = (mouseDir + transform.position);
+        swordPosition = mouseDir*alcance + transform.position;
         
         if (Input.GetMouseButtonDown(0) && cooldown >=2)
         {
