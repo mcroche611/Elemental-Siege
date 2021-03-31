@@ -28,7 +28,7 @@ public class Attack : MonoBehaviour
         Vector2 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 vector = new Vector2(mouseWorldPosition.x - transform.position.x, mouseWorldPosition.y - transform.position.y);
         float angulo = Mathf.Atan2(vector.y, vector.x) * 180 / Mathf.PI;
-        return Quaternion.Euler(new Vector3(0f, 0f, angulo));
+        return Quaternion.Euler(new Vector3(0f, 0f, angulo-90));
     }
 
 }

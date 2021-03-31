@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class VidaPlayer : MonoBehaviour
 {
+    public float vidaplayer;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +14,10 @@ public class VidaPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log(vidaplayer);
+        if (vidaplayer == 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
