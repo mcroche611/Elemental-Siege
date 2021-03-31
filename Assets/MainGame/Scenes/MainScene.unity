@@ -4493,9 +4493,9 @@ MonoBehaviour:
   agua: {fileID: 5108945870854057946, guid: faa23928b2149c748ad75d1612916f2b, type: 3}
   electricidad: {fileID: 3400363912640841692, guid: 71536740a70347b47964d31ccdda780c,
     type: 3}
-  manaAgua: 90
+  manaAgua: 20
   manaFuego: 10
-  manaElectro: 50
+  manaElectro: 30
 --- !u!114 &1645363344
 MonoBehaviour:
   m_ObjectHideFlags: 0
