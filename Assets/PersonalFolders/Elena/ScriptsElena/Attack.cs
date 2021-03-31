@@ -16,24 +16,19 @@ public class Attack : MonoBehaviour
     void Update()
     {
         
-        Vector3 mousePosition = Input.mousePosition;
-        //mousePosition.z = Camera.main.nearClipPlane; //z tiene que ser positivo o puede ocasionar problemas por no estar en campo visible. Empieza a dar la coordenada de la cámara si no. pedes poner z = 10 y tambien
-        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mousePosition); //Transforms a point from screen space into world space, where world space is defined as the coordinate system at the very top of your game's hierarchy.
-                                                                                    //es para sacar las coordenadas que tendría desde el punto de vista del jugador de la cámara
-
-        Vector3 mouseDir = (mouseWorldPosition - transform.position).normalized;
-        mouseDir.z = 0;
-        Vector3 swordPosition = new Vector3();
-
-        swordPosition = mouseDir*alcance + transform.position;
-        
         if (Input.GetMouseButtonDown(0) && cooldown >=2)
         {
-            Debug.Log("sword" + swordPosition + "mouse" + mouseDir + "transform" + transform.position);
-            Instantiate<GameObject>(espada, swordPosition, Quaternion.AngleAxis(20, Vector3.forward)); //lo que hace el quaternion es girar 20 grados el axis z
+            
+            Instantiate<GameObject>(espada, transform.position, Rotation(), transform); 
         }
     }
     //idea hacer que vaya al punto donde clickee el ratón y luego eliminarlo al poco
-
+    private Quaternion Rotation()
+    {
+        Vector2 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 vector = new Vector2(mouseWorldPosition.x - transform.position.x, mouseWorldPosition.y - transform.position.y);
+        float angulo = Mathf.Atan2(vector.y, vector.x) * 180 / Mathf.PI;
+        return Quaternion.Euler(new Vector3(0f, 0f, angulo));
+    }
 
 }

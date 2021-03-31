@@ -24,18 +24,26 @@ public class ElementalAttack : MonoBehaviour
 
     private void Update()
     {
-        if (cont <= 0 && Input.GetButton("Jump"))
+        if (cont <= 0 && Input.GetMouseButtonDown(1))
         {
             string elementoActual = GetComponent<ElementChanger>().ElementoActual();
-
+            Rotation();
             if (elementoActual == "Fuego" && quitaMana.RestaMana(manaFuego))
-                Instantiate<GameObject>(fuego, transform.position, fuego.transform.rotation);        
+                Instantiate<GameObject>(fuego, transform.position, Rotation());        
             else if (elementoActual == "Electricidad" && quitaMana.RestaMana(manaElectro))
-                Instantiate<GameObject>(electricidad, transform.position, fuego.transform.rotation);
+                Instantiate<GameObject>(electricidad, transform.position, Rotation());
             else if (quitaMana.RestaMana(manaAgua))
-                Instantiate<GameObject>(agua, transform.position, fuego.transform.rotation);
+                Instantiate<GameObject>(agua, transform.position, Rotation());
             cont = 0.5f;
         }       
         cont -= Time.deltaTime;
+    }
+
+    private Quaternion Rotation()
+    {
+        Vector2 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 vector = new Vector2(mouseWorldPosition.x - transform.position.x, mouseWorldPosition.y - transform.position.y);       
+        float angulo = Mathf.Atan2(vector.y, vector.x) * 180 / Mathf.PI;
+        return Quaternion.Euler(new Vector3(0f, 0f, angulo));
     }
 }

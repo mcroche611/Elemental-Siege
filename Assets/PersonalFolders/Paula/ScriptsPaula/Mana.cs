@@ -30,7 +30,7 @@ public class Mana : MonoBehaviour
         }*/
         //Debug.Log(mana);
     }
-    public bool RestaMana(int cantidad) //Se invoca al realizar una habilidad elemental, comprueba si se puede realizar el ataque
+    public bool RestaMana(int cantidad) //Se invoca al realizar una habilidad elemental, comprueba si se puede realizar el ataque y resta mana si es asi
     {
         bool manaSuficiente= (mana>=cantidad);
 
@@ -38,7 +38,7 @@ public class Mana : MonoBehaviour
         {
             mana -= cantidad;
         }
-        Debug.Log(mana);
+        //Debug.Log(mana);
         return manaSuficiente;
         
     }
