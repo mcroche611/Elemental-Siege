@@ -9,24 +9,9 @@ public class GameManager : MonoBehaviour
 
 
     private static GameManager instance;
-    [SerializeField]
-    private int health;
 
-    [SerializeField]
-    private int maxMana;
-    private float mana;
+    [SerializeField] float ataque, bonoAgua, bonoFuego, bonoElectricidad;
 
-    [SerializeField]
-    private float manaRegSpeed;
-
-    public float playerSpeed; //PREGUNTAR A GUILLERMO VARIABLE PUBLICA?
-    //velocity = GameManager.GetInstance().playerSpeed; añadir a script de movimiento Consoller
-
-    [SerializeField]
-    private int damageBonus;
-
-    [SerializeField]
-    private float attack;
 
 
     void Awake()
@@ -43,7 +28,6 @@ public class GameManager : MonoBehaviour
             //Si ya existe un gameobject con un componente instancia de esta clase (es decir ya hay un GM) no necesitamos uno nuevo
             Destroy(this.gameObject);
         }
-        mana = maxMana;  
             
     }
     public static GameManager GetInstance() //Para conseguir la referencia a game maager haciendo gameManager.getInstance()
@@ -51,27 +35,11 @@ public class GameManager : MonoBehaviour
         return instance;
     }
 
-
-    void Update()
+    public float Stat (string nombre)
     {
-        if (mana < maxMana)
-        {
-            mana += manaRegSpeed * Time.deltaTime;
-        }
-        else mana = maxMana;
-        /*if (Input.GetKeyDown("space"))
-        {
-            RestaMana(30);
-        }
-        Debug.Log(mana);*/
-    }
-    
-    public void RestaMana(int cantidad) //Se invoca al realizar una habilidad elemental
-    {
-        if (mana>=cantidad)
-        {
-            mana -= cantidad;
-        }
-        
+        if (nombre == "Fuego") return bonoFuego;
+        else if (nombre == "Agua") return bonoAgua;
+        else if (nombre == "Electricidad") return bonoElectricidad;
+        else return ataque;
     }
 }

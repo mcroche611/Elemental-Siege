@@ -20,4 +20,9 @@ public class ActivateElementOnCollision : MonoBehaviour
     {
         return element == "Agua_Mojado";
     }
+
+    public string Elemento()
+    {
+        return element.Split('_')[0];
+    }
 }

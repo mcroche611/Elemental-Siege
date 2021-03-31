@@ -4691,12 +4691,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab6ecef15388a3b4fa4f5854fe044fd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  maxMana: 100
-  manaRegSpeed: 3
-  playerSpeed: 0
-  damageBonus: 0
-  attack: 0
+  ataque: 25
+  bonoAgua: 20
+  bonoFuego: 20
+  bonoElectricidad: 20
 --- !u!1 &1763003394
 GameObject:
   m_ObjectHideFlags: 0
@@ -6451,7 +6449,7 @@ PrefabInstance:
     - target: {fileID: 2239740731589996916, guid: 77007398225556f4ab071f089f471cca,
         type: 3}
       propertyPath: health
-      value: 12
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7369265975475909508, guid: 77007398225556f4ab071f089f471cca,
         type: 3}
