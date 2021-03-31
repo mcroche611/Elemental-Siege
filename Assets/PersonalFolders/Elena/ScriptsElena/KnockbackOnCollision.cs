@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class KnockbackOnCollision : MonoBehaviour
 {
-    Vector3 mouseDir = new Vector3();
     int velocidadKnock = 2;
     Rigidbody2D rb;
     // Start is called before the first frame update

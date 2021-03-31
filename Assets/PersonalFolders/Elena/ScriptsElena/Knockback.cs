@@ -8,7 +8,7 @@ public class Knockback : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.GetComponent<Enemy>() != null) //miramos a ver si se choca con la espada, lo unico que tiene el script
+        if (col.GetComponent<Enemy2>() != null) //miramos a ver si se choca con la espada, lo unico que tiene el script
         {
             Debug.Log("colision espada enemigo");
             Rigidbody2D rbEnemy = col.GetComponent<Rigidbody2D>(); //accedemos al rb enemigo porque es lo que colisiona con la espada
