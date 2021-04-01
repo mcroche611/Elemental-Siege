@@ -16,11 +16,6 @@ public class ActivateElementOnCollision : MonoBehaviour
         }
     }
 
-    public bool EsAgua()
-    {
-        return element == "Agua_Mojado";
-    }
-
     public string Elemento()
     {
         return element.Split('_')[0];
