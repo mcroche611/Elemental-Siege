@@ -3,20 +3,14 @@ using UnityEngine;
 
 public class EnemyRaycast : MonoBehaviour
 {
-    //add Raycast within range???
-
     [SerializeField]
     float detectRange;
 
     [SerializeField]
-    float attackRange;
-
-    [SerializeField]
     float speed;
 
-    float distToPlayer;
     Vector2 vel;
-    int unit = 1;
+    bool attackMode = false;
 
     Transform player;
     Rigidbody2D rb;
@@ -35,9 +29,7 @@ public class EnemyRaycast : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //distToPlayer = Vector2.Distance(transform.position, player.position);
-
-        if (CanSeePlayer(detectRange))
+        if (CanSeePlayer(detectRange) && !attackMode)
         {
             ChasePlayer();
         }
@@ -45,11 +37,6 @@ public class EnemyRaycast : MonoBehaviour
         {
             StopChasingPlayer();
         }
-
-        //if (distToPlayer < attackRange) //or OnCollisionEnter2D
-        //{
-        //    AttackPlayer();
-        //}
     }
 
     private bool CanSeePlayer(float detectRange)
@@ -63,7 +50,6 @@ public class EnemyRaycast : MonoBehaviour
 
         RaycastHit2D hit = Physics2D.Linecast(transform.position, player.position, pm);
 
-
         if (hit.collider != null)
         {
             if (hit.collider.gameObject.GetComponent<PlayerController>() != null)
@@ -75,11 +61,6 @@ public class EnemyRaycast : MonoBehaviour
         Debug.DrawLine(transform.position, player.position, Color.white);
 
         return val;
-    }
-
-    private void AttackPlayer()
-    {
-        throw new NotImplementedException();
     }
 
     void ChasePlayer()
@@ -98,5 +79,21 @@ public class EnemyRaycast : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(vel.x * speed, vel.y * speed);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.GetComponent<PlayerController>() != null)
+        {
+            attackMode = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.GetComponent<PlayerController>() != null)
+        {
+            attackMode = false;
+        }
     }
 }
