@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class VidaPlayer : MonoBehaviour
 {
-    public float vidaplayer;
+    public int vidaPlayer;
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameManager.GetInstance().SetHpPlayer(vidaPlayer);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(vidaplayer);
-        if (vidaplayer == 0)
+        vidaPlayer = GameManager.GetInstance().GetVidaPlayer();
+
+        Debug.Log(vidaPlayer);
+        if (vidaPlayer == 0)
         {
             Destroy(this.gameObject);
         }

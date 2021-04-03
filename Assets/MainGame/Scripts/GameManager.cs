@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] float ataque, bonoAgua, bonoFuego, bonoElectricidad;
 
+    int hpPlayer;
+
     Transform playerTf;
 
     void Awake()
@@ -56,5 +58,20 @@ public class GameManager : MonoBehaviour
     public Transform GetPlayerTransform()
     {
         return playerTf;
+    }
+
+    public void EnemyMakeDamage(int damage)
+    {
+        hpPlayer -= damage;
+    }
+
+    public void SetHpPlayer(int vidaPlayer)
+    {
+        hpPlayer = vidaPlayer;
+    }
+
+    public int GetVidaPlayer()
+    {
+        return hpPlayer;
     }
 }
