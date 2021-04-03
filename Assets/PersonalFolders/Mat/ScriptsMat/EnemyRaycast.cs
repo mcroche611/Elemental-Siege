@@ -54,27 +54,16 @@ public class EnemyRaycast : MonoBehaviour
 
         bool val = false;
 
-        RaycastHit2D hitPlayer = Physics2D.Linecast(transform.position, player.position, 1 << LayerMask.NameToLayer("Player"));
-        RaycastHit2D hitMuro = Physics2D.Linecast(transform.position, player.position, 1 << LayerMask.NameToLayer("Muros"));
+        int p, m, pm;
+        p = 1 << LayerMask.NameToLayer("Player");
+        m = 1 << LayerMask.NameToLayer("Muros");
+        pm = p | m;
 
-        if (hitPlayer.collider != null)
+        RaycastHit2D hit = Physics2D.Linecast(transform.position, player.position, pm);
+
+        if (hit.collider != null)
         {
-            if (hitMuro.collider != null)
-            {
-                if (Vector2.Distance(hitPlayer.collider.transform.position, transform.position) < Vector2.Distance(hitMuro.collider.transform.position, transform.position))
-                {
-                    val = hitPlayer.collider.gameObject.GetComponent<PlayerController>() != null;
-                }
-            }
-            else
-            {
-                val = hitPlayer.collider.gameObject.GetComponent<PlayerController>() != null;
-            }
-
-            if (val)
-                Debug.Log("Primero Player");
-            else
-                Debug.Log("Obstáculo encontrado");
+            val = hit.collider.gameObject.GetComponent<PlayerController>() != null;
         }
 
         Debug.DrawLine(transform.position, player.position, Color.white);
