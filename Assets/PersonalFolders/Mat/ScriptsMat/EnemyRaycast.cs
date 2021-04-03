@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class EnemyRange : MonoBehaviour
+public class EnemyRaycast : MonoBehaviour
 {
     //add Raycast within range???
 
@@ -35,17 +35,51 @@ public class EnemyRange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        distToPlayer = Vector2.Distance(transform.position, player.position);
+        //distToPlayer = Vector2.Distance(transform.position, player.position);
 
-        if (distToPlayer < detectRange)
+        if (CanSeePlayer(detectRange))
         {
             ChasePlayer();
         }
 
-        if (distToPlayer < attackRange) //or OnCollisionEnter2D
+        //if (distToPlayer < attackRange) //or OnCollisionEnter2D
+        //{
+        //    AttackPlayer();
+        //}
+    }
+
+    private bool CanSeePlayer(float detectRange)
+    {
+        Vector2 trayectoria = player.position - transform.position;
+
+        bool val = false;
+
+        RaycastHit2D hitPlayer = Physics2D.Linecast(transform.position, player.position, 1 << LayerMask.NameToLayer("Player"));
+        RaycastHit2D hitMuro = Physics2D.Linecast(transform.position, player.position, 1 << LayerMask.NameToLayer("Muros"));
+
+        if (hitPlayer.collider != null)
         {
-            AttackPlayer();
+            if (hitMuro.collider != null)
+            {
+                if (Vector2.Distance(hitPlayer.collider.transform.position, transform.position) < Vector2.Distance(hitMuro.collider.transform.position, transform.position))
+                {
+                    val = hitPlayer.collider.gameObject.GetComponent<PlayerController>() != null;
+                }
+            }
+            else
+            {
+                val = hitPlayer.collider.gameObject.GetComponent<PlayerController>() != null;
+            }
+
+            if (val)
+                Debug.Log("Primero Player");
+            else
+                Debug.Log("Obstáculo encontrado");
         }
+
+        Debug.DrawLine(transform.position, player.position, Color.white);
+
+        return val;
     }
 
     private void AttackPlayer()

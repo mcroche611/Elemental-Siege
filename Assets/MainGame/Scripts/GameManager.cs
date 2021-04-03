@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] float ataque, bonoAgua, bonoFuego, bonoElectricidad;
 
-
+    Transform playerTf;
 
     void Awake()
     {
@@ -27,9 +27,9 @@ public class GameManager : MonoBehaviour
         {
             //Si ya existe un gameobject con un componente instancia de esta clase (es decir ya hay un GM) no necesitamos uno nuevo
             Destroy(this.gameObject);
-        }
-            
+        }          
     }
+
     public static GameManager GetInstance() //Para conseguir la referencia a game maager haciendo gameManager.getInstance()
     {
         return instance;
@@ -41,5 +41,20 @@ public class GameManager : MonoBehaviour
         else if (nombre == "Agua") return bonoAgua;
         else if (nombre == "Electricidad") return bonoElectricidad;
         else return ataque;
+    }
+
+    public void SetPlayerTransform(Transform tf)
+    {
+        playerTf = tf;
+
+        if (playerTf != null)
+            Debug.Log("PlayerTf correct");
+        else
+            Debug.Log("PlayerTf null");
+    }
+
+    public Transform GetPlayerTransform()
+    {
+        return playerTf;
     }
 }
