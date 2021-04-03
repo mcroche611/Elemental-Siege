@@ -13,7 +13,7 @@ public class EnemyRange : MonoBehaviour
 
     float distToPlayer;
     Vector2 vel;
-    int horizontal, vertical;
+    int unit = 1;
 
     Rigidbody2D rb;
 
@@ -36,7 +36,14 @@ public class EnemyRange : MonoBehaviour
 
     void ChasePlayer()
     {
-        if (transform.position.x < player.position.x)
+        int horizontal = 0, vertical = 0;
+
+        if (Mathf.Abs(transform.position.x - player.position.x) < unit)
+        {
+            Debug.Log("Horizontal = 0");
+            horizontal = 0;
+        }
+        else if (transform.position.x < player.position.x)
         {
             horizontal = 1;
         }
@@ -45,17 +52,23 @@ public class EnemyRange : MonoBehaviour
             horizontal = -1;
         }
 
-        if (transform.position.y < player.position.y)
+        if (Mathf.Abs(transform.position.y - player.position.y) < unit)
+        {
+            Debug.Log("Vertical = 0");
+            vertical = 0;
+        }
+        else if (transform.position.y < player.position.y)
         {
             vertical = 1;
         }
         else if (transform.position.y > player.position.y)
         {
             vertical = -1;
-        }
+        }        
 
+        
         vel = new Vector2(horizontal, vertical).normalized;
-       
+
     }
 
     private void FixedUpdate()
