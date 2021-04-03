@@ -41,6 +41,10 @@ public class EnemyRaycast : MonoBehaviour
         {
             ChasePlayer();
         }
+        else
+        {
+            StopChasingPlayer();
+        }
 
         //if (distToPlayer < attackRange) //or OnCollisionEnter2D
         //{
@@ -50,8 +54,6 @@ public class EnemyRaycast : MonoBehaviour
 
     private bool CanSeePlayer(float detectRange)
     {
-        Vector2 trayectoria = player.position - transform.position;
-
         bool val = false;
 
         int p, m, pm;
@@ -61,9 +63,13 @@ public class EnemyRaycast : MonoBehaviour
 
         RaycastHit2D hit = Physics2D.Linecast(transform.position, player.position, pm);
 
+
         if (hit.collider != null)
         {
-            val = hit.collider.gameObject.GetComponent<PlayerController>() != null;
+            if (hit.collider.gameObject.GetComponent<PlayerController>() != null)
+            {
+                val = hit.distance <= detectRange;
+            }
         }
 
         Debug.DrawLine(transform.position, player.position, Color.white);
@@ -78,37 +84,15 @@ public class EnemyRaycast : MonoBehaviour
 
     void ChasePlayer()
     {
-        int horizontal = 0, vertical = 0;
+        Vector2 trayectoria = player.position - transform.position;
 
-        if (Mathf.Abs(transform.position.x - player.position.x) < unit)
-        {
-            horizontal = 0;
-        }
-        else if (transform.position.x < player.position.x)
-        {
-            horizontal = 1;
-        }
-        else if (transform.position.x > player.position.x)
-        {
-            horizontal = -1;
-        }
+        vel = trayectoria.normalized;
+    }
 
-        if (Mathf.Abs(transform.position.y - player.position.y) < unit)
-        {
-            vertical = 0;
-        }
-        else if (transform.position.y < player.position.y)
-        {
-            vertical = 1;
-        }
-        else if (transform.position.y > player.position.y)
-        {
-            vertical = -1;
-        }        
-
-        
-        vel = new Vector2(horizontal, vertical).normalized;
-
+    private void StopChasingPlayer()
+    {
+        vel.x = 0;
+        vel.y = 0;
     }
 
     private void FixedUpdate()
