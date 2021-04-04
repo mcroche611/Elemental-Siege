@@ -16,7 +16,7 @@ public class AttackOnCollision : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<PlayerController>() != null)
         {
-            InvokeRepeating("MakeDamage", 0.5f, coolDown);
+            InvokeRepeating("MakeDamage", 0f, coolDown);
         }
     }
 
@@ -37,6 +37,6 @@ public class AttackOnCollision : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        CancelInvoke();
+        CancelInvoke("MakeDamage");
     }
 }
