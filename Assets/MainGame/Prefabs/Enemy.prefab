@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 8270795129788528785}
   - component: {fileID: 5328649918640859357}
   - component: {fileID: 1236601110831857516}
+  - component: {fileID: -5819485750555743739}
+  - component: {fileID: 2239740731589996916}
   - component: {fileID: -3506597713794222983}
   - component: {fileID: -5084534236044607983}
   m_Layer: 10
@@ -114,6 +116,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icono: {fileID: 4597571645131044798, guid: af5960dd2c1e1114ea69beada5a9e406, type: 3}
+  "da\xF1oQuemadura": 1
+  timpoQuemadura: 1
 --- !u!114 &5328649918640859357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,6 +144,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icono: {fileID: 4597571645131044798, guid: 75e62b9cfa344f14891d1296b73eae4e, type: 3}
+  "tiempoParalizaci\xF3n": 2
+--- !u!114 &-5819485750555743739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7369265975475911802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8f4515c8e2ca764eb7dfacbc1302f2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "tiempoParalizaci\xF3n": 2
+--- !u!114 &2239740731589996916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7369265975475911802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d972487b5417edd488319bb1740f0d8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
 --- !u!61 &-3506597713794222983
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -186,4 +217,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 4

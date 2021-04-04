@@ -27,6 +27,8 @@ public class StateManager : MonoBehaviour
             //Debug.Log("Se ha producido una Reacción Elemental");
             CancelInvoke("StateTimeOut");
             currentState.enabled = false;
+            if (elementalAtack.Split('_')[0] == "Electricidad")
+                GetComponent<Paralizar>().Paraliza();
             currentState = null;
         }
               
@@ -36,5 +38,17 @@ public class StateManager : MonoBehaviour
     {
         currentState.enabled = false;
         currentState = null;
+    }
+
+    void Paraliza()
+    {
+        //aquí iría el script de movimiento del enemigo
+        GetComponent<Patrulla>().enabled = false;
+        //faltaría el escript de ataque del enemigo también
+    }
+
+    void ParalizaAcaba()
+    {
+        GetComponent<Patrulla>().enabled = true;
     }
 }

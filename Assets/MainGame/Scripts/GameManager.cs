@@ -9,25 +9,12 @@ public class GameManager : MonoBehaviour
 
 
     private static GameManager instance;
-    [SerializeField]
-    private int health;
 
-    [SerializeField]
-    private int maxMana;
-    private float mana;
+    [SerializeField] float ataque, bonoAgua, bonoFuego, bonoElectricidad;
 
-    [SerializeField]
-    private float manaRegSpeed;
+    int hpPlayer;
 
-    public float playerSpeed; //PREGUNTAR A GUILLERMO VARIABLE PUBLICA?
-    //velocity = GameManager.GetInstance().playerSpeed; añadir a script de movimiento Consoller
-
-    [SerializeField]
-    private int damageBonus;
-
-    [SerializeField]
-    private float attack;
-
+    Transform playerTf;
 
     void Awake()
     {
@@ -42,36 +29,49 @@ public class GameManager : MonoBehaviour
         {
             //Si ya existe un gameobject con un componente instancia de esta clase (es decir ya hay un GM) no necesitamos uno nuevo
             Destroy(this.gameObject);
-        }
-        mana = maxMana;  
-            
+        }          
     }
+
     public static GameManager GetInstance() //Para conseguir la referencia a game maager haciendo gameManager.getInstance()
     {
         return instance;
     }
 
-
-    void Update()
+    public float Stat (string nombre)
     {
-        if (mana < maxMana)
-        {
-            mana += manaRegSpeed * Time.deltaTime;
-        }
-        else mana = maxMana;
-        /*if (Input.GetKeyDown("space"))
-        {
-            RestaMana(30);
-        }
-        Debug.Log(mana);*/
+        if (nombre == "Fuego") return bonoFuego;
+        else if (nombre == "Agua") return bonoAgua;
+        else if (nombre == "Electricidad") return bonoElectricidad;
+        else return ataque;
     }
-    
-    public void RestaMana(int cantidad) //Se invoca al realizar una habilidad elemental
+
+    public void SetPlayerTransform(Transform tf)
     {
-        if (mana>=cantidad)
-        {
-            mana -= cantidad;
-        }
-        
+        playerTf = tf;
+
+        if (playerTf != null)
+            Debug.Log("PlayerTf correct");
+        else
+            Debug.Log("PlayerTf null");
+    }
+
+    public Transform GetPlayerTransform()
+    {
+        return playerTf;
+    }
+
+    public void EnemyMakeDamage(int damage)
+    {
+        hpPlayer -= damage;
+    }
+
+    public void SetHpPlayer(int vidaPlayer)
+    {
+        hpPlayer = vidaPlayer;
+    }
+
+    public int GetVidaPlayer()
+    {
+        return hpPlayer;
     }
 }
