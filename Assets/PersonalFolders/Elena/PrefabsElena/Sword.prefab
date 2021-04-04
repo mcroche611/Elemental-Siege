@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2105567126279228889}
   - component: {fileID: 6209138095165186313}
   - component: {fileID: 4861831466969528899}
+  - component: {fileID: 9202359332304693006}
   m_Layer: 11
   m_Name: Sword
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1603291472181913768, guid: 5afce191fb262a741b7213982bee13a1,
+  m_Sprite: {fileID: -8527442550737655860, guid: b954770b5febfe74ca20f1696ec4cb06,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -102,7 +103,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 0.25, y: 0.625}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.25, y: 0.625}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -136,3 +137,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knock: 2
+--- !u!95 &9202359332304693006
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8218089456628840902}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 67595e3a8dbe847429b873017314fba5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
