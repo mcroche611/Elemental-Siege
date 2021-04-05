@@ -110,10 +110,10 @@ public class EnemyRaycast : MonoBehaviour
         speed = speed * disminucion;
         Debug.Log(speed);
     }
+
     public void restablecerVelocidad(float disminucion)
     {
         speed = speed / disminucion;
         Debug.Log(speed);
-
     }
 }
