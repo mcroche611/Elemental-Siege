@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
-    //hacemos una variable de cooldown visible desde el editor de momento. Pasar a privado después
-    public float cooldown = 2;
-    float cooldownSecs = 2;
+    float cooldown = 0; //se inicializa a 0 para que pueda atacar desde el principio
+    [SerializeField]float cooldownSecs = 2;
     public GameObject espada;
+    Rigidbody2D playerRigidbody;
     void Awake()
     {
-
-
+        playerRigidbody = GetComponent<Rigidbody2D>();
     }
     void Update()
     {
@@ -21,9 +20,9 @@ public class Attack : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0) && cooldown <= 0)
         {
-            GetComponent<PlayerController>().enabled = false;
+            Freeze();
             Atacar();
-            Invoke("Habilitar", cooldownSecs);  //se vuelve a habilitar pasado el cooldown
+            Invoke("Unfreeze", cooldownSecs);  //se vuelve a habilitar pasado el cooldown. NO FUNCIONA, hay drag y queda mal.
             cooldown = cooldownSecs;
         }
 
@@ -42,9 +41,16 @@ public class Attack : MonoBehaviour
 
     }
 
-    private void Habilitar()
+    private void Unfreeze()
     {
-        GetComponent<PlayerController>().enabled = true;
+        playerRigidbody.constraints = RigidbodyConstraints2D.None;
+        playerRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+    }
+    private void Freeze()
+    {
+        playerRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
+
     }
 
 }
