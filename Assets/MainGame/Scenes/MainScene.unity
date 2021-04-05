@@ -4483,10 +4483,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab6ecef15388a3b4fa4f5854fe044fd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ataque: 0
-  bonoAgua: 0
-  bonoFuego: 0
-  bonoElectricidad: 0
+  ataque: 25
+  bonoAgua: 20
+  bonoFuego: 20
+  bonoElectricidad: 20
 --- !u!1 &1763003394
 GameObject:
   m_ObjectHideFlags: 0
@@ -6238,6 +6238,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5819485750555743739, guid: 77007398225556f4ab071f089f471cca,
+        type: 3}
+      propertyPath: "tiempoParalizaci\xF3n"
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2239740731589996916, guid: 77007398225556f4ab071f089f471cca,
+        type: 3}
+      propertyPath: health
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 7369265975475909508, guid: 77007398225556f4ab071f089f471cca,
         type: 3}
       propertyPath: m_LocalPosition.x
