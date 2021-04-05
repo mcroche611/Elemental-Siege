@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 2017438766814546702}
   - component: {fileID: 2017438766814546696}
   - component: {fileID: 2017438766814546697}
+  - component: {fileID: 2017438766814546711}
+  - component: {fileID: 2017438766814546708}
   - component: {fileID: 2017438766814546709}
+  - component: {fileID: 2017438766814546710}
   - component: {fileID: 2017438766814546698}
   - component: {fileID: 2017438766814546699}
-  - component: {fileID: 2017438766814546708}
-  - component: {fileID: 2017438766814546711}
-  - component: {fileID: 2017438766814546710}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -136,6 +136,33 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &2017438766814546711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017438766814546700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 983f42b1d4341574f97030b3bda8dce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidaPlayer: 100
+--- !u!114 &2017438766814546708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017438766814546700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073aa367de8d98c479096699c7214d92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxMana: 100
+  manaRegSpeed: 3
 --- !u!114 &2017438766814546709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,6 +176,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: 3
+--- !u!114 &2017438766814546710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017438766814546700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c955a275251a28d46a5cd28e49f59f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldownSecs: 0
+  espada: {fileID: 8218089456628840902, guid: 50b8fcfedad7b1749b6be1e144019a23, type: 3}
 --- !u!114 &2017438766814546698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,6 +209,7 @@ MonoBehaviour:
   manaAgua: 20
   manaFuego: 10
   manaElectro: 30
+  elementalAttackCoolDown: 0.5
 --- !u!114 &2017438766814546699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,44 +222,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21c8ad5604da08749bfd76ea13d49937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2017438766814546708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2017438766814546700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 073aa367de8d98c479096699c7214d92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxMana: 100
-  manaRegSpeed: 3
---- !u!114 &2017438766814546711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2017438766814546700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 983f42b1d4341574f97030b3bda8dce1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vidaPlayer: 100
---- !u!114 &2017438766814546710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2017438766814546700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c955a275251a28d46a5cd28e49f59f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cooldownSecs: 0.2
-  espada: {fileID: 8218089456628840902, guid: 50b8fcfedad7b1749b6be1e144019a23, type: 3}
+  changeElementCoolDown: 0.5

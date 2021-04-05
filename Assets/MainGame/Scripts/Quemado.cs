@@ -6,7 +6,7 @@ public class Quemado : MonoBehaviour
 {
     public GameObject icono;
     [SerializeField] float dañoQuemadura;
-    [SerializeField] float timpoQuemadura;
+    [SerializeField] float tiempoQuemadura;
     EnemyHealth enemy;
 
     private void Awake()
@@ -18,7 +18,7 @@ public class Quemado : MonoBehaviour
     {
         //Debug.Log("Estado actual del enemigo: Quemado");
         Instantiate<GameObject>(icono, new Vector3(transform.position.x, transform.position.y + transform.localScale.y / 2 + 0.5f, transform.position.z), icono.transform.rotation, transform);
-        InvokeRepeating("Quemar", 0f, timpoQuemadura);
+        InvokeRepeating("Quemar", tiempoQuemadura, tiempoQuemadura);
     }
 
     private void OnDisable()
