@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class EnemyRaycast : MonoBehaviour
+public class EnemyMovement : MonoBehaviour
 {
     [SerializeField]
     float detectRange;

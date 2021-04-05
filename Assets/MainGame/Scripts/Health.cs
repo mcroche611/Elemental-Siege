@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VidaPlayer : MonoBehaviour
+public class Health : MonoBehaviour
 {
     [SerializeField] float vidaPlayer;
 

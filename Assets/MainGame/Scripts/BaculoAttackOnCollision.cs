@@ -39,16 +39,16 @@ public class BaculoAttackOnCollision : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Enemy>() != null)
+        if (collision.GetComponent<EnemyHealth>() != null)
         {
             //Knockback
             Rigidbody2D rbEnemy = collision.GetComponent<Rigidbody2D>(); 
             Vector2 direction = (rbEnemy.transform.position - transform.position).normalized; 
             rbEnemy.AddForce(direction * knock, ForceMode2D.Impulse);
             //Aturdimiento
-            collision.GetComponent<EnemyRaycast>().enabled = false;
+            collision.GetComponent<EnemyMovement>().enabled = false;
             //QuitarVida
-            collision.GetComponent<Enemy>().QuitarVida(playerAttack);
+            collision.GetComponent<EnemyHealth>().QuitarVida(playerAttack);
         }
     }
 }

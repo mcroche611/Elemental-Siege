@@ -7,11 +7,11 @@ public class Quemado : MonoBehaviour
     public GameObject icono;
     [SerializeField] float dañoQuemadura;
     [SerializeField] float timpoQuemadura;
-    Enemy enemy;
+    EnemyHealth enemy;
 
     private void Awake()
     {
-        enemy = GetComponent<Enemy>();
+        enemy = GetComponent<EnemyHealth>();
     }
 
     private void OnEnable()

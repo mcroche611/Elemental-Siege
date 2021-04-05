@@ -6,7 +6,7 @@ public class ProjectileCollition : MonoBehaviour
 {
     public GameObject AEOAquaAttack;
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         Destroy(this.gameObject);
         if (GetComponent<ActivateElementOnCollision>().Elemento() == "Agua")

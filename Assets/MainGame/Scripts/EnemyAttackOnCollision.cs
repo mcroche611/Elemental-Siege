@@ -79,7 +79,7 @@ public class EnemyAttackOnCollision : MonoBehaviour
                 pcPlayer.enabled = false;
                 Invoke("DevolverMovimiento", tiempoAturdimiento);
                 //Quitar vida
-                player.GetComponent<VidaPlayer>().ReceiveDamage(damage);
+                player.GetComponent<Health>().ReceiveDamage(damage);
                 //Volver a atacar
                 attackEnabled = false;
                 Invoke("EnableAttack", attackCoolDown);

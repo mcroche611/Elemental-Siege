@@ -6,9 +6,9 @@ public class ProjectileMakeDamage : MonoBehaviour
 {
     [SerializeField] float escaladoDeDaño;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+        EnemyHealth enemy = collision.gameObject.GetComponent<EnemyHealth>();
 
         if (enemy)
             enemy.QuitarVida(Formula());
@@ -20,4 +20,6 @@ public class ProjectileMakeDamage : MonoBehaviour
         float ataque = GameManager.GetInstance().Stat("");
         return (ataque + bonoAlDaño) * escaladoDeDaño;
     }
+
+
 }

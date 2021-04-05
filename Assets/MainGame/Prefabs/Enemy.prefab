@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knock: 5
-  damage: 1
+  damage: 33
   attackCoolDown: 0
   tiempoAturdimiento: 0.25
 --- !u!61 &-3506597713794222983

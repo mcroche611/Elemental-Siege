@@ -11,7 +11,7 @@ public class Baculo : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Enemy>() != null)
+        if (collision.GetComponent<EnemyHealth>() != null)
         {
             Destroy(GetComponent<BoxCollider2D>());
         }

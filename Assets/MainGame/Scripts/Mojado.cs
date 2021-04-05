@@ -5,14 +5,14 @@ using UnityEngine;
 public class Mojado : MonoBehaviour
 {
     public GameObject icono;
-    EnemyRaycast enemyRaycast;
+    EnemyMovement enemyRaycast;
 
     [SerializeField]
     float disminucionVelocidad;
 
     private void Awake()
     {
-        enemyRaycast = GetComponent<EnemyRaycast>(); //tomamos el script enemyRange porque es el que contiene la velocidad de movimiento del enemigo
+        enemyRaycast = GetComponent<EnemyMovement>(); //tomamos el script enemyRange porque es el que contiene la velocidad de movimiento del enemigo
 
     }
     private void OnEnable()

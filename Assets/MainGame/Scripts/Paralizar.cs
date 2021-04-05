@@ -8,14 +8,14 @@ public class Paralizar : MonoBehaviour
     public void Paraliza()
     {
         CancelInvoke("ParalizaAcaba");
-        GetComponent<EnemyRaycast>().DisminuirVelocidad(0f);
+        GetComponent<EnemyMovement>().DisminuirVelocidad(0f);
         GetComponent<EnemyAttackOnCollision>().enabled = false;
         Invoke("ParalizaAcaba", tiempoParalización);
     }
 
     void ParalizaAcaba()
     {
-        GetComponent<EnemyRaycast>().RestablecerVelocidad();
+        GetComponent<EnemyMovement>().RestablecerVelocidad();
         GetComponent<EnemyAttackOnCollision>().enabled = true;
     }
 
