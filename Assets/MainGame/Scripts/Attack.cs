@@ -5,7 +5,9 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
     float cooldown = 0; //se inicializa a 0 para que pueda atacar desde el principio
-    [SerializeField]float cooldownSecs = 2;
+
+    [SerializeField]float cooldownSecs = 0.5f;
+
     public GameObject espada;
     Rigidbody2D playerRigidbody;
     void Awake()
