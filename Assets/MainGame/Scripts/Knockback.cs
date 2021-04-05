@@ -5,9 +5,12 @@ using UnityEngine;
 public class Knockback : MonoBehaviour
 {
     public float knock = 0.0002f; //no es una velocidad realmente, es una fuerza en sí creo
-    [SerializeField]
     float playerAttack;
     Enemy enemy;
+    private void Awake()
+    {
+        playerAttack = GameManager.GetInstance().Stat("valecualquiercosa");
+    }
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.GetComponent<Enemy>() != null) //miramos a ver si se choca con la espada, lo unico que tiene el script
@@ -16,7 +19,7 @@ public class Knockback : MonoBehaviour
             Rigidbody2D rbEnemy = col.GetComponent<Rigidbody2D>(); //accedemos al rb enemigo porque es lo que colisiona con la espada
             Vector2 direction = (rbEnemy.transform.position - transform.position).normalized; //al restar dos puntos nos da su vector de dirección
             rbEnemy.AddForce(direction * knock, ForceMode2D.Impulse);  //usando la masa del objeto genera una fuerza
-            enemy = col.GetComponent<Enemy>();
+            enemy = col.GetComponent<Enemy>(); //aprovechamos para quitar vida al enemigo
             enemy.QuitarVida(playerAttack);
             //rbEnemy.velocity = direction * knock; Así no funciona tampoco
             //knock = -knock;
