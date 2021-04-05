@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1338104814180892739}
   - component: {fileID: 4594273815144287494}
+  - component: {fileID: 9202359332304693006}
   - component: {fileID: 2105567126279228889}
   - component: {fileID: 7704657651017676022}
   - component: {fileID: 6209138095165186313}
-  - component: {fileID: 9202359332304693006}
   - component: {fileID: 3443571300835180257}
   m_Layer: 11
   m_Name: Sword
@@ -87,6 +87,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &9202359332304693006
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8218089456628840902}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 67595e3a8dbe847429b873017314fba5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!61 &2105567126279228889
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -146,25 +165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa4c3c09321b7544c8d63bdfc47018b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &9202359332304693006
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8218089456628840902}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 67595e3a8dbe847429b873017314fba5, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &3443571300835180257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,5 +177,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8cc3f9a6ac4b044e9b82dd3454df327, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knock: 0.0002
-  playerAttack: 50
+  knock: 5
