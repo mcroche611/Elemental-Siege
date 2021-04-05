@@ -14,6 +14,7 @@ public class EnemyRange : MonoBehaviour
     [SerializeField]
     float speed;
 
+
     float distToPlayer;
     Vector2 vel;
     int unit = 1;
@@ -92,4 +93,6 @@ public class EnemyRange : MonoBehaviour
     {
         rb.velocity = new Vector2(vel.x * speed, vel.y * speed);
     }
+
+    
 }

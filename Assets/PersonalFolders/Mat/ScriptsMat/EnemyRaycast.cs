@@ -104,4 +104,16 @@ public class EnemyRaycast : MonoBehaviour
             attackMode = false;
         }
     }
+
+    public void disminuirVelocidad(float disminucion)
+    {
+        speed = speed * disminucion;
+        Debug.Log(speed);
+    }
+    public void restablecerVelocidad(float disminucion)
+    {
+        speed = speed / disminucion;
+        Debug.Log(speed);
+
+    }
 }
