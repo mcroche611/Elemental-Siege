@@ -27,10 +27,5 @@ public class Knockback : MonoBehaviour
             //o hacer un bucle con un contador de segundos y que el knockback solo ocurriera durante un par. creo que no funciona así, la fuerza ya está aplicada.
 
         }
-
-
-
-
-
     }
 }
