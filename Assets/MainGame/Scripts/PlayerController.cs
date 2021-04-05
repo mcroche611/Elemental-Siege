@@ -8,14 +8,9 @@ public class PlayerController : MonoBehaviour
     public float velocity;
     Rigidbody2D rb;
 
-
-    private void Awake()
-    {
-        GameManager.GetInstance().SetPlayerTransform(gameObject.transform);
-    }
-
     void Start()
     {
+        GameManager.GetInstance().SetPlayer(this.gameObject);
         //Cacheamos el componente Rigidbody
         rb = GetComponent<Rigidbody2D>();
 

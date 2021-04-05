@@ -12,15 +12,20 @@ public class EnemyRaycast : MonoBehaviour
     Vector2 vel;
     bool attackMode = false;
 
-    Transform player;
+    Transform playerTf;
     Rigidbody2D rb;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        player = GameManager.GetInstance().GetPlayerTransform();
+        GetPlayerTransform();
+    }
 
-        if (player != null)
+    private void GetPlayerTransform()
+    {
+        playerTf = GameManager.GetInstance().GetPlayerTransform();
+
+        if (playerTf != null)
             Debug.Log("Player transform correct");
         else
             Debug.Log("Player transform not found");
@@ -48,7 +53,10 @@ public class EnemyRaycast : MonoBehaviour
         m = 1 << LayerMask.NameToLayer("Muros");
         pm = p | m;
 
-        RaycastHit2D hit = Physics2D.Linecast(transform.position, player.position, pm);
+        if (playerTf == null)
+            GetPlayerTransform();
+        
+        RaycastHit2D hit = Physics2D.Linecast(transform.position, playerTf.position, pm);
 
         if (hit.collider != null)
         {
@@ -58,14 +66,14 @@ public class EnemyRaycast : MonoBehaviour
             }
         }
 
-        Debug.DrawLine(transform.position, player.position, Color.white);
+        Debug.DrawLine(transform.position, playerTf.position, Color.white);
 
         return val;
     }
 
     void ChasePlayer()
     {
-        Vector2 trayectoria = player.position - transform.position;
+        Vector2 trayectoria = playerTf.position - transform.position;
 
         vel = trayectoria.normalized;
     }

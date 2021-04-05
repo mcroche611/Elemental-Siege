@@ -12,9 +12,10 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] float ataque, bonoAgua, bonoFuego, bonoElectricidad;
 
-    int hpPlayer;
+    //int hpPlayer;
 
     Transform playerTf;
+    GameObject player;
 
     void Awake()
     {
@@ -45,33 +46,39 @@ public class GameManager : MonoBehaviour
         else return ataque;
     }
 
-    public void SetPlayerTransform(Transform tf)
-    {
-        playerTf = tf;
+    //public void SetPlayerTransform(Transform tf)
+    //{
+    //    playerTf = tf;
+    //}
 
-        if (playerTf != null)
-            Debug.Log("PlayerTf correct");
+    public void SetPlayer(GameObject playerGO)
+    {
+        if (playerGO == null)
+            Debug.LogError("playerGO null");
         else
-            Debug.Log("PlayerTf null");
+            this.player = playerGO;
     }
 
     public Transform GetPlayerTransform()
     {
-        return playerTf;
+        if (player != null)
+            return player.transform;
+        else
+            return null;
     }
 
     public void EnemyMakeDamage(int damage)
     {
-        hpPlayer -= damage;
+        player.GetComponent<VidaPlayer>().ReceiveDamage(damage);
     }
 
-    public void SetHpPlayer(int vidaPlayer)
-    {
-        hpPlayer = vidaPlayer;
-    }
+    //public void SetHpPlayer(int vidaPlayer)
+    //{
+    //    hpPlayer = vidaPlayer;
+    //}
 
-    public int GetVidaPlayer()
-    {
-        return hpPlayer;
-    }
+    //public int GetVidaPlayer()
+    //{
+    //    return hpPlayer;
+    //}
 }

@@ -16,12 +16,16 @@ public class AttackOnCollision : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<PlayerController>() != null)
         {
-            InvokeRepeating("MakeDamage", 0.5f, coolDown);
+            Debug.Log("Collision");
+
+            // Una vez que colisiona, intenta hacer MakeDamage constante
+            InvokeRepeating("MakeDamage", 0f, 0.2f);
         }
     }
 
     private void MakeDamage()
     {
+        // Solo ataca cuando ha pasado el tiempo de cool down
         if (attackEnabled)
         {
             GameManager.GetInstance().EnemyMakeDamage(damage);
@@ -37,6 +41,6 @@ public class AttackOnCollision : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        CancelInvoke();
+        CancelInvoke("MakeDamage");
     }
 }
