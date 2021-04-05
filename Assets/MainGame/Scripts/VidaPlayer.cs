@@ -23,7 +23,7 @@ public class VidaPlayer : MonoBehaviour
         vidaPlayer -= damage;
 
         Debug.Log("ReceiveDamage: " + vidaPlayer);
-        if (vidaPlayer == 0)
+        if (vidaPlayer <= 0)
         {
             Destroy(this.gameObject);
         }
