@@ -8,11 +8,12 @@ public class PlayerController : MonoBehaviour
     public float velocity;
     Rigidbody2D rb;
 
-    // Start is called before the first frame update
     void Start()
     {
+        GameManager.GetInstance().SetPlayer(this.gameObject);
         //Cacheamos el componente Rigidbody
         rb = GetComponent<Rigidbody2D>();
+
     }
 
     // Update is called once per frame

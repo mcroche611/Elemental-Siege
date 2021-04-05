@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 79327119139263012}
   - component: {fileID: 2009394223325827162}
   - component: {fileID: 1208175472554767870}
+  - component: {fileID: 7225677754822601452}
   - component: {fileID: 7418303914830109855}
   - component: {fileID: 6988754666472040122}
   m_Layer: 9
@@ -128,6 +129,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
+--- !u!114 &7225677754822601452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5108945870854057946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 153444f6239129f4cb94ac1bd4c86a12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "escaladoDeDa\xF1o": 0.7
 --- !u!61 &7418303914830109855
 BoxCollider2D:
   m_ObjectHideFlags: 0

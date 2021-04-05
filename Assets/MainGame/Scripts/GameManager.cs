@@ -9,25 +9,13 @@ public class GameManager : MonoBehaviour
 
 
     private static GameManager instance;
-    [SerializeField]
-    private int health;
 
-    [SerializeField]
-    private int maxMana;
-    private float mana;
+    [SerializeField] float ataque, bonoAgua, bonoFuego, bonoElectricidad;
 
-    [SerializeField]
-    private float manaRegSpeed;
+    //int hpPlayer;
 
-    public float playerSpeed; //PREGUNTAR A GUILLERMO VARIABLE PUBLICA?
-    //velocity = GameManager.GetInstance().playerSpeed; añadir a script de movimiento Consoller
-
-    [SerializeField]
-    private int damageBonus;
-
-    [SerializeField]
-    private float attack;
-
+    Transform playerTf;
+    GameObject player;
 
     void Awake()
     {
@@ -42,36 +30,55 @@ public class GameManager : MonoBehaviour
         {
             //Si ya existe un gameobject con un componente instancia de esta clase (es decir ya hay un GM) no necesitamos uno nuevo
             Destroy(this.gameObject);
-        }
-        mana = maxMana;  
-            
+        }          
     }
+
     public static GameManager GetInstance() //Para conseguir la referencia a game maager haciendo gameManager.getInstance()
     {
         return instance;
     }
 
+    public float Stat (string nombre)
+    {
+        if (nombre == "Fuego") return bonoFuego;
+        else if (nombre == "Agua") return bonoAgua;
+        else if (nombre == "Electricidad") return bonoElectricidad;
+        else return ataque;
+    }
 
-    void Update()
+    //public void SetPlayerTransform(Transform tf)
+    //{
+    //    playerTf = tf;
+    //}
+
+    public void SetPlayer(GameObject playerGO)
     {
-        if (mana < maxMana)
-        {
-            mana += manaRegSpeed * Time.deltaTime;
-        }
-        else mana = maxMana;
-        /*if (Input.GetKeyDown("space"))
-        {
-            RestaMana(30);
-        }
-        Debug.Log(mana);*/
+        if (playerGO == null)
+            Debug.LogError("playerGO null");
+        else
+            this.player = playerGO;
     }
-    
-    public void RestaMana(int cantidad) //Se invoca al realizar una habilidad elemental
+
+    public Transform GetPlayerTransform()
     {
-        if (mana>=cantidad)
-        {
-            mana -= cantidad;
-        }
-        
+        if (player != null)
+            return player.transform;
+        else
+            return null;
     }
+
+    public void EnemyMakeDamage(int damage)
+    {
+        player.GetComponent<VidaPlayer>().ReceiveDamage(damage);
+    }
+
+    //public void SetHpPlayer(int vidaPlayer)
+    //{
+    //    hpPlayer = vidaPlayer;
+    //}
+
+    //public int GetVidaPlayer()
+    //{
+    //    return hpPlayer;
+    //}
 }
