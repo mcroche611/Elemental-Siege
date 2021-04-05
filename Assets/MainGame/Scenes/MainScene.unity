@@ -4210,6 +4210,7 @@ GameObject:
   - component: {fileID: 1645363342}
   - component: {fileID: 1645363345}
   - component: {fileID: 1645363346}
+  - component: {fileID: 1645363347}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -4399,6 +4400,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vidaPlayer: 100
+--- !u!114 &1645363347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645363337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c955a275251a28d46a5cd28e49f59f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldownSecs: 2
+  espada: {fileID: 8218089456628840902, guid: 50b8fcfedad7b1749b6be1e144019a23, type: 3}
 --- !u!1 &1699993725
 GameObject:
   m_ObjectHideFlags: 0
