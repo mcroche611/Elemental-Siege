@@ -5,7 +5,7 @@ using UnityEngine;
 public class StateManager : MonoBehaviour
 {
     MonoBehaviour currentState = null;
-    public float stateTime = 5f;
+    [SerializeField] float stateTime;
 
     public void NewElement(string elementalAtack)
     {

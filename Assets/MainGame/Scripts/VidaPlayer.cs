@@ -5,20 +5,9 @@ using UnityEngine;
 
 public class VidaPlayer : MonoBehaviour
 {
-    public int vidaPlayer;
-    // Start is called before the first frame update
-    void Start()
-    {
+    [SerializeField] float vidaPlayer;
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    internal void ReceiveDamage(int damage)
+    internal void ReceiveDamage(float damage)
     {
         vidaPlayer -= damage;
 

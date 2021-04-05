@@ -2,17 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Knockback : MonoBehaviour
+public class BaculoAttackOnCollision : MonoBehaviour
 {
-    public float knock = 0.0002f; //no es una velocidad realmente, es una fuerza en sí creo
+    [SerializeField] float knock; //no es una velocidad realmente, es una fuerza en sí creo
     float playerAttack;
-    Enemy enemy;
-    private void Awake()
+    //Enemy enemy;
+
+    private void Start()
     {
-        playerAttack = GameManager.GetInstance().Stat("valecualquiercosa");
+        playerAttack = GameManager.GetInstance().Stat("");
     }
+
+    /*
     void OnTriggerEnter2D(Collider2D col)
     {
+
         if (col.GetComponent<Enemy>() != null) //miramos a ver si se choca con la espada, lo unico que tiene el script
         {
             Debug.Log("colision espada enemigo");
@@ -29,6 +33,22 @@ public class Knockback : MonoBehaviour
             //Aparte, cómo solucionar que el rigidbody del enemigo y el jugador colisionen? haciendo que las layers no colisionen entre si? pero molaria que tampoco pudieras pasar entre enemigos
             //o hacer un bucle con un contador de segundos y que el knockback solo ocurriera durante un par. creo que no funciona así, la fuerza ya está aplicada.
 
+        }
+    }
+    */
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.GetComponent<Enemy>() != null)
+        {
+            //Knockback
+            Rigidbody2D rbEnemy = collision.GetComponent<Rigidbody2D>(); 
+            Vector2 direction = (rbEnemy.transform.position - transform.position).normalized; 
+            rbEnemy.AddForce(direction * knock, ForceMode2D.Impulse);
+            //Aturdimiento
+            collision.GetComponent<EnemyRaycast>().enabled = false;
+            //QuitarVida
+            collision.GetComponent<Enemy>().QuitarVida(playerAttack);
         }
     }
 }

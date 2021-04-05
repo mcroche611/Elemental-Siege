@@ -5,8 +5,8 @@ using UnityEngine;
 public class Quemado : MonoBehaviour
 {
     public GameObject icono;
-    [SerializeField] float dañoQuemadura = 1f;
-    [SerializeField] float timpoQuemadura = 1f;
+    [SerializeField] float dañoQuemadura;
+    [SerializeField] float timpoQuemadura;
     Enemy enemy;
 
     private void Awake()

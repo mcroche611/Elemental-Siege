@@ -19,14 +19,14 @@ public class Mojado : MonoBehaviour
     {
         //Debug.Log("Estado actual del enemigo: Mojado");
         Instantiate<GameObject>(icono, new Vector3(transform.position.x, transform.position.y + transform.localScale.y / 2 + 0.5f, transform.position.z), icono.transform.rotation, transform);
-        enemyRaycast.disminuirVelocidad(disminucionVelocidad); //al activarse disminuye la velocidad
+        enemyRaycast.DisminuirVelocidad(disminucionVelocidad); //al activarse disminuye la velocidad
     }
 
     private void OnDisable()
     {
         //Debug.Log("Estado actual del enemigo: Ninguno");
         Destroy(transform.GetChild(0).gameObject);
-        enemyRaycast.restablecerVelocidad(disminucionVelocidad); //vuelve a moverse a la misma velocidad que al principio
+        enemyRaycast.RestablecerVelocidad(); //vuelve a moverse a la misma velocidad que al principio
 
     }
 }

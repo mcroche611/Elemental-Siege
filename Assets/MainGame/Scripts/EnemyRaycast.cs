@@ -9,14 +9,19 @@ public class EnemyRaycast : MonoBehaviour
     [SerializeField]
     float speed;
 
+    [SerializeField]
+    float tiempoAturdimiento;
+
     Vector2 vel;
     bool attackMode = false;
 
+    float iniSpeed;
     Transform playerTf;
     Rigidbody2D rb;
 
     void Start()
     {
+        iniSpeed = speed;
         rb = GetComponent<Rigidbody2D>();
         GetPlayerTransform();
     }
@@ -105,15 +110,25 @@ public class EnemyRaycast : MonoBehaviour
         }
     }
 
-    public void disminuirVelocidad(float disminucion)
+    public void DisminuirVelocidad(float disminucion)
     {
         speed = speed * disminucion;
         Debug.Log(speed);
     }
 
-    public void restablecerVelocidad(float disminucion)
+    public void RestablecerVelocidad()
     {
-        speed = speed / disminucion;
+        speed = iniSpeed;
         Debug.Log(speed);
+    }
+
+    private void OnDisable()
+    {
+        Invoke("DevolverMovimiento", tiempoAturdimiento);
+    }
+
+    private void DevolverMovimiento()
+    {
+        this.enabled = true;
     }
 }

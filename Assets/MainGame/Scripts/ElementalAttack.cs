@@ -6,21 +6,18 @@ public class ElementalAttack : MonoBehaviour
 {
     //Variables accesibles desde el editor
     public GameObject fuego, agua, electricidad;
+
+
+    [SerializeField] int manaAgua, manaFuego, manaElectro;
+    [SerializeField] float elementalAttackCoolDown;
+    
     float cont = 0;
     Mana quitaMana;
-    [SerializeField]
-    int manaAgua;
-    [SerializeField]
-    int manaFuego;
-    [SerializeField]
-    int manaElectro;
 
-   
     private void Start()
     {
         quitaMana = GetComponent<Mana>();
     }
-
 
     private void Update()
     {
@@ -34,7 +31,7 @@ public class ElementalAttack : MonoBehaviour
                 Instantiate<GameObject>(electricidad, transform.position, Rotation());
             else if (quitaMana.RestaMana(manaAgua))
                 Instantiate<GameObject>(agua, transform.position, Rotation());
-            cont = 0.5f;
+            cont = elementalAttackCoolDown;
         }       
         cont -= Time.deltaTime;
     }

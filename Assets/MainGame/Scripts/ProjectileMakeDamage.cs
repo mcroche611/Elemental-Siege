@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MakeDamage : MonoBehaviour
+public class ProjectileMakeDamage : MonoBehaviour
 {
-    [SerializeField] float escaladoDeDaño = 0.3f;
+    [SerializeField] float escaladoDeDaño;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
