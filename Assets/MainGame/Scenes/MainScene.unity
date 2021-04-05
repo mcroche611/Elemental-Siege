@@ -4536,9 +4536,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c955a275251a28d46a5cd28e49f59f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 2
+  cooldown: 6
   espada: {fileID: 8218089456628840902, guid: 50b8fcfedad7b1749b6be1e144019a23, type: 3}
-  alcance: 1.5
 --- !u!1 &1699993725
 GameObject:
   m_ObjectHideFlags: 0
