@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class AEOAquaAttack : MonoBehaviour
 {
-    [SerializeField] float rapidezExpansion = 0.5f;
-    [SerializeField] float tamañoMáximo = 5f;
+    [SerializeField] float rapidezExpansion;
+    [SerializeField] float tamañoMáximo;
+
     float tamaño = 0;
 
-    // Start is called before the first frame update
     void Start()
     {
         transform.localScale = new Vector3(0f, 0f, 0f);
     }
 
-    // Update is called once per frame
     void Update()
     {
         tamaño += rapidezExpansion * Time.deltaTime;

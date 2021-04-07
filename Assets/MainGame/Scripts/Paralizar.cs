@@ -8,17 +8,15 @@ public class Paralizar : MonoBehaviour
     public void Paraliza()
     {
         CancelInvoke("ParalizaAcaba");
-        //aquí iría el script de movimiento del enemigo
-        GetComponent<Patrulla>().enabled = false;
-        //faltaría el escript de ataque del enemigo también
+        GetComponent<EnemyMovement>().DisminuirVelocidad(0f);
+        GetComponent<EnemyAttackOnCollision>().enabled = false;
         Invoke("ParalizaAcaba", tiempoParalización);
     }
 
     void ParalizaAcaba()
     {
-        //aquí iría el script de movimiento del enemigo
-        GetComponent<Patrulla>().enabled = true;
-        //aquí iría el script de movimiento del enemigo
+        GetComponent<EnemyMovement>().RestablecerVelocidad();
+        GetComponent<EnemyAttackOnCollision>().enabled = true;
     }
 
     private void OnDestroy()

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Attack : MonoBehaviour
+public class PhysicalAttack : MonoBehaviour
 {
     float cooldown = 0; //se inicializa a 0 para que pueda atacar desde el principio
 
