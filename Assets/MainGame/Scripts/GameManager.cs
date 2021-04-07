@@ -67,10 +67,7 @@ public class GameManager : MonoBehaviour
             return null;
     }
 
-    public void EnemyMakeDamage(int damage)
-    {
-        player.GetComponent<VidaPlayer>().ReceiveDamage(damage);
-    }
+
 
     //public void SetHpPlayer(int vidaPlayer)
     //{

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MueveProyectil : MonoBehaviour
 {
-    public float speed = 3f;
+    [SerializeField] float speed;
 
     void Update()
     {

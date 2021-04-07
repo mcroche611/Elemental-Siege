@@ -6,11 +6,11 @@ public class ActivateElementOnCollision : MonoBehaviour
 {
     [SerializeField] string element;
 
-    void OnCollisionEnter2D(Collision2D info)
+    void OnTriggerEnter2D(Collider2D collision)
     {       
-        GameObject other = info.gameObject;
+        GameObject other = collision.gameObject;
                 
-        if (other.layer == LayerMask.NameToLayer("Enemy"))
+        if (other.GetComponent<EnemyHealth>() != null)
         {
             other.GetComponent<StateManager>().NewElement(element);
         }

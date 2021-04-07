@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColisionProyectil : MonoBehaviour
+public class ProjectileCollition : MonoBehaviour
 {
     public GameObject AEOAquaAttack;
-    private void OnCollisionEnter2D(Collision2D other)
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
         Destroy(this.gameObject);
         if (GetComponent<ActivateElementOnCollision>().Elemento() == "Agua")
@@ -13,7 +14,7 @@ public class ColisionProyectil : MonoBehaviour
     }
 
     Vector2 posicionInicial;
-    [SerializeField] float distanciaMaxima = 7f;
+    [SerializeField] float distanciaMaxima;
 
     private void Start()
     {

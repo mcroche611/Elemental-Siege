@@ -6,13 +6,13 @@ public class LowerSpeed : MonoBehaviour
 {
     public GameObject icono;
     //tener una variable de speed en el script de Enemy
-    Enemy enemy;
+    EnemyHealth enemy;
     public int enemySpeed = 3;
     [SerializeField] float disminucionVelocidad;
 
     private void Awake()
     {
-        enemy = GetComponent<Enemy>();
+        enemy = GetComponent<EnemyHealth>();
 
     }
     void OnEnable()

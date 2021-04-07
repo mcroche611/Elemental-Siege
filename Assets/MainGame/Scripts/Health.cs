@@ -3,22 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VidaPlayer : MonoBehaviour
+public class Health : MonoBehaviour
 {
-    public int vidaPlayer;
-    // Start is called before the first frame update
-    void Start()
-    {
+    [SerializeField] float vidaPlayer;
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    internal void ReceiveDamage(int damage)
+    internal void ReceiveDamage(float damage)
     {
         vidaPlayer -= damage;
 
