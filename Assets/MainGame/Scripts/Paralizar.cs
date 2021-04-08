@@ -8,14 +8,15 @@ public class Paralizar : MonoBehaviour
     public void Paraliza()
     {
         CancelInvoke("ParalizaAcaba");
-        GetComponent<EnemyMovement>().DisminuirVelocidad(0f);
         GetComponent<EnemyAttackOnCollision>().enabled = false;
+        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;     
         Invoke("ParalizaAcaba", tiempoParalización);
     }
 
     void ParalizaAcaba()
     {
-        GetComponent<EnemyMovement>().RestablecerVelocidad();
+        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
         GetComponent<EnemyAttackOnCollision>().enabled = true;
     }
 

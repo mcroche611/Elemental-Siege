@@ -77,7 +77,6 @@ public class EnemyAttackOnCollision : MonoBehaviour
                 //Aturdimiento
                 pcPlayer = player.GetComponent<PlayerController>();
                 pcPlayer.enabled = false;
-                Invoke("DevolverMovimiento", tiempoAturdimiento);
                 //Quitar vida
                 player.GetComponent<Health>().ReceiveDamage(damage);
                 //Volver a atacar
@@ -93,8 +92,5 @@ public class EnemyAttackOnCollision : MonoBehaviour
         attackEnabled = true;
     }
 
-    private void DevolverMovimiento()
-    {
-        pcPlayer.enabled = true;
-    }
+
 }

@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c102d606842d9e44baeac1fe69a220b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knock: 5
+  knock: 4.5
   damage: 10
   attackCoolDown: 0
   tiempoAturdimiento: 0.25
