@@ -9,38 +9,47 @@ public class Mana : MonoBehaviour
     private float mana;
 
     [SerializeField]
-    private float manaRegSpeed;
+    private int manaRegSpeed;
 
     void Awake()
     {
         mana = maxMana;
     }
-
-    
-    void Update()
+    private void Start()
     {
-        if (mana < maxMana)
-        {
-            mana += manaRegSpeed * Time.deltaTime;
-        }
-        else mana = maxMana;
-        /*if (Input.GetKeyDown("space"))
-        {
-            RestaMana(30);
-        }*/
-        //Debug.Log(mana);
+        //Recupera cierta cantidad de mana cada cantidad determinada de tiempo por manaRegSpeed
+        InvokeRepeating("SumaMana", manaRegSpeed, manaRegSpeed); 
     }
+
     public bool RestaMana(int cantidad) //Se invoca al realizar una habilidad elemental, comprueba si se puede realizar el ataque y resta mana si es asi
     {
         bool manaSuficiente= (mana>=cantidad);
-
+        bool max = (mana == maxMana);
+        //Si hay suficiente mana como para restarle
         if (manaSuficiente)
         {
             mana -= cantidad;
         }
-        //Debug.Log(mana);
+
+        Debug.Log("Mana: " + mana);
         return manaSuficiente;
         
+        
     }
-    
+    public void SumaMana() 
+    {
+        //Suma cuando el mana sea menor que la cantidad maxima
+        //Suma hasta que llegue a maxMana
+        
+        if(mana<maxMana)
+        {
+            mana += 1;
+        }
+       
+    }
+    private void OnDestroy()
+    {
+        CancelInvoke("SumaMana");
+    }
+
 }
