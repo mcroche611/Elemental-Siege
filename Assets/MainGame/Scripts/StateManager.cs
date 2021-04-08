@@ -39,16 +39,4 @@ public class StateManager : MonoBehaviour
         currentState.enabled = false;
         currentState = null;
     }
-
-    void Paraliza()
-    {
-        //aquí iría el script de movimiento del enemigo
-        GetComponent<Patrulla>().enabled = false;
-        //faltaría el escript de ataque del enemigo también
-    }
-
-    void ParalizaAcaba()
-    {
-        GetComponent<Patrulla>().enabled = true;
-    }
 }
