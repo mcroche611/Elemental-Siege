@@ -189,8 +189,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c955a275251a28d46a5cd28e49f59f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldownSecs: 0
-  espada: {fileID: 8218089456628840902, guid: 50b8fcfedad7b1749b6be1e144019a23, type: 3}
+  cooldownSecs: 0.25
+  espada: {fileID: 5261907094802688272, guid: 5cb4dc1fd68ce954f91f565c603a17c5, type: 3}
 --- !u!114 &2017438766814546698
 MonoBehaviour:
   m_ObjectHideFlags: 0
