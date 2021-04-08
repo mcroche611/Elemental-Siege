@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Vapolizado : MonoBehaviour
+public class Vapolizadopreuba : MonoBehaviour
 {
     MonoBehaviour currentState = null;
     [SerializeField] float stateTime;
@@ -24,11 +24,6 @@ public class Vapolizado : MonoBehaviour
         }
         else if (currentState != element_state)
         {
-            GetComponent<Mojado>();
-            if (currentState == Mojado)
-            {
-
-            }
             //Debug.Log("Se ha producido una Reacción Elemental");
             CancelInvoke("StateTimeOut");
             currentState.enabled = false;
