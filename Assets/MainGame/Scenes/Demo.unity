@@ -3850,6 +3850,11 @@ PrefabInstance:
       propertyPath: elementalAttackCoolDown
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2017438766814546698, guid: 13db7e7adbb422e4095c16193b4b0ea4,
+        type: 3}
+      propertyPath: manaElectro
+      value: 75
+      objectReference: {fileID: 0}
     - target: {fileID: 2017438766814546699, guid: 13db7e7adbb422e4095c16193b4b0ea4,
         type: 3}
       propertyPath: changeElementCoolDown
@@ -3918,12 +3923,12 @@ PrefabInstance:
     - target: {fileID: 2017438766814546708, guid: 13db7e7adbb422e4095c16193b4b0ea4,
         type: 3}
       propertyPath: manaRegSpeed
-      value: 20
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 2017438766814546708, guid: 13db7e7adbb422e4095c16193b4b0ea4,
         type: 3}
       propertyPath: maxMana
-      value: 200
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 2017438766814546710, guid: 13db7e7adbb422e4095c16193b4b0ea4,
         type: 3}
