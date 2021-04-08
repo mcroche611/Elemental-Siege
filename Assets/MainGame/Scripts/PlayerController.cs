@@ -5,7 +5,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     //Declarar las variables
-    [SerializeField] float velocity;
+    [SerializeField] 
+    float velocity;
+
+    [SerializeField]
+    float tiempoAturdimiento;
+
     Rigidbody2D rb;
 
     void Start()
@@ -36,5 +41,15 @@ public class PlayerController : MonoBehaviour
         }
         */
 
+    }
+
+    private void OnDisable()
+    {
+        Invoke("RecuperarMovimiento", tiempoAturdimiento);
+    }
+
+    private void RecuperarMovimiento()
+    {
+        this.enabled = true;
     }
 }
