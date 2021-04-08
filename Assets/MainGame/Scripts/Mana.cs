@@ -6,10 +6,12 @@ public class Mana : MonoBehaviour
 {
     [SerializeField]
     private int maxMana;
+
+    [SerializeField]
     private float mana;
 
     [SerializeField]
-    private int manaRegSpeed;
+    private float manaRegSpeed;
 
     void Awake()
     {

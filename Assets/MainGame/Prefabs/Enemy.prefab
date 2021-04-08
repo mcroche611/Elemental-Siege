@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icono: {fileID: 4597571645131044798, guid: af5960dd2c1e1114ea69beada5a9e406, type: 3}
-  "da\xF1oQuemadura": 1
+  "da\xF1oQuemadura": 5
   tiempoQuemadura: 1
 --- !u!114 &5328649918640859357
 MonoBehaviour:
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f4515c8e2ca764eb7dfacbc1302f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "tiempoParalizaci\xF3n": 2
+  "tiempoParalizaci\xF3n": 1.5
 --- !u!114 &2239740731589996916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d972487b5417edd488319bb1740f0d8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 200
+  health: 130
 --- !u!114 &-4657491275654557295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectRange: 50
-  speed: 2
+  speed: 3
   tiempoAturdimiento: 0.25
 --- !u!114 &-4720373225171299128
 MonoBehaviour:
@@ -203,7 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knock: 4.5
   damage: 15
-  attackCoolDown: 0
+  attackCoolDown: 0.25
   tiempoAturdimiento: 0.25
 --- !u!61 &-3506597713794222983
 BoxCollider2D:

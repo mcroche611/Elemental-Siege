@@ -24,7 +24,7 @@ public class PhysicalAttack : MonoBehaviour
         {
             Freeze();
             Atacar();
-            Invoke("Unfreeze", cooldownSecs);  //se vuelve a habilitar pasado el cooldown. NO FUNCIONA, hay drag y queda mal.
+            Invoke("Unfreeze", cooldownSecs);  
             cooldown = cooldownSecs;
         }
 
@@ -58,15 +58,3 @@ public class PhysicalAttack : MonoBehaviour
 }
 
 
-//para hacer que le quite vida a los enemigos se me ocurre lo siguiente
-/*
- * poner en el script de enemy o en alguno que lleve el enemigo o incluso en el de la espada para acceder a él y poner ahi el atributo de ataque
- * enemy = GetComponent<Enemy>();
- * enemy.QuitarVida(ataque)
- * espero que se pueda hacer, preguntar ^^
- * 
- * 
- * 
- * 
- * 
- */
