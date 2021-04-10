@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073aa367de8d98c479096699c7214d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxMana: 150
+  maxMana: 500
   mana: 0
   manaRegSpeed: 0.25
 --- !u!114 &2017438766814546709

@@ -47,6 +47,7 @@ public class StateManager : MonoBehaviour
                 else
                 {
                     Debug.Log("Se ha producido la RE Electrocargado");
+                    GetComponent<Electrocargado>().Electrocargado_();
                 }
             }
             else
@@ -59,6 +60,7 @@ public class StateManager : MonoBehaviour
                 else
                 {
                     Debug.Log("Se ha producido la RE Ectrocargado");
+                    GetComponent<Electrocargado>().Electrocargado_();
                 }
             }
             currentState = null;
