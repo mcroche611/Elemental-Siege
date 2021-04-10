@@ -25,11 +25,11 @@ public class AEOAquaAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D info)
     {
-        GameObject other = info.gameObject;
+        StateManager stateManager = info.GetComponent<StateManager>();
 
-        if (other.layer == LayerMask.NameToLayer("Enemy"))
+        if (stateManager != null)
         {
-            other.GetComponent<StateManager>().NewElement("Agua_Mojado");
+            stateManager.NewElement("Agua_Mojado");
         }
     }
 }

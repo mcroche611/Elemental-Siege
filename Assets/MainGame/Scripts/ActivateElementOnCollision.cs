@@ -8,11 +8,11 @@ public class ActivateElementOnCollision : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {       
-        GameObject other = collision.gameObject;
+        StateManager stateManager = collision.GetComponent<StateManager>();
                 
-        if (other.GetComponent<EnemyHealth>() != null)
+        if (stateManager != null)
         {
-            other.GetComponent<StateManager>().NewElement(element);
+            stateManager.NewElement(element);
         }
     }
 
