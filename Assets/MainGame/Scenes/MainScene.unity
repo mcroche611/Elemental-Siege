@@ -4182,6 +4182,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4657491275654557295, guid: 77007398225556f4ab071f089f471cca,
+        type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2239740731589996916, guid: 77007398225556f4ab071f089f471cca,
+        type: 3}
+      propertyPath: health
+      value: 10000
+      objectReference: {fileID: 0}
     - target: {fileID: 7369265975475909508, guid: 77007398225556f4ab071f089f471cca,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4479,7 +4489,7 @@ PrefabInstance:
     - target: {fileID: 2017438766814546708, guid: 13db7e7adbb422e4095c16193b4b0ea4,
         type: 3}
       propertyPath: maxMana
-      value: 200
+      value: 20000
       objectReference: {fileID: 0}
     - target: {fileID: 2017438766814546710, guid: 13db7e7adbb422e4095c16193b4b0ea4,
         type: 3}
@@ -4487,6 +4497,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8218089456628840902, guid: 50b8fcfedad7b1749b6be1e144019a23,
         type: 3}
+    - target: {fileID: 2017438766814546711, guid: 13db7e7adbb422e4095c16193b4b0ea4,
+        type: 3}
+      propertyPath: vidaPlayer
+      value: 10000
+      objectReference: {fileID: 0}
     - target: {fileID: 2017438766814546708, guid: 13db7e7adbb422e4095c16193b4b0ea4,
         type: 3}
       propertyPath: manaReg

@@ -24,11 +24,43 @@ public class StateManager : MonoBehaviour
         }
         else if (currentState != element_state)
         {
-            //Debug.Log("Se ha producido una Reacción Elemental");
             CancelInvoke("StateTimeOut");
             currentState.enabled = false;
-            if (elementalAtack.Split('_')[0] == "Electricidad")
+            string element = elementalAtack.Split('_')[0];
+            if (element == "Fuego")
+            {
+                if (currentState == GetComponent<Mojado>())
+                {
+                    Debug.Log("Se ha producido la RE vaporizado (débil)");
+                }
+                else
+                {
+                    Debug.Log("Se ha producido la RE Sobrecaragado");
+                }
+            }
+            else if (element == "Agua")
+            {
+                if (currentState == GetComponent<Quemado>())
+                {
+                    Debug.Log("Se ha producido la RE vaporizado (fuerte)");
+                }
+                else
+                {
+                    Debug.Log("Se ha producido la RE Electrocargado");
+                }
+            }
+            else
+            {
                 GetComponent<Paralizar>().Paraliza();
+                if (currentState == GetComponent<Quemado>())
+                {
+                    Debug.Log("Se ha producido RE Sobrecargado");
+                }
+                else
+                {
+                    Debug.Log("Se ha producido la RE Ectrocargado");
+                }
+            }
             currentState = null;
         }
               
