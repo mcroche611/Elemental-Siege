@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class ProjectileCollition : MonoBehaviour
 {
-    public GameObject AEOAquaAttack;
-
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Destroy(this.gameObject);
-        if (GetComponent<ActivateElementOnCollision>().Elemento() == "Agua")
-            Instantiate<GameObject>(AEOAquaAttack, other.transform.position, AEOAquaAttack.transform.rotation);
+        if (GetComponent<ActivateElementOnCollision>().Elemento() != "Agua")
+            Destroy(this.gameObject);
+        else
+        {
+            AEOAquaAttack _AEOAquaAttack = GetComponent<AEOAquaAttack>();
+            _AEOAquaAttack.EnemigoGolpeado(other.gameObject);
+            _AEOAquaAttack.enabled = true;
+        }
     }
 
     Vector2 posicionInicial;
