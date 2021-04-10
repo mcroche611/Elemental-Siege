@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: -5819485750555743739}
   - component: {fileID: 2239740731589996916}
   - component: {fileID: -4657491275654557295}
+  - component: {fileID: 506402057110561137}
   - component: {fileID: -4720373225171299128}
   - component: {fileID: -3506597713794222983}
   - component: {fileID: -5084534236044607983}
@@ -187,8 +188,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectRange: 50
-  speed: 3
+  speed: 1
   tiempoAturdimiento: 0.25
+--- !u!114 &506402057110561137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7369265975475911802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d504df0db8cc5f241b9bfedb2308093e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  areaEfecto: {fileID: 1605384763536310482, guid: 6108491c6dd2e234da1f7d7893de9384,
+    type: 3}
+  "escaladoDeDa\xF1o": 0.2
 --- !u!114 &-4720373225171299128
 MonoBehaviour:
   m_ObjectHideFlags: 0

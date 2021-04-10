@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StateManager : MonoBehaviour
+public class Personal_SM : MonoBehaviour
 {
     MonoBehaviour currentState = null;
     [SerializeField] float stateTime;
@@ -36,6 +36,7 @@ public class StateManager : MonoBehaviour
                 else
                 {
                     Debug.Log("Se ha producido la RE Sobrecaragado");
+
                 }
             }
             else if (element == "Agua")
@@ -47,7 +48,6 @@ public class StateManager : MonoBehaviour
                 else
                 {
                     Debug.Log("Se ha producido la RE Electrocargado");
-                    GetComponent<Electrocargado>().Electrocargado_();
                 }
             }
             else
@@ -60,12 +60,11 @@ public class StateManager : MonoBehaviour
                 else
                 {
                     Debug.Log("Se ha producido la RE Ectrocargado");
-                    GetComponent<Electrocargado>().Electrocargado_();
                 }
             }
             currentState = null;
         }
-              
+
     }
 
     private void StateTimeOut()
@@ -74,3 +73,4 @@ public class StateManager : MonoBehaviour
         currentState = null;
     }
 }
+
