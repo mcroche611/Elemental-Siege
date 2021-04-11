@@ -19,8 +19,9 @@ public class Sobrecargado : MonoBehaviour
 
     public void Sobrecarga()
     {
-        GetComponent<EnemyHealth>().QuitarVida(Formula());
         Instantiate<GameObject>(areaEfecto, transform.position, transform.rotation);
+        GetComponent<EnemyHealth>().QuitarVida(Formula());
+        
     }
 
     private float Formula()

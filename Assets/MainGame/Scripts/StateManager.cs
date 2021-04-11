@@ -37,6 +37,7 @@ public class StateManager : MonoBehaviour
                 else
                 {
                     Debug.Log("Se ha producido la RE Sobrecaragado");
+                    GetComponent<Sobrecargado>().Sobrecarga();
                     
                 }
             }
@@ -58,6 +59,7 @@ public class StateManager : MonoBehaviour
                 if (currentState == GetComponent<Quemado>())
                 {
                     Debug.Log("Se ha producido RE Sobrecargado");
+                    GetComponent<Sobrecargado>().Sobrecarga();
                 }
                 else
                 {
