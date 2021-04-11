@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectRange: 50
-  speed: 1
+  speed: 2
   tiempoAturdimiento: 0.25
 --- !u!114 &506402057110561137
 MonoBehaviour:

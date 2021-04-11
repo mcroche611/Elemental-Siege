@@ -18,7 +18,8 @@ public class AEOSobrecargado : MonoBehaviour
     //Aquellos enemigos con los que colisione este trigger seran impulsados y se les restara vida
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<EnemyHealth>() != null) //comprueba si aquello con lo que colisiona es un enemigo
+        //comprueba si aquello con lo que colisiona es un enemigo (solo los enemigos tienen el componente enemy health)
+        if (collision.gameObject.GetComponent<EnemyHealth>() != null) 
         {
             //Knockback
             Rigidbody2D rbEnemy = collision.GetComponent<Rigidbody2D>();

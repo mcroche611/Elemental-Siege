@@ -25,6 +25,6 @@ public class Electrocargado : MonoBehaviour
 
     private float Formula()
     {
-        return (ataque + bonoAgua + bonoFuego) * escaladoDeDaño;
+        return (ataque + bonoAgua + bonoElectricidad) * escaladoDeDaño;
     }
 }

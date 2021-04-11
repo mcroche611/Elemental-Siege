@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class Sobrecargado : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject areaEfecto;
+
+    [SerializeField] float escaladoDeDaño; //0.6 para esta reaccion
+    float ataque, bonoAgua, bonoFuego, bonoElectricidad;
+
+    private void Start()
     {
-        
+        ataque = GameManager.GetInstance().Stat("");
+        bonoAgua = GameManager.GetInstance().Stat("Agua");
+        bonoFuego = GameManager.GetInstance().Stat("Fuego");
+        bonoElectricidad = GameManager.GetInstance().Stat("Electricidad");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Sobrecarga()
     {
-        
+        GetComponent<EnemyHealth>().QuitarVida(Formula());
+        Instantiate<GameObject>(areaEfecto, transform.position, transform.rotation);
     }
+
+    private float Formula()
+    {
+        return (ataque + bonoFuego + bonoElectricidad) * escaladoDeDaño;
+    }
+
 }
