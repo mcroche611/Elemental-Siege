@@ -32,11 +32,13 @@ public class StateManager : MonoBehaviour
             {
                 if (currentState == GetComponent<Mojado>())
                 {
+                    GetComponent<Vapolizado>().Vapolizado_Debil();
                     Debug.Log("Se ha producido la RE vaporizado (débil)");
                 }
                 else
                 {
                     Debug.Log("Se ha producido la RE Sobrecaragado");
+                    GetComponent<Sobrecargado>().Sobrecarga();
                     
                 }
             }
@@ -44,6 +46,7 @@ public class StateManager : MonoBehaviour
             {
                 if (currentState == GetComponent<Quemado>())
                 {
+                    GetComponent<Vapolizado>().Vapolizado_Fuerte();
                     Debug.Log("Se ha producido la RE vaporizado (fuerte)");
                 }
                 else
@@ -58,6 +61,7 @@ public class StateManager : MonoBehaviour
                 if (currentState == GetComponent<Quemado>())
                 {
                     Debug.Log("Se ha producido RE Sobrecargado");
+                    GetComponent<Sobrecargado>().Sobrecarga();
                 }
                 else
                 {
