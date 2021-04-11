@@ -3189,6 +3189,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.5}
   m_EdgeRadius: 0
+--- !u!1 &1129964782 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3618546866066789124, guid: bafc34cece54a0b41be0809e6b5b66e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 71884536}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1129964783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129964782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b573282e38d9ae748a38b9a825cbdc98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  areaEfecto: {fileID: 0}
+  "escaladoDeDa\xF1o": 0
 --- !u!1001 &1133321067
 PrefabInstance:
   m_ObjectHideFlags: 0
