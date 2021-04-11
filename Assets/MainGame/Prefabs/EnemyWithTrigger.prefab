@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3651909071368848536}
   - component: {fileID: 3596650970399789801}
   - component: {fileID: 8173723829408244154}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ PrefabInstance:
     - target: {fileID: 7369265975475911802, guid: 77007398225556f4ab071f089f471cca,
         type: 3}
       propertyPath: m_Name
-      value: Enemy Variant
+      value: EnemyWithTrigger
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77007398225556f4ab071f089f471cca, type: 3}
