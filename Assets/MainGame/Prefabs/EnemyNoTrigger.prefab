@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: -3506597713794222983}
   - component: {fileID: -5084534236044607983}
   m_Layer: 10
-  m_Name: Enemy
+  m_Name: EnemyNoTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -187,7 +187,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eba461726ccb69c449450f339ffc2de0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectRange: 50
   speed: 1
   tiempoAturdimiento: 0.25
 --- !u!114 &506402057110561137
