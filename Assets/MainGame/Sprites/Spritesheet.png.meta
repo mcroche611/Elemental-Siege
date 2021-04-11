@@ -1052,6 +1052,9 @@ TextureImporter:
   - first:
       213: -2114075842035137778
     second: Spritesheet_349
+  - first:
+      213: 7215655030578290729
+    second: Spritesheet_350
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1480,8 +1483,8 @@ TextureImporter:
         y: 240
         width: 16
         height: 16
-      alignment: 6
-      pivot: {x: 0, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

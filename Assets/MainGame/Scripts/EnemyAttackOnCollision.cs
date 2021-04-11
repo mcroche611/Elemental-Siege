@@ -87,6 +87,24 @@ public class EnemyAttackOnCollision : MonoBehaviour
         }
     }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        GameObject player = collision.gameObject;
+
+        if (player.GetComponent<PlayerController>() != null)
+        {
+            if (attackEnabled)
+            {
+                //Quitar vida
+                player.GetComponent<Health>().ReceiveDamage(damage);
+                //Volver a atacar
+                attackEnabled = false;
+                Invoke("EnableAttack", attackCoolDown);
+            }
+
+        }
+    }
+
     private void EnableAttack()
     {
         attackEnabled = true;

@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField]
-    float detectRange;
+    //[SerializeField]
+    //float detectRange;
 
     [SerializeField]
     float speed;
@@ -18,12 +18,14 @@ public class EnemyMovement : MonoBehaviour
     float iniSpeed;
     Transform playerTf;
     Rigidbody2D rb;
+    EnemyTrigger trigger;
 
     void Start()
     {
         iniSpeed = speed;
         rb = GetComponent<Rigidbody2D>();
         GetPlayerTransform();
+        trigger = GetComponentInChildren<EnemyTrigger>();
     }
 
     private void GetPlayerTransform()
@@ -36,12 +38,20 @@ public class EnemyMovement : MonoBehaviour
             Debug.Log("Player transform not found");
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (CanSeePlayer(detectRange) && !attackMode)
+        //if (trigger == null)
+        //{
+        //    trigger = gameObject.GetComponentInChildren<EnemyTrigger>();
+        //}
+
+        // Recibe del componente trigger si el jugador está en el área del enemigo
+        if (trigger.DetectPlayer())
         {
-            ChasePlayer();
+            if (CanSeePlayer() && !attackMode)
+            {
+                ChasePlayer();
+            }
         }
         else
         {
@@ -49,7 +59,35 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    private bool CanSeePlayer(float detectRange)
+
+    //private bool CanSeePlayerInRange(float detectRange)
+    //{
+    //    bool val = false;
+
+    //    int p, m, pm;
+    //    p = 1 << LayerMask.NameToLayer("Player");
+    //    m = 1 << LayerMask.NameToLayer("Muros");
+    //    pm = p | m;
+
+    //    if (playerTf == null)
+    //        GetPlayerTransform();
+        
+    //    RaycastHit2D hit = Physics2D.Linecast(transform.position, playerTf.position, pm);
+
+    //    if (hit.collider != null)
+    //    {
+    //        if (hit.collider.gameObject.GetComponent<PlayerController>() != null)
+    //        {
+    //            val = hit.distance <= detectRange;
+    //        }
+    //    }
+
+    //    Debug.DrawLine(transform.position, playerTf.position, Color.white);
+
+    //    return val;
+    //}
+
+    private bool CanSeePlayer()
     {
         bool val = false;
 
@@ -60,14 +98,14 @@ public class EnemyMovement : MonoBehaviour
 
         if (playerTf == null)
             GetPlayerTransform();
-        
+
         RaycastHit2D hit = Physics2D.Linecast(transform.position, playerTf.position, pm);
 
         if (hit.collider != null)
         {
             if (hit.collider.gameObject.GetComponent<PlayerController>() != null)
             {
-                val = hit.distance <= detectRange;
+                val = true; //hit.distance <= detectRange;
             }
         }
 

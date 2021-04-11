@@ -102,7 +102,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.01793623, y: -0.06543809}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -113,7 +113,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.48, y: 4.48}
+  m_Size: {x: 2.2559528, y: 3.4984312}
   m_EdgeRadius: 0
 --- !u!50 &2017438766814546697
 Rigidbody2D:
@@ -161,8 +161,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073aa367de8d98c479096699c7214d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxMana: 100
-  manaRegSpeed: 3
+  maxMana: 500
+  mana: 0
+  manaRegSpeed: 0.25
 --- !u!114 &2017438766814546709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b49cef25ec2f1324985bda1b28096f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 3
+  velocity: 3.5
   tiempoAturdimiento: 0.25
 --- !u!114 &2017438766814546710
 MonoBehaviour:
@@ -207,9 +208,9 @@ MonoBehaviour:
   agua: {fileID: 5108945870854057946, guid: faa23928b2149c748ad75d1612916f2b, type: 3}
   electricidad: {fileID: 3400363912640841692, guid: 71536740a70347b47964d31ccdda780c,
     type: 3}
-  manaAgua: 20
+  manaAgua: 50
   manaFuego: 10
-  manaElectro: 30
+  manaElectro: 40
   elementalAttackCoolDown: 0.5
 --- !u!114 &2017438766814546699
 MonoBehaviour:

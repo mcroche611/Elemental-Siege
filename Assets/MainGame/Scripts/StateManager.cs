@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class StateManager : MonoBehaviour
 {
     MonoBehaviour currentState = null;
     [SerializeField] float stateTime;
-
+    
     public void NewElement(string elementalAtack)
     {
         MonoBehaviour element_state = GetComponent(elementalAtack.Split('_')[1]) as MonoBehaviour;
@@ -24,11 +25,46 @@ public class StateManager : MonoBehaviour
         }
         else if (currentState != element_state)
         {
-            //Debug.Log("Se ha producido una Reacción Elemental");
             CancelInvoke("StateTimeOut");
             currentState.enabled = false;
-            if (elementalAtack.Split('_')[0] == "Electricidad")
+            string element = elementalAtack.Split('_')[0];
+            if (element == "Fuego")
+            {
+                if (currentState == GetComponent<Mojado>())
+                {
+                    Debug.Log("Se ha producido la RE vaporizado (débil)");
+                }
+                else
+                {
+                    Debug.Log("Se ha producido la RE Sobrecaragado");
+                    
+                }
+            }
+            else if (element == "Agua")
+            {
+                if (currentState == GetComponent<Quemado>())
+                {
+                    Debug.Log("Se ha producido la RE vaporizado (fuerte)");
+                }
+                else
+                {
+                    Debug.Log("Se ha producido la RE Electrocargado");
+                    GetComponent<Electrocargado>().Electrocargado_();
+                }
+            }
+            else
+            {
                 GetComponent<Paralizar>().Paraliza();
+                if (currentState == GetComponent<Quemado>())
+                {
+                    Debug.Log("Se ha producido RE Sobrecargado");
+                }
+                else
+                {
+                    Debug.Log("Se ha producido la RE Ectrocargado");
+                    GetComponent<Electrocargado>().Electrocargado_();
+                }
+            }
             currentState = null;
         }
               
@@ -38,17 +74,5 @@ public class StateManager : MonoBehaviour
     {
         currentState.enabled = false;
         currentState = null;
-    }
-
-    void Paraliza()
-    {
-        //aquí iría el script de movimiento del enemigo
-        GetComponent<Patrulla>().enabled = false;
-        //faltaría el escript de ataque del enemigo también
-    }
-
-    void ParalizaAcaba()
-    {
-        GetComponent<Patrulla>().enabled = true;
     }
 }
