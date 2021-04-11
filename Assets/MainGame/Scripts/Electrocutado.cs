@@ -17,7 +17,7 @@ public class Electrocutado : MonoBehaviour
     private void OnDisable()
     {
         //Debug.Log("Estado actual del enemigo: Ninguno");
-        Destroy(transform.GetChild(0).gameObject);
+        Destroy(transform.GetChild(1).gameObject);
     }
 
 

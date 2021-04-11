@@ -25,7 +25,7 @@ public class Quemado : MonoBehaviour
     {
         //Debug.Log("Estado actual del enemigo: Ninguno");
         CancelInvoke("Quemar");
-        Destroy(transform.GetChild(0).gameObject);
+        Destroy(transform.GetChild(1).gameObject);
     }
 
     private void Quemar()
