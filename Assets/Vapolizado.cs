@@ -20,5 +20,6 @@ public class Vapolizado : MonoBehaviour
     private float Formula()
     {
         return (ataque + bonoAgua + bonoFuego) * escaladoDeDaño;
+        Debug.Log("vapolizado bien hecho");
     }
 }
