@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class StateManager : MonoBehaviour
 {
     MonoBehaviour currentState = null;
     [SerializeField] float stateTime;
-
+    
     public void NewElement(string elementalAtack)
     {
         MonoBehaviour element_state = GetComponent(elementalAtack.Split('_')[1]) as MonoBehaviour;
@@ -36,6 +37,7 @@ public class StateManager : MonoBehaviour
                 else
                 {
                     Debug.Log("Se ha producido la RE Sobrecaragado");
+                    
                 }
             }
             else if (element == "Agua")
