@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Vapolizado : MonoBehaviour
 {
-    [SerializeField] float escaladoDeDaño;
+    [SerializeField] float escaladoDeDañoFuerte, escaladoDeDañoDebil;
     float ataque, bonoAgua, bonoFuego, bonoElectricidad;
 
     private void Start()
@@ -14,12 +14,17 @@ public class Vapolizado : MonoBehaviour
         bonoFuego = GameManager.GetInstance().Stat("Fuego");
         bonoElectricidad = GameManager.GetInstance().Stat("Electricidad");
     }
-    public void Vapolizado_()
+    public void Vapolizado_Debil()
     {
-        GetComponent<EnemyHealth>().QuitarVida(Formula());
+        GetComponent<EnemyHealth>().QuitarVida(Formula(escaladoDeDañoDebil));
     }
-    private float Formula()
+    public void Vapolizado_Fuerte()
     {
-        return (ataque + bonoAgua + bonoFuego) * escaladoDeDaño;
+        GetComponent<EnemyHealth>().QuitarVida(Formula(escaladoDeDañoFuerte));
+    }
+
+    private float Formula(float escalado)
+    {
+        return (ataque + bonoAgua + bonoFuego) * escalado;
     }
 }
