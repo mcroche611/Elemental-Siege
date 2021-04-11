@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField]
-    float detectRange;
+    //[SerializeField]
+    //float detectRange;
 
     [SerializeField]
     float speed;
@@ -105,7 +105,7 @@ public class EnemyMovement : MonoBehaviour
         {
             if (hit.collider.gameObject.GetComponent<PlayerController>() != null)
             {
-                val = hit.distance <= detectRange;
+                val = true; //hit.distance <= detectRange;
             }
         }
 
