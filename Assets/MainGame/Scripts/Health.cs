@@ -5,16 +5,23 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] float vidaPlayer;
+    [SerializeField] float maxVida;
+    float vida;
+
+    private void Start()
+    {
+        vida = maxVida;
+    }
 
     internal void ReceiveDamage(float damage)
     {
-        vidaPlayer -= damage;
+        vida -= damage;
+        GameManager.GetInstance().GMActualizarVida(vida / maxVida);
 
-        Debug.Log("ReceiveDamage: " + vidaPlayer);
-        if (vidaPlayer <= 0)
+        Debug.Log("ReceiveDamage: " + vida);
+        if (vida <= 0)
         {
             Destroy(this.gameObject);
-        }
+        } 
     }
 }
