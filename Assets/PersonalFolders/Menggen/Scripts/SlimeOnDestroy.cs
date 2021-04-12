@@ -4,25 +4,14 @@ using UnityEngine;
 
 public class SlimeOnDestroy : MonoBehaviour
 {
-    Rigidbody2D rb;
-    GameObject SpriteSlime;
-
-    // Start is called before the first frame update
-    void Start()
+    GameObject slime;
+    private void OnDestroy()
     {
-
-        GetComponent<Rigidbody2D>();
-        GetComponent<GameObject>();
+        Instantiate<GameObject>(slime, transform.position, transform.rotation);
+        Instantiate<GameObject>(slime, transform.position, transform.rotation);
+        Instantiate<GameObject>(slime, transform.position, transform.rotation);
+        Instantiate<GameObject>(slime, transform.position, transform.rotation);
     }
-    /*private void OnDestroy()
-    {
-        GetComponent<EnemyHealth>();
-        if ()
-        {
-            
-        }
-    }
-    */
 }
 
 
