@@ -11,8 +11,18 @@ public class SlimeOnDestroy : MonoBehaviour
     void Start()
     {
 
+        GetComponent<Rigidbody2D>();
+        GetComponent<GameObject>();
     }
-
+    /*private void OnDestroy()
+    {
+        GetComponent<EnemyHealth>();
+        if ()
+        {
+            
+        }
+    }
+    */
 }
 
 
