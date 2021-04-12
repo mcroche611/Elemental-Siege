@@ -60,26 +60,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b36709a25caa844d8277880cfb301e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6725595701427029963
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3618546866066789124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ed0b1564c6f2284c9388fdc50f64d7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  areaEfectoElectrocaragado: {fileID: 1605384763536310482, guid: 6108491c6dd2e234da1f7d7893de9384,
-    type: 3}
-  areaEfectoSobrecargado: {fileID: 3231714772862266445, guid: 37d43dba4e589c34db3afb62f0473a27,
-    type: 3}
-  "escaladoDeDa\xF1oElectrocargado": 0.2
-  "escaladoDeDa\xF1oSobrecargado": 0.6
-  "escaladoDeDa\xF1oVaporizadoDebil": 0.4
-  "escaladoDeDa\xF1oVaporizadoFuerte": 0.8
 --- !u!1001 &6085292663741788030
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -162,15 +142,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyWithTrigger
       objectReference: {fileID: 0}
+    - target: {fileID: 8075401358374459511, guid: 77007398225556f4ab071f089f471cca,
+        type: 3}
+      propertyPath: areaEfectoElectrocaragado
+      value: 
+      objectReference: {fileID: 1605384763536310482, guid: 6108491c6dd2e234da1f7d7893de9384,
+        type: 3}
+    - target: {fileID: 8075401358374459511, guid: 77007398225556f4ab071f089f471cca,
+        type: 3}
+      propertyPath: areaEfectoSobrecargado
+      value: 
+      objectReference: {fileID: 3231714772862266445, guid: 37d43dba4e589c34db3afb62f0473a27,
+        type: 3}
+    - target: {fileID: 8075401358374459511, guid: 77007398225556f4ab071f089f471cca,
+        type: 3}
+      propertyPath: "escaladoDeDa\xF1oElectrocargado"
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8075401358374459511, guid: 77007398225556f4ab071f089f471cca,
+        type: 3}
+      propertyPath: "escaladoDeDa\xF1oSobrecargado"
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8075401358374459511, guid: 77007398225556f4ab071f089f471cca,
+        type: 3}
+      propertyPath: "escaladoDeDa\xF1oVaporizadoDebil"
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8075401358374459511, guid: 77007398225556f4ab071f089f471cca,
+        type: 3}
+      propertyPath: "escaladoDeDa\xF1oVaporizadoFuerte"
+      value: 0.8
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 506402057110561137, guid: 77007398225556f4ab071f089f471cca, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 77007398225556f4ab071f089f471cca, type: 3}
---- !u!1 &3618546866066789124 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7369265975475911802, guid: 77007398225556f4ab071f089f471cca,
-    type: 3}
-  m_PrefabInstance: {fileID: 6085292663741788030}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3618546866066791674 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7369265975475909508, guid: 77007398225556f4ab071f089f471cca,
