@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 7936879573317169418}
   - component: {fileID: 1569157125016576497}
   - component: {fileID: 3219311890021726309}
-  - component: {fileID: 6533083909284508414}
+  - component: {fileID: -2673045453613139618}
   - component: {fileID: 7064530304456908885}
+  - component: {fileID: 6533083909284508414}
   - component: {fileID: 7884265929057069958}
   - component: {fileID: -1084479419917982900}
-  - component: {fileID: -2673045453613139618}
   m_Layer: 9
   m_Name: BolaDeFuego
   m_TagString: Untagged
@@ -114,6 +114,40 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7, y: 0.8}
   m_EdgeRadius: 0
+--- !u!50 &-2673045453613139618
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2289046916620740401}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &7064530304456908885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2289046916620740401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a66f4d6766044a749994c4b1fa2f6a33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanciaMaxima: 6
 --- !u!114 &6533083909284508414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,20 +161,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   element: Fuego_Quemado
---- !u!114 &7064530304456908885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2289046916620740401}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a66f4d6766044a749994c4b1fa2f6a33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AEOAquaAttack: {fileID: 0}
-  distanciaMaxima: 6
 --- !u!114 &7884265929057069958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,24 +187,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "escaladoDeDa\xF1o": 0.3
---- !u!50 &-2673045453613139618
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2289046916620740401}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0

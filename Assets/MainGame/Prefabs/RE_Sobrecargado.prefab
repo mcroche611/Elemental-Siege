@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6131767528450386790}
   - component: {fileID: -2450660852698360597}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: RE_Sobrecargado
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
