@@ -13,17 +13,15 @@ GameObject:
   - component: {fileID: 6957295217954198163}
   - component: {fileID: 6957295217954198160}
   - component: {fileID: 6957295217954198161}
-  - component: {fileID: 6957295217954198164}
-  - component: {fileID: 6957295217954198127}
-  - component: {fileID: 6957295217954198124}
-  - component: {fileID: 6957295217954198125}
-  - component: {fileID: 6957295217954198122}
-  - component: {fileID: 6957295217954198123}
+  - component: {fileID: 6957295217954198167}
   - component: {fileID: 6957295217954198120}
   - component: {fileID: 6957295217954198121}
   - component: {fileID: 6957295217954198166}
-  - component: {fileID: 6957295217954198167}
-  - component: {fileID: 6957295217954198126}
+  - component: {fileID: 6957295217954198123}
+  - component: {fileID: 6957295217954198124}
+  - component: {fileID: 6957295217954198127}
+  - component: {fileID: 6957295217954198125}
+  - component: {fileID: 1684000204697596681}
   m_Layer: 0
   m_Name: "Slime peque\xF1o"
   m_TagString: Untagged
@@ -162,7 +160,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &6957295217954198164
+--- !u!114 &6957295217954198167
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -171,10 +169,79 @@ MonoBehaviour:
   m_GameObject: {fileID: 6957295217954198174}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32acee50227e0f649a619ba4dc1bb317, type: 3}
+  m_Script: {fileID: 11500000, guid: d9fb1079df769a64081a7e7089ffa4c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slime: {fileID: 0}
+  stateTime: 5
+--- !u!114 &6957295217954198120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6957295217954198174}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d0b64dbf234578449cbf4f142d01cb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icono: {fileID: 4597571645131044798, guid: af5960dd2c1e1114ea69beada5a9e406, type: 3}
+  "da\xF1oQuemadura": 5
+  tiempoQuemadura: 1
+--- !u!114 &6957295217954198121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6957295217954198174}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c99fdcaeed3e2cb4088b07884363ffe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icono: {fileID: 4597571645131044798, guid: 66cd2801ca4289b499dfc4959c7d2fb5, type: 3}
+  disminucionVelocidad: 0.4
+--- !u!114 &6957295217954198166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6957295217954198174}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac955c720d9729440a982af07f4633bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icono: {fileID: 4597571645131044798, guid: 75e62b9cfa344f14891d1296b73eae4e, type: 3}
+  "tiempoParalizaci\xF3n": 2
+--- !u!114 &6957295217954198123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6957295217954198174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8f4515c8e2ca764eb7dfacbc1302f2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "tiempoParalizaci\xF3n": 1.5
+--- !u!114 &6957295217954198124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6957295217954198174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d972487b5417edd488319bb1740f0d8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 130
 --- !u!114 &6957295217954198127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,19 +256,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   tiempoAturdimiento: 0.25
---- !u!114 &6957295217954198124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6957295217954198174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d972487b5417edd488319bb1740f0d8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 130
 --- !u!114 &6957295217954198125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,7 +272,7 @@ MonoBehaviour:
   damage: 15
   attackCoolDown: 0.25
   tiempoAturdimiento: 0.25
---- !u!114 &6957295217954198122
+--- !u!114 &1684000204697596681
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -227,88 +281,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 6957295217954198174}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b36709a25caa844d8277880cfb301e7, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ed0b1564c6f2284c9388fdc50f64d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6957295217954198123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6957295217954198174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8f4515c8e2ca764eb7dfacbc1302f2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  "tiempoParalizaci\xF3n": 1.5
---- !u!114 &6957295217954198120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6957295217954198174}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d0b64dbf234578449cbf4f142d01cb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  icono: {fileID: 195985427336989388, guid: 462f6fa3cd4101f499fcaafb2fd281e0, type: 3}
-  "da\xF1oQuemadura": 5
-  tiempoQuemadura: 1
---- !u!114 &6957295217954198121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6957295217954198174}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c99fdcaeed3e2cb4088b07884363ffe0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  icono: {fileID: 382193637843200993, guid: 737b9f00d1174eb458108eba2d0fa61b, type: 3}
-  disminucionVelocidad: 0.4
---- !u!114 &6957295217954198166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6957295217954198174}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac955c720d9729440a982af07f4633bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  icono: {fileID: 8682478991660152943, guid: 480c5d6d67d68e544a7749c769df5958, type: 3}
-  "tiempoParalizaci\xF3n": 2
---- !u!114 &6957295217954198167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6957295217954198174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9fb1079df769a64081a7e7089ffa4c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stateTime: 5
---- !u!114 &6957295217954198126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6957295217954198174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32acee50227e0f649a619ba4dc1bb317, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slime: {fileID: 0}
+  areaEfectoElectrocaragado: {fileID: 1605384763536310482, guid: 6108491c6dd2e234da1f7d7893de9384,
+    type: 3}
+  areaEfectoSobrecargado: {fileID: 3231714772862266445, guid: 37d43dba4e589c34db3afb62f0473a27,
+    type: 3}
+  "escaladoDeDa\xF1oElectrocargado": 0.2
+  "escaladoDeDa\xF1oSobrecargado": 0.6
+  "escaladoDeDa\xF1oVaporizadoDebil": 0.4
+  "escaladoDeDa\xF1oVaporizadoFuerte": 0.8

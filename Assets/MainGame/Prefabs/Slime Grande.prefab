@@ -13,6 +13,16 @@ GameObject:
   - component: {fileID: 4634209904693306651}
   - component: {fileID: 8051810355449330895}
   - component: {fileID: -3776747665359861840}
+  - component: {fileID: -5488552955086523217}
+  - component: {fileID: 3106458992827590643}
+  - component: {fileID: -5024623653277841669}
+  - component: {fileID: -3531086284138028792}
+  - component: {fileID: 8449021483515600160}
+  - component: {fileID: -7047751986993821554}
+  - component: {fileID: -6882873553273769699}
+  - component: {fileID: 4733891578378328692}
+  - component: {fileID: -5866758324617633682}
+  - component: {fileID: -7081124177179076136}
   m_Layer: 0
   m_Name: Slime Grande
   m_TagString: Untagged
@@ -145,9 +155,154 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!114 &-5488552955086523217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4634209904693306650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9fb1079df769a64081a7e7089ffa4c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateTime: 5
+--- !u!114 &3106458992827590643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4634209904693306650}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d0b64dbf234578449cbf4f142d01cb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icono: {fileID: 4597571645131044798, guid: af5960dd2c1e1114ea69beada5a9e406, type: 3}
+  "da\xF1oQuemadura": 5
+  tiempoQuemadura: 1
+--- !u!114 &-5024623653277841669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4634209904693306650}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c99fdcaeed3e2cb4088b07884363ffe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icono: {fileID: 4597571645131044798, guid: 66cd2801ca4289b499dfc4959c7d2fb5, type: 3}
+  disminucionVelocidad: 0.4
+--- !u!114 &-3531086284138028792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4634209904693306650}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac955c720d9729440a982af07f4633bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icono: {fileID: 4597571645131044798, guid: 75e62b9cfa344f14891d1296b73eae4e, type: 3}
+  "tiempoParalizaci\xF3n": 2
+--- !u!114 &8449021483515600160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4634209904693306650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8f4515c8e2ca764eb7dfacbc1302f2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "tiempoParalizaci\xF3n": 1.5
+--- !u!114 &-7047751986993821554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4634209904693306650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d972487b5417edd488319bb1740f0d8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 500
+--- !u!114 &-6882873553273769699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4634209904693306650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eba461726ccb69c449450f339ffc2de0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  tiempoAturdimiento: 0.25
+--- !u!114 &4733891578378328692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4634209904693306650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c102d606842d9e44baeac1fe69a220b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knock: 4.5
+  damage: 15
+  attackCoolDown: 0.25
+  tiempoAturdimiento: 0.25
+--- !u!114 &-5866758324617633682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4634209904693306650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ed0b1564c6f2284c9388fdc50f64d7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  areaEfectoElectrocaragado: {fileID: 1605384763536310482, guid: 6108491c6dd2e234da1f7d7893de9384,
+    type: 3}
+  areaEfectoSobrecargado: {fileID: 3231714772862266445, guid: 37d43dba4e589c34db3afb62f0473a27,
+    type: 3}
+  "escaladoDeDa\xF1oElectrocargado": 0.2
+  "escaladoDeDa\xF1oSobrecargado": 0.6
+  "escaladoDeDa\xF1oVaporizadoDebil": 0.4
+  "escaladoDeDa\xF1oVaporizadoFuerte": 0.8
+--- !u!114 &-7081124177179076136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4634209904693306650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32acee50227e0f649a619ba4dc1bb317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slime: {fileID: 1718666314291745708, guid: d568732fc33ca054384243967d38bf0e, type: 3}
