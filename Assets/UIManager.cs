@@ -6,34 +6,27 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public Sprite fuego, agua, electricidad;
-    Image _elementoActual, _elemento1, _elemento2;
-    public GameObject barraDeVida, barraDeMana, elementoActual, elemento1, elemento2;
+    public Image elementoActual, elemento1, elemento2;
     Vector2 maxBarraDeVida, maxBarraDeMana;
-    GridLayoutGroup _barraDeVida, _barraDeMana;
+    public GridLayoutGroup barraDeVida, barraDeMana;
 
     void Start()
     {
         GameManager.GetInstance().SetUIManager(this);
         
-        _barraDeVida = barraDeVida.GetComponent<GridLayoutGroup>();
-        maxBarraDeVida = _barraDeVida.cellSize;
-        _barraDeMana = barraDeMana.GetComponent<GridLayoutGroup>();
-        maxBarraDeMana = _barraDeMana.cellSize;
-        _elementoActual = elementoActual.GetComponent<Image>();
-        _elemento1 = elemento1.GetComponent<Image>();
-        _elemento2 = elemento2.GetComponent<Image>();
-        
+        maxBarraDeVida = barraDeVida.cellSize;
+        maxBarraDeMana = barraDeMana.cellSize;    
     }
 
     public void ActualizarVida(float porcentajeVida)
     {
-        _barraDeVida.cellSize = new Vector2(porcentajeVida * maxBarraDeVida.x, maxBarraDeVida.y);     
+        barraDeVida.cellSize = new Vector2(porcentajeVida * maxBarraDeVida.x, maxBarraDeVida.y);     
     }
 
     
     public void ActualizarMana(float porcentajeMana)
     {
-        _barraDeMana.cellSize = new Vector2(porcentajeMana * maxBarraDeMana.x, maxBarraDeVida.y);      
+        barraDeMana.cellSize = new Vector2(porcentajeMana * maxBarraDeMana.x, maxBarraDeVida.y);      
     }
     
     public void ActualizarElementos(string elementoEquipado)
@@ -41,21 +34,21 @@ public class UIManager : MonoBehaviour
 
         if (elementoEquipado == "Fuego")
         {
-            _elementoActual.sprite = fuego;
-            _elemento1.sprite = agua;
-            _elemento2.sprite = electricidad;
+            elementoActual.sprite = fuego;
+            elemento1.sprite = electricidad;
+            elemento2.sprite = agua;
         }
         else if (elementoEquipado == "Agua")
         {
-            _elementoActual.sprite = agua;
-            _elemento1.sprite = electricidad;
-            _elemento2.sprite = fuego;
+            elementoActual.sprite = agua;
+            elemento1.sprite = fuego;
+            elemento2.sprite = electricidad;
         }
         else
         {
-            _elementoActual.sprite = electricidad;
-            _elemento1.sprite = fuego;
-            _elemento2.sprite = agua;
+            elementoActual.sprite = electricidad;
+            elemento1.sprite = agua;
+            elemento2.sprite = fuego;
         }
         
     }

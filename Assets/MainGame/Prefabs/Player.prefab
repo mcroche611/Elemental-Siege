@@ -210,7 +210,7 @@ MonoBehaviour:
   manaAgua: 50
   manaFuego: 10
   manaElectro: 40
-  elementalAttackCoolDown: 0.5
+  coolDown: 0
 --- !u!114 &2017438766814546699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,4 +223,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21c8ad5604da08749bfd76ea13d49937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeElementCoolDown: 0.5
+  coolDown: 0.6
