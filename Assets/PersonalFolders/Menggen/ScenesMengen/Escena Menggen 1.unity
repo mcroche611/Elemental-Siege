@@ -3207,7 +3207,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7846163bbd61bf4b895746f9a36d199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "escaladoDeDa\xF1o": 5
+  "escaladoDeDa\xF1oFuerte": 0
+  "escaladoDeDa\xF1oDebil": 0
 --- !u!114 &1129964784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3220,12 +3221,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b573282e38d9ae748a38b9a825cbdc98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  areaEfecto: {fileID: 0}
-  "escaladoDeDa\xF1o": 0
-  ataque: 0
-  bonoAgua: 0
-  bonoFuego: 0
-  bonoElectricidad: 0
 --- !u!1001 &1133321067
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4665,6 +4660,24 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2017438766814546698, guid: 13db7e7adbb422e4095c16193b4b0ea4,
+        type: 3}
+      propertyPath: agua
+      value: 
+      objectReference: {fileID: 7949742180199860792, guid: d64bf9a059e3438478e32c9382b03eba,
+        type: 3}
+    - target: {fileID: 2017438766814546698, guid: 13db7e7adbb422e4095c16193b4b0ea4,
+        type: 3}
+      propertyPath: electricidad
+      value: 
+      objectReference: {fileID: 6092889850191198081, guid: e621f1e4ad8d9324299b3dd43822c8f1,
+        type: 3}
+    - target: {fileID: 2017438766814546698, guid: 13db7e7adbb422e4095c16193b4b0ea4,
+        type: 3}
+      propertyPath: fuego
+      value: 
+      objectReference: {fileID: 907399313485673079, guid: a11cc335aeb25b34c98ca55e287d1eb3,
+        type: 3}
     - target: {fileID: 2017438766814546700, guid: 13db7e7adbb422e4095c16193b4b0ea4,
         type: 3}
       propertyPath: m_Name

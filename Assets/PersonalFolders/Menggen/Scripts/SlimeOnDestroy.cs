@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SlimeOnDestroy : MonoBehaviour
 {
-    GameObject slime;
+    public GameObject slime;
     private void OnDestroy()
     {
         Instantiate<GameObject>(slime, transform.position, transform.rotation);
