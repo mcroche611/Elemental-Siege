@@ -32,13 +32,13 @@ public class StateManager : MonoBehaviour
             {
                 if (currentState == GetComponent<Mojado>())
                 {
-                    GetComponent<Vapolizado>().Vapolizado_Debil();
+                    GetComponent<ElementalReactions>().VapolizadoDebil();
                     Debug.Log("Se ha producido la RE vaporizado (débil)");
                 }
                 else
                 {
                     Debug.Log("Se ha producido la RE Sobrecaragado");
-                    GetComponent<Sobrecargado>().Sobrecarga();
+                    GetComponent<ElementalReactions>().Sobrecargado();
                     
                 }
             }
@@ -46,13 +46,13 @@ public class StateManager : MonoBehaviour
             {
                 if (currentState == GetComponent<Quemado>())
                 {
-                    GetComponent<Vapolizado>().Vapolizado_Fuerte();
+                    GetComponent<ElementalReactions>().VapolizadoFuerte();
                     Debug.Log("Se ha producido la RE vaporizado (fuerte)");
                 }
                 else
                 {
                     Debug.Log("Se ha producido la RE Electrocargado");
-                    GetComponent<Electrocargado>().Electrocargado_();
+                    GetComponent<ElementalReactions>().Electrocargado();
                 }
             }
             else
@@ -61,12 +61,12 @@ public class StateManager : MonoBehaviour
                 if (currentState == GetComponent<Quemado>())
                 {
                     Debug.Log("Se ha producido RE Sobrecargado");
-                    GetComponent<Sobrecargado>().Sobrecarga();
+                    GetComponent<ElementalReactions>().Sobrecargado();
                 }
                 else
                 {
                     Debug.Log("Se ha producido la RE Ectrocargado");
-                    GetComponent<Electrocargado>().Electrocargado_();
+                    GetComponent<ElementalReactions>().Electrocargado();
                 }
             }
             currentState = null;

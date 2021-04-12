@@ -162,8 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxMana: 500
-  mana: 0
-  manaRegSpeed: 0.25
+  manaRegSpeed: 0.01
 --- !u!114 &2017438766814546709
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1068049876939388282}
   - component: {fileID: 4553742739671029350}
-  - component: {fileID: 79327119139263012}
+  - component: {fileID: 6988754666472040122}
+  - component: {fileID: 6691652697057012015}
   - component: {fileID: 2009394223325827162}
+  - component: {fileID: 79327119139263012}
   - component: {fileID: 1208175472554767870}
   - component: {fileID: 7225677754822601452}
   - component: {fileID: -1733522521447541949}
-  - component: {fileID: 6988754666472040122}
-  - component: {fileID: 6691652697057012015}
   m_Layer: 9
   m_Name: BolaDeAgua
   m_TagString: Untagged
@@ -89,74 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &79327119139263012
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5108945870854057946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1790e217e18ae954a8ab61db7e488f5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  element: Agua_Mojado
---- !u!114 &2009394223325827162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5108945870854057946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a66f4d6766044a749994c4b1fa2f6a33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distanciaMaxima: 6
---- !u!114 &1208175472554767870
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5108945870854057946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d595a47f985d33f40a3f9f460b94b263, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 6
---- !u!114 &7225677754822601452
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5108945870854057946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 153444f6239129f4cb94ac1bd4c86a12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  "escaladoDeDa\xF1o": 0.7
---- !u!114 &-1733522521447541949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5108945870854057946}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff324fb8164519f4a94a0cfd3294b02f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AEO_AquaAttack: {fileID: 6911828631846880193, guid: 63643d6a056bc344e9112fdf3dea5403,
-    type: 3}
-  rapidezExpansion: 5
-  "tama\xF1oM\xE1ximo": 5
 --- !u!50 &6988754666472040122
 Rigidbody2D:
   serializedVersion: 4
@@ -204,3 +136,71 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6875, y: 0.8125}
   m_EdgeRadius: 0
+--- !u!114 &2009394223325827162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5108945870854057946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a66f4d6766044a749994c4b1fa2f6a33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanciaMaxima: 6
+--- !u!114 &79327119139263012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5108945870854057946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1790e217e18ae954a8ab61db7e488f5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  element: Agua_Mojado
+--- !u!114 &1208175472554767870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5108945870854057946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d595a47f985d33f40a3f9f460b94b263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 6
+--- !u!114 &7225677754822601452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5108945870854057946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 153444f6239129f4cb94ac1bd4c86a12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "escaladoDeDa\xF1o": 0.7
+--- !u!114 &-1733522521447541949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5108945870854057946}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff324fb8164519f4a94a0cfd3294b02f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AEO_AquaAttack: {fileID: 6911828631846880193, guid: 63643d6a056bc344e9112fdf3dea5403,
+    type: 3}
+  rapidezExpansion: 5
+  "tama\xF1oM\xE1ximo": 5
