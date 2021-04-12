@@ -7,15 +7,18 @@ public class GameManager : MonoBehaviour
     /*Para hablar con el GameManager basta referenciarlo en alguno de nuestros scripts de esta forma
      GameManager.GetInstance ().NombreMétodoPúblico ();*/
 
-
     private static GameManager instance;
+    private UIManager theUIManager;
 
     [SerializeField] float ataque, bonoAgua, bonoFuego, bonoElectricidad;
 
-    //int hpPlayer;
-
     Transform playerTf;
     GameObject player;
+
+    public void SetUIManager(UIManager uim)
+    {
+        theUIManager = uim;
+    }
 
     void Awake()
     {
@@ -46,11 +49,6 @@ public class GameManager : MonoBehaviour
         else return ataque;
     }
 
-    //public void SetPlayerTransform(Transform tf)
-    //{
-    //    playerTf = tf;
-    //}
-
     public void SetPlayer(GameObject playerGO)
     {
         if (playerGO == null)
@@ -67,15 +65,7 @@ public class GameManager : MonoBehaviour
             return null;
     }
 
-
-
-    //public void SetHpPlayer(int vidaPlayer)
-    //{
-    //    hpPlayer = vidaPlayer;
-    //}
-
-    //public int GetVidaPlayer()
-    //{
-    //    return hpPlayer;
-    //}
+    public void GMActualizarVida (float porcentajeVida) { theUIManager.ActualizarVida(porcentajeVida); }
+    public void GMActualizarMana (float porcentajeMana) { theUIManager.ActualizarMana(porcentajeMana); }
+    public void GMActualizarElementos (string elemento) { theUIManager.ActualizarElementos(elemento);  }
 }

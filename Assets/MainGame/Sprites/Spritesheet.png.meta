@@ -598,7 +598,7 @@ TextureImporter:
     second: Spritesheet_197
   - first:
       213: -5976323105221611541
-    second: Spritesheet_198
+    second: boris2
   - first:
       213: 9029918056136141045
     second: Spritesheet_199
@@ -5298,15 +5298,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spritesheet_198
+      name: boris2
       rect:
         serializedVersion: 2
         x: 288
         y: 112
         width: 16
         height: 16
-      alignment: 6
-      pivot: {x: 0, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

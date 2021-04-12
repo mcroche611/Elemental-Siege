@@ -20,6 +20,7 @@ public class ElementChanger : MonoBehaviour
                 elementoActual = (elementoActual + 1) % 3;
             else elementoActual = (elementoActual + 2) % 3;
             Debug.Log("Elemento seleccionado: " + elementos[elementoActual]);
+            GameManager.GetInstance().GMActualizarElementos(elementos[elementoActual]);
             cont = changeElementCoolDown;
         }
         cont -= Time.deltaTime;

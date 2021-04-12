@@ -8,10 +8,9 @@ public class Mana : MonoBehaviour
     private int maxMana;
 
     [SerializeField]
-    private float mana;
-
-    [SerializeField]
     private float manaRegSpeed;
+
+    private float mana;
 
     void Awake()
     {
@@ -31,6 +30,7 @@ public class Mana : MonoBehaviour
         if (manaSuficiente)
         {
             mana -= cantidad;
+            GameManager.GetInstance().GMActualizarMana(mana / maxMana);
         }
 
         Debug.Log("Mana: " + mana);
@@ -40,12 +40,11 @@ public class Mana : MonoBehaviour
     }
     public void SumaMana() 
     {
-        //Suma cuando el mana sea menor que la cantidad maxima
-        //Suma hasta que llegue a maxMana
         
         if(mana<maxMana)
         {
             mana += 1;
+            GameManager.GetInstance().GMActualizarMana(mana / maxMana);
         }
        
     }
