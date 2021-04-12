@@ -9,7 +9,7 @@ public class ElementalAttack : MonoBehaviour
 
 
     [SerializeField] int manaAgua, manaFuego, manaElectro;
-    [SerializeField] float elementalAttackCoolDown;
+    [SerializeField] float coolDown;
     
     float cont = 0;
     Mana quitaMana;
@@ -31,7 +31,7 @@ public class ElementalAttack : MonoBehaviour
                 Instantiate<GameObject>(electricidad, transform.position, Rotation());
             else if (quitaMana.RestaMana(manaAgua))
                 Instantiate<GameObject>(agua, transform.position, Rotation());
-            cont = elementalAttackCoolDown;
+            cont = coolDown;
         }       
         cont -= Time.deltaTime;
     }
