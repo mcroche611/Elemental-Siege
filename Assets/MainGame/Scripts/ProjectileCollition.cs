@@ -6,18 +6,24 @@ public class ProjectileCollition : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (GetComponent<ActivateElementOnCollision>().Elemento() != "Agua")
+        ElementalReactions elementalReactions = other.GetComponent<ElementalReactions>();
+
+        if (elementalReactions != null)
         {
-            other.GetComponent<ElementalReactions>().RotacionBola(GetComponent<Rigidbody2D>().velocity);
-            Destroy(this.gameObject);
+            if (GetComponent<ActivateElementOnCollision>().Elemento() != "Agua")
+            {
+                other.GetComponent<ElementalReactions>().RotacionBola(GetComponent<Rigidbody2D>().velocity);
+                Destroy(this.gameObject);
+            }
+
+            else
+            {
+                AEOAquaAttack _AEOAquaAttack = GetComponent<AEOAquaAttack>();
+                _AEOAquaAttack.EnemigoGolpeado(other.gameObject);
+                _AEOAquaAttack.enabled = true;
+            }
         }
-            
-        else
-        {
-            AEOAquaAttack _AEOAquaAttack = GetComponent<AEOAquaAttack>();
-            _AEOAquaAttack.EnemigoGolpeado(other.gameObject);
-            _AEOAquaAttack.enabled = true;
-        }
+        else Destroy(this.gameObject);
     }
 
     Vector2 posicionInicial;

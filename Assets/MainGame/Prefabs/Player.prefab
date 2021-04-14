@@ -203,9 +203,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a90635992b9a7441ae8995c6bb02f75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuego: {fileID: 2289046916620740401, guid: 21b18998441295f4ba0baa744a0a63f4, type: 3}
-  agua: {fileID: 5108945870854057946, guid: faa23928b2149c748ad75d1612916f2b, type: 3}
-  electricidad: {fileID: 3400363912640841692, guid: 71536740a70347b47964d31ccdda780c,
+  fuego: {fileID: 907399313485673079, guid: a11cc335aeb25b34c98ca55e287d1eb3, type: 3}
+  agua: {fileID: 7949742180199860792, guid: d64bf9a059e3438478e32c9382b03eba, type: 3}
+  electricidad: {fileID: 6092889850191198081, guid: e621f1e4ad8d9324299b3dd43822c8f1,
     type: 3}
   manaAgua: 50
   manaFuego: 10

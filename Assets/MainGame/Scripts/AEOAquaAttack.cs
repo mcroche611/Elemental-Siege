@@ -14,6 +14,7 @@ public class AEOAquaAttack : MonoBehaviour
 
     private void OnEnable()
     {
+        Destroy(GetComponent<Animator>());
         Destroy(GetComponent<ActivateElementOnCollision>());
         Destroy(GetComponent<ProjectileCollition>());
         Destroy(GetComponent<MueveProyectil>());
