@@ -8,9 +8,9 @@ public class Archer : MonoBehaviour
     GameObject prefabFlecha;
 
     [SerializeField]
-
     float cooldown = 1f;
-    Transform playerTransform; //def del transform del player para usarlo
+
+    Transform playerTransform; //def del transform del player para usarlo cuando entre al trigger
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,13 +20,13 @@ public class Archer : MonoBehaviour
             //ShootArrow();
             InvokeRepeating("ShootArrow", 0f, cooldown);
         }
-        else
-        {
-            CancelInvoke();
-        }
 
     }
 
+    private void OnTriggerExit2D(Collider2D other) //al salir el jugador, ya no dispara flechas
+    {
+        CancelInvoke();
+    }
     void ShootArrow()
     {
         float angulo = Mathf.Atan2(playerTransform.position.y - transform.position.y, playerTransform.transform.position.x - transform.position.x) * 180 / Mathf.PI;
