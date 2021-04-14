@@ -11,7 +11,13 @@ public class EnemyHealth : MonoBehaviour
     {
         health -= cantidad;
         Debug.Log(health);
+
         if (health <= 0)
+        {
+            Slime slime = GetComponent<Slime>();
+            if (slime != null)
+                slime.InstanciarSlimes();
             Destroy(this.gameObject);
+        }           
     }   
 }
