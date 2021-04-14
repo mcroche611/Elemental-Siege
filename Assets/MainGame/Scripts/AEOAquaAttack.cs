@@ -28,6 +28,7 @@ public class AEOAquaAttack : MonoBehaviour
     {
         tamaño += rapidezExpansion * Time.deltaTime;
         transform.localScale = new Vector3(tamaño, tamaño, 0f);
+        GetComponent<CircleCollider2D>().radius = tamaño;
 
         if (tamaño > tamañoMáximo)
             Destroy(this.gameObject);

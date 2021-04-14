@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2444547871014004665}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 99, y: 99, z: 1}
   m_Children: []
   m_Father: {fileID: 5543072570311371070}
   m_RootOrder: 0
@@ -75,16 +75,16 @@ GameObject:
   - component: {fileID: 8508858448193940916}
   - component: {fileID: -3532393667017953076}
   - component: {fileID: 3807292396276884753}
+  - component: {fileID: -2385597413425331270}
   - component: {fileID: 4974034350873881780}
   - component: {fileID: 7777516559311845655}
   - component: {fileID: 8924173619915049530}
   - component: {fileID: -5348799903832597962}
-  - component: {fileID: -2385597413425331270}
   - component: {fileID: -3241482755087690142}
-  - component: {fileID: -8936820778579034999}
   - component: {fileID: -3586151620385553795}
+  - component: {fileID: 1728427578678792287}
   m_Layer: 10
-  m_Name: Slime Grande
+  m_Name: SlimeGrande
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,7 +99,7 @@ Transform:
   m_GameObject: {fileID: 4093884336931229606}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 20, y: 20, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children:
   - {fileID: 450948263400843786}
   m_Father: {fileID: 0}
@@ -230,7 +230,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icono: {fileID: 4597571645131044798, guid: 75e62b9cfa344f14891d1296b73eae4e, type: 3}
-  "tiempoParalizaci\xF3n": 2
+--- !u!114 &-2385597413425331270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4093884336931229606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ed0b1564c6f2284c9388fdc50f64d7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  areaEfectoElectrocaragado: {fileID: 1605384763536310482, guid: 6108491c6dd2e234da1f7d7893de9384,
+    type: 3}
+  areaEfectoSobrecargado: {fileID: 3231714772862266445, guid: 37d43dba4e589c34db3afb62f0473a27,
+    type: 3}
+  "escaladoDeDa\xF1oElectrocargado": 0.2
+  "escaladoDeDa\xF1oSobrecargado": 0.6
+  "escaladoDeDa\xF1oVaporizadoDebil": 0.4
+  "escaladoDeDa\xF1oVaporizadoFuerte": 0.8
 --- !u!114 &4974034350873881780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,7 +275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d972487b5417edd488319bb1740f0d8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 500
+  health: 100
 --- !u!114 &8924173619915049530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,26 +306,6 @@ MonoBehaviour:
   damage: 15
   attackCoolDown: 0.25
   tiempoAturdimiento: 0.25
---- !u!114 &-2385597413425331270
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4093884336931229606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ed0b1564c6f2284c9388fdc50f64d7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  areaEfectoElectrocaragado: {fileID: 1605384763536310482, guid: 6108491c6dd2e234da1f7d7893de9384,
-    type: 3}
-  areaEfectoSobrecargado: {fileID: 3231714772862266445, guid: 37d43dba4e589c34db3afb62f0473a27,
-    type: 3}
-  "escaladoDeDa\xF1oElectrocargado": 0.2
-  "escaladoDeDa\xF1oSobrecargado": 0.6
-  "escaladoDeDa\xF1oVaporizadoDebil": 0.4
-  "escaladoDeDa\xF1oVaporizadoFuerte": 0.8
 --- !u!114 &-3241482755087690142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,33 +319,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slime: {fileID: 8186798521541953525, guid: d568732fc33ca054384243967d38bf0e, type: 3}
-  "cantidadDeDivisi\xF3n": 4
---- !u!61 &-8936820778579034999
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4093884336931229606}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.12, y: 0.1}
-    newSize: {x: 0.12, y: 0.1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.12, y: 0.1}
-  m_EdgeRadius: 0
 --- !u!50 &-3586151620385553795
 Rigidbody2D:
   serializedVersion: 4
@@ -368,3 +340,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!58 &1728427578678792287
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4093884336931229606}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.3
