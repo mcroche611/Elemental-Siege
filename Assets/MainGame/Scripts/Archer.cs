@@ -20,6 +20,10 @@ public class Archer : MonoBehaviour
             //ShootArrow();
             InvokeRepeating("ShootArrow", 0f, cooldown);
         }
+        else
+        {
+            CancelInvoke();
+        }
 
     }
 
