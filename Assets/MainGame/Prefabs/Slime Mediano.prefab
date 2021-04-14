@@ -306,3 +306,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slime: {fileID: 6957295217954198174, guid: 31e5dc464ac03be499a7c5d0c758d891, type: 3}
+  "cantidadDeDivisi\xF3n": 4
