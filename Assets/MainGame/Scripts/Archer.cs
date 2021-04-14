@@ -20,13 +20,13 @@ public class Archer : MonoBehaviour
             //ShootArrow();
             InvokeRepeating("ShootArrow", 0f, cooldown);
         }
-        else
-        {
-            CancelInvoke();
-        }
 
     }
 
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        CancelInvoke();
+    }
     void ShootArrow()
     {
         float angulo = Mathf.Atan2(playerTransform.position.y - transform.position.y, playerTransform.transform.position.x - transform.position.x) * 180 / Mathf.PI;
