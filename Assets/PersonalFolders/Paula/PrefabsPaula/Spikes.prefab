@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2517197025213004802}
   - component: {fileID: 6669924608785039504}
   - component: {fileID: 8213385030658496082}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Spikes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a13469d280fed274781b35f5cbf9661b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpikesDamage: 2
-  playerDamageDuration: 10
-  enemySpikesDamage: 4
-  enemyDamageDuration: 6
+  playerSpikesDamage: 20
+  playerDamageDuration: 1
+  enemySpikesDamage: 40
+  enemyDamageDuration: 1
+  playerSpeedReduction: 0
+  enemySpeedReduction: 0
