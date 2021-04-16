@@ -169,9 +169,5 @@ public class EnemyMovement : MonoBehaviour
     {
         this.enabled = true;
     }
-    public void DisminuirSpikes(float disminucion)
-    {
-        speed = speed-(speed * disminucion);
-        Debug.Log("Velocidad Enemigo:" + speed);
-    }
+
 }

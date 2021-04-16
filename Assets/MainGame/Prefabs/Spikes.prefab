@@ -125,5 +125,5 @@ MonoBehaviour:
   playerDamageDuration: 1
   enemySpikesDamage: 40
   enemyDamageDuration: 1
-  playerSpeedReduction: 0
-  enemySpeedReduction: 0
+  playerSpeedReduction: 0.2
+  enemySpeedReduction: 0.2
