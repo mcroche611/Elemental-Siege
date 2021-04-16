@@ -151,7 +151,7 @@ public class EnemyMovement : MonoBehaviour
     public void DisminuirVelocidad(float disminucion)
     {
         speed = speed * disminucion;
-        Debug.Log(speed);
+        
     }
 
     public void RestablecerVelocidad()
@@ -169,4 +169,5 @@ public class EnemyMovement : MonoBehaviour
     {
         this.enabled = true;
     }
+
 }
