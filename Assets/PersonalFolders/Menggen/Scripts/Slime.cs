@@ -6,8 +6,6 @@ public class Slime : MonoBehaviour
 {
     public GameObject slime;
     
-    
-
     public void InstanciarSlimes()
     {
         Debug.Log("Hola");
