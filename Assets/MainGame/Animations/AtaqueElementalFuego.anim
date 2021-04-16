@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: espada_animation
+  m_Name: AtaqueElementalFuego
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,16 +20,10 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -8527442550737655860, guid: b954770b5febfe74ca20f1696ec4cb06,
+      value: {fileID: -3667849891553759584, guid: bcdbd83fabd79bb4e86615190a27afc2,
         type: 3}
     - time: 0.083333336
-      value: {fileID: -1643389817789898457, guid: b954770b5febfe74ca20f1696ec4cb06,
-        type: 3}
-    - time: 0.16666667
-      value: {fileID: 7211491898151854808, guid: b954770b5febfe74ca20f1696ec4cb06,
-        type: 3}
-    - time: 0.25
-      value: {fileID: -1247501539174927167, guid: b954770b5febfe74ca20f1696ec4cb06,
+      value: {fileID: -3021730727967435315, guid: bcdbd83fabd79bb4e86615190a27afc2,
         type: 3}
     attribute: m_Sprite
     path: 
@@ -50,16 +44,14 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -8527442550737655860, guid: b954770b5febfe74ca20f1696ec4cb06, type: 3}
-    - {fileID: -1643389817789898457, guid: b954770b5febfe74ca20f1696ec4cb06, type: 3}
-    - {fileID: 7211491898151854808, guid: b954770b5febfe74ca20f1696ec4cb06, type: 3}
-    - {fileID: -1247501539174927167, guid: b954770b5febfe74ca20f1696ec4cb06, type: 3}
+    - {fileID: -3667849891553759584, guid: bcdbd83fabd79bb4e86615190a27afc2, type: 3}
+    - {fileID: -3021730727967435315, guid: bcdbd83fabd79bb4e86615190a27afc2, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.33333334
+    m_StopTime: 0.16666667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

@@ -12,13 +12,14 @@ public class PlayerController : MonoBehaviour
     float tiempoAturdimiento;
 
     Rigidbody2D rb;
-
+    bool ralentizado;
+    float newVelocity;
     void Start()
     {
         GameManager.GetInstance().SetPlayer(this.gameObject);
         //Cacheamos el componente Rigidbody
         rb = GetComponent<Rigidbody2D>();
-
+        ralentizado = false;
     }
 
     // Update is called once per frame
@@ -28,8 +29,13 @@ public class PlayerController : MonoBehaviour
         //Input de movimiento de cuatro direccones y movimiento en diagonal
         Vector2 vel = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
         //Velocidad de Movimiento
-        rb.velocity = new Vector2(vel.x * velocity, vel.y * velocity);    
-
+        if (ralentizado)
+        {
+            velocity = velocity-(velocity* newVelocity);
+            
+        }
+        rb.velocity = new Vector2(vel.x * velocity, vel.y * velocity);
+        
     }
 
     private void OnDisable()
@@ -40,5 +46,14 @@ public class PlayerController : MonoBehaviour
     private void RecuperarMovimiento()
     {
         this.enabled = true;
+    }
+    public void Ralentizado(ref float porcentaje)
+    {
+        ralentizado = true;
+        newVelocity = porcentaje;
+    }
+    public void NoRalentizado()
+    {
+        ralentizado = false;
     }
 }

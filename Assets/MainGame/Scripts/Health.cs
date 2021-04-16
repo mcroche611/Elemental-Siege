@@ -19,9 +19,7 @@ public class Health : MonoBehaviour
         GameManager.GetInstance().GMActualizarVida(vida / maxVida);
 
         Debug.Log("ReceiveDamage: " + vida);
-        if (vida <= 0)
-        {
-            Destroy(this.gameObject);
-        } 
+        if (vida <= 0)       
+            Destroy(this.gameObject);        
     }
 }

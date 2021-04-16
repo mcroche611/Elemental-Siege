@@ -5,7 +5,6 @@ using UnityEngine;
 public class Electrocutado : MonoBehaviour
 {
     public GameObject icono;
-    [SerializeField] float tiempoParalización;
 
     private void OnEnable()
     {
