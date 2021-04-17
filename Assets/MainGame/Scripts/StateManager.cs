@@ -32,6 +32,7 @@ public class StateManager : MonoBehaviour
             {
                 if (currentState == GetComponent<Mojado>())
                 {
+                    GetComponentInChildren<Charco>().NoPuedeMojarse();
                     GetComponent<ElementalReactions>().VapolizadoDebil();
                     Debug.Log("Se ha producido la RE vaporizado (débil)");
                 }
@@ -66,6 +67,7 @@ public class StateManager : MonoBehaviour
                 else
                 {
                     Debug.Log("Se ha producido la RE Ectrocargado");
+                    GetComponentInChildren<Charco>().NoPuedeMojarse();
                     GetComponent<ElementalReactions>().Electrocargado();
                 }
             }
@@ -74,9 +76,15 @@ public class StateManager : MonoBehaviour
               
     }
 
-    private void StateTimeOut()
+    public void StateTimeOut()
     {
         currentState.enabled = false;
         currentState = null;
+        CancelInvoke("StateTimeOut");
+    }
+
+    public MonoBehaviour Estado()
+    {
+        return currentState;
     }
 }

@@ -23,8 +23,7 @@ public class Spikes : MonoBehaviour
     EnemyMovement enemySpeed;
 
     private void OnTriggerEnter2D(Collider2D collision)
-    {
-        
+    {       
         /*IMPORTANTE: solo deben colisionar con los pinchos el jugador y los enemigos 
          * en la matriz de colisiones a la hora de usr esta implementacion*/
 
@@ -43,8 +42,7 @@ public class Spikes : MonoBehaviour
             enemyHealth = collision.GetComponent<EnemyHealth>();
             InvokeRepeating("DamageEnemy", 0, enemyDamageDuration);
             Invoke("ReduceEnemySpeed", 0);
-        }
-        
+        }      
     }
     
     private void OnTriggerExit2D(Collider2D collision)
@@ -60,8 +58,7 @@ public class Spikes : MonoBehaviour
             CancelInvoke("DamageEnemy");
             CancelInvoke("ReduceEnemySpeed");
             Invoke("ReturnEnemySpeed", 0);
-        }
-        
+        }     
     }
     //Accede al metodo que resta vida al jugador
     void DamagePlayer()
@@ -69,13 +66,12 @@ public class Spikes : MonoBehaviour
         playerHealth.ReceiveDamage(playerSpikesDamage);
     }
     //Accede al metodo que resta vida al enemigo
-     void DamageEnemy()
-     {
-        enemyHealth.QuitarVida(enemySpikesDamage);
-     }
-    void ReducePlayerSpeed()
+    void DamageEnemy()
     {
-        
+        enemyHealth.QuitarVida(enemySpikesDamage);
+    }
+    void ReducePlayerSpeed()
+    {       
         playerSpeed.Ralentizado(playerSpeedReduction);
     }
     void ReturnPlayerSpeed()
@@ -83,13 +79,11 @@ public class Spikes : MonoBehaviour
         playerSpeed.NoRalentizado(playerSpeedReduction);
     }
     void ReduceEnemySpeed()
-    {
-        
+    {     
         enemySpeed.DisminuirVelocidad(enemySpeedReduction);
-    }
-    
+    }   
     private void ReturnEnemySpeed()
     {
-        enemySpeed.RestablecerVelocidad();
+        enemySpeed.AumentarVelocidad(enemySpeedReduction);
     }
 }
