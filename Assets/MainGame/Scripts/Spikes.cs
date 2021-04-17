@@ -13,22 +13,15 @@ public class Spikes : MonoBehaviour
     [SerializeField]
     int enemyDamageDuration;   //Tiempo durante el cual se resta vida al jugador
     [SerializeField]
-    float playerSpeedReduction;   //Porcentaje en el que se reduce la velocidad del jugador
+    float playerSpeedReduction;   //Proporcion en la que se reduce la velocidad del jugador
     [SerializeField]
-    float enemySpeedReduction; //Porcentaje en el que se reduce la velocidad del enemigo
+    float enemySpeedReduction; //Proporcion en la que se reduce la velocidad del enemigo
 
     Health playerHealth;
     EnemyHealth enemyHealth;
     PlayerController playerSpeed;
     EnemyMovement enemySpeed;
 
-    private void Start()
-    {
-        playerHealth = null;
-        enemyHealth = null;
-        playerSpeed = null;
-        enemySpeed = null;
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         
@@ -37,9 +30,10 @@ public class Spikes : MonoBehaviour
 
         //En este caso es el jugador quien entra en el trigger
         playerHealth = collision.GetComponent<Health>();
-        playerSpeed = collision.GetComponent<PlayerController>();
+       
         if (playerHealth != null)
         {
+            playerSpeed = collision.GetComponent<PlayerController>();
             InvokeRepeating("DamagePlayer", 0, playerDamageDuration);
             Invoke("ReducePlayerSpeed", 0);
         }
@@ -55,12 +49,19 @@ public class Spikes : MonoBehaviour
     
     private void OnTriggerExit2D(Collider2D collision)
     {
+        playerHealth = collision.GetComponent<Health>();
+        if (playerHealth != null)
+        {
+            CancelInvoke("DamagePlayer");
+            Invoke("ReturnPlayerSpeed",0);
+        }
+        else
+        {
+            CancelInvoke("DamageEnemy");
+            CancelInvoke("ReduceEnemySpeed");
+            Invoke("ReturnEnemySpeed", 0);
+        }
         
-        CancelInvoke("DamagePlayer");
-        CancelInvoke("DamageEnemy");
-        Invoke("ReturnPlayerSpeed", 0);
-        CancelInvoke("ReduceEnemySpeed");
-        //Invoke("ReturnEnemySpeed", 0);
     }
     //Accede al metodo que resta vida al jugador
     void DamagePlayer()
@@ -74,21 +75,21 @@ public class Spikes : MonoBehaviour
      }
     void ReducePlayerSpeed()
     {
-        playerSpeedReduction = playerSpeedReduction / 100;
-        playerSpeed.Ralentizado(ref playerSpeedReduction);
+        
+        playerSpeed.Ralentizado(playerSpeedReduction);
     }
     void ReturnPlayerSpeed()
     {
-        playerSpeed.NoRalentizado();
+        playerSpeed.NoRalentizado(playerSpeedReduction);
     }
     void ReduceEnemySpeed()
     {
-        enemySpeedReduction = enemySpeedReduction / 100;
-        enemySpeed.DisminuirSpikes(enemySpeedReduction);
+        
+        enemySpeed.DisminuirVelocidad(enemySpeedReduction);
     }
     
-    /*private void ReturnEnemySpeed()
+    private void ReturnEnemySpeed()
     {
         enemySpeed.RestablecerVelocidad();
-    }*/
+    }
 }
