@@ -24,7 +24,6 @@ public class Mojado : MonoBehaviour
     private void OnDisable()
     {
         icono.SetActive(false);
-        //GetComponent<Charco>().enabled = false;
         enemyMovement.AumentarVelocidad(disminucionVelocidad); //vuelve a moverse a la misma velocidad que al principio
     }
 }

@@ -18,11 +18,8 @@ public class StateManager : MonoBehaviour
             element_state.enabled = true;
             Invoke("StateTimeOut", stateTime);
         }
-        else if (currentState == element_state)
-        {
-            CancelInvoke("StateTimeOut");
-            Invoke("StateTimeOut", stateTime);
-        }
+        else if (currentState == element_state)          
+            Invoke("StateTimeOut", stateTime);     
         else if (currentState != element_state)
         {
             CancelInvoke("StateTimeOut");
@@ -34,13 +31,10 @@ public class StateManager : MonoBehaviour
                 {
                     GetComponentInChildren<Charco>().NoPuedeMojarse();
                     GetComponent<ElementalReactions>().VapolizadoDebil();
-                    Debug.Log("Se ha producido la RE vaporizado (débil)");
                 }
                 else
                 {
-                    Debug.Log("Se ha producido la RE Sobrecaragado");
-                    GetComponent<ElementalReactions>().Sobrecargado();
-                    
+                    GetComponent<ElementalReactions>().Sobrecargado();                   
                 }
             }
             else if (element == "Agua")
@@ -48,39 +42,35 @@ public class StateManager : MonoBehaviour
                 if (currentState == GetComponent<Quemado>())
                 {
                     GetComponent<ElementalReactions>().VapolizadoFuerte();
-                    Debug.Log("Se ha producido la RE vaporizado (fuerte)");
                 }
                 else
                 {
-                    Debug.Log("Se ha producido la RE Electrocargado");
+                    GetComponent<Paralizar>().Paraliza();
                     GetComponent<ElementalReactions>().Electrocargado();
                 }
             }
             else
             {
                 GetComponent<Paralizar>().Paraliza();
-                if (currentState == GetComponent<Quemado>())
+                if (currentState == GetComponent<Electrocutado>())
                 {
-                    Debug.Log("Se ha producido RE Sobrecargado");
                     GetComponent<ElementalReactions>().Sobrecargado();
                 }
                 else
                 {
-                    Debug.Log("Se ha producido la RE Ectrocargado");
                     GetComponentInChildren<Charco>().NoPuedeMojarse();
-                    GetComponent<ElementalReactions>().Electrocargado();
+                    GetComponent<ElementalReactions>().Electrocargado();                   
                 }
             }
             currentState = null;
-        }
-              
+        }           
     }
 
     public void StateTimeOut()
     {
+        CancelInvoke("StateTimeOut");
         currentState.enabled = false;
         currentState = null;
-        CancelInvoke("StateTimeOut");
     }
 
     public MonoBehaviour Estado()

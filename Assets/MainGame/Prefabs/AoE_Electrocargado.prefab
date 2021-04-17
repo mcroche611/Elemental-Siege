@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1605384763536310484}
   - component: {fileID: 1605384763536310483}
   m_Layer: 0
-  m_Name: RE_Electrocargado
+  m_Name: AoE_Electrocargado
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

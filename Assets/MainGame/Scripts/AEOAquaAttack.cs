@@ -31,8 +31,10 @@ public class AEOAquaAttack : MonoBehaviour
 
         if (stateManager != null && collision.gameObject != enemigoGolpeado)
         {
-
-            stateManager.NewElement("Agua_Mojado");
+            if (collision.GetComponent<Quemado>().enabled)
+                stateManager.StateTimeOut();
+            else
+                stateManager.NewElement("Agua_Mojado");
         }
     }
 

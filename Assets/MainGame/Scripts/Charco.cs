@@ -6,15 +6,17 @@ public class Charco : MonoBehaviour
 {
     [SerializeField] float tiempoParaMojar;
 
-    bool puedeMojarse;
+    bool puedeMojarse = false;
     bool pisaCharco = false;
 
     LayerMask col;
     Mojado mojado;
+    Electrocutado electrocutado;
     StateManager stateManager;
 
     private void Awake()
     {
+        electrocutado = GetComponentInParent<Electrocutado>();
         mojado = GetComponentInParent<Mojado>();
         stateManager = GetComponentInParent<StateManager>();
     }
@@ -29,16 +31,23 @@ public class Charco : MonoBehaviour
             MonoBehaviour state = stateManager.Estado() as MonoBehaviour;
             if (state == mojado)
                 puedeMojarse = true;
-            else if (state == null)
-                NoPuedeMojarse();
             else
             {
                 NoPuedeMojarse();
-                stateManager.StateTimeOut();
+                if (state != null)
+                {
+                    if (state == electrocutado)
+                        GetComponentInParent<Paralizar>().Paraliza();
+                    stateManager.StateTimeOut();                    
+                }
             }
         }           
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        pisaCharco = false;
+    }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -50,11 +59,13 @@ public class Charco : MonoBehaviour
             if (puedeMojarse)
             {
                 MonoBehaviour state = stateManager.Estado() as MonoBehaviour;
-                if (state == null || state == mojado)
-                    stateManager.NewElement("Agua_Mojado");
+                if (state == null || state == mojado)              
+                    stateManager.NewElement("Agua_Mojado");                                                                      
                 else
                 {
                     NoPuedeMojarse();
+                    if (state == electrocutado)
+                        GetComponentInParent<Paralizar>().Paraliza();
                     stateManager.StateTimeOut();
                 }
             }
@@ -62,19 +73,11 @@ public class Charco : MonoBehaviour
         else pisaCharco = false;
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        pisaCharco = false;
-    }
-
-
     public void NoPuedeMojarse()
     {
-        if (col == LayerMask.NameToLayer("Charcos"))
-        {
-            puedeMojarse = false;
-            Invoke("PuedeMojarse", tiempoParaMojar);
-        }            
+        CancelInvoke("PuedeMojarse");
+        puedeMojarse = false;
+        Invoke("PuedeMojarse", tiempoParaMojar);                       
     }
 
     void PuedeMojarse()

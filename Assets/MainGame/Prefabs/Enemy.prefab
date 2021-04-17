@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f4515c8e2ca764eb7dfacbc1302f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "tiempoParalizaci\xF3n": 1.5
+  "tiempoParalizaci\xF3n": 1
 --- !u!114 &2286146314169111624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d972487b5417edd488319bb1740f0d8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 200
+  health: 2000
 --- !u!114 &8879304277022554158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,7 +315,7 @@ GameObject:
   - component: {fileID: 791620279524732302}
   - component: {fileID: 7141669098027298055}
   - component: {fileID: 9132743047828631745}
-  m_Layer: 16
+  m_Layer: 17
   m_Name: Pies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -374,7 +374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22022ba2063c5904b8d6627dd3b30abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tiempoParaMojar: 1.5
+  tiempoParaMojar: 2
 --- !u!1 &8051058169640690496
 GameObject:
   m_ObjectHideFlags: 0
