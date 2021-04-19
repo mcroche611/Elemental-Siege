@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Mojado : MonoBehaviour
 {
-    public GameObject icono;
     EnemyMovement enemyMovement;
+    GameObject icono;
 
     [SerializeField]
     float disminucionVelocidad;
@@ -13,20 +13,17 @@ public class Mojado : MonoBehaviour
     private void Awake()
     {
         enemyMovement = GetComponent<EnemyMovement>(); //tomamos el script enemyRange porque es el que contiene la velocidad de movimiento del enemigo
-
+        icono = (transform.GetChild(1).gameObject).transform.GetChild(1).gameObject;
     }
     private void OnEnable()
     {
-        //Debug.Log("Estado actual del enemigo: Mojado");
-        Instantiate<GameObject>(icono, new Vector3(transform.position.x, transform.position.y + transform.localScale.y / 2 + 0.5f, transform.position.z), icono.transform.rotation, transform);
+        icono.SetActive(true);
         enemyMovement.DisminuirVelocidad(disminucionVelocidad); //al activarse disminuye la velocidad
     }
 
     private void OnDisable()
     {
-        //Debug.Log("Estado actual del enemigo: Ninguno");
-        Destroy(transform.GetChild(1).gameObject);
-        enemyMovement.RestablecerVelocidad(); //vuelve a moverse a la misma velocidad que al principio
-
+        icono.SetActive(false);
+        enemyMovement.AumentarVelocidad(disminucionVelocidad); //vuelve a moverse a la misma velocidad que al principio
     }
 }

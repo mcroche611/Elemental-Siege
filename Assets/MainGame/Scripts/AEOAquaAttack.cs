@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AEOAquaAttack : MonoBehaviour
 {
-    public Sprite AEO_AquaAttack;
     GameObject enemigoGolpeado;
 
     [SerializeField] float rapidezExpansion;
@@ -12,23 +11,15 @@ public class AEOAquaAttack : MonoBehaviour
 
     float tamaño = 0;
 
-    private void OnEnable()
+    private void Start()
     {
-        Destroy(GetComponent<Animator>());
-        Destroy(GetComponent<ActivateElementOnCollision>());
-        Destroy(GetComponent<ProjectileCollition>());
-        Destroy(GetComponent<MueveProyectil>());
-        Destroy(GetComponent<ProjectileMakeDamage>());
-        GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 0f);
         transform.localScale = new Vector2(0f, 0f);
-        GetComponent<SpriteRenderer>().sprite = AEO_AquaAttack;
     }
 
     void Update()
     {
         tamaño += rapidezExpansion * Time.deltaTime;
-        transform.localScale = new Vector3(tamaño, tamaño, 0f);
-        GetComponent<CircleCollider2D>().radius = tamaño;
+        transform.localScale = new Vector2(tamaño, tamaño);
 
         if (tamaño > tamañoMáximo)
             Destroy(this.gameObject);
@@ -40,7 +31,10 @@ public class AEOAquaAttack : MonoBehaviour
 
         if (stateManager != null && collision.gameObject != enemigoGolpeado)
         {
-            stateManager.NewElement("Agua_Mojado");
+            if (collision.GetComponent<Quemado>().enabled)
+                stateManager.StateTimeOut();
+            else
+                stateManager.NewElement("Agua_Mojado");
         }
     }
 
