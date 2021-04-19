@@ -6,10 +6,11 @@ public class EnemyHealth : MonoBehaviour
 {
     [SerializeField]
     private float health;
-
+    
     public void QuitarVida(float cantidad)
     {
-        health -= cantidad;
+        if (GetComponent<EscudoFuego>().enabled == false) //si el enemigo no tiene escudo, se le daña
+            health -= cantidad;
         Debug.Log(health);
 
         if (health <= 0)
