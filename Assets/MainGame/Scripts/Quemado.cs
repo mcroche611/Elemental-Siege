@@ -4,28 +4,27 @@ using UnityEngine;
 
 public class Quemado : MonoBehaviour
 {
-    public GameObject icono;
     [SerializeField] float dañoQuemadura;
     [SerializeField] float tiempoQuemadura;
     EnemyHealth enemy;
+    GameObject icono;
 
     private void Awake()
     {
         enemy = GetComponent<EnemyHealth>();
+        icono = (transform.GetChild(1).gameObject).transform.GetChild(0).gameObject;
     }
 
     private void OnEnable()
     {
-        //Debug.Log("Estado actual del enemigo: Quemado");
-        Instantiate<GameObject>(icono, new Vector3(transform.position.x, transform.position.y + transform.localScale.y / 2 + 0.5f, transform.position.z), icono.transform.rotation, transform);
+        icono.SetActive(true);
         InvokeRepeating("Quemar", tiempoQuemadura, tiempoQuemadura);
     }
 
     private void OnDisable()
     {
-        //Debug.Log("Estado actual del enemigo: Ninguno");
         CancelInvoke("Quemar");
-        Destroy(transform.GetChild(1).gameObject);
+        icono.SetActive(false);
     }
 
     private void Quemar()

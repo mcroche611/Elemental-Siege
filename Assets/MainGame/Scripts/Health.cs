@@ -13,15 +13,26 @@ public class Health : MonoBehaviour
         vida = maxVida;
     }
 
-    internal void ReceiveDamage(float damage)
+    public void ReceiveDamage(float damage)
     {
         vida -= damage;
         GameManager.GetInstance().GMActualizarVida(vida / maxVida);
 
         Debug.Log("ReceiveDamage: " + vida);
-        if (vida <= 0)
+        if (vida <= 0)       
+            Destroy(this.gameObject);        
+    }
+
+    public void Healing(float hp) //hacemos otro método para curar
+    {
+        if ((vida + hp) > maxVida) //para que no pueda tener más vida que la máxima
         {
-            Destroy(this.gameObject);
-        } 
+            vida = maxVida;
+        }
+        else
+            vida += hp;
+
+        GameManager.GetInstance().GMActualizarVida(vida / maxVida);
+
     }
 }

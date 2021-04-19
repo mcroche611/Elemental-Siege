@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class Electrocutado : MonoBehaviour
 {
-    public GameObject icono;
-    [SerializeField] float tiempoParalización;
+    GameObject icono;
+
+    private void Awake()
+    {
+        icono = (transform.GetChild(1).gameObject).transform.GetChild(2).gameObject; 
+    }
 
     private void OnEnable()
     {
-        //Debug.Log("Estado actual del enemigo: Electrocutado");
-        Instantiate<GameObject>(icono, new Vector3(transform.position.x, transform.position.y + transform.localScale.y/2 + 0.5f, transform.position.z), icono.transform.rotation, transform);
+        icono.SetActive(true);      
         GetComponent<Paralizar>().Paraliza();
     }
 
     private void OnDisable()
     {
-        //Debug.Log("Estado actual del enemigo: Ninguno");
-        Destroy(transform.GetChild(1).gameObject);
+        icono.SetActive(false);
     }
 
 
