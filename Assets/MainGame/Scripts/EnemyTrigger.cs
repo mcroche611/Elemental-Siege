@@ -15,7 +15,11 @@ public class EnemyTrigger : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<PlayerController>() != null)
+        {
+            Debug.Log("EnemyTrigger: Player Detected");
             playerDetected = true;
+        }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
