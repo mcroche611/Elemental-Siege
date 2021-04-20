@@ -40,11 +40,6 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
-        //if (trigger == null)
-        //{
-        //    trigger = gameObject.GetComponentInChildren<EnemyTrigger>();
-        //}
-
         // Recibe del componente trigger si el jugador está en el área del enemigo
         if (trigger.DetectPlayer())
         {
@@ -58,34 +53,6 @@ public class EnemyMovement : MonoBehaviour
             StopChasingPlayer();
         }
     }
-
-
-    //private bool CanSeePlayerInRange(float detectRange)
-    //{
-    //    bool val = false;
-
-    //    int p, m, pm;
-    //    p = 1 << LayerMask.NameToLayer("Player");
-    //    m = 1 << LayerMask.NameToLayer("Muros");
-    //    pm = p | m;
-
-    //    if (playerTf == null)
-    //        GetPlayerTransform();
-        
-    //    RaycastHit2D hit = Physics2D.Linecast(transform.position, playerTf.position, pm);
-
-    //    if (hit.collider != null)
-    //    {
-    //        if (hit.collider.gameObject.GetComponent<PlayerController>() != null)
-    //        {
-    //            val = hit.distance <= detectRange;
-    //        }
-    //    }
-
-    //    Debug.DrawLine(transform.position, playerTf.position, Color.white);
-
-    //    return val;
-    //}
 
     private bool CanSeePlayer()
     {
@@ -105,11 +72,10 @@ public class EnemyMovement : MonoBehaviour
         {
             if (hit.collider.gameObject.GetComponent<PlayerController>() != null)
             {
+                Debug.DrawLine(transform.position, playerTf.position, Color.white);
                 val = true; //hit.distance <= detectRange;
             }
         }
-
-        Debug.DrawLine(transform.position, playerTf.position, Color.white);
 
         return val;
     }
