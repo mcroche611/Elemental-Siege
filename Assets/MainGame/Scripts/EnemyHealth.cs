@@ -10,10 +10,10 @@ public class EnemyHealth : MonoBehaviour
     bool escudo;
     public void QuitarVida(float cantidad)
     {
-        if (GetComponent<EscudoFuego>() != null) //Si hay escudo se comprueba si está en uso
-            escudo = GetComponent<EscudoFuego>().enabled;
+        if (GetComponent<Escudo>() != null) //Si hay escudo se comprueba si está en uso
+            escudo = GetComponent<Escudo>().enabled;
 
-        if (GetComponent<EscudoFuego>() == null || !escudo) //si el enemigo no tiene escudo, se le daña
+        if (GetComponent<Escudo>() == null || !escudo) //si el enemigo no tiene escudo, se le daña
             health -= cantidad;
         Debug.Log(health);
 

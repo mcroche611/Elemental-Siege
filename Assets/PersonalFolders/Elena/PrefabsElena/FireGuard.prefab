@@ -358,7 +358,7 @@ GameObject:
   - component: {fileID: 8757333600198723038}
   - component: {fileID: 8757333600198723037}
   - component: {fileID: 8757333600198723036}
-  - component: {fileID: 8757333600198723033}
+  - component: {fileID: 6770578330498102706}
   - component: {fileID: 8757333600198723035}
   - component: {fileID: 8757333600198723034}
   m_Layer: 10
@@ -563,7 +563,7 @@ MonoBehaviour:
   "escaladoDeDa\xF1oSobrecargado": 0.6
   "escaladoDeDa\xF1oVaporizadoDebil": 0.4
   "escaladoDeDa\xF1oVaporizadoFuerte": 0.8
---- !u!114 &8757333600198723033
+--- !u!114 &6770578330498102706
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -572,10 +572,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8757333600198723032}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb213ff8ea470bb41ad68c16b68ddbf5, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a79c47d4b86a4f44905dd99cd0bf363, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shieldHealth: 20
+  shieldType: Fuego
 --- !u!61 &8757333600198723035
 BoxCollider2D:
   m_ObjectHideFlags: 0
