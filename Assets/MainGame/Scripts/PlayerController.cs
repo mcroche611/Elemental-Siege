@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     float tiempoAturdimiento;
 
     Rigidbody2D rb;
+
     void Start()
     {
         GameManager.GetInstance().SetPlayer(this.gameObject);
