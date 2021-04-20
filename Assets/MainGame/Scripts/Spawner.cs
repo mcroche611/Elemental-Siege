@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject enemigo;
+    [SerializeField] GameObject [] enemigos;
     [SerializeField] float tiempoSpawn;
 
-    private void Start()
+    private void OnEnable()
     {
         InvokeRepeating("Spawn", 0f, tiempoSpawn);
     }
 
     private void Spawn()
     {
-        Instantiate<GameObject>(enemigo, transform.position, enemigo.transform.rotation);
+        int enemigoRnd=Random.Range(0,enemigos.Length-1);
+        Debug.Log("Crea el enemigo que hay en la posicion: " + enemigoRnd);
+        Instantiate<GameObject>(enemigos[enemigoRnd], transform.position, enemigos[enemigoRnd].transform.rotation);
+    }
+    private void OnDisable()
+    {
+        CancelInvoke("Spawn");
     }
 }
