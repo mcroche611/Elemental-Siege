@@ -6,9 +6,10 @@ public class Puerta : MonoBehaviour
 {
     string orientacion;
 
-    private void Start()
+    private void Awake()
     {
         orientacion = gameObject.name.Split(' ')[1];
+        GameManager.GetInstance().IniPuertas(orientacion, transform.position);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxMana: 500
-  manaRegSpeed: 0.01
+  manaRegSpeed: 0.25
 --- !u!114 &2017438766814546709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,7 +235,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8970056230236536100}
   - component: {fileID: 2650718417977228686}
-  - component: {fileID: 2568738619966181104}
   m_Layer: 17
   m_Name: Centro
   m_TagString: Untagged
@@ -283,15 +282,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.098883614, y: 0.118005514}
   m_EdgeRadius: 0
---- !u!114 &2568738619966181104
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2898028848250252255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b23f519b96b45d54aa052d085bbb536a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
