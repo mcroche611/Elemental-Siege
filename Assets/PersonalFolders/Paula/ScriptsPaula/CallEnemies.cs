@@ -4,24 +4,36 @@ using UnityEngine;
 
 public class CallEnemies : MonoBehaviour
 {
-    [SerializeField] GameObject objetoSpawner;
+    [SerializeField] 
+    GameObject objetoSpawner;
+    [SerializeField]
+    float vidaMinima;
     Spawner scriptSpawner;
+    IblisHealth componenteVida;
+
     void Start()
     {
-        //scriptSpawner = objetoSpawner.gameObject.GetComponent<Spawner>();
+        //Obtiene el coponente spawner para poner la variale de fuerte o debil a true o por u defecto a false
+        scriptSpawner = objetoSpawner.GetComponent<Spawner>();
+        //Consigue la vida del enemigo y comprueba si es menor a un determinado valor para ver si debe llamar a enemigos fuertes
+        componenteVida = GetComponent<IblisHealth>(); 
     }
 
-    
     void Update()
     {
-        if (Input.GetKeyDown("space"))
+        if (componenteVida.VidaIblis() < vidaMinima) //Esto probablmente se puede hacer mejor.
         {
-            objetoSpawner.SetActive(true);
+            scriptSpawner.Fuertes();
+            ActivaSpawner();
         }
-        else
-        {
-            objetoSpawner.SetActive(false);
-        }
+    }
+    void ActivaSpawner()
+    {
+        objetoSpawner.SetActive(true);
+    }
+    void DesactivaSpawner()
+    {
+        objetoSpawner.SetActive(false);
     }
     private void OnDestroy() //destruir spawner cuando se destruya a iblis
     {
