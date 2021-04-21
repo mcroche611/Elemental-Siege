@@ -10,14 +10,12 @@ public class Mana : MonoBehaviour
     [SerializeField]
     private float manaRegSpeed;
 
-    private float mana;
+    private int mana;
 
-    void Awake()
-    {
-        mana = maxMana;
-    }
     private void Start()
     {
+        mana = maxMana;
+        GameManager.GetInstance().GMActualizarMana(mana / maxMana);
         //Recupera cierta cantidad de mana cada cantidad determinada de tiempo por manaRegSpeed
         InvokeRepeating("SumaMana", manaRegSpeed, manaRegSpeed); 
     }
@@ -52,5 +50,4 @@ public class Mana : MonoBehaviour
     {
         CancelInvoke("SumaMana");
     }
-
 }
