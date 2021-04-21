@@ -239,6 +239,7 @@ GameObject:
   - component: {fileID: 37649847}
   - component: {fileID: 37649846}
   - component: {fileID: 37649845}
+  - component: {fileID: 37649848}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -311,6 +312,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &37649848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37649844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e21a052c7239ede439974189ef5496a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jugador: {fileID: 2006619732}
 --- !u!1001 &42005944
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -673,6 +687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab6ecef15388a3b4fa4f5854fe044fd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
   ataque: 25
   bonoAgua: 20
   bonoFuego: 20
@@ -6245,6 +6260,12 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.5}
   m_EdgeRadius: 0
+--- !u!4 &2006619732 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2017438766814546703, guid: 13db7e7adbb422e4095c16193b4b0ea4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1776453905}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2091804984
 PrefabInstance:
   m_ObjectHideFlags: 0
