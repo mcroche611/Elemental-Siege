@@ -140,15 +140,15 @@ public class GameManager : MonoBehaviour
         return s;
     }
 
-    private void OnLevelWasLoaded()
+    /*private void OnLevelWasLoaded()
     {      
         if (orientacion == "Este") Nasnas.transform.position = GameObject.Find("Puerta Oeste").transform.position + new Vector3(2f, 0, 0);
         else if (orientacion == "Norte") Nasnas.transform.position = GameObject.Find("Puerta Sur").transform.position + new Vector3(0, 2f, 0);
         else if (orientacion == "Sur") Nasnas.transform.position = GameObject.Find("Puerta Norte").transform.position  + new Vector3(0, -2f, 0);
         else if (orientacion == "Oeste") Nasnas.transform.position = GameObject.Find("Puerta Este").transform.position + new Vector3(-2f, 0, 0);              
     }
-
-    /*
+    */
+    
     public void IniPuertas(string orientacion, Vector2 posicion)
     {
         if (orientacion == "Este") puertaEste = posicion;
@@ -156,5 +156,14 @@ public class GameManager : MonoBehaviour
         else if (orientacion == "Sur") puertaSur = posicion;
         else puertaOeste = posicion;
     }
-    */
+
+    private void OnLevelWasLoaded()
+    {
+        if (orientacion == "Este") Nasnas.transform.position = puertaOeste + new Vector2(2f, 0);
+        else if (orientacion == "Norte") Nasnas.transform.position = puertaSur + new Vector2(0, 2f);
+        else if (orientacion == "Sur") Nasnas.transform.position = puertaNorte + new Vector2(0, -2f);
+        else if (orientacion == "Oeste") Nasnas.transform.position = puertaEste + new Vector2(-2f, 0);
+    }
+
+    
 }

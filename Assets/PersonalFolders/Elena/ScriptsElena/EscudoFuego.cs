@@ -9,8 +9,10 @@ public class EscudoFuego : MonoBehaviour
 
     float playerElementalAttack;
 
-
-    EnemyHealth enemyHealth;
+    private void OnEnable()
+    {
+        GetComponent<SpriteRenderer>().color = Color.red; //tonteria visual para ver si tiene el escudo o no
+    }
     void Start()
     {
         playerElementalAttack = GameManager.GetInstance().Stat("Agua"); //cogemos el bono agua
@@ -21,14 +23,13 @@ public class EscudoFuego : MonoBehaviour
     {
         if (shieldHealth <= 0)
         {
-            //enemyHealth.enabled = true;    //al destruirse le puedes quitar vida al enemigo
-
-            Destroy(gameObject);                   //si la vida del escudo llega a 0 se destruye
+            GetComponent<EscudoFuego>().enabled = false;    //si la vida del escudo llega a 0 se desactiva
         }
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
+        GetComponent<SpriteRenderer>().color = Color.yellow; //se le pone otro color al desaparecer
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -38,11 +39,11 @@ public class EscudoFuego : MonoBehaviour
             string element = collision.GetComponent<ActivateElementOnCollision>().Elemento(); //como se hace esto wtf
             if (element == "Agua")
             {
-                shieldHealth = 25;
+                shieldHealth -= playerElementalAttack;
             }
             else
             {
-                shieldHealth = 3;
+                shieldHealth -= 2;
             }
         }
     }

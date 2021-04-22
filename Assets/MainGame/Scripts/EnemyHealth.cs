@@ -7,9 +7,14 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField]
     private float health;
 
+    bool escudo;
     public void QuitarVida(float cantidad)
     {
-        health -= cantidad;
+        if (GetComponent<Escudo>() != null) //Si hay escudo se comprueba si está en uso
+            escudo = GetComponent<Escudo>().enabled;
+
+        if (GetComponent<Escudo>() == null || !escudo) //si el enemigo no tiene escudo, se le daña
+            health -= cantidad;
         Debug.Log(health);
 
         if (health <= 0)
