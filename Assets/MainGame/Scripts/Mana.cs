@@ -15,7 +15,11 @@ public class Mana : MonoBehaviour
     private void Start()
     {
         mana = maxMana;
+<<<<<<< HEAD
         GameManager.GetInstance().GMActualizarMana((float) (mana / maxMana));
+=======
+        GameManager.GetInstance().GMActualizarMana((float)mana / (float)maxMana);
+>>>>>>> 549ff12b086255129957acbcb3dd875e9d7ec826
         //Recupera cierta cantidad de mana cada cantidad determinada de tiempo por manaRegSpeed
         InvokeRepeating("SumaMana", manaRegSpeed, manaRegSpeed); 
     }
@@ -28,7 +32,11 @@ public class Mana : MonoBehaviour
         if (manaSuficiente)
         {
             mana -= cantidad;
+<<<<<<< HEAD
             GameManager.GetInstance().GMActualizarMana((float) (mana / maxMana));
+=======
+            GameManager.GetInstance().GMActualizarMana((float)mana / (float)maxMana);
+>>>>>>> 549ff12b086255129957acbcb3dd875e9d7ec826
         }
 
         Debug.Log("Mana: " + mana);
@@ -42,7 +50,11 @@ public class Mana : MonoBehaviour
         if(mana<maxMana)
         {
             mana += 1;
+<<<<<<< HEAD
             GameManager.GetInstance().GMActualizarMana((float)(mana / maxMana));
+=======
+            GameManager.GetInstance().GMActualizarMana((float)mana / (float)maxMana);
+>>>>>>> 549ff12b086255129957acbcb3dd875e9d7ec826
         }
        
     }
