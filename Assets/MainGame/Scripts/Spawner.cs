@@ -10,40 +10,45 @@ public class Spawner : MonoBehaviour
     GameObject[] enemigosDebiles;
     [SerializeField] 
     float tiempoSpawn;
-    bool fuerte = false;
+    bool fuertes;
+    int posIni;
 
     private void OnEnable()
     {
-        if (!fuerte)
-        {
-            InvokeRepeating("SpawnDebiles", 0f, tiempoSpawn);
-        }
-        else
-        {
-            InvokeRepeating("SpawnFuertes", 0f, tiempoSpawn);
-        }
+        Invoke("Spawn", 0f);
         
-    }
-
-    private void SpawnFuertes()
-    {
-        int enemigoRnd=Random.Range(0,enemigosFuertes.Length-1);
-        Debug.Log("Crea el enemigo que hay en la posicion: " + enemigoRnd);
-        Instantiate<GameObject>(enemigosFuertes[enemigoRnd], transform.position, enemigosFuertes[enemigoRnd].transform.rotation);
-    }
-    private void SpawnDebiles()
-    {
-        int enemigoRnd = Random.Range(0, enemigosDebiles.Length - 1);
-        Debug.Log("Crea el enemigo que hay en la posicion: " + enemigoRnd);
-        Instantiate<GameObject>(enemigosDebiles[enemigoRnd], transform.position, enemigosDebiles[enemigoRnd].transform.rotation);
+        
     }
     private void OnDisable()
     {
-        CancelInvoke("SpawnFuertes");
-        CancelInvoke("SpawnDebiles");
+        CancelInvoke("Spawn");
     }
-    public void Fuertes()
+    public void Debiles()
     {
-        fuerte = true;
+        fuertes = false;
+    }
+    void Spawn()
+    {
+        
+        
+        //Vector2 desp=new Vector2()
+        for (int i = 0; i < 3; i++)
+        {
+            /*int rndPosX = Random.Range(0, 2);
+            int rndPosY = Random.Range(1, 2);
+            Vector2 desp = new Vector2(rndPosX, rndPosY);*/
+            if (posIni < enemigosDebiles.Length)
+            {
+                Instantiate<GameObject>(enemigosDebiles[posIni], transform.position, transform.rotation);
+                posIni++;
+            }
+            else
+            { 
+                posIni = 0;
+                Instantiate<GameObject>(enemigosDebiles[posIni], transform.position, transform.rotation);
+            }
+            Debug.Log("posIni:" + posIni);
+        }
+        //Instantiate<GameObject>(enemigosDebiles[posIni], transform.position, transform.rotation);
     }
 }

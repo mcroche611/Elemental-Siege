@@ -16,15 +16,26 @@ public class CallEnemies : MonoBehaviour
         //Obtiene el coponente spawner para poner la variale de fuerte o debil a true o por u defecto a false
         scriptSpawner = objetoSpawner.GetComponent<Spawner>();
         //Consigue la vida del enemigo y comprueba si es menor a un determinado valor para ver si debe llamar a enemigos fuertes
-        componenteVida = GetComponent<IblisHealth>(); 
+       // componenteVida = GetComponent<IblisHealth>(); 
+       
     }
 
     void Update()
     {
-        if (componenteVida.VidaIblis() < vidaMinima) //Esto probablmente se puede hacer mejor.
+        /* if (componenteVida.VidaIblis() < vidaMinima) //Esto probablmente se puede hacer mejor.
+         {
+             scriptSpawner.Fuertes();
+             ActivaSpawner();
+         }*/
+        if (Input.GetKeyDown("space"))
         {
-            scriptSpawner.Fuertes();
+            //scriptSpawner.Debiles();
             ActivaSpawner();
+            
+        }
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            DesactivaSpawner();
         }
     }
     void ActivaSpawner()
