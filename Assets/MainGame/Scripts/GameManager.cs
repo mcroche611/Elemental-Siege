@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     private UIManager theUIManager;
 
     public GameObject Player;
+    public GameObject camara;
     GameObject Nasnas;
 
     Vector2 puertaNorte, puertaSur, puertaEste, puertaOeste;
