@@ -16,4 +16,6 @@ public class Baculo : MonoBehaviour
             Destroy(GetComponent<BoxCollider2D>());
         }
     }
+
+
 }

@@ -17,7 +17,7 @@ public class Jarron : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {//al entrar en el trigger del baculo o de los ataques elementales
 
-        if (collision.GetComponent<Baculo>() != null || collision.GetComponent<ActivateElementOnCollision>() != null)
+        if (collision.GetComponent<BaculoAttackOnCollision>() != null || collision.GetComponent<ActivateElementOnCollision>() != null)
         {
             if (numeroRandom <= dropProbabilityPercentage)
             {
