@@ -16,40 +16,40 @@ public class Spawner : MonoBehaviour
 
     private void OnEnable()
     {
-        Invoke("Spawn", 0f);
+        Invoke("SpawnFuertes", 0f);
         
         
     }
     private void OnDisable()
     {
-        CancelInvoke("Spawn");
+        CancelInvoke("SpawnFuertes");
     }
     public void Debiles()
     {
         fuertes = false;
     }
-    void Spawn()
+    void SpawnFuertes()
     {
-        
-        
+       
         //Vector2 desp=new Vector2()
         for (int i = 0; i < 3; i++)
         {
+            
             /*int rndPosX = Random.Range(0, 2);
             int rndPosY = Random.Range(1, 2);
             Vector2 desp = new Vector2(rndPosX, rndPosY);*/
-            if (posIni < enemigosDebiles.Length)
+            if (posIni < enemigosFuertes.Length)
             {
-                Instantiate<GameObject>(enemigosDebiles[posIni], posiciones[i].position, transform.rotation);
+                Instantiate<GameObject>(enemigosFuertes[posIni], posiciones[i].position, posiciones[i].rotation);
                 posIni++;
             }
             else
             { 
                 posIni = 0;
-                Instantiate<GameObject>(enemigosDebiles[posIni], posiciones[i].position, transform.rotation);
+                Instantiate<GameObject>(enemigosFuertes[posIni], posiciones[i].position, posiciones[i].rotation);
             }
             Debug.Log("posIni:" + posIni);
         }
-        //Instantiate<GameObject>(enemigosDebiles[posIni], transform.position, transform.rotation);
+        
     }
 }
