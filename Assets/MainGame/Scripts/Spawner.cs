@@ -8,7 +8,8 @@ public class Spawner : MonoBehaviour
     GameObject [] enemigosFuertes;
     [SerializeField]
     GameObject[] enemigosDebiles;
-    [SerializeField] 
+    [SerializeField]
+    Transform[] posiciones;
     float tiempoSpawn;
     bool fuertes;
     int posIni;
@@ -39,13 +40,13 @@ public class Spawner : MonoBehaviour
             Vector2 desp = new Vector2(rndPosX, rndPosY);*/
             if (posIni < enemigosDebiles.Length)
             {
-                Instantiate<GameObject>(enemigosDebiles[posIni], transform.position, transform.rotation);
+                Instantiate<GameObject>(enemigosDebiles[posIni], posiciones[i].position, transform.rotation);
                 posIni++;
             }
             else
             { 
                 posIni = 0;
-                Instantiate<GameObject>(enemigosDebiles[posIni], transform.position, transform.rotation);
+                Instantiate<GameObject>(enemigosDebiles[posIni], posiciones[i].position, transform.rotation);
             }
             Debug.Log("posIni:" + posIni);
         }
