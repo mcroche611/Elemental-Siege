@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject Player;
     GameObject Nasnas;
+
     Vector2 puertaNorte, puertaSur, puertaEste, puertaOeste;
     string orientacion;
 
@@ -104,7 +105,7 @@ public class GameManager : MonoBehaviour
         if (_orientacion == "Este") nivel.sceneNow.y++;
         else if (_orientacion == "Norte") nivel.sceneNow.x--;
         else if (_orientacion == "Sur") nivel.sceneNow.x++;
-        else nivel.sceneNow.y--;
+        else nivel.sceneNow.y--; 
 
         SceneManager.LoadScene(nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y]);       
     }
@@ -127,7 +128,7 @@ public class GameManager : MonoBehaviour
             {
                 string S = s.scenes[i, j];
                 S = S.Remove(S.Length - 1);
-                if (S != "---" && S != "1M")
+                if (S != "---")
                     s.enemies[i, j] = true;
                 else
                     s.enemies[i, j] = false;
@@ -139,15 +140,6 @@ public class GameManager : MonoBehaviour
 
         return s;
     }
-
-    /*private void OnLevelWasLoaded()
-    {      
-        if (orientacion == "Este") Nasnas.transform.position = GameObject.Find("Puerta Oeste").transform.position + new Vector3(2f, 0, 0);
-        else if (orientacion == "Norte") Nasnas.transform.position = GameObject.Find("Puerta Sur").transform.position + new Vector3(0, 2f, 0);
-        else if (orientacion == "Sur") Nasnas.transform.position = GameObject.Find("Puerta Norte").transform.position  + new Vector3(0, -2f, 0);
-        else if (orientacion == "Oeste") Nasnas.transform.position = GameObject.Find("Puerta Este").transform.position + new Vector3(-2f, 0, 0);              
-    }
-    */
     
     public void IniPuertas(string orientacion, Vector2 posicion)
     {
@@ -165,5 +157,20 @@ public class GameManager : MonoBehaviour
         else if (orientacion == "Oeste") Nasnas.transform.position = puertaEste + new Vector2(-2f, 0);
     }
 
-    
+    public void CompletarEscena()
+    {
+        nivel.enemies[nivel.sceneNow.x, nivel.sceneNow.y] = false;
+    }
+
+    public bool EscenaCompleta()
+    {
+        return nivel.enemies[nivel.sceneNow.x, nivel.sceneNow.y];
+    }
+
+    public void AumentarBono(string elemento, float cantidad)
+    {
+        if (elemento == "Agua") bonoAgua += cantidad;
+        else if (elemento == "Fuego") bonoFuego += cantidad;
+        else bonoElectricidad += cantidad;
+    }
 }

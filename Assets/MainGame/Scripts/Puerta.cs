@@ -16,5 +16,7 @@ public class Puerta : MonoBehaviour
     {
         if (collision.GetComponent<Health>())
             GameManager.GetInstance().Puerta(orientacion);
+        else if (collision.GetComponent<MagoEncerrado>())
+            Destroy(collision.gameObject);
     }
 }
