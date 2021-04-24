@@ -5,18 +5,24 @@ using UnityEngine;
 public class Puerta : MonoBehaviour
 {
     string orientacion;
+    bool puedeEntrar = false;
 
-    private void Awake()
+    private void Start()
     {
         orientacion = gameObject.name.Split(' ')[1];
-        GameManager.GetInstance().IniPuertas(orientacion, transform.position);
+        Invoke("PuedeEntrar", 0.5f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Health>())
+        if (collision.GetComponent<Health>() && puedeEntrar)
             GameManager.GetInstance().Puerta(orientacion);
         else if (collision.GetComponent<MagoEncerrado>())
             Destroy(collision.gameObject);
+    }
+
+    void PuedeEntrar()
+    {
+        puedeEntrar = true;
     }
 }

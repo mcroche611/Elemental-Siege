@@ -13,11 +13,10 @@ public class GameManager : MonoBehaviour
     private UIManager theUIManager;
 
     public GameObject Player;
-    public GameObject camara;
-    GameObject Nasnas;
+    GameObject nasnas;
 
-    Vector2 puertaNorte, puertaSur, puertaEste, puertaOeste;
-    string orientacion;
+    private string orientacionUltimaPuerta;
+    bool primeraEscena = true;
 
     struct Coor
     {
@@ -62,8 +61,9 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        Nasnas = (GameObject) Instantiate(Player, Player.transform.position, Player.transform.rotation);
-        nivel = Nivel1();      
+        nivel = Nivel1();
+        nasnas = (GameObject) Instantiate(Player, transform.position, transform.rotation);
+        LevelManager.GetInstance().SetUpCamera(nasnas.transform);
     }
 
     public static GameManager GetInstance() //Para conseguir la referencia a game maager haciendo gameManager.getInstance()
@@ -99,17 +99,37 @@ public class GameManager : MonoBehaviour
     public void GMActualizarMana (float porcentajeMana) { theUIManager.ActualizarMana(porcentajeMana); }
     public void GMActualizarElementos (string elemento) { theUIManager.ActualizarElementos(elemento);  }
 
-    public void Puerta(string _orientacion)
+    public void Puerta(string orientacion)
     {
-        orientacion = _orientacion;
-
-        if (_orientacion == "Este") nivel.sceneNow.y++;
-        else if (_orientacion == "Norte") nivel.sceneNow.x--;
-        else if (_orientacion == "Sur") nivel.sceneNow.x++;
-        else nivel.sceneNow.y--; 
+        if (orientacion == "Este")
+        {
+            nivel.sceneNow.y++;
+            orientacionUltimaPuerta = "Oeste";
+        } 
+        else if (orientacion == "Norte")
+        {
+            nivel.sceneNow.x--;
+            orientacionUltimaPuerta = "Sur";
+        }
+        else if (orientacion == "Sur")
+        {
+            nivel.sceneNow.x++;
+            orientacionUltimaPuerta = "Norte";
+        }
+        else
+        {
+            nivel.sceneNow.y--;
+            orientacionUltimaPuerta = "Este";
+        } 
 
         SceneManager.LoadScene(nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y]);       
     }
+
+    private void OnLevelWasLoaded(int level)
+    {
+        LevelManager.GetInstance().SetUpCamera(nasnas.transform);
+        LevelManager.GetInstance().SetUpPlayer(orientacionUltimaPuerta, nasnas.transform);
+    }   
 
     static Escena Nivel1()
     {
@@ -142,22 +162,6 @@ public class GameManager : MonoBehaviour
         return s;
     }
     
-    public void IniPuertas(string orientacion, Vector2 posicion)
-    {
-        if (orientacion == "Este") puertaEste = posicion;
-        else if (orientacion == "Norte") puertaNorte = posicion;
-        else if (orientacion == "Sur") puertaSur = posicion;
-        else puertaOeste = posicion;
-    }
-
-    private void OnLevelWasLoaded()
-    {
-        if (orientacion == "Este") Nasnas.transform.position = puertaOeste + new Vector2(2f, 0);
-        else if (orientacion == "Norte") Nasnas.transform.position = puertaSur + new Vector2(0, 2f);
-        else if (orientacion == "Sur") Nasnas.transform.position = puertaNorte + new Vector2(0, -2f);
-        else if (orientacion == "Oeste") Nasnas.transform.position = puertaEste + new Vector2(-2f, 0);
-    }
-
     public void CompletarEscena()
     {
         nivel.enemies[nivel.sceneNow.x, nivel.sceneNow.y] = false;

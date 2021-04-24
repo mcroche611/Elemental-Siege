@@ -10,9 +10,10 @@ public class Health : MonoBehaviour
 
     private void Start()
     {
-        vida = maxVida;
-        GameManager.GetInstance().GMActualizarVida(vida / maxVida);
         DontDestroyOnLoad(this.gameObject);
+        vida = maxVida;
+        //GameManager.GetInstance().GMActualizarVida(vida / maxVida);
+
     }
 
     public void ReceiveDamage(float damage)

@@ -15,7 +15,7 @@ public class Mana : MonoBehaviour
     private void Start()
     {
         mana = maxMana;
-        GameManager.GetInstance().GMActualizarMana((float)mana / (float)maxMana);
+        //GameManager.GetInstance().GMActualizarMana((float)mana / (float)maxMana);
         //Recupera cierta cantidad de mana cada cantidad determinada de tiempo por manaRegSpeed
         InvokeRepeating("SumaMana", manaRegSpeed, manaRegSpeed); 
     }
