@@ -5,49 +5,65 @@ using UnityEngine;
 public class CallEnemies : MonoBehaviour
 {
     [SerializeField] 
-    GameObject objetoSpawner;
+    GameObject objetoSpawnerF;
+    [SerializeField]
+    GameObject objetoSpawnerD;
     [SerializeField]
     float vidaMinima;
-    Spawner scriptSpawner;
-    IblisHealth componenteVida;
-
+    //IblisHealth componenteVida;
+    EnemyHealth prueba;
     void Start()
     {
-        //Obtiene el coponente spawner para poner la variale de fuerte o debil a true o por u defecto a false
-        scriptSpawner = objetoSpawner.GetComponent<Spawner>();
         //Consigue la vida del enemigo y comprueba si es menor a un determinado valor para ver si debe llamar a enemigos fuertes
-       // componenteVida = GetComponent<IblisHealth>(); 
-       
+        //componenteVida = GetComponent<IblisHealth>(); 
+        prueba = GetComponent<EnemyHealth>();
     }
 
     void Update()
     {
-        /* if (componenteVida.VidaIblis() < vidaMinima) //Esto probablmente se puede hacer mejor.
+         if (prueba.Health() < vidaMinima) //Esto probablmente se puede hacer mejor.
          {
-             scriptSpawner.Fuertes();
-             ActivaSpawner();
-         }*/
-        if (Input.GetKeyDown("space"))
+             ActivaSpawnerF();
+         }
+        else
         {
-            //scriptSpawner.Debiles();
-            ActivaSpawner();
+            DesactivaSpawnerF();
+        }
+        /*if (Input.GetKeyDown("space"))
+        {
+          
             
-        }
-        if (Input.GetKeyDown(KeyCode.M))
+            ActivaSpawnerF();
+
+        }*/
+        /*if (Input.GetKeyDown(KeyCode.M))
         {
-            DesactivaSpawner();
-        }
+            //DesactivaSpawnerD();
+            DesactivaSpawnerF();
+        }*/
     }
-    void ActivaSpawner()
+    void ActivaSpawnerD()
     {
-        objetoSpawner.SetActive(true);
+        objetoSpawnerD.SetActive(true);
     }
-    void DesactivaSpawner()
+    void DesactivaSpawnerD()
     {
-        objetoSpawner.SetActive(false);
+        objetoSpawnerD.SetActive(false);
     }
+
+    void ActivaSpawnerF()
+    {
+        objetoSpawnerF.SetActive(true);
+    }
+    void DesactivaSpawnerF()
+    {
+        objetoSpawnerF.SetActive(false);
+    }
+
     private void OnDestroy() //destruir spawner cuando se destruya a iblis
     {
-        Destroy(objetoSpawner);
+        Destroy(objetoSpawnerD);
+        Destroy(objetoSpawnerF);
     }
+    
 }

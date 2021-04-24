@@ -6,7 +6,7 @@ public class Provisional : MonoBehaviour
 {
     public GameObject gameManager;
 
-    void Start()
+    void Awake()
     {
         if (GameManager.GetInstance() == null)
             Instantiate<GameObject>(gameManager, transform.position, transform.rotation);

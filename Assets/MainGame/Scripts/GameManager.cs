@@ -16,18 +16,34 @@ public class GameManager : MonoBehaviour
     GameObject nasnas;
 
     private string orientacionUltimaPuerta;
-    bool primeraEscena = true;
+    int enemigosEnSala = 0;
 
     struct Coor
     {
         public int x, y;
     }
 
+    struct Enemigo
+    {       
+        public string nombreEnemigo;
+        public Vector2 ultimaPosicion;
+        public bool vivo;
+        public float vida;
+    }
+
+    struct Pasillo
+    {
+        public Enemigo[] enemigos;
+        public int pc;
+    }
+
     struct Escena
     {
         public string[,] scenes;
         public bool[,] enemies;
+        public Pasillo[] pasillos;
         public Coor sceneNow;
+        public Coor sceneAfter;
     }
 
     Escena nivel;
@@ -89,10 +105,13 @@ public class GameManager : MonoBehaviour
 
     public Transform GetPlayerTransform()
     {
+        
         if (player != null)
             return player.transform;
         else
             return null;
+        
+
     }
 
     public void GMActualizarVida (float porcentajeVida) { theUIManager.ActualizarVida(porcentajeVida); }
@@ -129,6 +148,9 @@ public class GameManager : MonoBehaviour
     {
         LevelManager.GetInstance().SetUpCamera(nasnas.transform);
         LevelManager.GetInstance().SetUpPlayer(orientacionUltimaPuerta, nasnas.transform);
+        nivel.sceneAfter.x = nivel.sceneNow.x;
+        nivel.sceneAfter.y = nivel.sceneNow.y;
+        enemigosEnSala = 0;
     }   
 
     static Escena Nivel1()
@@ -142,6 +164,7 @@ public class GameManager : MonoBehaviour
                                       {"1P0", "1S0", "1P1", "1S1", "1P2", "1S2", "1MA", "---", "---"}};
 
         s.enemies = new bool[5, 9];
+        int pasillos = 0;
 
         for (int i = 0; i < 5; i++)
         {
@@ -150,14 +173,28 @@ public class GameManager : MonoBehaviour
                 string S = s.scenes[i, j];
                 S = S.Remove(S.Length - 1);
                 if (S != "---")
+                {
                     s.enemies[i, j] = true;
+                    if (S[1] == 'P')
+                        pasillos += 1;
+                }                  
                 else
                     s.enemies[i, j] = false;
             }
         }
 
+        s.pasillos = new Pasillo[pasillos];
+
+        for (int i = 0; i < s.pasillos.Length; i++)
+        {
+            s.pasillos[i].enemigos = new Enemigo[50];
+            s.pasillos[i].pc = 0;
+        }
+
         s.sceneNow.x = 4;
         s.sceneNow.y = 0;
+        s.sceneAfter.x = s.sceneNow.x;
+        s.sceneAfter.y = s.sceneNow.y;
 
         return s;
     }
@@ -178,4 +215,70 @@ public class GameManager : MonoBehaviour
         else if (elemento == "Fuego") bonoFuego += cantidad;
         else bonoElectricidad += cantidad;
     }
+
+    public bool EsPasillo() { return nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y][1] == 'P'; }
+    public bool EsSala() { return nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y][1] == 'S'; }
+    public bool EsMago() { return nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y][1] == 'M'; }
+
+    public bool SalaCompletada() { return enemigosEnSala <= 0; }
+    
+    public void NuevoEnemigo(string enemigo)
+    {
+        int pasilloActual = int.Parse(nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y][2].ToString());
+
+        nivel.pasillos[pasilloActual].enemigos[nivel.pasillos[pasilloActual].pc].nombreEnemigo = enemigo;
+        nivel.pasillos[pasilloActual].enemigos[nivel.pasillos[pasilloActual].pc].vivo = true;
+        nivel.pasillos[pasilloActual].pc += 1;
+    }
+
+
+    public void IniEnemigo(GameObject enemigo)
+    {
+        int pasilloActual = int.Parse(nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y][2].ToString());
+        int cont = 0;
+
+        while (nivel.pasillos[pasilloActual].enemigos[cont].nombreEnemigo != enemigo.name)
+        {
+            Debug.Log(nivel.pasillos[1].enemigos[0].nombreEnemigo);
+            Debug.Log(enemigo);
+            cont += 1;
+        }
+
+        if (nivel.pasillos[pasilloActual].enemigos[cont].vivo)
+        {
+            enemigo.transform.position = nivel.pasillos[pasilloActual].enemigos[cont].ultimaPosicion;
+            enemigo.GetComponent<EnemyHealth>().EnemigoVidaIni(nivel.pasillos[pasilloActual].enemigos[cont].vida);
+        }
+        else
+        {
+            enemigo.GetComponent<Enemy>().EstaMuerto();
+            Destroy(enemigo);
+        }          
+    }
+
+    public void MatarEnemigo(GameObject enemigo)
+    {
+        int pasilloActual = int.Parse(nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y][2].ToString());
+        int cont = 0;
+
+        while (nivel.pasillos[pasilloActual].enemigos[cont].nombreEnemigo != enemigo.name) cont += 1;
+
+        nivel.pasillos[pasilloActual].enemigos[cont].vivo = false;
+    }
+
+    public void ModificarEnemigo(GameObject enemigo, float vida)
+    {
+        int cont = 0;
+        int pasilloActual = int.Parse(nivel.scenes[nivel.sceneAfter.x, nivel.sceneAfter.y][2].ToString());
+
+        while (nivel.pasillos[pasilloActual].enemigos[cont].nombreEnemigo != enemigo.name) cont += 1;
+
+        nivel.pasillos[pasilloActual].enemigos[cont].ultimaPosicion = enemigo.transform.position;
+        nivel.pasillos[pasilloActual].enemigos[cont].vida = vida;
+        nivel.pasillos[pasilloActual].enemigos[cont].vivo = true;
+    }
+
+
+    public void AñadirEnemigoEnSala() { enemigosEnSala += 1; }
+    public void QuitarEnemigoSala() { enemigosEnSala -= 1; Debug.Log("Enemigos en restantes: " + enemigosEnSala); }
 }

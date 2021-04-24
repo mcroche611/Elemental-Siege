@@ -43,6 +43,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6749968100805474663}
   - component: {fileID: 2854993521610120516}
+  - component: {fileID: 6776872116217346668}
   - component: {fileID: 8874805353012169521}
   - component: {fileID: 8431842185834430162}
   - component: {fileID: 7380355865106319985}
@@ -130,6 +131,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6776872116217346668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438688099962324506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9155cbc4db2b3aa40933b4ad392bff6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8874805353012169521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,7 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d972487b5417edd488319bb1740f0d8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2000
+  health: 100
 --- !u!114 &8879304277022554158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -403,7 +416,7 @@ Transform:
   m_GameObject: {fileID: 8051058169640690496}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 50, y: 50, z: 1}
   m_Children: []
   m_Father: {fileID: 6749968100805474663}
   m_RootOrder: 0

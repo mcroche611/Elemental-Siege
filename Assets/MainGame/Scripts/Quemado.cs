@@ -18,7 +18,9 @@ public class Quemado : MonoBehaviour
     private void OnEnable()
     {
         icono.SetActive(true);
+        
         InvokeRepeating("Quemar", tiempoQuemadura, tiempoQuemadura);
+        
     }
 
     private void OnDisable()
@@ -35,5 +37,6 @@ public class Quemado : MonoBehaviour
     private void OnDestroy()
     {
         CancelInvoke("Quemar");
+       
     }
 }
