@@ -24,5 +24,9 @@ public class EnemyHealth : MonoBehaviour
                 slime.InstanciarSlimes();
             Destroy(this.gameObject);
         }           
-    }   
+    }  
+    public float Health()
+    {
+        return health;
+    }
 }

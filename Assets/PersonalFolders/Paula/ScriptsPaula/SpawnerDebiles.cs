@@ -10,18 +10,19 @@ public class SpawnerDebiles : MonoBehaviour
     Transform[] posiciones;
     [SerializeField]
     float tiempoSpawn;
+    [SerializeField]
+    float beforeSpawn;
     int posIniD; //Indice que recorre el array de enemigos debiles
 
     private void OnEnable()
     {
         //La primera posicion es la 0
         posIniD = 0;
-        InvokeRepeating("SpawnDebiles", 0f, tiempoSpawn); //Se invocan enmigos constantemente hasta que se desactive el GO (con la muerte de Iblis creo)
+        InvokeRepeating("SpawnDebiles", beforeSpawn, tiempoSpawn); //Se invocan enmigos constantemente hasta que se desactive el GO (con la muerte de Iblis creo)
 
     }
     private void OnDisable()
     {
-      
         CancelInvoke("SpawnDebiles");
     }
     void SpawnDebiles()

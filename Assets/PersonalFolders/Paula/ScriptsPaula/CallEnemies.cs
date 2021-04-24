@@ -11,33 +11,36 @@ public class CallEnemies : MonoBehaviour
     [SerializeField]
     float vidaMinima;
     //IblisHealth componenteVida;
-
+    EnemyHealth prueba;
     void Start()
     {
-       //Consigue la vida del enemigo y comprueba si es menor a un determinado valor para ver si debe llamar a enemigos fuertes
-       // componenteVida = GetComponent<IblisHealth>(); 
-       
+        //Consigue la vida del enemigo y comprueba si es menor a un determinado valor para ver si debe llamar a enemigos fuertes
+        //componenteVida = GetComponent<IblisHealth>(); 
+        prueba = GetComponent<EnemyHealth>();
     }
 
     void Update()
     {
-        /* if (componenteVida.VidaIblis() < vidaMinima) //Esto probablmente se puede hacer mejor.
+         if (prueba.Health() < vidaMinima) //Esto probablmente se puede hacer mejor.
          {
-             scriptSpawner.Fuertes();
-             ActivaSpawner();
-         }*/
-        if (Input.GetKeyDown("space"))
+             ActivaSpawnerF();
+         }
+        else
+        {
+            DesactivaSpawnerF();
+        }
+        /*if (Input.GetKeyDown("space"))
         {
           
-            //ActivaSpawnerD();
+            
             ActivaSpawnerF();
 
-        }
-        if (Input.GetKeyDown(KeyCode.M))
+        }*/
+        /*if (Input.GetKeyDown(KeyCode.M))
         {
             //DesactivaSpawnerD();
             DesactivaSpawnerF();
-        }
+        }*/
     }
     void ActivaSpawnerD()
     {
@@ -62,5 +65,5 @@ public class CallEnemies : MonoBehaviour
         Destroy(objetoSpawnerD);
         Destroy(objetoSpawnerF);
     }
-
+    
 }
