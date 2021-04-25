@@ -29,13 +29,14 @@ public class EnemyMovement : MonoBehaviour
     }
 
     private void GetPlayerTransform()
-    {
+    {       
         playerTf = GameManager.GetInstance().GetPlayerTransform();
 
         if (playerTf != null)
             Debug.Log("Player transform correct");
         else
             Debug.Log("Player transform not found");
+        
     }
 
     void Update()

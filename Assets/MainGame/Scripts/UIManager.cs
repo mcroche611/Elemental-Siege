@@ -17,7 +17,7 @@ public class UIManager : MonoBehaviour
         maxBarraDeVida = barraDeVida.cellSize;
         maxBarraDeMana = barraDeMana.cellSize;
 
-        //DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(this.gameObject);
     }
 
     public void ActualizarVida(float porcentajeVida)
