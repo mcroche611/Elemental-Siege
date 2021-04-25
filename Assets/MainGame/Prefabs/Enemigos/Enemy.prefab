@@ -44,15 +44,15 @@ GameObject:
   - component: {fileID: 6749968100805474663}
   - component: {fileID: 2854993521610120516}
   - component: {fileID: 6776872116217346668}
+  - component: {fileID: 2286146314169111624}
+  - component: {fileID: 8879304277022554158}
+  - component: {fileID: 5427682969815687633}
   - component: {fileID: 8874805353012169521}
+  - component: {fileID: 6864370913509781364}
   - component: {fileID: 8431842185834430162}
   - component: {fileID: 7380355865106319985}
   - component: {fileID: 2095839575281774947}
   - component: {fileID: 5358221478498816179}
-  - component: {fileID: 2286146314169111624}
-  - component: {fileID: 8879304277022554158}
-  - component: {fileID: 5427682969815687633}
-  - component: {fileID: 6864370913509781364}
   - component: {fileID: 4738140729430422435}
   - component: {fileID: 549504702799059346}
   m_Layer: 10
@@ -143,6 +143,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9155cbc4db2b3aa40933b4ad392bff6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2286146314169111624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438688099962324506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d972487b5417edd488319bb1740f0d8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 500
+--- !u!114 &8879304277022554158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438688099962324506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eba461726ccb69c449450f339ffc2de0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  tiempoAturdimiento: 0.25
+--- !u!114 &5427682969815687633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438688099962324506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c102d606842d9e44baeac1fe69a220b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knock: 4.5
+  damage: 15
+  attackCoolDown: 0.25
+  tiempoAturdimiento: 0.25
 --- !u!114 &8874805353012169521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,6 +199,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateTime: 5
+--- !u!114 &6864370913509781364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438688099962324506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ed0b1564c6f2284c9388fdc50f64d7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  areaEfectoElectrocaragado: {fileID: 1605384763536310482, guid: 6108491c6dd2e234da1f7d7893de9384,
+    type: 3}
+  areaEfectoSobrecargado: {fileID: 3231714772862266445, guid: 37d43dba4e589c34db3afb62f0473a27,
+    type: 3}
+  "escaladoDeDa\xF1oElectrocargado": 0.2
+  "escaladoDeDa\xF1oSobrecargado": 0.6
+  "escaladoDeDa\xF1oVaporizadoDebil": 0.4
+  "escaladoDeDa\xF1oVaporizadoFuerte": 0.8
 --- !u!114 &8431842185834430162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,69 +271,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "tiempoParalizaci\xF3n": 1
---- !u!114 &2286146314169111624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1438688099962324506}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d972487b5417edd488319bb1740f0d8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
---- !u!114 &8879304277022554158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1438688099962324506}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eba461726ccb69c449450f339ffc2de0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
-  tiempoAturdimiento: 0.25
---- !u!114 &5427682969815687633
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1438688099962324506}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c102d606842d9e44baeac1fe69a220b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  knock: 4.5
-  damage: 15
-  attackCoolDown: 0.25
-  tiempoAturdimiento: 0.25
---- !u!114 &6864370913509781364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1438688099962324506}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ed0b1564c6f2284c9388fdc50f64d7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  areaEfectoElectrocaragado: {fileID: 1605384763536310482, guid: 6108491c6dd2e234da1f7d7893de9384,
-    type: 3}
-  areaEfectoSobrecargado: {fileID: 3231714772862266445, guid: 37d43dba4e589c34db3afb62f0473a27,
-    type: 3}
-  "escaladoDeDa\xF1oElectrocargado": 0.2
-  "escaladoDeDa\xF1oSobrecargado": 0.6
-  "escaladoDeDa\xF1oVaporizadoDebil": 0.4
-  "escaladoDeDa\xF1oVaporizadoFuerte": 0.8
 --- !u!61 &4738140729430422435
 BoxCollider2D:
   m_ObjectHideFlags: 0

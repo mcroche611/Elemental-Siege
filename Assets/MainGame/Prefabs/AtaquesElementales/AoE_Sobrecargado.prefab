@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6131767528450386790}
   - component: {fileID: -2450660852698360597}
   m_Layer: 0
-  m_Name: RE_Sobrecargado
+  m_Name: AoE_Sobrecargado
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diametro: 5
-  knock: 20
+  knock: 10
 --- !u!58 &-2450660852698360597
 CircleCollider2D:
   m_ObjectHideFlags: 0

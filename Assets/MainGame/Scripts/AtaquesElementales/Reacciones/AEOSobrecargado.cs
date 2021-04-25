@@ -8,8 +8,9 @@ public class AEOSobrecargado : MonoBehaviour
 
     [SerializeField] 
     float diametro;
-    
-    public float knock;
+
+    [SerializeField]
+    float knock;
 
     //El gameobject va creciendo hasta llegar a un diametro maximo y despues se destruye
     void Start() 
@@ -26,19 +27,15 @@ public class AEOSobrecargado : MonoBehaviour
         if (enemyMovement != null && collision.gameObject != enemigoGolpeado) 
         {
             enemyMovement.enabled = false;
-
             //Knockback
-
             Rigidbody2D rbEnemie = collision.GetComponent<Rigidbody2D>();
             Vector2 direction = (rbEnemie.transform.position - transform.position);
             //el Knockback afecta más a los enemigos que estén más cerca de la explosión
-            rbEnemie.AddForce(direction.normalized * (knock * (1 - direction.magnitude/diametro)), ForceMode2D.Impulse);
+            rbEnemie.AddForce(direction.normalized * (knock * (1 - direction.magnitude / diametro)), ForceMode2D.Impulse);
         }
     }
 
-    public void EnemigoGolpeado(GameObject collision)
-    {
-        enemigoGolpeado = collision;
-    }
-
+    public void EnemigoGolpeado(GameObject collision) { enemigoGolpeado = collision; }
+ 
+    public float Knockback() { return knock; }
 }
