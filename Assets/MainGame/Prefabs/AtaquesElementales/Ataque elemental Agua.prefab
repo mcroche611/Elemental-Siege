@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 990722044624244347}
   - component: {fileID: 2530209936449393561}
-  - component: {fileID: 8420698075446539934}
-  - component: {fileID: 6373156006593173973}
-  - component: {fileID: -3438982003895105600}
-  - component: {fileID: 4126827809981531138}
-  - component: {fileID: 6663683314209007281}
   - component: {fileID: 5343251195333248828}
+  - component: {fileID: 8420698075446539934}
+  - component: {fileID: -3438982003895105600}
+  - component: {fileID: 6663683314209007281}
+  - component: {fileID: 6373156006593173973}
+  - component: {fileID: 4126827809981531138}
   m_Layer: 9
   m_Name: Ataque elemental Agua
   m_TagString: Untagged
@@ -88,6 +88,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &5343251195333248828
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7949742180199860792}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.025251813, y: 0.0152077675}
+  serializedVersion: 2
+  m_Radius: 0.09781731
 --- !u!50 &8420698075446539934
 Rigidbody2D:
   serializedVersion: 4
@@ -109,21 +125,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6373156006593173973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7949742180199860792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a66f4d6766044a749994c4b1fa2f6a33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AOEAquaAttack: {fileID: 6297167302053352261, guid: fec7a50b664ed1743b28a5a5b77d83d6,
-    type: 3}
-  distanciaMaxima: 6
 --- !u!114 &-3438982003895105600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,19 +138,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   element: Agua_Mojado
---- !u!114 &4126827809981531138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7949742180199860792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d595a47f985d33f40a3f9f460b94b263, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 6
+  AOEAquaAttack: {fileID: 6297167302053352261, guid: fec7a50b664ed1743b28a5a5b77d83d6,
+    type: 3}
 --- !u!114 &6663683314209007281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,19 +153,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "escaladoDeDa\xF1o": 0.7
---- !u!58 &5343251195333248828
-CircleCollider2D:
+--- !u!114 &6373156006593173973
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7949742180199860792}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.025251813, y: 0.0152077675}
-  serializedVersion: 2
-  m_Radius: 0.09781731
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a66f4d6766044a749994c4b1fa2f6a33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanciaMaxima: 6
+--- !u!114 &4126827809981531138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7949742180199860792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d595a47f985d33f40a3f9f460b94b263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 6

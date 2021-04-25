@@ -27,13 +27,15 @@ public class ElementalReactions : MonoBehaviour
 
     public void Sobrecargado()
     {
-        Instantiate<GameObject>(areaEfectoSobrecargado, transform.position, transform.rotation, transform);
+        GameObject _areaEfectoSobrecargado = (GameObject) Instantiate(areaEfectoSobrecargado, transform.position, transform.rotation);
+        _areaEfectoSobrecargado.GetComponent<AEOSobrecargado>().EnemigoGolpeado(this.gameObject);
+        float knock = _areaEfectoSobrecargado.GetComponent<AEOSobrecargado>().Knockback();
+
         GetComponent<EnemyHealth>().QuitarVida(Formula(bonoFuego, bonoElectricidad, escaladoDeDañoSobrecargado));
 
-        GetComponentInChildren<AEOSobrecargado>().EnemigoGolpeado(this.gameObject);
         GetComponent<EnemyMovement>().enabled = false;
         Rigidbody2D rbEnemy = GetComponent<Rigidbody2D>();
-        rbEnemy.AddForce(direccionBola.normalized * GetComponentInChildren<AEOSobrecargado>().knock, ForceMode2D.Impulse);
+        rbEnemy.AddForce(direccionBola.normalized * knock, ForceMode2D.Impulse);      
     }
 
     public void VapolizadoDebil()

@@ -20,6 +20,4 @@ public class ProjectileMakeDamage : MonoBehaviour
         float ataque = GameManager.GetInstance().Stat("");
         return (ataque + bonoAlDaño) * escaladoDeDaño;
     }
-
-
 }

@@ -18,8 +18,12 @@ public class StateManager : MonoBehaviour
             element_state.enabled = true;
             Invoke("StateTimeOut", stateTime);
         }
-        else if (currentState == element_state)          
-            Invoke("StateTimeOut", stateTime);     
+        else if (currentState == element_state)
+        {
+            CancelInvoke("StateTimeOut");
+            Invoke("StateTimeOut", stateTime);
+        }          
+                
         else if (currentState != element_state)
         {
             CancelInvoke("StateTimeOut");
@@ -52,7 +56,7 @@ public class StateManager : MonoBehaviour
             else
             {
                 GetComponent<Paralizar>().Paraliza();
-                if (currentState == GetComponent<Electrocutado>())
+                if (currentState == GetComponent<Quemado>())
                 {
                     GetComponent<ElementalReactions>().Sobrecargado();
                 }
