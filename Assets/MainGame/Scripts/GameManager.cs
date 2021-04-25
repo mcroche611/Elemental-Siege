@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public GameObject Player;
     GameObject nasnas;
 
+    public bool juegoPrincipal;
     private string orientacionUltimaPuerta;
     int enemigosEnSala = 0;
 
@@ -79,7 +80,8 @@ public class GameManager : MonoBehaviour
     {
         nivel = Nivel1();
         nasnas = (GameObject) Instantiate(Player, transform.position, transform.rotation);
-        LevelManager.GetInstance().SetUpCamera(nasnas.transform);
+        if (juegoPrincipal) 
+            LevelManager.GetInstance().SetUpCamera(nasnas.transform);
     }
 
     public static GameManager GetInstance() //Para conseguir la referencia a game maager haciendo gameManager.getInstance()

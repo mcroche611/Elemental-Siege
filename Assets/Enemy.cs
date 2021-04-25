@@ -8,44 +8,49 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //si es un pasillo
-        if (GameManager.GetInstance().EsPasillo())
-        {          
-            //si el jugador no ha pisado la escena antes
-            if (GameManager.GetInstance().EscenaCompleta())
-                //se guarda en el registro de los pasillos          
-                GameManager.GetInstance().NuevoEnemigo(gameObject.name);        
-            //si ya la ha pisado
-            else 
-            {
-                //el GM se encarga de reestablecer sus valores de antes de salir 
-                //tambien comprueba si el enemigo estaba muerto y en caso afirmativo
-                //modifica la variable esta muerto antes de destruirlo para evitar problemas
-                GameManager.GetInstance().IniEnemigo(this.gameObject);
-            }
-        }
-        //si es una sala
-        else
+        GameManager gameManager = GameManager.GetInstance();
+
+        if (gameManager.juegoPrincipal)
         {
-            //que ya está completa
-            if (!GameManager.GetInstance().EscenaCompleta())
+            //si es un pasillo
+            if (gameManager.EsPasillo())
             {
-                //destruyo el objeto
-                estaMuerto = true;
-                Destroy(this.gameObject);
+                //si el jugador no ha pisado la escena antes
+                if (gameManager.EscenaCompleta())
+                    //se guarda en el registro de los pasillos          
+                    gameManager.NuevoEnemigo(gameObject.name);
+                //si ya la ha pisado
+                else
+                {
+                    //el GM se encarga de reestablecer sus valores de antes de salir 
+                    //tambien comprueba si el enemigo estaba muerto y en caso afirmativo
+                    //modifica la variable esta muerto antes de destruirlo para evitar problemas
+                    gameManager.IniEnemigo(this.gameObject);
+                }
             }
-            //si no 
+            //si es una sala
             else
             {
-                //añado el enemigo al registro para bloquear puertas
-                GameManager.GetInstance().AñadirEnemigoEnSala();
+                //que ya está completa
+                if (!gameManager.EscenaCompleta())
+                {
+                    //destruyo el objeto
+                    estaMuerto = true;
+                    Destroy(this.gameObject);
+                }
+                //si no 
+                else
+                {
+                    //añado el enemigo al registro para bloquear puertas
+                    gameManager.AñadirEnemigoEnSala();
+                }
             }
         }
     }
 
     private void OnDestroy()
     {
-        if (!estaMuerto)      
+        if (GameManager.GetInstance().juegoPrincipal && !estaMuerto)      
             GameManager.GetInstance().ModificarEnemigo(this.gameObject, GetComponent<EnemyHealth>().Health());      
     }
 

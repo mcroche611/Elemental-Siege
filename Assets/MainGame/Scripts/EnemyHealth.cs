@@ -22,11 +22,17 @@ public class EnemyHealth : MonoBehaviour
             Slime slime = GetComponent<Slime>();
             if (slime != null)
                 slime.InstanciarSlimes();
-            if (GameManager.GetInstance().EsPasillo())
-                GameManager.GetInstance().MatarEnemigo(this.gameObject);
-            else
-                GameManager.GetInstance().QuitarEnemigoSala();
-            GetComponent<Enemy>().EstaMuerto();                     
+
+            GameManager gameManager = GameManager.GetInstance();
+
+            if (gameManager.juegoPrincipal)
+            {
+                if (gameManager.EsPasillo())
+                    gameManager.MatarEnemigo(this.gameObject);
+                else
+                    gameManager.QuitarEnemigoSala();
+                GetComponent<Enemy>().EstaMuerto();
+            }                              
             Destroy(this.gameObject);
         }           
     }  
