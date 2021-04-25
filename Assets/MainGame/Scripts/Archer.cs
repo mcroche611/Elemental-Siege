@@ -23,7 +23,7 @@ public class Archer : MonoBehaviour
 
     }
 
-    private void OnTriggerExit2D(Collider2D other) //al salir el jugador, ya no dispara flechas
+    private void OnTriggerExit2D(Collider2D other) //al salir el jugador (lo único con lo que choca), ya no dispara flechas
     {
         CancelInvoke();
     }
