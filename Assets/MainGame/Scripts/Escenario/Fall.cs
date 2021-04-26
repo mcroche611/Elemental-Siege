@@ -41,7 +41,7 @@ public class Fall : MonoBehaviour
     {
         Debug.Log("OnTriggerEnter");
 
-        if (collision.GetComponent<Centro>() != null)
+        if (collision.tag == "Centro")
         {
             if (character == collision.gameObject)
             {
