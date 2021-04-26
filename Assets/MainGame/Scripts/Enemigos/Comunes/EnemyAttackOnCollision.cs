@@ -72,6 +72,7 @@ public class EnemyAttackOnCollision : MonoBehaviour
             {                                             
                 //Knockback
                 Rigidbody2D rbPlayer = player.GetComponent<Rigidbody2D>();
+                rbPlayer.velocity = new Vector2(0f, 0f);
                 Vector2 direction = (rbPlayer.transform.position - transform.position).normalized;
                 rbPlayer.AddForce(direction * knock, ForceMode2D.Impulse);
                 //Aturdimiento
