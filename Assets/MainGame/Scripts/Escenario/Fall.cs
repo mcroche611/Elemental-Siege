@@ -50,6 +50,7 @@ public class Fall : MonoBehaviour
 
             character = collision.transform.parent.gameObject;
             ogScale = character.transform.localScale.x;
+            collision.gameObject.GetComponentInParent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
             Invoke("FallSize", 0);
 

@@ -193,7 +193,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Centro
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 2898028848250252255, guid: 13db7e7adbb422e4095c16193b4b0ea4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Centro
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5085394352279285672, guid: 13db7e7adbb422e4095c16193b4b0ea4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 13db7e7adbb422e4095c16193b4b0ea4, type: 3}
 --- !u!1001 &340038135
 PrefabInstance:
@@ -652,6 +658,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab6ecef15388a3b4fa4f5854fe044fd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 1827109882}
+  juegoPrincipal: 0
   ataque: 25
   bonoAgua: 20
   bonoFuego: 20
@@ -739,6 +747,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 665b98576ff6444498c3a4baf9a1c9e3, type: 3}
+--- !u!1 &1827109882 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2017438766814546700, guid: 13db7e7adbb422e4095c16193b4b0ea4,
+    type: 3}
+  m_PrefabInstance: {fileID: 213042080}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1897811941
 PrefabInstance:
   m_ObjectHideFlags: 0
