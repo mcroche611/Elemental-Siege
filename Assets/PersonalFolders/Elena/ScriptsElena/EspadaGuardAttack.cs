@@ -15,12 +15,13 @@ public class EspadaGuardAttack : MonoBehaviour
     {
         if (collision.GetComponent<Mana>() != null)
         {
-            //Knockback
-            Rigidbody2D rbPlayer = collision.GetComponent<Rigidbody2D>();
-            Vector2 direction = (rbPlayer.transform.position - transform.position).normalized;
-            rbPlayer.AddForce(direction * knock, ForceMode2D.Impulse);
             //Aturdimiento
             collision.GetComponent<PlayerController>().enabled = false;
+            //Knockback
+            Rigidbody2D rbPlayer = collision.GetComponent<Rigidbody2D>();
+            rbPlayer.velocity = new Vector2(0, 0);
+            Vector2 direction = (collision.transform.position - GetComponentInParent<Transform>().GetComponentInParent<Transform>().position).normalized;
+            rbPlayer.AddForce(direction * knock, ForceMode2D.Impulse);           
             //QuitarVida
             collision.GetComponent<Health>().ReceiveDamage(attackDamage);
         }
