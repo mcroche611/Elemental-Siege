@@ -353,7 +353,7 @@ GameObject:
   m_Component:
   - component: {fileID: 64845345}
   - component: {fileID: 64845346}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: GuardSword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3940,7 +3940,7 @@ PrefabInstance:
     - target: {fileID: 2284860475241333988, guid: a17ba645228474d48b233094503d7389,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.7581062
+      value: 5.69
       objectReference: {fileID: 0}
     - target: {fileID: 2284860475241333988, guid: a17ba645228474d48b233094503d7389,
         type: 3}
@@ -5632,7 +5632,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireGuard (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8757333600198723037, guid: 1abf58c509459c544acfe7a7e892d282, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1abf58c509459c544acfe7a7e892d282, type: 3}
 --- !u!4 &1375823949 stripped
 Transform:
@@ -6770,7 +6771,7 @@ GameObject:
   - component: {fileID: 1805428889}
   - component: {fileID: 1805428891}
   - component: {fileID: 1805428890}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: GuardSwordTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}

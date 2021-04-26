@@ -12,6 +12,7 @@ public class EspadaGuard : MonoBehaviour
     [SerializeField]
     float attackDuration = 1f; //cuidado con esto para que no salga negativo
 
+    float cooldown;
     Transform playerTransform;
     GameObject guardSword;
 
@@ -22,6 +23,10 @@ public class EspadaGuard : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        cooldown -= Time.deltaTime;
+    }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -31,7 +36,7 @@ public class EspadaGuard : MonoBehaviour
         Invoke("SwordActivate", 1f);
         guardSword.transform.rotation = Rotation();
         Debug.Log("attack");
-        Invoke("SwordDeactivate", attackDuration);
+        //Invoke("SwordDeactivate", attackDuration);
 
 
     }
@@ -44,12 +49,19 @@ public class EspadaGuard : MonoBehaviour
 
     private void SwordActivate()
     {
-        guardSword.SetActive(true);
+        if (cooldown <= 0)
+        {
+            guardSword.SetActive(true);
+            cooldown = attackCooldown;
+            Invoke("SwordDeactivate", attackDuration);
+
+        }
+
     }
 
     private void SwordDeactivate()
     {
-        guardSword.SetActive(true);
+        guardSword.SetActive(false);
 
     }
 
