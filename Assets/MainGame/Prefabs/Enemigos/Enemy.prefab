@@ -459,10 +459,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4480049111494168278}
   - component: {fileID: 9040735351005109632}
-  - component: {fileID: 4372553601023232936}
   m_Layer: 17
   m_Name: Centro
-  m_TagString: Untagged
+  m_TagString: Centro
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -507,18 +506,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.06368364, y: 0.12946922}
   m_EdgeRadius: 0
---- !u!114 &4372553601023232936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8567578884730162477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b23f519b96b45d54aa052d085bbb536a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2932411284637526358
 PrefabInstance:
   m_ObjectHideFlags: 0
