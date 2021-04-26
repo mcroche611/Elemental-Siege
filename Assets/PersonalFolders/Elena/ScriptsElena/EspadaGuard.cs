@@ -1,12 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EspadaGuard : MonoBehaviour
 {
 
     [SerializeField]
-    float attackCooldown = 2f;
+    float attackCooldown = 1.5f;
     [SerializeField]
     float attackDamage = 15f;
     [SerializeField]
@@ -15,9 +13,15 @@ public class EspadaGuard : MonoBehaviour
     float cooldown;
     Transform playerTransform;
     GameObject guardSword;
+    Rigidbody2D enemyRigidbody;
 
+    void Awake()
+    {
+
+    }
     private void Start()
     {
+        enemyRigidbody = GetComponentInParent<Rigidbody2D>();
         guardSword = transform.GetChild(0).gameObject;
         guardSword.transform.position = transform.position;
 
@@ -28,30 +32,41 @@ public class EspadaGuard : MonoBehaviour
         cooldown -= Time.deltaTime;
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         playerTransform = collision.transform;
 
-        
-        Invoke("SwordActivate", 1f);
+        Freeze();  //se quita el movimiento del enemigo
+        guardSword.SetActive(true);    //nada más entrar se activa la espada
         guardSword.transform.rotation = Rotation();
-        Debug.Log("attack");
-        //Invoke("SwordDeactivate", attackDuration);
-
+        Invoke("Unfreeze", attackDuration); //se le devuelve el movimiento pasado e ataque
+        Invoke("SwordDeactivate", attackDuration); //y se desactiva acabada la duracion del ataque
+        cooldown = attackCooldown; //el cooldown se resetea
 
     }
-
-    private void OnTriggerExit2D(Collider2D other) //al salir el jugador, ya no dispara flechas
+    private void OnTriggerStay2D(Collider2D collision) //si permanece dentro el jugador
     {
-        Invoke("SwordDeactivate", 0f);
+
+        
+        Invoke("Attack", attackCooldown);
+        Debug.Log("attack");
+
 
     }
 
-    private void SwordActivate()
+    private void OnTriggerExit2D(Collider2D other) //al salir el jugador nos aseguramos de que pare
+    {
+        SwordDeactivate();
+    }
+
+    private void Attack()
     {
         if (cooldown <= 0)
         {
+            Freeze();
             guardSword.SetActive(true);
+            guardSword.transform.rotation = Rotation();
+            Invoke("Unfreeze", attackDuration);            
             cooldown = attackCooldown;
             Invoke("SwordDeactivate", attackDuration);
 
@@ -72,4 +87,15 @@ public class EspadaGuard : MonoBehaviour
         return Quaternion.Euler(new Vector3(0f, 0f, angulo - 90));
     }
 
+    private void Unfreeze()
+    {
+        enemyRigidbody.constraints = RigidbodyConstraints2D.None;
+        enemyRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+    }
+    private void Freeze()
+    {
+        enemyRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
+
+    }
 }
