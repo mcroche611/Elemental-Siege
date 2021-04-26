@@ -103,4 +103,11 @@ public class Escudo : MonoBehaviour
 
         }
     }
+
+    public void CambioEscudo(string type)
+    {
+        shieldType = type;
+    }
+
+
 }
