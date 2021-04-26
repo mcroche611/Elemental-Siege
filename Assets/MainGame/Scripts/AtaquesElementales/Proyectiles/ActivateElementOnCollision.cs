@@ -21,9 +21,16 @@ public class ActivateElementOnCollision : MonoBehaviour
             }
             else collision.GetComponent<ElementalReactions>().RotacionBola(GetComponent<Rigidbody2D>().velocity);
 
-            stateManager.NewElement(element);
+            Escudo escudo = collision.GetComponent<Escudo>();
+
+            if (escudo == null)
+                stateManager.NewElement(element);
+            else if (!escudo.enabled)
+                stateManager.NewElement(element);
         }
     }
+
+
 
     public string Elemento()
     {

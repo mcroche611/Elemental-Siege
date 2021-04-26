@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
     float tiempoAturdimiento;
 
     Rigidbody2D rb;
+    Vector2 vel;
+
+    int cont;
 
     void Start()
     {
@@ -24,13 +27,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         //Input de movimiento de cuatro direccones y movimiento en diagonal
-        Vector2 vel = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
+         vel = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
         //Velocidad de Movimiento
-     
         rb.velocity = new Vector2(vel.x * velocity, vel.y * velocity);
-        
     }
 
     private void OnDisable()

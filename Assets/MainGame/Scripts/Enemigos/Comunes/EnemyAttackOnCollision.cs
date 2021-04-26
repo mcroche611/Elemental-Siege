@@ -105,6 +105,7 @@ public class EnemyAttackOnCollision : MonoBehaviour
         }
     }
 
+
     private void EnableAttack()
     {
         attackEnabled = true;
