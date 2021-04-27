@@ -7,7 +7,7 @@ public class Paralizar : MonoBehaviour
     [SerializeField] float tiempoParalización;
     public void Paraliza()
     {
-        CancelInvoke("ParalizaAcaba");
+        CancelInvoke("ParalizaAcaba");      
         GetComponent<EnemyAttackOnCollision>().enabled = false;
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;     
         Invoke("ParalizaAcaba", tiempoParalización);

@@ -239,12 +239,7 @@ public class GameManager : MonoBehaviour
         int pasilloActual = int.Parse(nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y][2].ToString());
         int cont = 0;
 
-        while (nivel.pasillos[pasilloActual].enemigos[cont].nombreEnemigo != enemigo.name)
-        {
-            Debug.Log(nivel.pasillos[1].enemigos[0].nombreEnemigo);
-            Debug.Log(enemigo);
-            cont += 1;
-        }
+        while (nivel.pasillos[pasilloActual].enemigos[cont].nombreEnemigo != enemigo.name) cont += 1;
 
         if (nivel.pasillos[pasilloActual].enemigos[cont].vivo)
         {

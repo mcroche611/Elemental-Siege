@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 2017438766814546702}
   - component: {fileID: 2017438766814546696}
   - component: {fileID: 2017438766814546697}
+  - component: {fileID: 2017438766814546709}
   - component: {fileID: 2017438766814546711}
   - component: {fileID: 2017438766814546708}
-  - component: {fileID: 2017438766814546709}
   - component: {fileID: 2017438766814546710}
   - component: {fileID: 2017438766814546698}
   - component: {fileID: 2017438766814546699}
@@ -138,6 +138,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &2017438766814546709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017438766814546700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b49cef25ec2f1324985bda1b28096f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: 8
+  tiempoAturdimiento: 0.25
 --- !u!114 &2017438766814546711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 983f42b1d4341574f97030b3bda8dce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxVida: 100
+  maxVida: 1000
 --- !u!114 &2017438766814546708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,20 +179,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxMana: 500
   manaRegSpeed: 0.1
---- !u!114 &2017438766814546709
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2017438766814546700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b49cef25ec2f1324985bda1b28096f52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocity: 10
-  tiempoAturdimiento: 0.25
 --- !u!114 &2017438766814546710
 MonoBehaviour:
   m_ObjectHideFlags: 0
