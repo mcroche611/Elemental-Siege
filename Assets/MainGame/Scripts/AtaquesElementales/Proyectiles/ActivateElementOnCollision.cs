@@ -7,6 +7,8 @@ public class ActivateElementOnCollision : MonoBehaviour
     [SerializeField] string element;
 
     public GameObject AOEAquaAttack;
+    bool escudo;
+
 
     void OnTriggerEnter2D(Collider2D collision)
     {       
@@ -21,12 +23,12 @@ public class ActivateElementOnCollision : MonoBehaviour
             }
             else collision.GetComponent<ElementalReactions>().RotacionBola(GetComponent<Rigidbody2D>().velocity);
 
-            Escudo escudo = collision.GetComponent<Escudo>();
+            if (collision.GetComponent<Escudo>() != null) //Si hay escudo se comprueba si está en uso
+                escudo = collision.GetComponent<Escudo>().enabled;
 
-            if (escudo == null)
+            if (collision.GetComponent<Escudo>() == null || !escudo) //si el enemigo no tiene escudo, se pone el elemento
                 stateManager.NewElement(element);
-            else if (!escudo.enabled)
-                stateManager.NewElement(element);
+
         }
     }
 
