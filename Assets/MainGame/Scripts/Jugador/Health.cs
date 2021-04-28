@@ -9,6 +9,7 @@ public class Health : MonoBehaviour
     float vida;
     [SerializeField] GameObject playerPrefab;
     LevelManager levels;
+    //Vector3 initialScale;
 
     private void Start()
     {
@@ -17,6 +18,7 @@ public class Health : MonoBehaviour
         //GameManager.GetInstance().GMActualizarVida(vida / maxVida);
 
         levels = LevelManager.GetInstance();
+        //initialScale = levels.GetPlayerTransform().localScale;
     }
 
     public void ReceiveDamage(float damage)
@@ -41,9 +43,22 @@ public class Health : MonoBehaviour
         GameManager.GetInstance().GMActualizarVida(vida / maxVida);
     }
 
-    public void RespawnOnFall()
-    {
+    public void DamageOnFall()
+    {   
         // El jugador pierde un cuarto de vida al caer por un precipicio
         vida -= maxVida / 4;
+        Debug.Log("DamageOnFall: " + vida);
+    }
+
+    public void RespawnOnFall()
+    {
+        //Transform playerTf = levels.GetPlayerTransform();
+        //playerTf.localScale = initialScale;
+
+        GameObject playerClone = Instantiate<GameObject>(playerPrefab, new Vector2(0f, 0f), transform.rotation);
+
+        playerClone.transform.localScale *= 10;
+
+        Debug.Log("RespawnOnFall: " + vida);
     }
 }
