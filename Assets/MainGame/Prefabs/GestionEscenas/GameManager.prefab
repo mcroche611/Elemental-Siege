@@ -45,6 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 2017438766814546700, guid: 13db7e7adbb422e4095c16193b4b0ea4, type: 3}
   juegoPrincipal: 1
+  scenesInOrder: []
   ataque: 25
   bonoAgua: 20
   bonoFuego: 20
