@@ -107,7 +107,7 @@ public class GameManager : MonoBehaviour
             LevelManager.GetInstance().SetUpCamera(nasnas.transform);
     }
 
-    public static GameManager GetInstance() //Para conseguir la referencia a game maager haciendo gameManager.getInstance()
+    public static GameManager GetInstance() //Para conseguir la referencia a game manager haciendo GameManager.GetInstance()
     {
         return instance;
     }
