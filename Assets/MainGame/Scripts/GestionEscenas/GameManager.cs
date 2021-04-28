@@ -19,8 +19,6 @@ public class GameManager : MonoBehaviour
     private string orientacionUltimaPuerta;
     int enemigosEnSala = 0;
 
-    public string[] scenesInOrder;
-    int scene;
     struct Coor
     {
         public int x, y;
@@ -285,22 +283,5 @@ public class GameManager : MonoBehaviour
     public void ChangeScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
-    }
-    //Método que pasa de nivel según si queda niveles existentes o no
-    private void NextLevel()
-    {
-
-        //Si no queda
-        if (scene + 1 == scenesInOrder.Length)
-        {
-            //Se cambia a la escena inicial
-            ChangeScene(scenesInOrder[0]);
-        }
-        //Si queda
-        else
-        {
-            //Se restablecen y se ajustan los valores necesarios y se pasa al proximo nivel
-            ChangeScene(scenesInOrder[scene]);
-        }
     }
 }
