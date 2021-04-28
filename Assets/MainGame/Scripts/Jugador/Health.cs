@@ -6,15 +6,17 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] float maxVida;
-    float vida;
-    [SerializeField] GameObject playerPrefab;
+    //[SerializeField] GameObject playerPrefab;
     LevelManager levels;
     //Vector3 initialScale;
 
     private void Start()
     {
         DontDestroyOnLoad(this.gameObject);
-        vida = maxVida;
+
+        if (GameManager.GetInstance().Vida == 0)
+            GameManager.GetInstance().Vida = maxVida;
+
         //GameManager.GetInstance().GMActualizarVida(vida / maxVida);
 
         levels = LevelManager.GetInstance();
@@ -23,31 +25,31 @@ public class Health : MonoBehaviour
 
     public void ReceiveDamage(float damage)
     {
-        vida -= damage;
-        GameManager.GetInstance().GMActualizarVida(vida / maxVida);
+        GameManager.GetInstance().Vida -= damage;
+        GameManager.GetInstance().GMActualizarVida(GameManager.GetInstance().Vida / maxVida);
 
-        Debug.Log("ReceiveDamage: " + vida);
-        if (vida <= 0)       
+        Debug.Log("ReceiveDamage: " + GameManager.GetInstance().Vida);
+        if (GameManager.GetInstance().Vida <= 0)       
             Destroy(this.gameObject);        
     }
 
     public void Healing(float hp) //hacemos otro método para curar
     {
-        if ((vida + hp) > maxVida) //para que no pueda tener más vida que la máxima
+        if ((GameManager.GetInstance().Vida + hp) > maxVida) //para que no pueda tener más vida que la máxima
         {
-            vida = maxVida;
+            GameManager.GetInstance().Vida = maxVida;
         }
         else
-            vida += hp;
+            GameManager.GetInstance().Vida += hp;
 
-        GameManager.GetInstance().GMActualizarVida(vida / maxVida);
+        GameManager.GetInstance().GMActualizarVida(GameManager.GetInstance().Vida / maxVida);
     }
 
     public void DamageOnFall()
     {   
         // El jugador pierde un cuarto de vida al caer por un precipicio
-        vida -= maxVida / 4;
-        Debug.Log("DamageOnFall: " + vida);
+        GameManager.GetInstance().Vida -= maxVida / 4;
+        Debug.Log("DamageOnFall: " + GameManager.GetInstance().Vida);
     }
 
     public void RespawnOnFall()
@@ -55,10 +57,10 @@ public class Health : MonoBehaviour
         //Transform playerTf = levels.GetPlayerTransform();
         //playerTf.localScale = initialScale;
 
-        GameObject playerClone = Instantiate<GameObject>(playerPrefab, new Vector2(0f, 0f), transform.rotation);
+        GameManager.GetInstance().InstantiatePlayer();
 
-        playerClone.transform.localScale *= 10;
+        //playerClone.transform.localScale *= 10;
 
-        Debug.Log("RespawnOnFall: " + vida);
+        Debug.Log("RespawnOnFall: " + GameManager.GetInstance().Vida);
     }
 }

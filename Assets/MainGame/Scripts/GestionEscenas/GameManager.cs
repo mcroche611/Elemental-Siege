@@ -56,6 +56,21 @@ public class GameManager : MonoBehaviour
     Transform playerTf;
     GameObject player;
 
+    [SerializeField] private float vida;
+
+    public float Vida
+    {
+        get
+        {
+            return vida;
+        }
+        set
+        {
+            vida = value;
+            Debug.Log("vida: " + vida);
+        }
+    }
+
     public void SetUIManager(UIManager uim)
     {
         theUIManager = uim;
@@ -81,6 +96,12 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         nivel = Nivel1();
+
+        InstantiatePlayer();
+    }
+
+    public void InstantiatePlayer()
+    {
         nasnas = (GameObject)Instantiate(Player, transform.position, transform.rotation);
         if (juegoPrincipal)
             LevelManager.GetInstance().SetUpCamera(nasnas.transform);
