@@ -8,6 +8,7 @@ public class LevelManager : MonoBehaviour
     private static LevelManager instance;
     public Transform[] puertas;
     public CinemachineVirtualCamera cinmechineVirtualCamera;
+    Transform playerTf;
 
     private void Awake()
     {
@@ -30,6 +31,12 @@ public class LevelManager : MonoBehaviour
 
         while (puertas[cont].name.Split(' ')[1] != orientacion) cont += 1;
         player.position = puertas[cont].transform.position;
+        playerTf = player;
+    }
+
+    public Transform GetPlayerPosition()
+    {
+        return playerTf;
     }
     
 }
