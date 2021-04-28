@@ -19,13 +19,15 @@ public class GameManager : MonoBehaviour
     private string orientacionUltimaPuerta;
     int enemigosEnSala = 0;
 
+    public string[] scenesInOrder;
+    int scene;
     struct Coor
     {
         public int x, y;
     }
 
     struct Enemigo
-    {       
+    {
         public string nombreEnemigo;
         public Vector2 ultimaPosicion;
         public bool vivo;
@@ -73,14 +75,14 @@ public class GameManager : MonoBehaviour
             //Si ya existe un gameobject con un componente instancia de esta clase (es decir ya hay un GM) no necesitamos uno nuevo
             Destroy(this.gameObject);
         }
-        
+
     }
 
     private void Start()
     {
         nivel = Nivel1();
-        nasnas = (GameObject) Instantiate(Player, transform.position, transform.rotation);
-        if (juegoPrincipal) 
+        nasnas = (GameObject)Instantiate(Player, transform.position, transform.rotation);
+        if (juegoPrincipal)
             LevelManager.GetInstance().SetUpCamera(nasnas.transform);
     }
 
@@ -89,7 +91,7 @@ public class GameManager : MonoBehaviour
         return instance;
     }
 
-    public float Stat (string nombre)
+    public float Stat(string nombre)
     {
         if (nombre == "Fuego") return bonoFuego;
         else if (nombre == "Agua") return bonoAgua;
@@ -107,18 +109,18 @@ public class GameManager : MonoBehaviour
 
     public Transform GetPlayerTransform()
     {
-        
+
         if (player != null)
             return player.transform;
         else
             return null;
-        
+
 
     }
 
-    public void GMActualizarVida (float porcentajeVida) { theUIManager.ActualizarVida(porcentajeVida); }
-    public void GMActualizarMana (float porcentajeMana) { theUIManager.ActualizarMana(porcentajeMana); }
-    public void GMActualizarElementos (string elemento) { theUIManager.ActualizarElementos(elemento);  }
+    public void GMActualizarVida(float porcentajeVida) { theUIManager.ActualizarVida(porcentajeVida); }
+    public void GMActualizarMana(float porcentajeMana) { theUIManager.ActualizarMana(porcentajeMana); }
+    public void GMActualizarElementos(string elemento) { theUIManager.ActualizarElementos(elemento); }
 
     public void Puerta(string orientacion)
     {
@@ -126,7 +128,7 @@ public class GameManager : MonoBehaviour
         {
             nivel.sceneNow.y++;
             orientacionUltimaPuerta = "Oeste";
-        } 
+        }
         else if (orientacion == "Norte")
         {
             nivel.sceneNow.x--;
@@ -141,9 +143,9 @@ public class GameManager : MonoBehaviour
         {
             nivel.sceneNow.y--;
             orientacionUltimaPuerta = "Este";
-        } 
+        }
 
-        SceneManager.LoadScene(nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y]);       
+        SceneManager.LoadScene(nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y]);
     }
 
     private void OnLevelWasLoaded(int level)
@@ -153,7 +155,7 @@ public class GameManager : MonoBehaviour
         nivel.sceneAfter.x = nivel.sceneNow.x;
         nivel.sceneAfter.y = nivel.sceneNow.y;
         enemigosEnSala = 0;
-    }   
+    }
 
     static Escena Nivel1()
     {
@@ -179,7 +181,7 @@ public class GameManager : MonoBehaviour
                     s.enemies[i, j] = true;
                     if (S[1] == 'P')
                         pasillos += 1;
-                }                  
+                }
                 else
                     s.enemies[i, j] = false;
             }
@@ -200,7 +202,7 @@ public class GameManager : MonoBehaviour
 
         return s;
     }
-    
+
     public void CompletarEscena()
     {
         nivel.enemies[nivel.sceneNow.x, nivel.sceneNow.y] = false;
@@ -223,7 +225,7 @@ public class GameManager : MonoBehaviour
     public bool EsMago() { return nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y][1] == 'M'; }
 
     public bool SalaCompletada() { return enemigosEnSala <= 0; }
-    
+
     public void NuevoEnemigo(string enemigo)
     {
         int pasilloActual = int.Parse(nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y][2].ToString());
@@ -250,7 +252,7 @@ public class GameManager : MonoBehaviour
         {
             enemigo.GetComponent<Enemy>().EstaMuerto();
             Destroy(enemigo);
-        }          
+        }
     }
 
     public void MatarEnemigo(GameObject enemigo)
@@ -278,4 +280,27 @@ public class GameManager : MonoBehaviour
 
     public void AñadirEnemigoEnSala() { enemigosEnSala += 1; }
     public void QuitarEnemigoSala() { enemigosEnSala -= 1; Debug.Log("Enemigos en restantes: " + enemigosEnSala); }
+
+    //Método público para cambiar de escena
+    public void ChangeScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+    //Método que pasa de nivel según si queda niveles existentes o no
+    private void NextLevel()
+    {
+
+        //Si no queda
+        if (scene + 1 == scenesInOrder.Length)
+        {
+            //Se cambia a la escena inicial
+            ChangeScene(scenesInOrder[0]);
+        }
+        //Si queda
+        else
+        {
+            //Se restablecen y se ajustan los valores necesarios y se pasa al proximo nivel
+            ChangeScene(scenesInOrder[scene]);
+        }
+    }
 }
