@@ -7,7 +7,7 @@ public class LevelManager : MonoBehaviour
 {
     private static LevelManager instance;
     public Transform[] puertas;
-    public CinemachineVirtualCamera cinmechineVirtualCamera;
+    public CinemachineVirtualCamera cinemechineVirtualCamera;
     Transform playerTf;
 
     private void Awake()
@@ -22,7 +22,7 @@ public class LevelManager : MonoBehaviour
 
     public void SetUpCamera(Transform player)
     {
-        cinmechineVirtualCamera.Follow = player;
+        cinemechineVirtualCamera.Follow = player;
     }
 
     public void SetUpPlayer(string orientacion, Transform player)
@@ -34,7 +34,15 @@ public class LevelManager : MonoBehaviour
         playerTf = player;
     }
 
-    public Transform GetPlayerPosition()
+    //temporal para cuando no tenemos la orientacion
+    public void SetPlayerTransform(Transform player)
+    {
+        playerTf = player;
+        Debug.Log("Player Transform Position: " + player.position);
+        Debug.Log("Get Transform: " + GetPlayerTransform().position);
+    }
+
+    public Transform GetPlayerTransform()
     {
         return playerTf;
     }

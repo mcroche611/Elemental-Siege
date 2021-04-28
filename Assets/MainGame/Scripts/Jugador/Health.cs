@@ -7,8 +7,8 @@ public class Health : MonoBehaviour
 {
     [SerializeField] float maxVida;
     float vida;
-    GameObject player;
-    LevelManager puerta;
+    [SerializeField] GameObject playerPrefab;
+    LevelManager levels;
 
     private void Start()
     {
@@ -16,7 +16,7 @@ public class Health : MonoBehaviour
         vida = maxVida;
         //GameManager.GetInstance().GMActualizarVida(vida / maxVida);
 
-        puerta = LevelManager.GetInstance();
+        levels = LevelManager.GetInstance();
     }
 
     public void ReceiveDamage(float damage)
@@ -41,14 +41,9 @@ public class Health : MonoBehaviour
         GameManager.GetInstance().GMActualizarVida(vida / maxVida);
     }
 
-    public void DamageOnFall()
+    public void RespawnOnFall()
     {
         // El jugador pierde un cuarto de vida al caer por un precipicio
         vida -= maxVida / 4;
-    }
-
-    void RespawnOnFall()
-    {
-        Instantiate<GameObject>(player, puerta.);
     }
 }

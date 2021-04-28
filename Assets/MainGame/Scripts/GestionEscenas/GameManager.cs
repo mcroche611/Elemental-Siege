@@ -16,7 +16,9 @@ public class GameManager : MonoBehaviour
     GameObject nasnas;
 
     public bool juegoPrincipal;
-    private string orientacionUltimaPuerta;
+
+    // Asumo que a la primera sala se ha accedido mediante una puerta a la izquierda
+    private string orientacionUltimaPuerta = "Oeste";
     int enemigosEnSala = 0;
 
     struct Coor
@@ -144,6 +146,11 @@ public class GameManager : MonoBehaviour
         } 
 
         SceneManager.LoadScene(nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y]);       
+    }
+
+    public string GetOrientacion()
+    {
+        return orientacionUltimaPuerta;
     }
 
     private void OnLevelWasLoaded(int level)

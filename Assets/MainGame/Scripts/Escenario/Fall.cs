@@ -21,7 +21,7 @@ public class Fall : MonoBehaviour
             if (character.GetComponent<PlayerController>() != null)
             {
                 Health charHealth = character.GetComponent<Health>();
-                charHealth.DamageOnFall();
+                charHealth.RespawnOnFall();
             }
 
             Destroy(character.gameObject);

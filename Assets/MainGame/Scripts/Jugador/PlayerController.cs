@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
         GameManager.GetInstance().SetPlayer(this.gameObject);
         //Cacheamos el componente Rigidbody
         rb = GetComponent<Rigidbody2D>();
-       
+        LevelManager.GetInstance().SetPlayerTransform(this.gameObject.transform);
     }
 
     // Update is called once per frame
