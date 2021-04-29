@@ -13,7 +13,7 @@ public class Mojado : MonoBehaviour
     private void Awake()
     {
         enemyMovement = GetComponent<EnemyMovement>(); //tomamos el script enemyRange porque es el que contiene la velocidad de movimiento del enemigo
-        icono = (transform.GetChild(1).gameObject).transform.GetChild(1).gameObject;
+        icono = ((transform.GetChild(1).gameObject).transform.GetChild(0).gameObject).transform.GetChild(1).gameObject;
     }
     private void OnEnable()
     {

@@ -12,7 +12,7 @@ public class Quemado : MonoBehaviour
     private void Awake()
     {
         enemy = GetComponent<EnemyHealth>();
-        icono = (transform.GetChild(1).gameObject).transform.GetChild(0).gameObject;
+        icono = ((transform.GetChild(1).gameObject).transform.GetChild(0).gameObject).transform.GetChild(0).gameObject;
     }
 
     private void OnEnable()

@@ -16,7 +16,9 @@ public class GameManager : MonoBehaviour
     GameObject nasnas;
 
     public bool juegoPrincipal;
-    private string orientacionUltimaPuerta;
+
+    // Asumo que a la primera sala se ha accedido mediante una puerta a la izquierda
+    private string orientacionUltimaPuerta = "Oeste";
     int enemigosEnSala = 0;
 
     struct Coor
@@ -54,6 +56,21 @@ public class GameManager : MonoBehaviour
     Transform playerTf;
     GameObject player;
 
+    [SerializeField] private float vida;
+
+    public float Vida
+    {
+        get
+        {
+            return vida;
+        }
+        set
+        {
+            vida = value;
+            Debug.Log("vida: " + vida);
+        }
+    }
+
     public void SetUIManager(UIManager uim)
     {
         theUIManager = uim;
@@ -79,12 +96,18 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         nivel = Nivel1();
+
+        InstantiatePlayer();
+    }
+
+    public void InstantiatePlayer()
+    {
         nasnas = (GameObject)Instantiate(Player, transform.position, transform.rotation);
         if (juegoPrincipal)
             LevelManager.GetInstance().SetUpCamera(nasnas.transform);
     }
 
-    public static GameManager GetInstance() //Para conseguir la referencia a game maager haciendo gameManager.getInstance()
+    public static GameManager GetInstance() //Para conseguir la referencia a game manager haciendo GameManager.GetInstance()
     {
         return instance;
     }
@@ -144,6 +167,11 @@ public class GameManager : MonoBehaviour
         }
 
         SceneManager.LoadScene(nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y]);
+    }
+
+    public string GetOrientacion()
+    {
+        return orientacionUltimaPuerta;
     }
 
     private void OnLevelWasLoaded(int level)

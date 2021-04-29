@@ -8,7 +8,7 @@ public class Electrocutado : MonoBehaviour
 
     private void Awake()
     {
-        icono = (transform.GetChild(1).gameObject).transform.GetChild(2).gameObject; 
+        icono = ((transform.GetChild(1).gameObject).transform.GetChild(0).gameObject).transform.GetChild(2).gameObject;
     }
 
     private void OnEnable()

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Escudo : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Escudo : MonoBehaviour
 
     [SerializeField]
     float shieldHealth = 20;
+    float maxShieldHealth;
 
     [SerializeField]
     string shieldType = "Fuego"; //puede ser "Fuego", "Agua" o "Electrico" sin tilde
@@ -22,10 +24,13 @@ public class Escudo : MonoBehaviour
     float playerFireBonus;
     float playerElectricBonus;
 
+    public GameObject barraDeEscudo;
+    RectTransform _barraDeEscudo;
+    float maxBarraDeEscudo;
 
     private void OnEnable()
     {
-        GetComponent<SpriteRenderer>().color = Color.red; //tonteria visual para ver si tiene el escudo o no
+
 
         //sacamos los bools al activarse el script para hacerlo menos veces
         if (shieldType == "Fuego")
@@ -35,8 +40,10 @@ public class Escudo : MonoBehaviour
         else if (shieldType == "Electrico")
             escudoElectrico = true;
 
-
-
+        
+        _barraDeEscudo = barraDeEscudo.GetComponent<RectTransform>();
+        maxBarraDeEscudo = _barraDeEscudo.sizeDelta.x;
+        maxShieldHealth = shieldHealth;
     }
     void Start() //si usamos este script para el boss, necesitamos pillar todos los bonus
                  //porque si no al cambiar de escudo, lo ejecutado en el start ya estará puesto
@@ -44,6 +51,8 @@ public class Escudo : MonoBehaviour
         playerWaterBonus = GameManager.GetInstance().Stat("Agua"); //cogemos el bono agua
         playerFireBonus = GameManager.GetInstance().Stat("Fuego"); //cogemos el bono agua
         playerElectricBonus = GameManager.GetInstance().Stat("Fuego");
+
+        
     }
 
     void Update()
@@ -100,7 +109,7 @@ public class Escudo : MonoBehaviour
                     shieldHealth -= 2;
                 }
             }
-
+            _barraDeEscudo.sizeDelta = new Vector2((maxBarraDeEscudo) * (shieldHealth / maxShieldHealth), _barraDeEscudo.sizeDelta.y);
         }
     }
 
