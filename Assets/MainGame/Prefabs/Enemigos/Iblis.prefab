@@ -256,7 +256,6 @@ GameObject:
   m_Component:
   - component: {fileID: 718894736548821336}
   - component: {fileID: 7632318783433816114}
-  - component: {fileID: 3605498751864887331}
   m_Layer: 17
   m_Name: Centro
   m_TagString: Untagged
@@ -304,18 +303,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.06368364, y: 0.12946922}
   m_EdgeRadius: 0
---- !u!114 &3605498751864887331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2773835488605648961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b23f519b96b45d54aa052d085bbb536a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4063016434675728862
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,6 +643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  barraDeVida: {fileID: 0}
 --- !u!114 &1864533382728463774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -765,6 +753,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a59274e675b5b0478563ae2c1938156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objetoSpawnerF: {fileID: 0}
-  objetoSpawnerD: {fileID: 0}
+  objetoSpawnerF: {fileID: 4384261681563158041, guid: 59071cce319b88a4bb8f5fb1bbaa5ad8,
+    type: 3}
+  objetoSpawnerD: {fileID: 4199202409773636906, guid: 7add5f6cdcd4de94fa5f2378b04e623e,
+    type: 3}
   vidaMinima: 70
