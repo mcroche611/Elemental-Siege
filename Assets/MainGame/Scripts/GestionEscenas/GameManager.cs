@@ -139,9 +139,19 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void GMActualizarVida(float porcentajeVida) { theUIManager.ActualizarVida(porcentajeVida); }
-    public void GMActualizarMana(float porcentajeMana) { theUIManager.ActualizarMana(porcentajeMana); }
-    public void GMActualizarElementos(string elemento) { theUIManager.ActualizarElementos(elemento); }
+    /////////////// Actualización UI ////////////////
+    public void GMActualizarVida(float porcentajeVida)
+    {
+        theUIManager.ActualizarVida(porcentajeVida);
+    }
+    public void GMActualizarMana(float porcentajeMana)
+    {
+        theUIManager.ActualizarMana(porcentajeMana);
+    }
+    public void GMActualizarElementos(string elemento)
+    {
+        theUIManager.ActualizarElementos(elemento);
+    }
 
     public void Puerta(string orientacion)
     {
@@ -246,9 +256,19 @@ public class GameManager : MonoBehaviour
         else bonoElectricidad += cantidad;
     }
 
-    public bool EsPasillo() { return nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y][1] == 'P'; }
-    public bool EsSala() { return nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y][1] == 'S'; }
-    public bool EsMago() { return nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y][1] == 'M'; }
+    ///////////////// Estructura de Niveles //////////////
+    public bool EsPasillo()
+    {
+        return nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y][1] == 'P';
+    }
+    public bool EsSala()
+    {
+        return nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y][1] == 'S';
+    }
+    public bool EsMago()
+    {
+        return nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y][1] == 'M';
+    }
 
     public bool SalaCompletada() { return enemigosEnSala <= 0; }
 

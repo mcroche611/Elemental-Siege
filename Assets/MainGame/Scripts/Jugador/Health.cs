@@ -51,12 +51,16 @@ public class Health : MonoBehaviour
         Debug.Log("DamageOnFall: " + GameManager.GetInstance().Vida);
     }
 
-    public void RespawnOnFall()
+    public void RespawnOnFall(Vector3 playerSpawnScale)
     {
         if (GameManager.GetInstance().Vida > 0)
         {
-            GameManager.GetInstance().InstantiatePlayer();
+            //GameManager.GetInstance().InstantiatePlayer();
             Debug.Log("RespawnOnFall: " + GameManager.GetInstance().Vida);
+
+            //transform.position = playerSpawnPos;
+            //transform.rotation = playerSpawnRot;
+            transform.localScale = playerSpawnScale;
         }   
     }
 }

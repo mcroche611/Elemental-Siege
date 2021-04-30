@@ -29,7 +29,11 @@ public class LevelManager : MonoBehaviour
     {
         int cont = 0;
 
-        while (puertas[cont].name.Split(' ')[1] != orientacion) cont += 1;
+        while (puertas[cont].name.Split(' ')[1] != orientacion)
+        {
+            cont += 1;
+        }
+
         player.position = puertas[cont].transform.position;
         playerTf = player;
     }
