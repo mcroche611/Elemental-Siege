@@ -15,7 +15,7 @@ public class LevelManager : MonoBehaviour
         instance = this;
     }
 
-    public static LevelManager GetInstance() //Para conseguir la referencia a game maager haciendo gameManager.getInstance()
+    public static LevelManager GetInstance() //Para conseguir la referencia a game manager haciendo gameManager.getInstance()
     {
         return instance;
     }

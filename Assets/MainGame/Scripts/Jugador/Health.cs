@@ -55,12 +55,14 @@ public class Health : MonoBehaviour
     {
         if (GameManager.GetInstance().Vida > 0)
         {
+            transform.localScale = playerSpawnScale;
+            LevelManager.GetInstance().SetUpPlayer(GameManager.GetInstance().GetOrientacion(), transform);
+
             //GameManager.GetInstance().InstantiatePlayer();
             Debug.Log("RespawnOnFall: " + GameManager.GetInstance().Vida);
 
             //transform.position = playerSpawnPos;
             //transform.rotation = playerSpawnRot;
-            transform.localScale = playerSpawnScale;
-        }   
+        }
     }
 }
