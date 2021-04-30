@@ -312,4 +312,8 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+    public void Quit()
+    {
+        UnityEditor.EditorApplication.isPlaying = false;
+    }
 }
