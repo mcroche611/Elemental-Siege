@@ -170,8 +170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d538c95d166c9f84b8cd52a85fd82a00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCoolDown: 1.5
-  attackDuration: 1
+  attackCoolDown: 1
+  attackFreeze: 0.25
   paralizado: 0
 --- !u!58 &1805428890
 CircleCollider2D:
@@ -1016,7 +1016,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  tiempoAturdimiento: 0.25
 --- !u!114 &8757333600198723036
 MonoBehaviour:
   m_ObjectHideFlags: 0
