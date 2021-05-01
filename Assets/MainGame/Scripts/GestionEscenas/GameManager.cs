@@ -277,12 +277,8 @@ public class GameManager : MonoBehaviour
     {
         return nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y][1] == 'S';
     }
-    public bool EsMago()
-    {
-        return nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y][1] == 'M';
-    }
 
-    public bool SalaCompletada() { return enemigosEnSala <= 0; }
+    public bool SalaCompletada() { return enemigosEnSala == 0; }
 
     public void NuevoEnemigo(string enemigo)
     {
@@ -334,7 +330,6 @@ public class GameManager : MonoBehaviour
         nivel.pasillos[pasilloActual].enemigos[cont].vida = vida;
         nivel.pasillos[pasilloActual].enemigos[cont].vivo = true;
     }
-
 
     public void AñadirEnemigoEnSala() { enemigosEnSala += 1; }
     public void QuitarEnemigoSala() { enemigosEnSala -= 1; }

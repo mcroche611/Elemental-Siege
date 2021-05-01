@@ -28,7 +28,8 @@ public class Puerta : MonoBehaviour
             {
                 GameManager.GetInstance().CompletarEscena();
                 GameManager.GetInstance().Puerta(orientacion);
-            }           
+            }  
+            else GameManager.GetInstance().Puerta(orientacion);
         }
             
         else if (collision.GetComponent<MagoEncerrado>())

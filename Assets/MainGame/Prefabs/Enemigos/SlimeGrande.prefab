@@ -292,6 +292,7 @@ GameObject:
   - component: {fileID: 5543072570311371070}
   - component: {fileID: 7405479223870013471}
   - component: {fileID: 7570654979521617298}
+  - component: {fileID: 5629288244557166221}
   - component: {fileID: -445086971375976734}
   - component: {fileID: 8508858448193940916}
   - component: {fileID: -3532393667017953076}
@@ -399,6 +400,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5629288244557166221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4093884336931229606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9155cbc4db2b3aa40933b4ad392bff6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &-445086971375976734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -511,7 +524,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  tiempoAturdimiento: 0.25
 --- !u!114 &-5348799903832597962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -528,6 +540,7 @@ MonoBehaviour:
   damage: 15
   attackCoolDown: 0.25
   tiempoAturdimiento: 0.25
+  paralizado: 0
 --- !u!114 &-3241482755087690142
 MonoBehaviour:
   m_ObjectHideFlags: 0
