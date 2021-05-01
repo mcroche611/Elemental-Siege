@@ -25,15 +25,20 @@ public class StateManager : MonoBehaviour
         }          
                 
         else if (currentState != element_state)
-        {
+        {           
             CancelInvoke("StateTimeOut");
             currentState.enabled = false;
+
             string element = elementalAtack.Split('_')[0];
+            Charco pies;
+
             if (element == "Fuego")
             {
                 if (currentState == GetComponent<Mojado>())
                 {
-                    GetComponentInChildren<Charco>().NoPuedeMojarse();
+                    pies = GetComponentInChildren<Charco>();
+                    if (pies != null)
+                        GetComponentInChildren<Charco>().NoPuedeMojarse();
                     GetComponent<ElementalReactions>().VapolizadoDebil();
                 }
                 else
@@ -62,7 +67,9 @@ public class StateManager : MonoBehaviour
                 }
                 else
                 {
-                    GetComponentInChildren<Charco>().NoPuedeMojarse();
+                    pies = GetComponentInChildren<Charco>();
+                    if (pies != null)
+                        GetComponentInChildren<Charco>().NoPuedeMojarse();
                     GetComponent<ElementalReactions>().Electrocargado();                   
                 }
             }

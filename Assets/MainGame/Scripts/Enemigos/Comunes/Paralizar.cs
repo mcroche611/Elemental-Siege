@@ -5,10 +5,27 @@ using UnityEngine;
 public class Paralizar : MonoBehaviour
 {
     [SerializeField] float tiempoParalización;
+    EnemyAttackOnCollision ataque;
+
     public void Paraliza()
     {
-        CancelInvoke("ParalizaAcaba");      
-        GetComponent<EnemyAttackOnCollision>().enabled = false;
+        CancelInvoke("ParalizaAcaba");
+        ataque = GetComponent<EnemyAttackOnCollision>();
+        if (ataque != null)
+            ataque.paralizado = true;
+        else
+        {
+            Archer ataqueArco = GetComponentInChildren<Archer>();
+            if (ataqueArco != null)          
+                ataqueArco.paralizado = true;
+            else
+            {
+                EspadaGuard ataqueEspada = GetComponentInChildren<EspadaGuard>();
+                if (ataqueEspada != null)
+                    ataqueEspada.paralizado = true;
+            }                      
+        }
+            
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;     
         Invoke("ParalizaAcaba", tiempoParalización);
     }
@@ -17,7 +34,20 @@ public class Paralizar : MonoBehaviour
     {
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
-        GetComponent<EnemyAttackOnCollision>().enabled = true;
+        if (ataque)
+            ataque.paralizado = false;
+        else
+        {
+            Archer ataqueArco = GetComponentInChildren<Archer>();
+            if (ataqueArco != null)
+                ataqueArco.paralizado = false;
+            else
+            {
+                EspadaGuard ataqueEspada = GetComponentInChildren<EspadaGuard>();
+                if (ataqueEspada != null)
+                    ataqueEspada.paralizado = false;
+            }
+        }
     }
 
     private void OnDestroy()

@@ -8,13 +8,18 @@ public class PlayerController : MonoBehaviour
     [SerializeField] 
     float velocity;
 
-    [SerializeField]
-    float tiempoAturdimiento;
-
     Rigidbody2D rb;
     Vector2 vel;
 
-    int cont;
+    float aturdido = 0;
+
+
+    private void Awake()
+    {
+        if (GameManager.GetInstance() != null)
+            if (GameManager.GetInstance().Nasnas(this.gameObject))
+                Destroy(this.gameObject);
+    }
 
     void Start()
     {
@@ -22,32 +27,36 @@ public class PlayerController : MonoBehaviour
         //Cacheamos el componente Rigidbody
         rb = GetComponent<Rigidbody2D>();
         //LevelManager.GetInstance().SetPlayerTransform(this.gameObject.transform);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Input de movimiento de cuatro direccones y movimiento en diagonal
-         vel = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
-        //Velocidad de Movimiento
-        rb.velocity = new Vector2(vel.x * velocity, vel.y * velocity);
+        if (aturdido <= 0)
+        {
+            //Input de movimiento de cuatro direccones y movimiento en diagonal
+            vel = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
+            //Velocidad de Movimiento
+            rb.velocity = new Vector2(vel.x * velocity, vel.y * velocity);
+        }
+        else
+            aturdido -= Time.deltaTime;
     }
 
-    private void OnDisable()
-    {
-        Invoke("RecuperarMovimiento", tiempoAturdimiento);
-    }
-
-    private void RecuperarMovimiento()
-    {
-        this.enabled = true;
-    }
     public void Ralentizado(float porcentaje)
     {
         velocity = velocity * porcentaje;
     }
+
     public void NoRalentizado(float porcentaje)
     {
         velocity = velocity / porcentaje;
+    }
+
+    public void Knockback(float tiempoAturdimiento)
+    {
+        rb.velocity = new Vector2(0f, 0f);
+        aturdido = tiempoAturdimiento;
     }
 }

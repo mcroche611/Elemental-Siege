@@ -12,13 +12,12 @@ public class GameManager : MonoBehaviour
     private static GameManager instance;
     private UIManager theUIManager;
 
-    public GameObject Player;
     GameObject nasnas;
 
     public bool juegoPrincipal;
 
     // Asumo que a la primera sala se ha accedido mediante una puerta a la izquierda
-    private string orientacionUltimaPuerta = "Oeste";
+    private string orientacionUltimaPuerta = "Este";
     int enemigosEnSala = 0;
 
     struct Coor
@@ -102,9 +101,11 @@ public class GameManager : MonoBehaviour
 
     public void InstantiatePlayer()
     {
+        /*
         nasnas = (GameObject)Instantiate(Player, transform.position, transform.rotation);
         if (juegoPrincipal)
             LevelManager.GetInstance().SetUpCamera(nasnas.transform);
+        */
     }
 
     public static GameManager GetInstance() //Para conseguir la referencia a game manager haciendo GameManager.GetInstance()
@@ -130,13 +131,10 @@ public class GameManager : MonoBehaviour
 
     public Transform GetPlayerTransform()
     {
-
         if (player != null)
             return player.transform;
         else
             return null;
-
-
     }
 
     /////////////// Actualización UI ////////////////
@@ -184,13 +182,27 @@ public class GameManager : MonoBehaviour
         return orientacionUltimaPuerta;
     }
 
+    public bool Nasnas(GameObject player)
+    {
+        if (nasnas == null)
+        {
+            nasnas = player;
+            return false;
+        }
+        else return true;
+    }
+
     private void OnLevelWasLoaded(int level)
     {
-        LevelManager.GetInstance().SetUpCamera(nasnas.transform);
-        LevelManager.GetInstance().SetUpPlayer(orientacionUltimaPuerta, nasnas.transform);
-        nivel.sceneAfter.x = nivel.sceneNow.x;
-        nivel.sceneAfter.y = nivel.sceneNow.y;
-        enemigosEnSala = 0;
+        if (level != 0)
+        {
+            LevelManager.GetInstance().SetUpCamera(nasnas.transform);
+            LevelManager.GetInstance().SetUpPlayer(orientacionUltimaPuerta, nasnas.transform);
+            nivel.sceneAfter.x = nivel.sceneNow.x;
+            nivel.sceneAfter.y = nivel.sceneNow.y;
+            enemigosEnSala = 0;
+        }
+        
     }
 
     static Escena Nivel1()
@@ -325,13 +337,14 @@ public class GameManager : MonoBehaviour
 
 
     public void AñadirEnemigoEnSala() { enemigosEnSala += 1; }
-    public void QuitarEnemigoSala() { enemigosEnSala -= 1; Debug.Log("Enemigos en restantes: " + enemigosEnSala); }
+    public void QuitarEnemigoSala() { enemigosEnSala -= 1; }
 
     //Método público para cambiar de escena
     public void ChangeScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
     }
+
     public void Quit()
     {
         UnityEditor.EditorApplication.isPlaying = false;

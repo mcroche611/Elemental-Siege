@@ -151,7 +151,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: 8
-  tiempoAturdimiento: 0.25
 --- !u!114 &2017438766814546711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,6 +343,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3443571300835180257, guid: 50b8fcfedad7b1749b6be1e144019a23,
+        type: 3}
+      propertyPath: tiempoAturdimiento
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3443571300835180257, guid: 50b8fcfedad7b1749b6be1e144019a23,
+        type: 3}
+      propertyPath: knock
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 8218089456628840902, guid: 50b8fcfedad7b1749b6be1e144019a23,
         type: 3}
