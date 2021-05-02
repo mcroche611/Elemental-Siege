@@ -9,11 +9,21 @@ public class Dialogue : MonoBehaviour
 
     [SerializeField]
     string[] sentences = new string[1]; //array de frases de dialogo
+
     string currentSentence;
+    int numeroSentence = 0;
+
+    private void Start()
+    {
+        currentSentence = sentences[0];
+
+    }
 
     void NextSentence()
     {
-        
+        numeroSentence++;
+        currentSentence = sentences[numeroSentence];
+        Debug.Log(currentSentence);
     }
 
 }

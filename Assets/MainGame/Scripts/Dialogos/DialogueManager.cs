@@ -4,18 +4,24 @@ using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
 {
+    private static DialogueManager instance;
+   
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    public static DialogueManager GetInstance() //Para conseguir la referencia a game manager haciendo gameManager.getInstance()
+    {
+        return instance;
+    }
 
     [SerializeField]
     string[] dialogueSentences;
 
-    void Start()
+    void ActivarPanel()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        gameObject.SetActive(true);
     }
 }
