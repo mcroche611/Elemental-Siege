@@ -20,7 +20,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     string[] dialogueSentences;
 
-    void ActivarPanel()
+    public void ActivarPanel()
     {
         gameObject.SetActive(true);
     }
