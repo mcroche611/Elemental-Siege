@@ -49,10 +49,10 @@ public class Escudo : MonoBehaviour
                  //porque si no al cambiar de escudo, lo ejecutado en el start ya estará puesto
     {
         playerWaterBonus = GameManager.GetInstance().Stat("Agua"); //cogemos el bono agua
-        playerFireBonus = GameManager.GetInstance().Stat("Fuego"); //cogemos el bono agua
-        playerElectricBonus = GameManager.GetInstance().Stat("Fuego");
+        playerFireBonus = GameManager.GetInstance().Stat("Fuego"); //cogemos el bono fuego
+        playerElectricBonus = GameManager.GetInstance().Stat("Electrico"); //cogemos el bono electrico
 
-        
+
     }
 
     void Update()
