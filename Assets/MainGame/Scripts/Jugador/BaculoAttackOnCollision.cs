@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class BaculoAttackOnCollision : MonoBehaviour
 {
-    [SerializeField] float knock; //no es una velocidad realmente, es una fuerza en sí creo
+    [SerializeField] float knock;
+    [SerializeField] float tiempoAturdimiento;
     float playerAttack;
-    //Enemy enemy;
 
     private void Start()
     {
@@ -15,16 +15,17 @@ public class BaculoAttackOnCollision : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<EnemyHealth>() != null)
+        EnemyHealth helth = collision.GetComponent<EnemyHealth>();
+
+        if (helth != null)
         {
             //Knockback
+            collision.GetComponent<EnemyMovement>().Knockback(tiempoAturdimiento);
             Rigidbody2D rbEnemy = collision.GetComponent<Rigidbody2D>(); 
             Vector2 direction = (rbEnemy.transform.position - transform.position).normalized; 
             rbEnemy.AddForce(direction * knock, ForceMode2D.Impulse);
-            //Aturdimiento
-            collision.GetComponent<EnemyMovement>().enabled = false;
             //QuitarVida
-            collision.GetComponent<EnemyHealth>().QuitarVida(playerAttack);
+            helth.QuitarVida(playerAttack);
         }
     }
 }

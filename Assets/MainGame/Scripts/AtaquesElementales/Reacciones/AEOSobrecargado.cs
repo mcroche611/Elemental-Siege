@@ -12,6 +12,11 @@ public class AEOSobrecargado : MonoBehaviour
     [SerializeField]
     float knock;
 
+    [SerializeField]
+    float tiempoAturdimiento;
+
+    float maxDamage;
+
     //El gameobject va creciendo hasta llegar a un diametro maximo y despues se destruye
     void Start() 
     {
@@ -25,17 +30,28 @@ public class AEOSobrecargado : MonoBehaviour
 
         //Comprueba si aquello con lo que colisiona es un enemigo (solo los enemigos tienen el componente enemy health)
         if (enemyMovement != null && collision.gameObject != enemigoGolpeado) 
-        {
-            enemyMovement.enabled = false;
+        {       
+            Vector2 direction = (collision.transform.position - transform.position);
+            //la explosion afecta más a los enemigos que estén más cerca de la explosión
+            float relacionDistancia = 1 - direction.magnitude / diametro;
+            //Daño
+            collision.GetComponent<EnemyHealth>().QuitarVida(maxDamage * relacionDistancia);
             //Knockback
-            Rigidbody2D rbEnemie = collision.GetComponent<Rigidbody2D>();
-            Vector2 direction = (rbEnemie.transform.position - transform.position);
-            //el Knockback afecta más a los enemigos que estén más cerca de la explosión
-            rbEnemie.AddForce(direction.normalized * (knock * (1 - direction.magnitude / diametro)), ForceMode2D.Impulse);
+            collision.GetComponent<EnemyMovement>().Knockback(tiempoAturdimiento);
+            collision.GetComponent<Rigidbody2D>().AddForce(direction.normalized * knock * relacionDistancia, ForceMode2D.Impulse);
         }
     }
 
     public void EnemigoGolpeado(GameObject collision) { enemigoGolpeado = collision; }
  
-    public float Knockback() { return knock; }
+    public void Knockback(out float _knock, out float _tiempoAturdimiento)
+    {
+        _knock = knock;
+        _tiempoAturdimiento = tiempoAturdimiento;
+    }
+
+    public void Damage(float damage)
+    {
+        maxDamage = damage;
+    }
 }

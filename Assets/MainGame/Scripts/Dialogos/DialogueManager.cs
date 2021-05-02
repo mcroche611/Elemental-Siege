@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    [SerializeField]
+    string[] dialogueSentences;
+
     void Start()
     {
         

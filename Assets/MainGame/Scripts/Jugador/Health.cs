@@ -15,7 +15,7 @@ public class Health : MonoBehaviour
         if (GameManager.GetInstance().Vida == 0)
         {
             GameManager.GetInstance().Vida = maxVida;
-            GameManager.GetInstance().GMActualizarVida(GameManager.GetInstance().Vida / maxVida);
+            //GameManager.GetInstance().GMActualizarVida(GameManager.GetInstance().Vida / maxVida);
         }
 
         levels = LevelManager.GetInstance();

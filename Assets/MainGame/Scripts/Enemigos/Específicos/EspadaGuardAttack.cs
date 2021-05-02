@@ -3,25 +3,24 @@
 public class EspadaGuardAttack : MonoBehaviour
 {
     [SerializeField] 
-    float knock;
+    float knock = 2f;
+
+    [SerializeField]
+    float tiempoAturdimiento = 1f;
 
     [SerializeField]
     float attackDamage = 15f;
-    //Enemy enemy;
-
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        PlayerController player = collision.gameObject.GetComponent<PlayerController>();
         if (collision.GetComponent<Mana>() != null)
         {
-            //Aturdimiento
-            collision.GetComponent<PlayerController>().enabled = false;
-            //Knockback
-            Rigidbody2D rbPlayer = collision.GetComponent<Rigidbody2D>();
-            rbPlayer.velocity = new Vector2(0, 0);
-            Vector2 direction = (collision.transform.position - GetComponentInParent<Transform>().GetComponentInParent<Transform>().position).normalized;
-            rbPlayer.AddForce(direction * knock, ForceMode2D.Impulse);           
+            //Knockback        
+            player.Knockback(tiempoAturdimiento);
+            Rigidbody2D rbPlayer = player.GetComponent<Rigidbody2D>();
+            Vector2 direction = (rbPlayer.transform.position - transform.position).normalized;
+            rbPlayer.AddForce(direction * knock, ForceMode2D.Impulse);
             //QuitarVida
             collision.GetComponent<Health>().ReceiveDamage(attackDamage);
         }
