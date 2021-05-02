@@ -4,36 +4,46 @@ using UnityEngine;
 
 public class Archer : MonoBehaviour
 {
-    [SerializeField]
-    GameObject prefabFlecha;
+    public GameObject prefabFlecha;
 
     [SerializeField]
-    float cooldown = 1f;
+    float attackCoolDown = 1f;
 
-    Transform playerTransform; //def del transform del player para usarlo cuando entre al trigger
+    bool attackEnabled = true;
+    [HideInInspector] public bool paralizado = false;
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<PlayerController>() != null)
+        if (attackEnabled && !paralizado)
         {
-            playerTransform = collision.transform;
-            //ShootArrow();
-            InvokeRepeating("ShootArrow", 0f, cooldown);
+            ShootArrow(collision.transform.position);
+            attackEnabled = false;
+            Invoke("EnableAttack", attackCoolDown);
         }
-
     }
 
-    private void OnTriggerExit2D(Collider2D other) //al salir el jugador (lo único con lo que choca), ya no dispara flechas
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        CancelInvoke();
+        if (attackEnabled && !paralizado)
+        {
+            ShootArrow(collision.transform.position);
+            attackEnabled = false;
+            Invoke("EnableAttack", attackCoolDown);
+        }
     }
-    void ShootArrow()
+
+
+
+    public void ShootArrow(Vector2 posPlayer)
     {
-        float angulo = Mathf.Atan2(playerTransform.position.y - transform.position.y, playerTransform.transform.position.x - transform.position.x) * 180 / Mathf.PI;
+        float angulo = Mathf.Atan2(posPlayer.y - transform.position.y, posPlayer.x - transform.position.x) * 180 / Mathf.PI;
         Quaternion anguloQuaternion = Quaternion.Euler(new Vector3(0f, 0f, angulo - 90)); //sacamos el angulo en el que hay que disparar 
         Instantiate<GameObject>(prefabFlecha, transform.position, anguloQuaternion); //instanciamos la flecha
-
     }
 
-
+    private void EnableAttack()
+    {
+        attackEnabled = true;
+    }
 }

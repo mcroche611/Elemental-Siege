@@ -15,7 +15,7 @@ public class Health : MonoBehaviour
         if (GameManager.GetInstance().Vida == 0)
         {
             GameManager.GetInstance().Vida = maxVida;
-            GameManager.GetInstance().GMActualizarVida(GameManager.GetInstance().Vida / maxVida);
+            //GameManager.GetInstance().GMActualizarVida(GameManager.GetInstance().Vida / maxVida);
         }
 
         levels = LevelManager.GetInstance();
@@ -51,12 +51,18 @@ public class Health : MonoBehaviour
         Debug.Log("DamageOnFall: " + GameManager.GetInstance().Vida);
     }
 
-    public void RespawnOnFall()
+    public void RespawnOnFall(Vector3 playerSpawnScale)
     {
         if (GameManager.GetInstance().Vida > 0)
         {
-            GameManager.GetInstance().InstantiatePlayer();
+            transform.localScale = playerSpawnScale;
+            LevelManager.GetInstance().SetUpPlayer(GameManager.GetInstance().GetOrientacion(), transform);
+
+            //GameManager.GetInstance().InstantiatePlayer();
             Debug.Log("RespawnOnFall: " + GameManager.GetInstance().Vida);
-        }   
+
+            //transform.position = playerSpawnPos;
+            //transform.rotation = playerSpawnRot;
+        }
     }
 }

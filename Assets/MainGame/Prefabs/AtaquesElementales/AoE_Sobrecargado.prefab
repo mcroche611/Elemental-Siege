@@ -97,7 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diametro: 5
-  knock: 10
+  knock: 7.5
+  tiempoAturdimiento: 0.3
 --- !u!58 &-2450660852698360597
 CircleCollider2D:
   m_ObjectHideFlags: 0

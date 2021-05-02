@@ -12,13 +12,12 @@ public class GameManager : MonoBehaviour
     private static GameManager instance;
     private UIManager theUIManager;
 
-    public GameObject Player;
     GameObject nasnas;
 
     public bool juegoPrincipal;
 
     // Asumo que a la primera sala se ha accedido mediante una puerta a la izquierda
-    private string orientacionUltimaPuerta = "Oeste";
+    private string orientacionUltimaPuerta = "Este";
     int enemigosEnSala = 0;
 
     struct Coor
@@ -102,9 +101,11 @@ public class GameManager : MonoBehaviour
 
     public void InstantiatePlayer()
     {
+        /*
         nasnas = (GameObject)Instantiate(Player, transform.position, transform.rotation);
         if (juegoPrincipal)
             LevelManager.GetInstance().SetUpCamera(nasnas.transform);
+        */
     }
 
     public static GameManager GetInstance() //Para conseguir la referencia a game manager haciendo GameManager.GetInstance()
@@ -130,18 +131,25 @@ public class GameManager : MonoBehaviour
 
     public Transform GetPlayerTransform()
     {
-
         if (player != null)
             return player.transform;
         else
             return null;
-
-
     }
 
-    public void GMActualizarVida(float porcentajeVida) { theUIManager.ActualizarVida(porcentajeVida); }
-    public void GMActualizarMana(float porcentajeMana) { theUIManager.ActualizarMana(porcentajeMana); }
-    public void GMActualizarElementos(string elemento) { theUIManager.ActualizarElementos(elemento); }
+    /////////////// Actualización UI ////////////////
+    public void GMActualizarVida(float porcentajeVida)
+    {
+        theUIManager.ActualizarVida(porcentajeVida);
+    }
+    public void GMActualizarMana(float porcentajeMana)
+    {
+        theUIManager.ActualizarMana(porcentajeMana);
+    }
+    public void GMActualizarElementos(string elemento)
+    {
+        theUIManager.ActualizarElementos(elemento);
+    }
 
     public void Puerta(string orientacion)
     {
@@ -174,13 +182,27 @@ public class GameManager : MonoBehaviour
         return orientacionUltimaPuerta;
     }
 
+    public bool Nasnas(GameObject player)
+    {
+        if (nasnas == null)
+        {
+            nasnas = player;
+            return false;
+        }
+        else return true;
+    }
+
     private void OnLevelWasLoaded(int level)
     {
-        LevelManager.GetInstance().SetUpCamera(nasnas.transform);
-        LevelManager.GetInstance().SetUpPlayer(orientacionUltimaPuerta, nasnas.transform);
-        nivel.sceneAfter.x = nivel.sceneNow.x;
-        nivel.sceneAfter.y = nivel.sceneNow.y;
-        enemigosEnSala = 0;
+        if (level != 0)
+        {
+            LevelManager.GetInstance().SetUpCamera(nasnas.transform);
+            LevelManager.GetInstance().SetUpPlayer(orientacionUltimaPuerta, nasnas.transform);
+            nivel.sceneAfter.x = nivel.sceneNow.x;
+            nivel.sceneAfter.y = nivel.sceneNow.y;
+            enemigosEnSala = 0;
+        }
+        
     }
 
     static Escena Nivel1()
@@ -246,11 +268,17 @@ public class GameManager : MonoBehaviour
         else bonoElectricidad += cantidad;
     }
 
-    public bool EsPasillo() { return nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y][1] == 'P'; }
-    public bool EsSala() { return nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y][1] == 'S'; }
-    public bool EsMago() { return nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y][1] == 'M'; }
+    ///////////////// Estructura de Niveles //////////////
+    public bool EsPasillo()
+    {
+        return nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y][1] == 'P';
+    }
+    public bool EsSala()
+    {
+        return nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y][1] == 'S';
+    }
 
-    public bool SalaCompletada() { return enemigosEnSala <= 0; }
+    public bool SalaCompletada() { return enemigosEnSala == 0; }
 
     public void NuevoEnemigo(string enemigo)
     {
@@ -303,15 +331,15 @@ public class GameManager : MonoBehaviour
         nivel.pasillos[pasilloActual].enemigos[cont].vivo = true;
     }
 
-
     public void AñadirEnemigoEnSala() { enemigosEnSala += 1; }
-    public void QuitarEnemigoSala() { enemigosEnSala -= 1; Debug.Log("Enemigos en restantes: " + enemigosEnSala); }
+    public void QuitarEnemigoSala() { enemigosEnSala -= 1; }
 
     //Método público para cambiar de escena
     public void ChangeScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
     }
+
     public void Quit()
     {
         UnityEditor.EditorApplication.isPlaying = false;

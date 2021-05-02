@@ -448,6 +448,11 @@ PrefabInstance:
       propertyPath: puertas.Array.data[1]
       value: 
       objectReference: {fileID: 339383732}
+    - target: {fileID: 5991974677647762834, guid: 3cdfc173bdd64504a968561c22e8a6ad,
+        type: 3}
+      propertyPath: cinemechineVirtualCamera
+      value: 
+      objectReference: {fileID: 1712778103}
     - target: {fileID: 5991974677647762835, guid: 3cdfc173bdd64504a968561c22e8a6ad,
         type: 3}
       propertyPath: m_LocalPosition.x
