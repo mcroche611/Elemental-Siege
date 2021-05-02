@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class ActivateShield : MonoBehaviour
 {
-    // Start is called before the first frame update
+    Escudo scriptEscudo;
     void Start()
     {
-        
+        scriptEscudo = GetComponent<Escudo>();
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         
