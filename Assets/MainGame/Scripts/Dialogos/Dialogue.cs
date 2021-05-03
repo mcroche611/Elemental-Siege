@@ -15,15 +15,11 @@ public class Dialogue : MonoBehaviour
 
     private void Start()
     {
+        gameObject.SetActive(false); //nos aseguramos de que no está activado desde el principio
         currentSentence = sentences[0];
 
     }
 
-    void NextSentence()
-    {
-        numeroSentence++;
-        currentSentence = sentences[numeroSentence];
-        Debug.Log(currentSentence);
-    }
+    
 
 }
