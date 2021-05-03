@@ -28,31 +28,44 @@ public class DialogueManager : MonoBehaviour
     {
         instance = this;
     }
-
-    private void Update()
-    {
-        if (numeroSentence >= currentSentence.Length)
-        {
-            CancelInvoke();
-        }
-    }
-
-    private void Start()
-    {
-        currentSentence = sentences[numeroSentence];
-        StartDialogue();
-        //dialogueText = "";
-        //ActivarPanel();
-        //ShowDialogueTyping();
-        
-    }
     public static DialogueManager GetInstance() //Para conseguir la referencia a dialogue manager haciendo gameManager.getInstance()
     {
         return instance;
     }
-
-    public void StartDialogue()
+    private void Update()
     {
+        if (Input.GetKeyDown("space"))
+        {
+            if (dialogueText.text == sentences[numeroSentence])
+            {
+                NextLine();
+            }
+            else
+            {
+                StopAllCoroutines();
+                dialogueText.text = sentences[numeroSentence];
+            }
+        }
+        
+    }
+   
+    private void Start()
+    {
+        //dialogueBox.SetActive(true);
+
+        dialogueText.text = "";
+
+        //currentSentence = sentences[numeroSentence];
+        StartDialogue2();
+        //ActivarPanel();
+        //ShowDialogueTyping();
+        
+    }
+    
+
+    public void StartDialogue() //va mal porque no aparece la box aunque esté activada
+    {
+        dialogueBox.SetActive(true);
         numeroLetra = 0;
         
             //Invoke("ShowDialogueTyping", 0.5f);
@@ -66,7 +79,7 @@ public class DialogueManager : MonoBehaviour
 
     public void NextSentence() //para pasar de frase
     {
-        if (numeroSentence < sentences.Length)
+        if (numeroSentence < sentences.Length-1) //-1 quiza
         {
             numeroSentence++;
             Debug.Log(currentSentence);
@@ -74,6 +87,10 @@ public class DialogueManager : MonoBehaviour
             
             Debug.Log("NUMEROSENTENCE " + numeroSentence + "S.LENGTH " + sentences.Length);
             Debug.Log(currentSentence);
+        }
+        else
+        {
+            //dialogueBox.SetActive(false);
         }
         
     }
@@ -87,7 +104,7 @@ public class DialogueManager : MonoBehaviour
     {
         
 
-        /*if (currentSentence != null && numeroLetra < currentSentence.Length)
+        if (currentSentence != null && numeroLetra < currentSentence.Length)
         {
             dialogueText.text += currentSentence[numeroLetra];
             numeroLetra++;
@@ -95,12 +112,12 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
-            //CancelInvoke();
+            CancelInvoke();
             numeroLetra = 0;
             Debug.Log("NUMEROLETRA"+numeroLetra);
             NextSentence();
         }
-        */
+        
 
 
         /*else
@@ -112,12 +129,37 @@ public class DialogueManager : MonoBehaviour
         */
     }
 
+
+
+
+    //VERSIÓN 2 DEL SCRIPT DE DIÁLOGO, CON COROUTINES.
+    //***********************************************
+    void StartDialogue2()
+    {
+        numeroLetra = 0;
+        StartCoroutine(TypeLine());
+    }
     IEnumerator TypeLine()
     {
-        foreach (char c in currentSentence)
+        foreach (char c in sentences[numeroSentence])
         {
             dialogueText.text += c;
             yield return new WaitForSeconds(textSpeed);
         }
+    }
+
+    void NextLine()
+    {
+        if(numeroSentence < sentences.Length-1)
+        {
+        numeroSentence++;
+        dialogueText.text = "";
+        StartCoroutine(TypeLine());
+        }
+        else
+        {
+            dialogueBox.SetActive(false);
+        }
+        
     }
 }
