@@ -295,6 +295,7 @@ GameObject:
   - component: {fileID: 8291554197596981468}
   - component: {fileID: 1126634405133917258}
   - component: {fileID: 5365998298433459903}
+  - component: {fileID: 8723804271410893389}
   - component: {fileID: 2773603778566107099}
   - component: {fileID: -6555716164866705308}
   - component: {fileID: 2537349865353715073}
@@ -399,6 +400,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8723804271410893389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3180247627925113999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9155cbc4db2b3aa40933b4ad392bff6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2773603778566107099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -511,7 +524,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  tiempoAturdimiento: 0.25
 --- !u!114 &-1412376425635897025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -528,6 +540,7 @@ MonoBehaviour:
   damage: 15
   attackCoolDown: 0.25
   tiempoAturdimiento: 0.25
+  paralizado: 0
 --- !u!61 &8197817028357812946
 BoxCollider2D:
   m_ObjectHideFlags: 0

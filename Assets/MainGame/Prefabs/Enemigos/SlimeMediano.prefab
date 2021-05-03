@@ -572,6 +572,7 @@ GameObject:
   - component: {fileID: 1672155986820835783}
   - component: {fileID: 603853821188305769}
   - component: {fileID: 6491738155296114181}
+  - component: {fileID: 8741926571916420998}
   - component: {fileID: 4711462330720933486}
   - component: {fileID: -5607560716165420353}
   - component: {fileID: -4391617355404121274}
@@ -714,6 +715,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.3
+--- !u!114 &8741926571916420998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8186798521541953525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9155cbc4db2b3aa40933b4ad392bff6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4711462330720933486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -806,7 +819,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  tiempoAturdimiento: 0.25
 --- !u!114 &747041258557290167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -823,6 +835,7 @@ MonoBehaviour:
   damage: 15
   attackCoolDown: 0.25
   tiempoAturdimiento: 0.25
+  paralizado: 0
 --- !u!114 &-7618062806368132733
 MonoBehaviour:
   m_ObjectHideFlags: 0

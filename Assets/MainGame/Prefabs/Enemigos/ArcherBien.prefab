@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2284860475241333988}
   - component: {fileID: 1368823715864899937}
+  - component: {fileID: 7788131611197660077}
   - component: {fileID: 7269779132974066118}
   - component: {fileID: 3075281776587357878}
   - component: {fileID: 768002525951041520}
@@ -96,6 +97,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7788131611197660077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297599194788136642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9155cbc4db2b3aa40933b4ad392bff6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7269779132974066118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,7 +221,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  tiempoAturdimiento: 0
 --- !u!61 &6140081877812016083
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -892,4 +904,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabFlecha: {fileID: 1420095790484119285, guid: 88381e8003258a0428844905227e47ec,
     type: 3}
-  cooldown: 1
+  attackCoolDown: 1
+  paralizado: 0
