@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] float ataque, bonoAgua, bonoFuego, bonoElectricidad;
 
-    Transform playerTf;
+    //Transform playerTf;
     GameObject player;
 
     public void SetUIManager(UIManager uim)
@@ -89,6 +89,13 @@ public class GameManager : MonoBehaviour
     public void GMActualizarElementos(string elemento)
     {
         theUIManager.ActualizarElementos(elemento);
+    }
+
+    public void InstantiatePlayer()
+    {
+        nasnas = Instantiate(player, transform.position, transform.rotation);
+        if (juegoPrincipal)
+            LevelManager.GetInstance().SetUpCamera(nasnas.transform);
     }
 
     public string GetOrientacion()

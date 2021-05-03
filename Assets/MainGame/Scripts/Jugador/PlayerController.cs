@@ -38,7 +38,10 @@ public class PlayerController : MonoBehaviour
             //Input de movimiento de cuatro direccones y movimiento en diagonal
             vel = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
             //Velocidad de Movimiento
-            rb.velocity = new Vector2(vel.x * velocity, vel.y * velocity);
+            if (rb != null)
+                rb.velocity = new Vector2(vel.x * velocity, vel.y * velocity);
+            else
+                rb = GetComponent<Rigidbody2D>();
         }
         else
             aturdido -= Time.deltaTime;
