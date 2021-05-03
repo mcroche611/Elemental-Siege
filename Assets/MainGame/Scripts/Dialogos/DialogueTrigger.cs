@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
+    /*
     [TextArea(3, 10)] //ampliamos la cantidad de líneas que pueden aparecer en el editor
 
     [SerializeField]
@@ -11,22 +12,22 @@ public class DialogueTrigger : MonoBehaviour
 
     string currentSentence;
     int numeroSentence = 0;
-
+    */
     private void Start()
     {
-        currentSentence = sentences[numeroSentence];
+        gameObject.SetActive(true);
     }
-    void StartDialogue()
+    /*void StartDialogue()
     {
         DialogueManager.GetInstance().ActivarPanel();
         
         DialogueManager.GetInstance().ShowDialogueTyping();
-
+        
     }
-
+    */
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        StartDialogue();
-        
+        DialogueManager.GetInstance().StartDialogue();
+        Debug.Log("ENTRADO AL TRIGGER");
     }
 }

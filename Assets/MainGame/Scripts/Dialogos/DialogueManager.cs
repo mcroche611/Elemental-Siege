@@ -6,8 +6,7 @@ using TMPro;
 public class DialogueManager : MonoBehaviour
 {
     private static DialogueManager instance;
-    [SerializeField]
-    string[] dialogueSentences;
+    
 
 
     [SerializeField]
@@ -15,12 +14,11 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI dialogueText;
     [SerializeField]
-    float lettersPerSecond; //velocidad con la que se typean las letras
-
+    float textSpeed = 0.2f; //velocidad con la que se typean las letras
 
     [TextArea(3, 10)] //ampliamos la cantidad de líneas que pueden aparecer en el editor
     [SerializeField]
-    string[] sentences = new string[1]; //array de frases de dialogo
+    string[] sentences = new string[5]; //array de frases de dialogo
 
     string currentSentence;
     int numeroSentence = 0;
@@ -31,9 +29,17 @@ public class DialogueManager : MonoBehaviour
         instance = this;
     }
 
+    private void Update()
+    {
+        if (numeroSentence >= currentSentence.Length)
+        {
+            CancelInvoke();
+        }
+    }
+
     private void Start()
     {
-        currentSentence = sentences[0];
+        currentSentence = sentences[numeroSentence];
         StartDialogue();
         //dialogueText = "";
         //ActivarPanel();
@@ -49,7 +55,8 @@ public class DialogueManager : MonoBehaviour
     {
         numeroLetra = 0;
         
-            ShowDialogueTyping();
+            //Invoke("ShowDialogueTyping", 0.5f);
+        InvokeRepeating("ShowDialogueTyping", 0f, 0.2f);
         
     }
     public void ActivarPanel()
@@ -59,9 +66,16 @@ public class DialogueManager : MonoBehaviour
 
     public void NextSentence() //para pasar de frase
     {
-        numeroSentence++;
-        currentSentence = sentences[numeroSentence];
-        Debug.Log(currentSentence);
+        if (numeroSentence < sentences.Length)
+        {
+            numeroSentence++;
+            Debug.Log(currentSentence);
+            currentSentence = sentences[numeroSentence];
+            
+            Debug.Log("NUMEROSENTENCE " + numeroSentence + "S.LENGTH " + sentences.Length);
+            Debug.Log(currentSentence);
+        }
+        
     }
 
     public void ShowDialogue()
@@ -71,14 +85,39 @@ public class DialogueManager : MonoBehaviour
     }
     public void ShowDialogueTyping() //para que vaya mostrando el dialogo poco a poco. ponerlo con invoke
     {
-        if (currentSentence != null && numeroLetra < currentSentence.Length)
+        
+
+        /*if (currentSentence != null && numeroLetra < currentSentence.Length)
         {
             dialogueText.text += currentSentence[numeroLetra];
             numeroLetra++;
+
         }
         else
+        {
+            //CancelInvoke();
             numeroLetra = 0;
-        
+            Debug.Log("NUMEROLETRA"+numeroLetra);
+            NextSentence();
+        }
+        */
+
+
+        /*else
+        {
+            dialogueText.text = "";
+            numeroLetra = 0;
+            NextSentence();
+        }
+        */
     }
 
+    IEnumerator TypeLine()
+    {
+        foreach (char c in currentSentence)
+        {
+            dialogueText.text += c;
+            yield return new WaitForSeconds(textSpeed);
+        }
+    }
 }
