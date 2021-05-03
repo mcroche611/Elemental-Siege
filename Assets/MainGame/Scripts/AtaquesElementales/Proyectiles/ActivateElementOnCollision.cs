@@ -25,11 +25,8 @@ public class ActivateElementOnCollision : MonoBehaviour
 
             Escudo escudo = collision.GetComponent<Escudo>();
 
-            if (collision.GetComponent<Escudo>() == null) //Si hay escudo se comprueba si está en uso
+            if (!(escudo != null && escudo.enabled))
                 stateManager.NewElement(element);
-            else if (!collision.GetComponent<Escudo>().enabled) //si el enemigo no tiene escudo, se pone el elemento
-                stateManager.NewElement(element);
-
         }
     }
 

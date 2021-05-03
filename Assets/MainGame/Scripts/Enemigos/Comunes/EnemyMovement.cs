@@ -3,18 +3,13 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    //[SerializeField]
-    //float detectRange;
-
     [SerializeField]
     float speed;
-
-    [SerializeField]
-    float tiempoAturdimiento;
 
     Vector2 vel;
     bool attackMode = false;
 
+    float aturdido;
     float iniSpeed;
     Transform playerTf;
     Rigidbody2D rb;
@@ -96,7 +91,10 @@ public class EnemyMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(vel.x * speed, vel.y * speed);
+        if (aturdido <= 0)
+            rb.velocity = new Vector2(vel.x * speed, vel.y * speed);
+        else
+            aturdido -= Time.deltaTime;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -117,8 +115,7 @@ public class EnemyMovement : MonoBehaviour
 
     public void DisminuirVelocidad(float disminucion)
     {
-        speed *= disminucion;
-        
+        speed *= disminucion;        
     }
 
     public void AumentarVelocidad(float aumento)
@@ -131,14 +128,12 @@ public class EnemyMovement : MonoBehaviour
         speed = iniSpeed;
     }
 
-    private void OnDisable()
+    public void Knockback(float tiempoAturdimiento)
     {
-        Invoke("DevolverMovimiento", tiempoAturdimiento);
+        if (gameObject.name != "ArcherBien")
+        {
+            rb.velocity = new Vector2(0f, 0f);
+            aturdido = tiempoAturdimiento;
+        }       
     }
-
-    private void DevolverMovimiento()
-    {
-        this.enabled = true;
-    }
-
 }

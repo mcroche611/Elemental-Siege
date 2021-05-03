@@ -652,7 +652,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6590476722900602267
 RectTransform:
   m_ObjectHideFlags: 0
@@ -797,7 +797,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -5335191898352440981, guid: 099f59d2d0088ff40931f7285c53af89,
     type: 3}
-  m_Color: {r: 1, g: 0.298, b: 0.915, a: 1}
+  m_Color: {r: 1, g: 0.43867922, b: 0.9731953, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -899,7 +899,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  tiempoAturdimiento: 0.25
 --- !u!114 &4929916465995409035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -916,6 +915,7 @@ MonoBehaviour:
   damage: 15
   attackCoolDown: 0.25
   tiempoAturdimiento: 0.25
+  paralizado: 0
 --- !u!114 &7548136670689446156
 MonoBehaviour:
   m_ObjectHideFlags: 0

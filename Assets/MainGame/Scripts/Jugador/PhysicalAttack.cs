@@ -3,40 +3,32 @@
 public class PhysicalAttack : MonoBehaviour
 {
 
-    [SerializeField]float cooldownSecs = 0.5f;
+    [SerializeField]float coolDownSecs = 0.5f;
 
-    [SerializeField] float staffDuration = 0.25f;
+    [SerializeField] float attackFreeze = 0.25f;
 
     GameObject staffChild;
-    float cooldown = 0; //se inicializa a 0 para que pueda atacar desde el principio
-    Rigidbody2D playerRigidbody;
+    float coolDown = 0; //se inicializa a 0 para que pueda atacar desde el principio
 
-    void Awake()
-    {
-        playerRigidbody = GetComponent<Rigidbody2D>();
-
-    }
     private void Start()
     {
         staffChild = transform.GetChild(1).gameObject;
 
     }
+
     void Update()
     {
-        if (cooldown > 0)
+        if (Input.GetMouseButtonDown(0) && coolDown <= 0)
         {
-            cooldown -= Time.deltaTime;
-        }
-        if (Input.GetMouseButtonDown(0) && cooldown <= 0)
-        {
-            Freeze();
             staffChild.SetActive(true);
             staffChild.transform.position = transform.position;
             staffChild.transform.rotation = Rotation();
-            Invoke("StaffDeactivate", staffDuration);
-            Invoke("Unfreeze", cooldownSecs);  
-            cooldown = cooldownSecs;
+            Invoke("StaffDeactivate", 0.3f);
+            GetComponent<PlayerController>().Knockback(attackFreeze);
+            coolDown = coolDownSecs;
         }
+        else coolDown -= Time.deltaTime;
+
 
     }
 
@@ -51,20 +43,7 @@ public class PhysicalAttack : MonoBehaviour
     private void StaffDeactivate()
     {
         staffChild.SetActive(false);
-
     }
-    private void Unfreeze()
-    {
-        playerRigidbody.constraints = RigidbodyConstraints2D.None;
-        playerRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
-
-    }
-    private void Freeze()
-    {
-        playerRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
-
-    }
-
 }
 
 

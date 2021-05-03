@@ -211,7 +211,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  tiempoAturdimiento: 0.25
 --- !u!114 &5427682969815687633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,6 +227,7 @@ MonoBehaviour:
   damage: 15
   attackCoolDown: 0.25
   tiempoAturdimiento: 0.25
+  paralizado: 0
 --- !u!114 &8874805353012169521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -621,6 +621,7 @@ GameObject:
   - component: {fileID: 791620279524732302}
   - component: {fileID: 7141669098027298055}
   - component: {fileID: 9132743047828631745}
+  - component: {fileID: 4136660789064069195}
   m_Layer: 17
   m_Name: Pies
   m_TagString: Untagged
@@ -681,6 +682,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tiempoParaMojar: 2
+--- !u!114 &4136660789064069195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5155889800735591753}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 991f313ac90880b468f25a52c9555d94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  relentizacion: 0.2
+  spikesDamge: 5
+  CoolDown: 0.5
 --- !u!1 &5254416466766950312
 GameObject:
   m_ObjectHideFlags: 0

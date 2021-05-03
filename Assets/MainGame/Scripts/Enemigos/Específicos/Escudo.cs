@@ -34,11 +34,23 @@ public class Escudo : MonoBehaviour
 
         //sacamos los bools al activarse el script para hacerlo menos veces
         if (shieldType == "Fuego")
-            escudoFuego = true;
+        {
+             escudoFuego = true;
+            GetComponent<SpriteRenderer>().color = Color.red;
+        }
+           
         else if (shieldType == "Agua")
+        {
             escudoAgua = true;
+            GetComponent<SpriteRenderer>().color = Color.blue;
+        }
+            
         else if (shieldType == "Electrico")
+        {
             escudoElectrico = true;
+            GetComponent<SpriteRenderer>().color = Color.magenta;
+        }
+           
 
         
         _barraDeEscudo = barraDeEscudo.GetComponent<RectTransform>();
@@ -49,10 +61,10 @@ public class Escudo : MonoBehaviour
                  //porque si no al cambiar de escudo, lo ejecutado en el start ya estará puesto
     {
         playerWaterBonus = GameManager.GetInstance().Stat("Agua"); //cogemos el bono agua
-        playerFireBonus = GameManager.GetInstance().Stat("Fuego"); //cogemos el bono agua
-        playerElectricBonus = GameManager.GetInstance().Stat("Fuego");
+        playerFireBonus = GameManager.GetInstance().Stat("Fuego"); //cogemos el bono fuego
+        playerElectricBonus = GameManager.GetInstance().Stat("Electrico"); //cogemos el bono electrico
 
-        
+
     }
 
     void Update()
@@ -66,6 +78,7 @@ public class Escudo : MonoBehaviour
     private void OnDisable()
     {
         GetComponent<SpriteRenderer>().color = Color.yellow; //se le pone otro color al desaparecer
+        
             escudoFuego = false;
             escudoAgua = false;
             escudoElectrico = false;
@@ -116,7 +129,15 @@ public class Escudo : MonoBehaviour
     public void CambioEscudo(string type)
     {
         shieldType = type;
+        shieldHealth = maxShieldHealth;
     }
-
-
+    
+    public float ShieldHealth() //Devuelve el valor de vida de escudo
+    {
+        return shieldHealth;
+    }
+    public string TipoEscudo() //Devuelve el tipo de escudo que se está usando
+    {
+        return shieldType;
+    }
 }
