@@ -19,7 +19,6 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] float ataque, bonoAgua, bonoFuego, bonoElectricidad;
 
-    //Transform playerTf;
     GameObject player;
 
     public void SetUIManager(UIManager uim)
@@ -73,6 +72,14 @@ public class GameManager : MonoBehaviour
             Debug.LogError("playerGO null");
         else
             this.player = playerGO;
+    }
+
+    public GameObject GetPlayer()
+    {
+        if (player != null)
+            return player;
+        else
+            return null;
     }
 
     public Transform GetPlayerTransform()

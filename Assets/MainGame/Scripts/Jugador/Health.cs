@@ -6,22 +6,8 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] float maxVida;
-    LevelManager levels;
 
     [SerializeField] float vida;
-
-    //public float Vida
-    //{
-    //    get
-    //    {
-    //        return vida;
-    //    }
-    //    set
-    //    {
-    //        vida = value;
-    //        Debug.Log("vida: " + vida);
-    //    }
-    //}
 
     private void Start()
     {
@@ -30,10 +16,7 @@ public class Health : MonoBehaviour
         if (vida == 0)
         {
             vida = maxVida;
-            //GameManager.GetInstance().GMActualizarVida(GameManager.GetInstance().Vida / maxVida);
         }
-
-        levels = LevelManager.GetInstance();
     }
 
     public void ReceiveDamage(float damage)
@@ -61,16 +44,11 @@ public class Health : MonoBehaviour
         // Vuelve al primer pasillo del nivel
         GameManager.GetInstance().ChangeScene("1P0");
 
-        GameManager.GetInstance().SetPlayer(this.gameObject);
+        //GameManager.GetInstance().SetPlayer(this.gameObject);
+        //LevelManager.GetInstance().SetUpCamera(gameObject.transform);
+        //LevelManager.GetInstance().SetUpPlayer("Este", GameManager.GetInstance().GetPlayerTransform());
         vida = maxVida;
-        LevelManager.GetInstance().SetUpCamera(gameObject.transform);
-        LevelManager.GetInstance().SetUpPlayer("Este", GameManager.GetInstance().GetPlayerTransform());
         GameManager.GetInstance().GMActualizarVida(vida / maxVida);
-
-
-
-        // Instancia al jugador
-        //GameManager.GetInstance().InstantiatePlayer();
     }
 
     public void Healing(float hp) //hacemos otro método para curar
@@ -107,9 +85,6 @@ public class Health : MonoBehaviour
             LevelManager.GetInstance().SetUpPlayer(GameManager.GetInstance().GetOrientacion(), transform);
 
             Debug.Log("RespawnOnFall: " + vida);
-
-            //transform.position = playerSpawnPos;
-            //transform.rotation = playerSpawnRot;
         }
     }
 }
