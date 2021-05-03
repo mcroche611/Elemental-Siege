@@ -77,6 +77,12 @@ public class Health : MonoBehaviour
         vida -= maxVida / 4;
         GameManager.GetInstance().GMActualizarVida(vida / maxVida);
         Debug.Log("DamageOnFall: " + vida);
+
+        if (vida <= 0)
+        {
+            Destroy(this.gameObject);
+            RespawnStart();
+        }
     }
 
     public void RespawnOnFall(Vector3 playerSpawnScale)
