@@ -52,11 +52,25 @@ public class Health : MonoBehaviour
 
     private void RespawnStart()
     {
+        // Resetea el avance en el nivel
+        GameManager.GetInstance().CreaNivel1();
+
+        // Cosas de los Start()
+        GameManager.GetInstance().restartJuego = true;
+
         // Vuelve al primer pasillo del nivel
         GameManager.GetInstance().ChangeScene("1P0");
 
+        GameManager.GetInstance().SetPlayer(this.gameObject);
+        vida = maxVida;
+        LevelManager.GetInstance().SetUpCamera(gameObject.transform);
+        LevelManager.GetInstance().SetUpPlayer("Este", GameManager.GetInstance().GetPlayerTransform());
+        GameManager.GetInstance().GMActualizarVida(vida / maxVida);
+
+
+
         // Instancia al jugador
-        GameManager.GetInstance().InstantiatePlayer();
+        //GameManager.GetInstance().InstantiatePlayer();
     }
 
     public void Healing(float hp) //hacemos otro método para curar

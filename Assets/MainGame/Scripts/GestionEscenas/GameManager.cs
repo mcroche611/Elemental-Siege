@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
-
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     private UIManager theUIManager;
 
     public bool juegoPrincipal;
+    public bool restartJuego = false;
 
     // Asumo que a la primera sala se ha accedido mediante una puerta a la izquierda
 
@@ -44,6 +45,11 @@ public class GameManager : MonoBehaviour
     }
 
     private void Start()
+    {
+        CreaNivel1();
+    }
+
+    public void CreaNivel1()
     {
         nivel = Nivel1();
     }
@@ -100,6 +106,8 @@ public class GameManager : MonoBehaviour
 
     public string GetOrientacion()
     {
+        restartJuego = false;
+
         return orientacionUltimaPuerta;
     }
 
@@ -223,7 +231,7 @@ public class GameManager : MonoBehaviour
 
     private void OnLevelWasLoaded(int level)
     {
-        if (level != 0)
+        if (level != 0 && !restartJuego)
         {
             LevelManager.GetInstance().SetUpCamera(nasnas.transform);
             LevelManager.GetInstance().SetUpPlayer(orientacionUltimaPuerta, nasnas.transform);
@@ -310,14 +318,17 @@ public class GameManager : MonoBehaviour
 
     public void ModificarEnemigo(GameObject enemigo, float vida)
     {
-        int cont = 0;
-        int pasilloActual = int.Parse(nivel.scenes[nivel.sceneAfter.x, nivel.sceneAfter.y][2].ToString());
+        if (!restartJuego)
+        {
+            int cont = 0;
+            int pasilloActual = int.Parse(nivel.scenes[nivel.sceneAfter.x, nivel.sceneAfter.y][2].ToString());
 
-        while (nivel.pasillos[pasilloActual].enemigos[cont].nombreEnemigo != enemigo.name) cont += 1;
+            while (nivel.pasillos[pasilloActual].enemigos[cont].nombreEnemigo != enemigo.name) cont += 1;
 
-        nivel.pasillos[pasilloActual].enemigos[cont].ultimaPosicion = enemigo.transform.position;
-        nivel.pasillos[pasilloActual].enemigos[cont].vida = vida;
-        nivel.pasillos[pasilloActual].enemigos[cont].vivo = true;
+            nivel.pasillos[pasilloActual].enemigos[cont].ultimaPosicion = enemigo.transform.position;
+            nivel.pasillos[pasilloActual].enemigos[cont].vida = vida;
+            nivel.pasillos[pasilloActual].enemigos[cont].vivo = true;
+        } 
     }
 
     public void AñadirEnemigoEnSala() { enemigosEnSala += 1; }
