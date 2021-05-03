@@ -13,9 +13,10 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     GameObject dialogueBox;
     [SerializeField]
-    string dialogueText;
+    TextMeshProUGUI dialogueText;
     [SerializeField]
     float lettersPerSecond; //velocidad con la que se typean las letras
+
 
     [TextArea(3, 10)] //ampliamos la cantidad de líneas que pueden aparecer en el editor
     [SerializeField]
@@ -32,9 +33,11 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
-        dialogueText = dialogueBox.GetComponentInChildren<TextMeshProUGUI>().text;
-        ActivarPanel();
-        ShowDialogueTyping();
+        currentSentence = sentences[0];
+        StartDialogue();
+        //dialogueText = "";
+        //ActivarPanel();
+        //ShowDialogueTyping();
         
     }
     public static DialogueManager GetInstance() //Para conseguir la referencia a dialogue manager haciendo gameManager.getInstance()
@@ -42,7 +45,13 @@ public class DialogueManager : MonoBehaviour
         return instance;
     }
 
-
+    public void StartDialogue()
+    {
+        numeroLetra = 0;
+        
+            ShowDialogueTyping();
+        
+    }
     public void ActivarPanel()
     {
         dialogueBox.SetActive(true);
@@ -57,17 +66,19 @@ public class DialogueManager : MonoBehaviour
 
     public void ShowDialogue()
     {
-
+        ActivarPanel();
+        dialogueText.text = currentSentence;
     }
     public void ShowDialogueTyping() //para que vaya mostrando el dialogo poco a poco. ponerlo con invoke
     {
         if (currentSentence != null && numeroLetra < currentSentence.Length)
         {
-            dialogueText += currentSentence[numeroLetra];
+            dialogueText.text += currentSentence[numeroLetra];
             numeroLetra++;
         }
         else
             numeroLetra = 0;
+        
     }
 
 }

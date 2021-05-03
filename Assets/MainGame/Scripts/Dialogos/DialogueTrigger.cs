@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
+    [TextArea(3, 10)] //ampliamos la cantidad de líneas que pueden aparecer en el editor
+
+    [SerializeField]
+    string[] sentences = new string[1]; //array de frases de dialogo
+
+    string currentSentence;
+    int numeroSentence = 0;
+
     private void Start()
     {
-
+        currentSentence = sentences[numeroSentence];
     }
     void StartDialogue()
     {
