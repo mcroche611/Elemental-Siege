@@ -36,6 +36,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (Input.GetKeyDown("space"))
         {
+            
             if (dialogueText.text == sentences[numeroSentence])
             {
                 NextLine();
@@ -45,18 +46,19 @@ public class DialogueManager : MonoBehaviour
                 StopAllCoroutines();
                 dialogueText.text = sentences[numeroSentence];
             }
+            
         }
         
     }
    
     private void Start()
     {
-        //dialogueBox.SetActive(true);
+        dialogueBox.SetActive(false);
 
         dialogueText.text = "";
+        //StartDialogue2();
 
         //currentSentence = sentences[numeroSentence];
-        StartDialogue2();
         //ActivarPanel();
         //ShowDialogueTyping();
         
@@ -134,9 +136,13 @@ public class DialogueManager : MonoBehaviour
 
     //VERSIÓN 2 DEL SCRIPT DE DIÁLOGO, CON COROUTINES.
     //***********************************************
-    void StartDialogue2()
+    public void StartDialogue2()
     {
-        numeroLetra = 0;
+        dialogueBox.SetActive(true);
+        dialogueText.text = "";
+        Time.timeScale = 0;
+
+        numeroSentence = 0;
         StartCoroutine(TypeLine());
     }
     IEnumerator TypeLine()
@@ -144,13 +150,13 @@ public class DialogueManager : MonoBehaviour
         foreach (char c in sentences[numeroSentence])
         {
             dialogueText.text += c;
-            yield return new WaitForSeconds(textSpeed);
+            yield return new WaitForSecondsRealtime(textSpeed);
         }
     }
 
     void NextLine()
     {
-        if(numeroSentence < sentences.Length-1)
+        if(numeroSentence < (sentences.Length-1))
         {
         numeroSentence++;
         dialogueText.text = "";
@@ -159,6 +165,7 @@ public class DialogueManager : MonoBehaviour
         else
         {
             dialogueBox.SetActive(false);
+            Time.timeScale = 1;
         }
         
     }
