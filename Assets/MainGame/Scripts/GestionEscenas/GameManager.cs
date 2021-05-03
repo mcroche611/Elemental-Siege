@@ -110,17 +110,6 @@ public class GameManager : MonoBehaviour
         else bonoElectricidad += cantidad;
     }
 
-    //Método público para cambiar de escena
-    public void ChangeScene(string sceneName)
-    {
-        SceneManager.LoadScene(sceneName);
-    }
-
-    public void Quit()
-    {
-        UnityEditor.EditorApplication.isPlaying = false;
-    }
-
     // Estructura de Niveles
 
     private string orientacionUltimaPuerta = "Este";
