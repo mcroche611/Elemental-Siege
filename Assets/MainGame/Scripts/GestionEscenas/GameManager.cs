@@ -21,21 +21,6 @@ public class GameManager : MonoBehaviour
     Transform playerTf;
     GameObject player;
 
-    [SerializeField] private float vida;
-
-    public float Vida
-    {
-        get
-        {
-            return vida;
-        }
-        set
-        {
-            vida = value;
-            Debug.Log("vida: " + vida);
-        }
-    }
-
     public void SetUIManager(UIManager uim)
     {
         theUIManager = uim;
