@@ -647,7 +647,7 @@ GameObject:
   - component: {fileID: 6550169927862669098}
   - component: {fileID: 3689561687880577894}
   m_Layer: 5
-  m_Name: Escudo Fuego
+  m_Name: Escudo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -731,8 +731,6 @@ GameObject:
   - component: {fileID: 8959390112028303849}
   - component: {fileID: 7872333326033732350}
   - component: {fileID: 9159750794916082354}
-  - component: {fileID: 3768184972907937094}
-  - component: {fileID: 8544387676280084362}
   m_Layer: 10
   m_Name: Iblis
   m_TagString: Untagged
@@ -1002,30 +1000,3 @@ MonoBehaviour:
   objetoSpawnerD: {fileID: 4199202409773636906, guid: 7add5f6cdcd4de94fa5f2378b04e623e,
     type: 3}
   vidaMinima: 70
---- !u!114 &3768184972907937094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9159750794916082355}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a79c47d4b86a4f44905dd99cd0bf363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shieldHealth: 20
-  shieldType: Fuego
-  barraDeEscudo: {fileID: 0}
---- !u!114 &8544387676280084362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9159750794916082355}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1bef870f2cebeb48a5adf8c9c5ac55e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
