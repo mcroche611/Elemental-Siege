@@ -153,6 +153,11 @@ public class GameManager : MonoBehaviour
         public Coor sceneAfter;
     }
 
+    public void ChangeScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
     private Escena Nivel1()
     {
         Escena s;
