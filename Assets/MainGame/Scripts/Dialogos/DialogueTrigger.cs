@@ -9,5 +9,6 @@ public class DialogueTrigger : MonoBehaviour
     {
         DialogueManager.GetInstance().StartDialogue2();
         Debug.Log("ENTRADO AL TRIGGER");
+        Destroy(gameObject);
     }
 }
