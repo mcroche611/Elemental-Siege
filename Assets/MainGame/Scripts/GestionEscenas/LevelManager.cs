@@ -38,14 +38,6 @@ public class LevelManager : MonoBehaviour
         playerTf = player;
     }
 
-    //temporal para cuando no tenemos la orientacion
-    public void SetPlayerTransform(Transform player)
-    {
-        playerTf = player;
-        Debug.Log("Player Transform Position: " + player.position);
-        Debug.Log("Get Transform: " + GetPlayerTransform().position);
-    }
-
     public Transform GetPlayerTransform()
     {
         return playerTf;

@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     Vector2 vel;
 
     float aturdido = 0;
-
+    bool playerSet = false;
 
     private void Awake()
     {
@@ -42,6 +42,14 @@ public class PlayerController : MonoBehaviour
                 rb.velocity = new Vector2(vel.x * velocity, vel.y * velocity);
             else
                 rb = GetComponent<Rigidbody2D>();
+
+            if (GameManager.GetInstance().restartJuego && !playerSet)
+            {
+                GameManager.GetInstance().SetPlayer(this.gameObject);
+                LevelManager.GetInstance().SetUpCamera(gameObject.transform);
+                LevelManager.GetInstance().SetUpPlayer("Este", GameManager.GetInstance().GetPlayerTransform());
+                playerSet = true;
+            }
         }
         else
             aturdido -= Time.deltaTime;
