@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Menu : MonoBehaviour
 {
-
+    public GameManager pauseMenu;
+    
     //Método público para cambiar de escena
     public void ChangeScene(string sceneName)
     {
@@ -15,5 +16,8 @@ public class Menu : MonoBehaviour
     {
         UnityEditor.EditorApplication.isPlaying = false;
     }
-
+    public void Pause()
+    {
+        pauseMenu.SetActive(true);
+    }
 }
