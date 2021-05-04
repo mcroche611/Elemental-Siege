@@ -164,7 +164,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 983f42b1d4341574f97030b3bda8dce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxVida: 1000
+  maxVida: 700
+  vida: 0
 --- !u!114 &2017438766814546708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,7 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073aa367de8d98c479096699c7214d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxMana: 500
+  maxMana: 300
   manaRegSpeed: 0.1
 --- !u!114 &2017438766814546710
 MonoBehaviour:
@@ -191,8 +192,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c955a275251a28d46a5cd28e49f59f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldownSecs: 0.25
-  staffDuration: 0.25
+  coolDownSecs: 0.5
+  attackFreeze: 0.25
 --- !u!114 &2017438766814546698
 MonoBehaviour:
   m_ObjectHideFlags: 0

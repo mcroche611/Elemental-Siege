@@ -293,6 +293,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4202363075750542437, guid: e1050de394ca7284fbd47b388d274311,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4202363075750542439, guid: e1050de394ca7284fbd47b388d274311,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -980,6 +985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86b5fa7a466783549b6b92e90c534916, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 0}
 --- !u!1 &1881818522
 GameObject:
   m_ObjectHideFlags: 0
