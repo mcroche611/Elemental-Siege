@@ -7,8 +7,12 @@ public class DialogueTrigger : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        DialogueManager.GetInstance().StartDialogue2();
-        Debug.Log("ENTRADO AL TRIGGER");
-        Destroy(gameObject);
+        if (collision.GetComponent<PlayerController>())
+        {
+            DialogueManager.GetInstance().StartDialogue2();
+            Debug.Log("ENTRADO AL TRIGGER");
+            Destroy(gameObject);
+        }
+        
     }
 }
