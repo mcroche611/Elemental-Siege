@@ -9,6 +9,7 @@ public class Fall : MonoBehaviour
     float ogScale;
     Vector3 spawnScale;
     int i = 0;
+    float maxDamage = 1000;
 
 
     private void FallSize()
@@ -21,16 +22,21 @@ public class Fall : MonoBehaviour
 
             if (character.GetComponent<PlayerController>() != null)
             {
-                Health charHealth = character.GetComponent<Health>();
-                charHealth.DamageOnFall();
+                Health playerHealth = character.GetComponent<Health>();
+                playerHealth.DamageOnFall();
 
-                charHealth.RespawnOnFall(spawnScale);
+                // reestablece el movimiento cuando el jugador termine de caer.
+                character.GetComponentInParent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+                character.GetComponentInParent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
 
-                //Destroy(character.gameObject);
+                playerHealth.RespawnOnFall(spawnScale);
             }
-            else 
-                Destroy(character.gameObject);
-
+            else
+            {
+                EnemyHealth enemyHealth = character.GetComponent<EnemyHealth>();
+                enemyHealth.QuitarVida(maxDamage);
+            }     
+            
             character = null;
         }
         else
@@ -60,7 +66,6 @@ public class Fall : MonoBehaviour
             collision.gameObject.GetComponentInParent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
             Invoke("FallSize", 0);
-
             Debug.Log("OgScale: " + ogScale);
         }
     }
