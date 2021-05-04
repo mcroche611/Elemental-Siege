@@ -24,6 +24,10 @@ public class Fall : MonoBehaviour
                 Health charHealth = character.GetComponent<Health>();
                 charHealth.DamageOnFall();
 
+                // reestablece el movimiento cuando el jugador termine de caer.
+                character.GetComponentInParent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+                character.GetComponentInParent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+
                 charHealth.RespawnOnFall(spawnScale);
 
                 //Destroy(character.gameObject);
@@ -60,7 +64,6 @@ public class Fall : MonoBehaviour
             collision.gameObject.GetComponentInParent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
             Invoke("FallSize", 0);
-
             Debug.Log("OgScale: " + ogScale);
         }
     }
