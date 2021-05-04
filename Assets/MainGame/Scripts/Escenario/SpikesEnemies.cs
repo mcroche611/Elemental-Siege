@@ -5,13 +5,13 @@ using UnityEngine;
 public class SpikesEnemies : MonoBehaviour
 {
     [SerializeField]
-    float relentizacion;
+    float relentizacion = 0.2f;
 
     [SerializeField]
-    float spikesDamge;
+    float spikesDamge = 5;
 
     [SerializeField]
-    float CoolDown;
+    float CoolDown = 0.5f;
 
     bool pisaSpike = false;
     EnemyHealth health;

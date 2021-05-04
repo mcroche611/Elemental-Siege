@@ -20,11 +20,12 @@ public class EnemyAttackOnCollision : MonoBehaviour
     bool attackEnabled = true;
     [HideInInspector] public bool paralizado = false;
 
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         PlayerController player = collision.gameObject.GetComponent<PlayerController>();
 
-        if (player.GetComponent<PlayerController>() != null)
+        if (player != null)
         {        
             if (attackEnabled && !paralizado)
             {
