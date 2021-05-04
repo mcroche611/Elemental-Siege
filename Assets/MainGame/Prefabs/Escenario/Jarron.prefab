@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7924192303689250473}
   - component: {fileID: 7924192303689250478}
   - component: {fileID: 7924192303689250472}
-  - component: {fileID: 7924192303689250475}
+  - component: {fileID: 7762553541500585687}
   m_Layer: 0
   m_Name: Jarron
   m_TagString: Untagged
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7924192303689250479}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.15, y: 1.24, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 5641273281166436184, guid: 63643d6a056bc344e9112fdf3dea5403,
+  m_Sprite: {fileID: -5075373584232630967, guid: 57a8a8a08b008ff4589398ff4529e54e,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   dropProbabilityPercentage: 90
   Heartprefab: {fileID: 6654300530743981165, guid: ecc37d904c13dd94bb6f97576d5471d7,
     type: 3}
---- !u!61 &7924192303689250475
+--- !u!61 &7762553541500585687
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,10 +112,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.5, y: 0.5}
+  m_Offset: {x: 0, y: -0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
+    pivot: {x: 0.5, y: 1}
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5

@@ -1,40 +1,16 @@
 fileFormatVersion: 2
-guid: 57a8a8a08b008ff4589398ff4529e54e
+guid: e4c6839e9f4520d4ba6bd3a44a0a421b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5075373584232630967
-    second: Jarron_0
+      213: 3313733511368546993
+    second: New Piskel (13)_0
   - first:
-      213: -1867896213068310167
-    second: Jarron_1
+      213: -1827528354219362881
+    second: New Piskel (13)_1
   - first:
-      213: -2213929412887187600
-    second: Jarron_2
-  - first:
-      213: 7059134137390355819
-    second: Jarron_3
-  - first:
-      213: -2228579539133192996
-    second: Jarron_4
-  - first:
-      213: 6861360019006095424
-    second: Jarron_5
-  - first:
-      213: -7933308581672285049
-    second: Jarron_6
-  - first:
-      213: 2247865853807468490
-    second: Jarron_7
-  - first:
-      213: 6295641101914639322
-    second: Jarron_8
-  - first:
-      213: 7481697864995399604
-    second: Jarron_0
-  - first:
-      213: -4913649435903439357
-    second: Jarron_3
+      213: -4465051430558342764
+    second: New Piskel (13)_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -120,28 +96,28 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Jarron_0
+      name: New Piskel (13)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 32
         height: 32
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b769d7819454d760800000000000000
-      internalID: 7481697864995399604
+      spriteID: 1ba1e69521fbcfd20800000000000000
+      internalID: 3313733511368546993
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jarron_1
+      name: New Piskel (13)_1
       rect:
         serializedVersion: 2
         x: 32
@@ -149,20 +125,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96914ce6a46e316e0800000000000000
-      internalID: -1867896213068310167
+      spriteID: fb5fccdf4a053a6e0800000000000000
+      internalID: -1827528354219362881
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jarron_2
+      name: New Piskel (13)_2
       rect:
         serializedVersion: 2
         x: 64
@@ -170,35 +146,14 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07fe11bcdea8641e0800000000000000
-      internalID: -2213929412887187600
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jarron_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 30e4d262fd53fcbb0800000000000000
-      internalID: -4913649435903439357
+      spriteID: 49168b97163f802c0800000000000000
+      internalID: -4465051430558342764
       vertices: []
       indices: 
       edges: []
