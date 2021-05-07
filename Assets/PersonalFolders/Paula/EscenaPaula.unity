@@ -1369,40 +1369,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &305020423 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9159750794916082355, guid: 88b29cbf55e51cd48aa641cc06c87a0c,
-    type: 3}
-  m_PrefabInstance: {fileID: 440023678}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &305020424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 305020423}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1bef870f2cebeb48a5adf8c9c5ac55e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tiempoCambio: 5
---- !u!114 &305020425
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 305020423}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a79c47d4b86a4f44905dd99cd0bf363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shieldHealth: 100
-  shieldType: Fuego
-  barraDeEscudo: {fileID: 1487844060}
 --- !u!4 &321451531 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1897762357622806067, guid: 665b98576ff6444498c3a4baf9a1c9e3,
@@ -7163,12 +7129,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4199202409773636906, guid: 7add5f6cdcd4de94fa5f2378b04e623e,
     type: 3}
   m_PrefabInstance: {fileID: 1468011576}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1487844060 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8847336422148475853, guid: 88b29cbf55e51cd48aa641cc06c87a0c,
-    type: 3}
-  m_PrefabInstance: {fileID: 440023678}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1501487905 stripped
 Transform:

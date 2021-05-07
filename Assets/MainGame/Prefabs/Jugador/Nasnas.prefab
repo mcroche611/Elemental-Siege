@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 2017438766814546698}
   - component: {fileID: 2017438766814546699}
   m_Layer: 8
-  m_Name: PlayerPrefab
+  m_Name: Nasnas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 983f42b1d4341574f97030b3bda8dce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxVida: 700
+  maxVida: 200
   vida: 0
 --- !u!114 &2017438766814546708
 MonoBehaviour:

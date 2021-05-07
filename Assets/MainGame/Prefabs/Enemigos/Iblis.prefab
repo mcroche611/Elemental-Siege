@@ -719,6 +719,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4596555385443438035}
   - component: {fileID: 8731721973660666226}
+  - component: {fileID: 4398233305895479207}
   - component: {fileID: 4275711653521034996}
   - component: {fileID: 5608785142000543567}
   - component: {fileID: 3618800334333009446}
@@ -731,6 +732,8 @@ GameObject:
   - component: {fileID: 8959390112028303849}
   - component: {fileID: 7872333326033732350}
   - component: {fileID: 9159750794916082354}
+  - component: {fileID: 8401098958903840655}
+  - component: {fileID: 8280494733155801327}
   m_Layer: 10
   m_Name: Iblis
   m_TagString: Untagged
@@ -807,6 +810,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4398233305895479207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9159750794916082355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9155cbc4db2b3aa40933b4ad392bff6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4275711653521034996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1000,3 +1015,31 @@ MonoBehaviour:
   objetoSpawnerD: {fileID: 4199202409773636906, guid: 7add5f6cdcd4de94fa5f2378b04e623e,
     type: 3}
   vidaMinima: 70
+--- !u!114 &8401098958903840655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9159750794916082355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1bef870f2cebeb48a5adf8c9c5ac55e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tiempoCambio: 5
+--- !u!114 &8280494733155801327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9159750794916082355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a79c47d4b86a4f44905dd99cd0bf363, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shieldHealth: 100
+  shieldType: Fuego
+  barraDeEscudo: {fileID: 0}
