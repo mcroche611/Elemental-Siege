@@ -6,16 +6,8 @@ using System;
 
 public class GameManager : MonoBehaviour
 {
-    /*Para hablar con el GameManager basta referenciarlo en alguno de nuestros scripts de esta forma
-     GameManager.GetInstance ().NombreMétodoPúblico ();*/
-
     private static GameManager instance;
     private UIManager theUIManager;
-
-    public bool juegoPrincipal;
-    public bool restartJuego = false;
-
-    // Asumo que a la primera sala se ha accedido mediante una puerta a la izquierda
 
     [SerializeField] float ataque, bonoAgua, bonoFuego, bonoElectricidad;
 

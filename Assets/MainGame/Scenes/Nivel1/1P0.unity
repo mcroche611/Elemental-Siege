@@ -4128,6 +4128,11 @@ PrefabInstance:
       propertyPath: escaleras
       value: 
       objectReference: {fileID: 1168778328}
+    - target: {fileID: 1987805597006922427, guid: 96478fe5aceb67843b6a73ab9a65e31f,
+        type: 3}
+      propertyPath: numNivel
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96478fe5aceb67843b6a73ab9a65e31f, type: 3}
 --- !u!1001 &1396905996

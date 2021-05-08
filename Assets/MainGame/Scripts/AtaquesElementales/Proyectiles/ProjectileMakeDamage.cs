@@ -10,7 +10,7 @@ public class ProjectileMakeDamage : MonoBehaviour
     {
         EnemyHealth enemy = collision.gameObject.GetComponent<EnemyHealth>();
 
-        if (enemy)
+        if (enemy != null)
             enemy.QuitarVida(Formula());
     }
 

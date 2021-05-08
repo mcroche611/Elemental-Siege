@@ -16,11 +16,14 @@ public class LevelManager : MonoBehaviour
     {
         //Si no hay ninguna instancia creada almacenamos aqui la instancia actual
         if (instance == null)
-        {
-            nivel = Nivel1();
+        {            
             instance = this;
             //Nos aseguramos de que el objeto al que esta asociado este script no se destruira al cambiar de escena
             DontDestroyOnLoad(this.gameObject);
+            if (numNivel == 1)
+                nivel = Nivel1();
+            else if (numNivel == 2)            
+                nivel = Nivel2();            
         }
         else
         {
@@ -29,6 +32,8 @@ public class LevelManager : MonoBehaviour
         }
 
     }
+
+    public int numNivel;
 
     public GameObject nasnas;
     GameObject player;
@@ -165,6 +170,51 @@ public class LevelManager : MonoBehaviour
         return s;
     }
 
+    private Escena Nivel2()
+    {
+        Escena s;
+
+        s.scenes = new string[8, 7]  {{ "---","2S5", "2P6", "2S6", "2P7", "2S7", "2P8"},
+                                      {"---", "---", "---", "2P5", "---", "---", "---"},
+                                      {"---", "---", "---", "2S4", "---", "---", "---"},
+                                      {"---", "---", "---", "SP4", "---", "---", "---"},
+                                      {"---", "2S1", "2P2", "2S2", "2P3", "2S3", "2MA"},
+                                      {"---", "2P1", "---", "2ME", "---", "---", "---"},
+                                      {"2P0", "2S0", "---", "---", "---", "---", "---"},
+                                      {"---", "2MF", "---", "---", "---", "---", "---"}};
+
+        s.habitacionDescubierta = new bool[8, 7];
+        int pasillos = 0;
+
+        for (int i = 0; i < s.scenes.GetLength(0); i++)
+        {
+            for (int j = 0; j < s.scenes.GetLength(1); j++)
+            {
+                s.habitacionDescubierta[i, j] = false;
+                char c = s.scenes[i, j][1];
+                if (c == 'P')
+                    pasillos += 1;
+            }
+        }
+
+        s.pasillos = new Pasillo[pasillos];
+
+        for (int i = 0; i < s.pasillos.Length; i++)
+        {
+            s.pasillos[i].enemigos = new Enemigo[50];
+            s.pasillos[i].pc = 0;
+        }
+
+        s.sceneNow.x = 6;
+        s.sceneNow.y = 0;
+        s.sceneAfter.x = s.sceneNow.x;
+        s.sceneAfter.y = s.sceneNow.y;
+        s.sceneIni.x = s.sceneNow.x;
+        s.sceneIni.y = s.sceneNow.y;
+
+        return s;
+    }
+
     public void CompletarHabitacion()
     {
         nivel.habitacionDescubierta[nivel.sceneNow.x, nivel.sceneNow.y] = true;
@@ -281,5 +331,10 @@ public class LevelManager : MonoBehaviour
     {
         haMuerto = true;
         SceneManager.LoadScene(nivel.scenes[nivel.sceneIni.x, nivel.sceneIni.y]);      
+    }
+
+    public void FinNivel()
+    {
+        Destroy(this.gameObject);
     }
 }
