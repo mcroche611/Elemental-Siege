@@ -7,8 +7,6 @@ public class DialogueManager : MonoBehaviour
 {
     private static DialogueManager instance;
     
-
-
     [SerializeField]
     GameObject dialogueBox;
     [SerializeField]
@@ -18,11 +16,10 @@ public class DialogueManager : MonoBehaviour
 
     [TextArea(3, 10)] //ampliamos la cantidad de líneas que pueden aparecer en el editor
     [SerializeField]
-    string[] sentences = new string[5]; //array de frases de dialogo
 
-    string currentSentence;
+
+    string[] sentences = new string[5]; //array de frases de dialogo
     int numeroSentence = 0;
-    int numeroLetra = 0;
 
     private void Awake()
     {
@@ -32,6 +29,16 @@ public class DialogueManager : MonoBehaviour
     {
         return instance;
     }
+    
+    private void Start()
+    {
+        dialogueBox.SetActive(false);
+
+        dialogueText.text = "";
+   
+        
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown("space"))
@@ -39,7 +46,7 @@ public class DialogueManager : MonoBehaviour
             
             if (dialogueText.text == sentences[numeroSentence])
             {
-                NextLine();
+                NextSentence();
             }
             else
             {
@@ -51,87 +58,7 @@ public class DialogueManager : MonoBehaviour
         
     }
    
-    private void Start()
-    {
-        dialogueBox.SetActive(false);
-
-        dialogueText.text = "";
-        //StartDialogue2();
-
-        //currentSentence = sentences[numeroSentence];
-        //ActivarPanel();
-        //ShowDialogueTyping();
-        
-    }
     
-
-    public void StartDialogue() //va mal porque no aparece la box aunque esté activada
-    {
-        dialogueBox.SetActive(true);
-        numeroLetra = 0;
-        
-            //Invoke("ShowDialogueTyping", 0.5f);
-        InvokeRepeating("ShowDialogueTyping", 0f, 0.2f);
-        
-    }
-    public void ActivarPanel()
-    {
-        dialogueBox.SetActive(true);
-    }
-
-    public void NextSentence() //para pasar de frase
-    {
-        if (numeroSentence < sentences.Length-1) //-1 quiza
-        {
-            numeroSentence++;
-            Debug.Log(currentSentence);
-            currentSentence = sentences[numeroSentence];
-            
-            Debug.Log("NUMEROSENTENCE " + numeroSentence + "S.LENGTH " + sentences.Length);
-            Debug.Log(currentSentence);
-        }
-        else
-        {
-            //dialogueBox.SetActive(false);
-        }
-        
-    }
-
-    public void ShowDialogue()
-    {
-        ActivarPanel();
-        dialogueText.text = currentSentence;
-    }
-    public void ShowDialogueTyping() //para que vaya mostrando el dialogo poco a poco. ponerlo con invoke
-    {
-        
-
-        if (currentSentence != null && numeroLetra < currentSentence.Length)
-        {
-            dialogueText.text += currentSentence[numeroLetra];
-            numeroLetra++;
-
-        }
-        else
-        {
-            CancelInvoke();
-            numeroLetra = 0;
-            Debug.Log("NUMEROLETRA"+numeroLetra);
-            NextSentence();
-        }
-        
-
-
-        /*else
-        {
-            dialogueText.text = "";
-            numeroLetra = 0;
-            NextSentence();
-        }
-        */
-    }
-
-
 
 
     //VERSIÓN 2 DEL SCRIPT DE DIÁLOGO, CON COROUTINES.
@@ -141,11 +68,10 @@ public class DialogueManager : MonoBehaviour
         dialogueBox.SetActive(true);
         dialogueText.text = "";
         Time.timeScale = 0;
-
         numeroSentence = 0;
-        StartCoroutine(TypeLine());
+        StartCoroutine(TypeSentence());
     }
-    IEnumerator TypeLine()
+    IEnumerator TypeSentence()
     {
         foreach (char c in sentences[numeroSentence])
         {
@@ -154,13 +80,13 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    void NextLine()
+    void NextSentence()
     {
         if(numeroSentence < (sentences.Length-1))
         {
         numeroSentence++;
         dialogueText.text = "";
-        StartCoroutine(TypeLine());
+        StartCoroutine(TypeSentence());
         }
         else
         {

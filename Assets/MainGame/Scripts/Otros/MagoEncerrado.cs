@@ -15,7 +15,8 @@ public class MagoEncerrado : MonoBehaviour
 
     private void Start()
     {
-        if (!GameManager.GetInstance().EscenaCompleta()) Destroy(this.gameObject);
+        if (LevelManager.GetInstance().HabiaEntradoAntes()) 
+            Destroy(this.gameObject);
     }
 
     private void Update()
@@ -29,7 +30,7 @@ public class MagoEncerrado : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<Health>() && !haHablado)
         {
-            GameManager.GetInstance().CompletarEscena();
+            LevelManager.GetInstance().CompletarHabitacion();
             GameManager.GetInstance().AumentarBono(elemento, cantidad);
             rb = GetComponent<Rigidbody2D>();
             moverse = true;          

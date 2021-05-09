@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Escudo : MonoBehaviour
 {
@@ -13,16 +12,10 @@ public class Escudo : MonoBehaviour
     float maxShieldHealth;
 
     [SerializeField]
-    string shieldType = "Fuego"; //puede ser "Fuego", "Agua" o "Electrico" sin tilde
-
-    bool escudoFuego;
-    bool escudoAgua;
-    bool escudoElectrico;
+    string shieldType;
 
     //el bonus del jugador de cada ataque elemental
-    float playerWaterBonus;
-    float playerFireBonus;
-    float playerElectricBonus;
+    float bonoAgua, bonoFuego, bonoElectricidad;
 
     public GameObject barraDeEscudo;
     RectTransform _barraDeEscudo;
@@ -30,100 +23,62 @@ public class Escudo : MonoBehaviour
 
     private void OnEnable()
     {
-
-
         //sacamos los bools al activarse el script para hacerlo menos veces
-        if (shieldType == "Fuego")
-        {
-             escudoFuego = true;
-            GetComponent<SpriteRenderer>().color = Color.red;
-        }
-           
+        if (shieldType == "Fuego")   
+            GetComponent<SpriteRenderer>().color = Color.red;                 
         else if (shieldType == "Agua")
-        {
-            escudoAgua = true;
-            GetComponent<SpriteRenderer>().color = Color.blue;
-        }
-            
-        else if (shieldType == "Electrico")
-        {
-            escudoElectrico = true;
+            GetComponent<SpriteRenderer>().color = Color.blue;                 
+        else
             GetComponent<SpriteRenderer>().color = Color.magenta;
-        }
-           
-
-        
+                      
         _barraDeEscudo = barraDeEscudo.GetComponent<RectTransform>();
         maxBarraDeEscudo = _barraDeEscudo.sizeDelta.x;
         maxShieldHealth = shieldHealth;
     }
-    void Start() //si usamos este script para el boss, necesitamos pillar todos los bonus
-                 //porque si no al cambiar de escudo, lo ejecutado en el start ya estará puesto
+    void Start()              
     {
-        playerWaterBonus = GameManager.GetInstance().Stat("Agua"); //cogemos el bono agua
-        playerFireBonus = GameManager.GetInstance().Stat("Fuego"); //cogemos el bono fuego
-        playerElectricBonus = GameManager.GetInstance().Stat("Electrico"); //cogemos el bono electrico
-
-
-    }
-
-    void Update()
-    {
-        if (shieldHealth <= 0)
-        {
-            GetComponent<Escudo>().enabled = false;    //si la vida del escudo llega a 0 se desactiva
-        }
+        bonoAgua = GameManager.GetInstance().Stat("Agua");
+        bonoFuego = GameManager.GetInstance().Stat("Fuego");
+        bonoElectricidad = GameManager.GetInstance().Stat("Electricidad");
     }
 
     private void OnDisable()
     {
-        GetComponent<SpriteRenderer>().color = Color.yellow; //se le pone otro color al desaparecer
-        
-            escudoFuego = false;
-            escudoAgua = false;
-            escudoElectrico = false;
+        GetComponent<SpriteRenderer>().color = Color.yellow; //se le pone otro color al desaparecer       
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void AtaqueEscudo(string element)
     {
-        if (collision.GetComponent<ActivateElementOnCollision>() != null)
+        if (shieldType == "Fuego")
         {
-            string element = collision.GetComponent<ActivateElementOnCollision>().Elemento(); //como se hace esto wtf
-            if (escudoFuego)
-            {
-                if (element == "Agua")
-                {
-                    shieldHealth -= playerWaterBonus;
-                }
-                else
-                {
-                    shieldHealth -= 2;
-                }
-            }
-            else if (escudoAgua)
-            {
-                if (element == "Electricidad")
-                {
-                    shieldHealth -= playerElectricBonus;
-                }
-                else
-                {
-                    shieldHealth -= 2;
-                }
-            }
-            else if (escudoElectrico)
-            {
-                if (element == "Fuego")
-                {
-                    shieldHealth -= playerFireBonus;
-                }
-                else
-                {
-                    shieldHealth -= 2;
-                }
-            }
-            _barraDeEscudo.sizeDelta = new Vector2((maxBarraDeEscudo) * (shieldHealth / maxShieldHealth), _barraDeEscudo.sizeDelta.y);
+            if (element == "Agua")
+                shieldHealth -= bonoAgua;
+            else if (element == "Electricidad")
+                shieldHealth -= bonoElectricidad / 4;
+        }                                 
+        else if (shieldType == "Agua")
+        {
+            if (element == "Electricidad")
+                shieldHealth -= bonoElectricidad;
+            else if (element == "Fuego")
+                shieldHealth -= bonoFuego / 4;
         }
+        else
+        {
+            if (element == "Fuego")
+                shieldHealth -= bonoFuego;
+            else if (element == "Agua")
+                shieldHealth -= bonoAgua / 4;
+        }     
+                         
+        _barraDeEscudo.sizeDelta = new Vector2((maxBarraDeEscudo) * (shieldHealth / maxShieldHealth), _barraDeEscudo.sizeDelta.y);
+        if (shieldHealth <= 0)
+            Invoke("DescativarEscudo", Time.deltaTime);                 
+    }
+
+    void DescativarEscudo()
+    {
+        GetComponent<Escudo>().enabled = false;
     }
 
     public void CambioEscudo(string type)

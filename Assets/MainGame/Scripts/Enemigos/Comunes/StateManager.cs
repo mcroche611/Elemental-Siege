@@ -12,7 +12,16 @@ public class StateManager : MonoBehaviour
     {
         MonoBehaviour element_state = GetComponent(elementalAtack.Split('_')[1]) as MonoBehaviour;
 
-        if (currentState == null)
+        Escudo escudo = GetComponent<Escudo>();
+
+        if (escudo != null && escudo.enabled)
+        {
+            Debug.Log("hola");
+            GetComponentInChildren<Charco>().NoPuedeMojarse();
+            escudo.AtaqueEscudo(elementalAtack.Split('_')[0]);
+        }
+            
+        else if (currentState == null)
         {
             currentState = element_state;
             element_state.enabled = true;
@@ -38,7 +47,7 @@ public class StateManager : MonoBehaviour
                 {
                     pies = GetComponentInChildren<Charco>();
                     if (pies != null)
-                        GetComponentInChildren<Charco>().NoPuedeMojarse();
+                        pies.NoPuedeMojarse();
                     GetComponent<ElementalReactions>().VapolizadoDebil();
                 }
                 else
@@ -69,7 +78,7 @@ public class StateManager : MonoBehaviour
                 {
                     pies = GetComponentInChildren<Charco>();
                     if (pies != null)
-                        GetComponentInChildren<Charco>().NoPuedeMojarse();
+                        pies.NoPuedeMojarse();
                     GetComponent<ElementalReactions>().Electrocargado();                   
                 }
             }

@@ -31,10 +31,12 @@ public class Menu : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+    /*
     public void Quit()
     {
         UnityEditor.EditorApplication.isPlaying = false;
     }
+    */
     public void Pause()
     {
         pauseMenu.SetActive(true);

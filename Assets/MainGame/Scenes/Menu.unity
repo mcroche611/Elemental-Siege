@@ -410,7 +410,12 @@ PrefabInstance:
     - target: {fileID: 4202363075750542432, guid: e1050de394ca7284fbd47b388d274311,
         type: 3}
       propertyPath: m_Name
-      value: Canvas (1)
+      value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202363075750542437, guid: e1050de394ca7284fbd47b388d274311,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4202363075750542439, guid: e1050de394ca7284fbd47b388d274311,
         type: 3}
@@ -979,6 +984,16 @@ PrefabInstance:
         type: 3}
       propertyPath: scenesInOrder.Array.data[1]
       value: 1MA
+      objectReference: {fileID: 0}
+    - target: {fileID: 8868029588279967806, guid: 6db0f26e86905d1439a234703c9de032,
+        type: 3}
+      propertyPath: ataque
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8868029588279967806, guid: 6db0f26e86905d1439a234703c9de032,
+        type: 3}
+      propertyPath: restartJuego
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6db0f26e86905d1439a234703c9de032, type: 3}

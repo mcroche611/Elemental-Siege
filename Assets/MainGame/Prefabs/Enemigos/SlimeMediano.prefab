@@ -439,6 +439,7 @@ GameObject:
   - component: {fileID: 8665975190077672420}
   - component: {fileID: 2266908096213567356}
   - component: {fileID: 4626963473866966922}
+  - component: {fileID: 3504423879454218892}
   m_Layer: 17
   m_Name: Pies
   m_TagString: Untagged
@@ -499,6 +500,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tiempoParaMojar: 2
+--- !u!114 &3504423879454218892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6099554868896416518}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 991f313ac90880b468f25a52c9555d94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  relentizacion: 0.2
+  spikesDamge: 5
+  CoolDown: 0.5
 --- !u!1 &6922522471712096170
 GameObject:
   m_ObjectHideFlags: 0

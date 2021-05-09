@@ -29,6 +29,12 @@ TextureImporter:
   - first:
       213: 6295641101914639322
     second: Jarron_8
+  - first:
+      213: 7481697864995399604
+    second: Jarron_0
+  - first:
+      213: -4913649435903439357
+    second: Jarron_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -72,7 +78,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -117,19 +123,61 @@ TextureImporter:
       name: Jarron_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 1
-        width: 20
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 945b9699d96a099b0800000000000000
-      internalID: -5075373584232630967
+      spriteID: 4b769d7819454d760800000000000000
+      internalID: 7481697864995399604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jarron_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96914ce6a46e316e0800000000000000
+      internalID: -1867896213068310167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jarron_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07fe11bcdea8641e0800000000000000
+      internalID: -2213929412887187600
       vertices: []
       indices: 
       edges: []
@@ -138,61 +186,19 @@ TextureImporter:
       name: Jarron_3
       rect:
         serializedVersion: 2
-        x: 38
-        y: 1
-        width: 20
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b655cf8d81517f160800000000000000
-      internalID: 7059134137390355819
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jarron_5
-      rect:
-        serializedVersion: 2
-        x: 68
+        x: 96
         y: 0
-        width: 22
-        height: 27
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0400de09592783f50800000000000000
-      internalID: 6861360019006095424
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jarron_7
-      rect:
-        serializedVersion: 2
-        x: 100
-        y: 0
-        width: 22
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: acf9ce69516023f10800000000000000
-      internalID: 2247865853807468490
+      spriteID: 30e4d262fd53fcbb0800000000000000
+      internalID: -4913649435903439357
       vertices: []
       indices: 
       edges: []

@@ -17,19 +17,25 @@ public class Puerta : MonoBehaviour
     {
         if (collision.GetComponent<Health>() && puedeEntrar)
         {
-            if (GameManager.GetInstance().EsSala())
-                if (GameManager.GetInstance().SalaCompletada())
-                {
-                    GameManager.GetInstance().CompletarEscena();
-                    GameManager.GetInstance().Puerta(orientacion);
-                }
-                else Debug.Log("Necesitas matar a todos los enemigos para abrir las puertas");
-            else if (GameManager.GetInstance().EsPasillo())
+            LevelManager levelManager = LevelManager.GetInstance();
+
+            if (levelManager.TipoHabitacion() == 'P')
             {
-                GameManager.GetInstance().CompletarEscena();
-                GameManager.GetInstance().Puerta(orientacion);
-            }  
-            else GameManager.GetInstance().Puerta(orientacion);
+                levelManager.CompletarHabitacion();
+                levelManager.Puerta(orientacion);
+            }
+            else if (levelManager.TipoHabitacion() == 'S')
+            {
+                if (levelManager.SalaCompletada())
+                {
+                    levelManager.CompletarHabitacion();
+                    levelManager.Puerta(orientacion);
+                }
+                else
+                    Debug.Log("Tienes que matar a todos los enemigos para salir de la sala");
+            }
+            else if (levelManager.TipoHabitacion() == 'M')
+                levelManager.Puerta(orientacion);
         }
             
         else if (collision.GetComponent<MagoEncerrado>())

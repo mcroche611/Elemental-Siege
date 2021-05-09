@@ -12,22 +12,12 @@ public class PlayerController : MonoBehaviour
     Vector2 vel;
 
     float aturdido = 0;
-    bool playerSet = false;
-
-    private void Awake()
-    {
-        if (GameManager.GetInstance() != null)
-            if (GameManager.GetInstance().Nasnas(this.gameObject))
-                Destroy(this.gameObject);
-    }
 
     void Start()
     {
         GameManager.GetInstance().SetPlayer(this.gameObject);
         //Cacheamos el componente Rigidbody
-        rb = GetComponent<Rigidbody2D>();
-        //LevelManager.GetInstance().SetPlayerTransform(this.gameObject.transform);
-        
+        rb = GetComponent<Rigidbody2D>();     
     }
 
     // Update is called once per frame
@@ -38,18 +28,7 @@ public class PlayerController : MonoBehaviour
             //Input de movimiento de cuatro direccones y movimiento en diagonal
             vel = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
             //Velocidad de Movimiento
-            if (rb != null)
-                rb.velocity = new Vector2(vel.x * velocity, vel.y * velocity);
-            else
-                rb = GetComponent<Rigidbody2D>();
-
-            if (GameManager.GetInstance().restartJuego && !playerSet)
-            {
-                GameManager.GetInstance().SetPlayer(this.gameObject);
-                LevelManager.GetInstance().SetUpCamera(gameObject.transform);
-                LevelManager.GetInstance().SetUpPlayer("Este", GameManager.GetInstance().GetPlayerTransform());
-                playerSet = true;
-            }
+            rb.velocity = new Vector2(vel.x * velocity, vel.y * velocity);
         }
         else
             aturdido -= Time.deltaTime;

@@ -6,16 +6,8 @@ using System;
 
 public class GameManager : MonoBehaviour
 {
-    /*Para hablar con el GameManager basta referenciarlo en alguno de nuestros scripts de esta forma
-     GameManager.GetInstance ().NombreMétodoPúblico ();*/
-
     private static GameManager instance;
     private UIManager theUIManager;
-
-    public bool juegoPrincipal;
-    public bool restartJuego = false;
-
-    // Asumo que a la primera sala se ha accedido mediante una puerta a la izquierda
 
     [SerializeField] float ataque, bonoAgua, bonoFuego, bonoElectricidad;
 
@@ -41,16 +33,6 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-    }
-
-    private void Start()
-    {
-        CreaNivel1();
-    }
-
-    public void CreaNivel1()
-    {
-        nivel = Nivel1();
     }
 
     public static GameManager GetInstance() //Para conseguir la referencia a game manager haciendo GameManager.GetInstance()
@@ -95,28 +77,17 @@ public class GameManager : MonoBehaviour
     {
         theUIManager.ActualizarVida(porcentajeVida);
     }
+
     public void GMActualizarMana(float porcentajeMana)
     {
         theUIManager.ActualizarMana(porcentajeMana);
     }
+
     public void GMActualizarElementos(string elemento)
     {
         theUIManager.ActualizarElementos(elemento);
     }
 
-    public void InstantiatePlayer()
-    {
-        nasnas = Instantiate(player, transform.position, transform.rotation);
-        if (juegoPrincipal)
-            LevelManager.GetInstance().SetUpCamera(nasnas.transform);
-    }
-
-    public string GetOrientacion()
-    {
-        restartJuego = false;
-
-        return orientacionUltimaPuerta;
-    }
 
     public void AumentarBono(string elemento, float cantidad)
     {
@@ -127,217 +98,8 @@ public class GameManager : MonoBehaviour
 
     // Estructura de Niveles
 
-    private string orientacionUltimaPuerta = "Este";
-    int enemigosEnSala = 0;
-    GameObject nasnas;
-    Escena nivel;
-
-    struct Coor
-    {
-        public int x, y;
-    }
-
-    struct Enemigo
-    {
-        public string nombreEnemigo;
-        public Vector2 ultimaPosicion;
-        public bool vivo;
-        public float vida;
-    }
-
-    struct Pasillo
-    {
-        public Enemigo[] enemigos;
-        public int pc;
-    }
-
-    struct Escena
-    {
-        public string[,] scenes;
-        public bool[,] habitacionSinDescubrir;
-        public Pasillo[] pasillos;
-        public Coor sceneNow;
-        public Coor sceneAfter;
-    }
-
     public void ChangeScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
     }
-
-    private Escena Nivel1()
-    {
-        Escena s;
-
-        s.scenes = new string[5, 9]  {{ "---","---", "1ME", "1S5", "1P7", "1S6", "1P8", "1S7", "1P9"},
-                                      {"---", "---", "---", "1P5", "---", "1P6", "---", "---", "---"},
-                                      {"---", "---", "---", "1S3", "1P4", "1S4", "---", "---", "---"},
-                                      {"---", "---", "---", "1P3", "---", "1MF", "---", "---", "---"},
-                                      {"1P0", "1S0", "1P1", "1S1", "1P2", "1S2", "1MA", "---", "---"}};
-
-        s.habitacionSinDescubrir = new bool[5, 9];
-        int pasillos = 0;
-
-        for (int i = 0; i < 5; i++)
-        {
-            for (int j = 0; j < 9; j++)
-            {
-                string S = s.scenes[i, j];
-                S = S.Remove(S.Length - 1);
-                if (S != "---")
-                {
-                    s.habitacionSinDescubrir[i, j] = true;
-                    if (S[1] == 'P')
-                        pasillos += 1;
-                }
-                else
-                    s.habitacionSinDescubrir[i, j] = false;
-            }
-        }
-
-        s.pasillos = new Pasillo[pasillos];
-
-        for (int i = 0; i < s.pasillos.Length; i++)
-        {
-            s.pasillos[i].enemigos = new Enemigo[50];
-            s.pasillos[i].pc = 0;
-        }
-
-        s.sceneNow.x = 4;
-        s.sceneNow.y = 0;
-        s.sceneAfter.x = s.sceneNow.x;
-        s.sceneAfter.y = s.sceneNow.y;
-
-        return s;
-    }
-
-    public void CompletarEscena()
-    {
-        nivel.habitacionSinDescubrir[nivel.sceneNow.x, nivel.sceneNow.y] = false;
-    }
-
-    public bool EscenaCompleta()
-    {
-        return nivel.habitacionSinDescubrir[nivel.sceneNow.x, nivel.sceneNow.y];
-    }
-
-    public bool EsPasillo()
-    {
-        return nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y][1] == 'P';
-    }
-    public bool EsSala()
-    {
-        return nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y][1] == 'S';
-    }
-
-    private void OnLevelWasLoaded(int level)
-    {
-        if (level != 0 && !restartJuego)
-        {
-            LevelManager.GetInstance().SetUpCamera(nasnas.transform);
-            LevelManager.GetInstance().SetUpPlayer(orientacionUltimaPuerta, nasnas.transform);
-            nivel.sceneAfter.x = nivel.sceneNow.x;
-            nivel.sceneAfter.y = nivel.sceneNow.y;
-            enemigosEnSala = 0;
-        }
-    }
-
-    public bool Nasnas(GameObject player)
-    {
-        if (nasnas == null)
-        {
-            nasnas = player;
-            return false;
-        }
-        else return true;
-    }
-
-    public void Puerta(string orientacion)
-    {
-        if (orientacion == "Este")
-        {
-            nivel.sceneNow.y++;
-            orientacionUltimaPuerta = "Oeste";
-        }
-        else if (orientacion == "Norte")
-        {
-            nivel.sceneNow.x--;
-            orientacionUltimaPuerta = "Sur";
-        }
-        else if (orientacion == "Sur")
-        {
-            nivel.sceneNow.x++;
-            orientacionUltimaPuerta = "Norte";
-        }
-        else
-        {
-            nivel.sceneNow.y--;
-            orientacionUltimaPuerta = "Este";
-        }
-
-        SceneManager.LoadScene(nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y]);
-    }
-
-    public void NuevoEnemigo(string enemigo)
-    {
-        int pasilloActual = int.Parse(nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y][2].ToString());
-
-        nivel.pasillos[pasilloActual].enemigos[nivel.pasillos[pasilloActual].pc].nombreEnemigo = enemigo;
-        nivel.pasillos[pasilloActual].enemigos[nivel.pasillos[pasilloActual].pc].vivo = true;
-        nivel.pasillos[pasilloActual].pc += 1;
-    }
-
-
-    public void IniEnemigo(GameObject enemigo)
-    {
-        int pasilloActual = int.Parse(nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y][2].ToString());
-        int cont = 0;
-
-        while (nivel.pasillos[pasilloActual].enemigos[cont].nombreEnemigo != enemigo.name) cont += 1;
-
-        if (nivel.pasillos[pasilloActual].enemigos[cont].vivo)
-        {
-            enemigo.transform.position = nivel.pasillos[pasilloActual].enemigos[cont].ultimaPosicion;
-            enemigo.GetComponent<EnemyHealth>().EnemigoVidaIni(nivel.pasillos[pasilloActual].enemigos[cont].vida);
-        }
-        else
-        {
-            enemigo.GetComponent<Enemy>().EstaMuerto();
-            Destroy(enemigo);
-        }
-    }
-
-    public void MatarEnemigo(GameObject enemigo)
-    {
-        int pasilloActual = int.Parse(nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y][2].ToString());
-        int cont = 0;
-
-        while (nivel.pasillos[pasilloActual].enemigos[cont].nombreEnemigo != enemigo.name) cont += 1;
-
-        nivel.pasillos[pasilloActual].enemigos[cont].vivo = false;
-    }
-
-    public void ModificarEnemigo(GameObject enemigo, float vida)
-    {
-        if (!restartJuego)
-        {
-            int cont = 0;
-            int pasilloActual = int.Parse(nivel.scenes[nivel.sceneAfter.x, nivel.sceneAfter.y][2].ToString());
-
-            while (nivel.pasillos[pasilloActual].enemigos[cont].nombreEnemigo != enemigo.name) cont += 1;
-
-            nivel.pasillos[pasilloActual].enemigos[cont].ultimaPosicion = enemigo.transform.position;
-            nivel.pasillos[pasilloActual].enemigos[cont].vida = vida;
-            nivel.pasillos[pasilloActual].enemigos[cont].vivo = true;
-        } 
-    }
-
-    public void AñadirEnemigoEnSala() { enemigosEnSala += 1; }
-    public void QuitarEnemigoSala() { enemigosEnSala -= 1; }
-    public bool SalaCompletada() { return enemigosEnSala == 0; }
-
-
-
-
-
 }

@@ -35,16 +35,16 @@ public class EnemyHealth : MonoBehaviour
                 if (slime != null)
                     slime.InstanciarSlimes();
 
-                GameManager gameManager = GameManager.GetInstance();
+                LevelManager levelmanager = LevelManager.GetInstance();
 
-                if (gameManager.juegoPrincipal)
+                if (levelmanager.TipoHabitacion() == 'P')
                 {
-                    if (gameManager.EsPasillo())
-                        gameManager.MatarEnemigo(this.gameObject);
-                    else
-                        gameManager.QuitarEnemigoSala();
+                    levelmanager.MatarEnemigo(this.gameObject);
                     GetComponent<Enemy>().EstaMuerto();
-                }
+                }                 
+                else
+                    levelmanager.QuitarEnemigoSala();
+                
                 Destroy(this.gameObject);
             }                                   
         }           
