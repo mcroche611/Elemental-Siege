@@ -17,7 +17,7 @@ public class DialogueManager : MonoBehaviour
     [TextArea(3, 10)] //ampliamos la cantidad de líneas que pueden aparecer en el editor
     [SerializeField]
 
-
+    static bool dialogueGoingOn; //bool con el propósito de que no se pueda pasar el juego si hay un diálogo
     string[] sentences = new string[5]; //array de frases de dialogo
     int numeroSentence = 0;
 
@@ -65,6 +65,7 @@ public class DialogueManager : MonoBehaviour
     //***********************************************
     public void StartDialogue2()
     {
+        dialogueGoingOn = true;
         dialogueBox.SetActive(true);
         dialogueText.text = "";
         Time.timeScale = 0;
@@ -92,7 +93,13 @@ public class DialogueManager : MonoBehaviour
         {
             dialogueBox.SetActive(false);
             Time.timeScale = 1;
+            dialogueGoingOn = false;
         }
         
+    }
+
+    public bool DialogueGoing()
+    {
+        return dialogueGoingOn;
     }
 }
