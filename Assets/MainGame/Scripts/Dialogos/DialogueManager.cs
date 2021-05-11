@@ -17,9 +17,11 @@ public class DialogueManager : MonoBehaviour
     [TextArea(3, 10)] //ampliamos la cantidad de líneas que pueden aparecer en el editor
     [SerializeField]
 
-    static bool dialogueGoingOn; //bool con el propósito de que no se pueda pasar el juego si hay un diálogo
     string[] sentences = new string[5]; //array de frases de dialogo
     int numeroSentence = 0;
+
+    static bool dialogueGoingOn; //bool con el propósito de que no se pueda pasar el juego si hay un diálogo
+
 
     private void Awake()
     {
