@@ -6,9 +6,11 @@ public class Paralizar : MonoBehaviour
 {
     [SerializeField] float tiempoParalización;
     EnemyAttackOnCollision ataque;
-
+    [SerializeField]
+    Animator animator;
     public void Paraliza()
     {
+        animator.enabled = false;
         CancelInvoke("ParalizaAcaba");
         ataque = GetComponent<EnemyAttackOnCollision>();
         if (ataque != null)
@@ -32,6 +34,7 @@ public class Paralizar : MonoBehaviour
 
     void ParalizaAcaba()
     {
+        animator.enabled = true;
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
         if (ataque)

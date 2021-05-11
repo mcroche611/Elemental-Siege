@@ -13,7 +13,7 @@ public class Menu : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !DialogueManager.GetInstance().DialogueGoing());
+        if (Input.GetKeyDown(KeyCode.Escape)) //&& !DialogueManager.GetInstance().DialogueGoing());
 
         {
             if (Time.timeScale == 1f)
