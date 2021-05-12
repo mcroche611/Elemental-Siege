@@ -66,6 +66,8 @@ public class PlayerController : MonoBehaviour
     {
         if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0 || Mathf.Abs(Input.GetAxisRaw("Vertical")) > 0)
         {
+            runningRight = true;
+
             if (Input.GetAxisRaw("Horizontal")<0)
             {
                 runningRight = false;
