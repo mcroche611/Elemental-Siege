@@ -5408,6 +5408,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2017438766814546709, guid: 13db7e7adbb422e4095c16193b4b0ea4,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1428985225}
     - target: {fileID: 2650718417977228686, guid: 13db7e7adbb422e4095c16193b4b0ea4,
         type: 3}
       propertyPath: m_Offset.x
