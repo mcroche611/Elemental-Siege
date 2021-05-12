@@ -32,6 +32,8 @@ public class PlayerController : MonoBehaviour
         Debug.Log("MOVIMIENTO HORIZONTAL" + Mathf.Abs(Input.GetAxisRaw("Horizontal")));
         animator.SetBool("RunningRight", runningRight);
         //animator.SetBool()
+        animator.SetBool("MovimientoAnimation", runningRight);
+        //animator.SetBool();
         if (aturdido <= 0)
         {
             //Input de movimiento de cuatro direccones y movimiento en diagonal
