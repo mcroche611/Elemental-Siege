@@ -18,6 +18,13 @@ public class Menu : MonoBehaviour
             if (Time.timeScale == 1f)
             {
                 Pause();
+                /*
+                 if (Input.GetMouseButtonDown(0))
+                {
+                    MainMenu();
+                }
+                */
+                
             }
             else
             {
@@ -31,12 +38,12 @@ public class Menu : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
-    /*
-    public void Quit()
+    
+    public void QuitGame()
     {
-        UnityEditor.EditorApplication.isPlaying = false;
+        Application.Quit();
     }
-    */
+
     public void Pause()
     {
         pauseMenu.SetActive(true);
@@ -48,6 +55,12 @@ public class Menu : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         gamePaused = false;
+    }
+    public void MainMenu()
+    {
+        gamePaused = false;
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Menu");
     }
     public bool GamePaused()
     {
