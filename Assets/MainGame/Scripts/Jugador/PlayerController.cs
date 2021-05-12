@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] 
     float velocity;
 
-    [SerializeField]
     Animator animator;
 
     Rigidbody2D rb;
@@ -21,6 +20,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        animator = GetComponent<Animator>();
         GameManager.GetInstance().SetPlayer(this.gameObject);
         //Cacheamos el componente Rigidbody
         rb = GetComponent<Rigidbody2D>();     
