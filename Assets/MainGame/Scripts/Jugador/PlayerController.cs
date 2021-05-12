@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     {
         RunningAnimation();
         Debug.Log("MOVIMIENTO HORIZONTAL" + Mathf.Abs(Input.GetAxisRaw("Horizontal")));
-        animator.SetBool("MovimientoAnimation", runningRight);
+        animator.SetBool("RunningRight", runningRight);
         //animator.SetBool()
         if (aturdido <= 0)
         {
@@ -63,8 +63,10 @@ public class PlayerController : MonoBehaviour
     {
         if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0 || Mathf.Abs(Input.GetAxisRaw("Vertical")) > 0)
         {
-            //if 
-            //runningRight = true;
+            if (Input.GetAxisRaw("Horizontal")<0)
+            {
+
+            }
         }
         else
         {
