@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     Vector2 vel;
 
-    bool movimientoAnimation = false; //bool para ver si el jugador se está moviendo en alguna dirección
+    bool runningRight = false; //bool para ver si el jugador se está moviendo en alguna dirección
                               //y animarlo
     float aturdido = 0;
 
@@ -30,8 +30,8 @@ public class PlayerController : MonoBehaviour
     {
         RunningAnimation();
         Debug.Log("MOVIMIENTO HORIZONTAL" + Mathf.Abs(Input.GetAxisRaw("Horizontal")));
-        animator.SetBool("MovimientoAnimation", movimientoAnimation);
-
+        animator.SetBool("MovimientoAnimation", runningRight);
+        animator.SetBool()
         if (aturdido <= 0)
         {
             //Input de movimiento de cuatro direccones y movimiento en diagonal
@@ -63,11 +63,12 @@ public class PlayerController : MonoBehaviour
     {
         if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0 || Mathf.Abs(Input.GetAxisRaw("Vertical")) > 0)
         {
-            movimientoAnimation = true;
+            //if 
+            //runningRight = true;
         }
         else
         {
-            movimientoAnimation = false;
+            runningRight = false;
         }
     }
 }
