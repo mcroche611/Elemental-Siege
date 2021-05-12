@@ -98,7 +98,15 @@ public class EnemyMovement : MonoBehaviour
     private void FixedUpdate()
     {
         if (aturdido <= 0)
+        {
             rb.velocity = new Vector2(vel.x * speed, vel.y * speed);
+            if (rb.velocity.x < 0)
+            {
+                gameObject.GetComponent<SpriteRenderer>().flipX=true;
+            }
+            else gameObject.GetComponent<SpriteRenderer>().flipX = false;
+        }
+            
         else
             aturdido -= Time.deltaTime;
     }
