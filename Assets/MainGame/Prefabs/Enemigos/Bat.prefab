@@ -497,6 +497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "tiempoParalizaci\xF3n": 1.5
+  animator: {fileID: 5365998298433459903}
 --- !u!114 &-3710859317766333384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -524,6 +525,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  animator: {fileID: 5365998298433459903}
 --- !u!114 &-1412376425635897025
 MonoBehaviour:
   m_ObjectHideFlags: 0

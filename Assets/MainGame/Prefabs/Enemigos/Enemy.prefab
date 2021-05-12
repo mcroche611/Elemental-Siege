@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 5358221478498816179}
   - component: {fileID: 4738140729430422435}
   - component: {fileID: 549504702799059346}
+  - component: {fileID: 887371118}
   m_Layer: 10
   m_Name: Enemy
   m_TagString: Untagged
@@ -112,7 +113,7 @@ Transform:
   m_GameObject: {fileID: 1438688099962324506}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4434386884070238026}
   - {fileID: 5170223897073441517}
@@ -160,7 +161,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5335191898352440981, guid: 099f59d2d0088ff40931f7285c53af89,
+  m_Sprite: {fileID: -1163977261356103619, guid: 2ccd08f31485fb449be24652a3bf64cc,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -211,6 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  animator: {fileID: 887371118}
 --- !u!114 &5427682969815687633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,6 +315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "tiempoParalizaci\xF3n": 1
+  animator: {fileID: 887371118}
 --- !u!61 &4738140729430422435
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -330,7 +333,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.34, y: 0.55}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.34, y: 0.55}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -360,6 +363,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!95 &887371118
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438688099962324506}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2808e6401a8e35b4281e2f806bd0e5e5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2099852421741605135
 GameObject:
   m_ObjectHideFlags: 0
@@ -866,7 +888,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.1
 --- !u!114 &655664006503454382
 MonoBehaviour:
   m_ObjectHideFlags: 0

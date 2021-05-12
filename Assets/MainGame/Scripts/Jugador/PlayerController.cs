@@ -8,9 +8,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] 
     float velocity;
 
+    [SerializeField]
+    Animator animator;
+
     Rigidbody2D rb;
     Vector2 vel;
 
+    bool movimientoAnimation = false; //bool para ver si el jugador se está moviendo en alguna dirección
+                              //y animarlo
     float aturdido = 0;
 
     void Start()
@@ -23,6 +28,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        RunningAnimation();
+        Debug.Log("MOVIMIENTO HORIZONTAL" + Mathf.Abs(Input.GetAxisRaw("Horizontal")));
+        animator.SetBool("MovimientoAnimation", movimientoAnimation);
+
         if (aturdido <= 0)
         {
             //Input de movimiento de cuatro direccones y movimiento en diagonal
@@ -48,5 +57,17 @@ public class PlayerController : MonoBehaviour
     {
         rb.velocity = new Vector2(0f, 0f);
         aturdido = tiempoAturdimiento;
+    }
+
+    void RunningAnimation()
+    {
+        if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0 || Mathf.Abs(Input.GetAxisRaw("Vertical")) > 0)
+        {
+            movimientoAnimation = true;
+        }
+        else
+        {
+            movimientoAnimation = false;
+        }
     }
 }
