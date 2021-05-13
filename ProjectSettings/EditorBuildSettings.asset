@@ -6,73 +6,73 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Menu.unity
+    path: Assets/MainGame/Scenes/Menu.unity
     guid: a18bf6e6f6c10834481cb59f3f0fe8c9
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel1/1P0.unity
+    path: Assets/MainGame/Scenes/Nivel1/1P0.unity
     guid: 0bf998196ce418949bf0858153895993
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel1/1P1.unity
+    path: Assets/MainGame/Scenes/Nivel1/1P1.unity
     guid: 77df5011ebb567d498750ff6d4680e31
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel1/1P2.unity
+    path: Assets/MainGame/Scenes/Nivel1/1P2.unity
     guid: 61b17909ac55042489ac1794251d695e
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel1/1P3.unity
+    path: Assets/MainGame/Scenes/Nivel1/1P3.unity
     guid: f75b1e226e831184f9d1563d5d9a4c67
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel1/1P4.unity
+    path: Assets/MainGame/Scenes/Nivel1/1P4.unity
     guid: bf433f34d9155324ca2f899563738cc3
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel1/1P5.unity
+    path: Assets/MainGame/Scenes/Nivel1/1P5.unity
     guid: 1fa28f971fc1690498e3e46aef694c50
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel1/1P6.unity
+    path: Assets/MainGame/Scenes/Nivel1/1P6.unity
     guid: a8ef6220a3ce7ff48b7e439aac55cb84
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel1/1P7.unity
+    path: Assets/MainGame/Scenes/Nivel1/1P7.unity
     guid: e1d199d0867e52f4f87b9aa908d9315b
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel1/1P8.unity
+    path: Assets/MainGame/Scenes/Nivel1/1P8.unity
     guid: b88560e6df4c5334295d712986ee2438
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel1/1P9.unity
+    path: Assets/MainGame/Scenes/Nivel1/1P9.unity
     guid: e7dae94d96ce6174bac9ebb98ab9fd86
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel1/1S0.unity
+    path: Assets/MainGame/Scenes/Nivel1/1S0.unity
     guid: 663fa6347ab30b042a607d44ffef2467
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel1/1S1.unity
+    path: Assets/MainGame/Scenes/Nivel1/1S1.unity
     guid: d325d775e23ffe04ba7f7f5aaa8897a6
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel1/1S2.unity
+    path: Assets/MainGame/Scenes/Nivel1/1S2.unity
     guid: 230a7a9d21dbc4743af8ae46e7a0345c
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel1/1S3.unity
+    path: Assets/MainGame/Scenes/Nivel1/1S3.unity
     guid: 4f8994ecdd374da4eb0ee438fedb7580
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel1/1S4.unity
+    path: Assets/MainGame/Scenes/Nivel1/1S4.unity
     guid: d9366a6d7c5fdfd469c568c80fa59b09
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel1/1S5.unity
+    path: Assets/MainGame/Scenes/Nivel1/1S5.unity
     guid: 9de105e62aca91a4da43fcaff89e48a7
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel1/1S6.unity
+    path: Assets/MainGame/Scenes/Nivel1/1S6.unity
     guid: 06c287bb9ed589b40afdaad235c05912
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel1/1S7.unity
+    path: Assets/MainGame/Scenes/Nivel1/1S7.unity
     guid: 51d9968d384c5164aa71bea9ae1fa9bc
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel1/1MA.unity
+    path: Assets/MainGame/Scenes/Nivel1/1MA.unity
     guid: 733f1e38d071caa4c82eb450cf1a2678
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel1/1ME.unity
+    path: Assets/MainGame/Scenes/Nivel1/1ME.unity
     guid: 839c4d55efae1e5408c19fb1638c57b5
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel1/1MF.unity
+    path: Assets/MainGame/Scenes/Nivel1/1MF.unity
     guid: 97066f9216db7d34f9b8b35bbedca738
   - enabled: 0
     path: 
@@ -84,63 +84,63 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel2/2MA.unity
+    path: Assets/MainGame/Scenes/Nivel2/2MA.unity
     guid: 6b13fa45954d22243b875d6224f8edef
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel2/2ME.unity
+    path: Assets/MainGame/Scenes/Nivel2/2ME.unity
     guid: b0688dd4a271fce40bbcf8d170504219
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel2/2MF.unity
+    path: Assets/MainGame/Scenes/Nivel2/2MF.unity
     guid: 3538a76cc46f78945ae5eea840d27a7f
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel2/2P0.unity
+    path: Assets/MainGame/Scenes/Nivel2/2P0.unity
     guid: 498e324e3b15b3f45b8310b7d4b83dcd
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel2/2P1.unity
+    path: Assets/MainGame/Scenes/Nivel2/2P1.unity
     guid: 85e2d094c0927de4a9e8cc114a51c3c6
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel2/2P2.unity
+    path: Assets/MainGame/Scenes/Nivel2/2P2.unity
     guid: 489784b1bfce4be4bb8e2a05880199a4
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel2/2P3.unity
+    path: Assets/MainGame/Scenes/Nivel2/2P3.unity
     guid: 37aba3ee868850c4c9adfd7b09b35075
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel2/2P4.unity
+    path: Assets/MainGame/Scenes/Nivel2/2P4.unity
     guid: 73759161c6fc93947be00a6b4a88c7f8
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel2/2P5.unity
+    path: Assets/MainGame/Scenes/Nivel2/2P5.unity
     guid: a90713ad3e0d5b44491e060c49e62ed1
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel2/2P6.unity
+    path: Assets/MainGame/Scenes/Nivel2/2P6.unity
     guid: 596e0f3e8c492f34eb0f30db8222a09d
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel2/2P7.unity
+    path: Assets/MainGame/Scenes/Nivel2/2P7.unity
     guid: 6946f01e78712d44c9dda0f266ae1a6c
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel2/2P8.unity
+    path: Assets/MainGame/Scenes/Nivel2/2P8.unity
     guid: 1862915c4015f0a49a8729f1fb2da48b
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel2/2S0.unity
+    path: Assets/MainGame/Scenes/Nivel2/2S0.unity
     guid: 20e59a0951b3355418b4ed095791210a
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel2/2S1.unity
+    path: Assets/MainGame/Scenes/Nivel2/2S1.unity
     guid: 599227a012c71fe46a1190f9662e98a8
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel2/2S2.unity
+    path: Assets/MainGame/Scenes/Nivel2/2S2.unity
     guid: dc2cd943b59240d4d98c4555858d1c3e
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel2/2S3.unity
+    path: Assets/MainGame/Scenes/Nivel2/2S3.unity
     guid: cd38d3c3273f09c43ad701e0684e7eac
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel2/2S4.unity
+    path: Assets/MainGame/Scenes/Nivel2/2S4.unity
     guid: 3c0b1265e58637a42975f501b9c662d8
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel2/2S5.unity
+    path: Assets/MainGame/Scenes/Nivel2/2S5.unity
     guid: 384abb97249e62c4eb460aac52d9f2a5
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel2/2S6.unity
+    path: Assets/MainGame/Scenes/Nivel2/2S6.unity
     guid: 51b0f4a939602bb4d972f34e51b58f0d
   - enabled: 1
-    path: Assets/MainGame/Prefabs/Scenes/Nivel2/2S7.unity
+    path: Assets/MainGame/Scenes/Nivel2/2S7.unity
     guid: 14687c92fcc30ab42bb6e9f5e665abc5
   m_configObjects: {}
