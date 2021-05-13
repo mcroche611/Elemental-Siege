@@ -639,6 +639,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2854993521610120516, guid: 8028319abc84c6f4fb0689c3a1871c8b,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6749968100805474663, guid: 8028319abc84c6f4fb0689c3a1871c8b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -677,7 +682,7 @@ PrefabInstance:
     - target: {fileID: 6749968100805474663, guid: 8028319abc84c6f4fb0689c3a1871c8b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6749968100805474663, guid: 8028319abc84c6f4fb0689c3a1871c8b,
         type: 3}
@@ -693,6 +698,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6749968100805474663, guid: 8028319abc84c6f4fb0689c3a1871c8b,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8028319abc84c6f4fb0689c3a1871c8b, type: 3}
@@ -4271,6 +4281,12 @@ PrefabInstance:
       propertyPath: numNivel
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1987805597006922427, guid: 96478fe5aceb67843b6a73ab9a65e31f,
+        type: 3}
+      propertyPath: nasnas
+      value: 
+      objectReference: {fileID: 2017438766814546700, guid: 725254f92dc462d4d85bff8af78954fc,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96478fe5aceb67843b6a73ab9a65e31f, type: 3}
 --- !u!1001 &1396905996
