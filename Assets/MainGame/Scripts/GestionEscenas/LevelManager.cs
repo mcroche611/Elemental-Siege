@@ -336,5 +336,6 @@ public class LevelManager : MonoBehaviour
     public void FinNivel()
     {
         Destroy(this.gameObject);
+        Destroy(player);
     }
 }
