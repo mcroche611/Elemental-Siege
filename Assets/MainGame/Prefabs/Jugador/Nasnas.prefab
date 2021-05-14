@@ -154,7 +154,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: 8
-  animator: {fileID: 1428985225}
 --- !u!114 &2017438766814546711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -485,6 +484,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9202359332304693006, guid: 50b8fcfedad7b1749b6be1e144019a23,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: bb52a8c7e43bfec44bda4efe09005729, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50b8fcfedad7b1749b6be1e144019a23, type: 3}
 --- !u!4 &8533224162620593562 stripped
