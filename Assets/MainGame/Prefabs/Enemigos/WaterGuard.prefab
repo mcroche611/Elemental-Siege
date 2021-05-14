@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knock: 10
+  tiempoAturdimiento: 1
   attackDamage: 15
 --- !u!61 &335509252478725816
 BoxCollider2D:
@@ -169,8 +170,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d538c95d166c9f84b8cd52a85fd82a00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCooldown: 2
-  attackDuration: 1
+  attackCoolDown: 1.5
+  attackFreeze: 1
+  paralizado: 0
 --- !u!58 &335509253145505798
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -846,6 +848,7 @@ GameObject:
   - component: {fileID: 6436236494319349038}
   - component: {fileID: 9020634607765462343}
   - component: {fileID: 9020634607765462342}
+  - component: {fileID: 306808126521802673}
   m_Layer: 10
   m_Name: WaterGuard
   m_TagString: Untagged
@@ -987,6 +990,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "tiempoParalizaci\xF3n": 1
+  animator: {fileID: 306808126521802673}
 --- !u!114 &9020634607765462339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1014,7 +1018,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  tiempoAturdimiento: 0.25
+  animator: {fileID: 306808126521802673}
 --- !u!114 &9020634607765462336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1097,3 +1101,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!95 &306808126521802673
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9020634607765462340}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
