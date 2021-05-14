@@ -4,9 +4,20 @@ using UnityEngine;
 
 public class DontDestroy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    static DontDestroy instance;
+    void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);   
+        //Si no hay ninguna instancia creada almacenamos aqui la instancia actual
+        if (instance == null)
+        {
+            instance = this;
+            //Nos aseguramos de que el objeto al que esta asociado este script no se destruira al cambiar de escena
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            //Si ya existe un gameobject con un componente instancia de esta clase (es decir ya hay un GM) no necesitamos uno nuevo
+            Destroy(this.gameObject);
+        }
     }
 }

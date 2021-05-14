@@ -119,7 +119,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2478020306641188643}
+      - m_Target: {fileID: 9218363973662935746}
         m_MethodName: Resume
         m_Mode: 1
         m_Arguments:
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2478020306641188643}
+      - m_Target: {fileID: 9218363973662935746}
         m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
@@ -748,7 +748,7 @@ GameObject:
   - component: {fileID: 8599794477123480982}
   - component: {fileID: 2947758179279678012}
   - component: {fileID: 288419260747257281}
-  - component: {fileID: 2478020306641188643}
+  - component: {fileID: 9218363973662935746}
   m_Layer: 5
   m_Name: Canvas de Pause
   m_TagString: Untagged
@@ -836,7 +836,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &2478020306641188643
+--- !u!114 &9218363973662935746
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -845,7 +845,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7658806414855646800}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86b5fa7a466783549b6b92e90c534916, type: 3}
+  m_Script: {fileID: 11500000, guid: 61df60b67cbcf1c4e9edd8e123f0ec23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 2249999788434895396}

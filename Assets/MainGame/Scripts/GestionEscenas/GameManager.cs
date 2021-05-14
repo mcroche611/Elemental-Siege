@@ -95,11 +95,4 @@ public class GameManager : MonoBehaviour
         else if (elemento == "Fuego") bonoFuego += cantidad;
         else bonoElectricidad += cantidad;
     }
-
-    // Estructura de Niveles
-
-    public void ChangeScene(string sceneName)
-    {
-        SceneManager.LoadScene(sceneName);
-    }
 }

@@ -378,7 +378,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2478020306641188643, guid: aaf708db6e3a17c46bac30436cb5cae4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: aaf708db6e3a17c46bac30436cb5cae4, type: 3}
 --- !u!1001 &723121326
 PrefabInstance:
@@ -1123,6 +1124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1633000250}
   playerWalking: {fileID: 0}
+  botton: {fileID: 8300000, guid: a892515056bd3af46827621f947bc56d, type: 3}
 --- !u!1 &1739390212
 GameObject:
   m_ObjectHideFlags: 0
@@ -1253,7 +1255,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86b5fa7a466783549b6b92e90c534916, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 0}
 --- !u!1 &1881818522
 GameObject:
   m_ObjectHideFlags: 0
@@ -1832,6 +1833,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SourceManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8835514617297782378, guid: 57364908af0f2a848b54f5c65a09ce20,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 949b12d08385af64fa33f857a8d2a30a, type: 3}
+    - target: {fileID: 8835514617297782378, guid: 57364908af0f2a848b54f5c65a09ce20,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.18
       objectReference: {fileID: 0}
     - target: {fileID: 8835514617297782379, guid: 57364908af0f2a848b54f5c65a09ce20,
         type: 3}
