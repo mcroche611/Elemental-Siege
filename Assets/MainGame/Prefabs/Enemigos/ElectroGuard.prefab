@@ -477,8 +477,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d538c95d166c9f84b8cd52a85fd82a00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCooldown: 2
-  attackDuration: 1
+  attackCoolDown: 1.5
+  attackFreeze: 1
+  paralizado: 0
 --- !u!58 &7901559247905058186
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -516,6 +517,7 @@ GameObject:
   - component: {fileID: 7901559248793290410}
   - component: {fileID: 7901559248793290411}
   - component: {fileID: 7901559248793290408}
+  - component: {fileID: -3472885028131857675}
   m_Layer: 10
   m_Name: ElectroGuard
   m_TagString: Untagged
@@ -657,6 +659,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "tiempoParalizaci\xF3n": 1
+  animator: {fileID: -3472885028131857675}
 --- !u!114 &7901559248793290415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -684,7 +687,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  tiempoAturdimiento: 0.25
+  animator: {fileID: -3472885028131857675}
 --- !u!114 &7901559248793290413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -767,6 +770,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!95 &-3472885028131857675
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7901559248793290409}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7901559249499407828
 GameObject:
   m_ObjectHideFlags: 0
@@ -864,6 +886,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knock: 10
+  tiempoAturdimiento: 1
   attackDamage: 15
 --- !u!61 &7901559249499407830
 BoxCollider2D:
