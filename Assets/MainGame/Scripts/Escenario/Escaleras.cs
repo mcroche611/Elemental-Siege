@@ -11,7 +11,7 @@ public class Escaleras : MonoBehaviour
         {
             Destroy(collision.gameObject);
             LevelManager.GetInstance().FinNivel();
-            SceneManager.LoadScene("2P0");
+            SceneManager.LoadScene("3P0");
         }
     }
 }

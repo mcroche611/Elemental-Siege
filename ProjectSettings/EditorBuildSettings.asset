@@ -143,16 +143,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MainGame/Scenes/Nivel2/2S7.unity
     guid: 14687c92fcc30ab42bb6e9f5e665abc5
-  - enabled: 1
+  - enabled: 0
     path: Assets/MainGame/Scenes/Build/Bats.unity
     guid: 7c53bb24660c04d40b91f23d4c2ac581
   - enabled: 1
-    path: Assets/MainGame/Scenes/Build/Enemy.unity
+    path: Assets/MainGame/Scenes/Build/Prueba2.unity
     guid: 728bf8d0397ed704e9dee9a7628fdc17
   - enabled: 1
+    path: Assets/MainGame/Scenes/Nivel3/Iblis.unity
+    guid: 1e7b1bdf24831f14197f1f29273e592a
+  - enabled: 1
+    path: Assets/MainGame/Scenes/Nivel3/3P0.unity
+    guid: 5595ab99d92f80a47ac99c009a5f5f1d
+  - enabled: 0
     path: Assets/MainGame/Scenes/Build/GuardaElemental.unity
     guid: 6ce12f2440a8e4241ad4f05326f4b85a
-  - enabled: 1
+  - enabled: 0
     path: Assets/MainGame/Scenes/Build/Slime.unity
     guid: f0506cdcb7df2f445bc981d04ce2ffea
   m_configObjects: {}

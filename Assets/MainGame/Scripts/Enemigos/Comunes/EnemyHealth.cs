@@ -37,14 +37,17 @@ public class EnemyHealth : MonoBehaviour
 
                 LevelManager levelmanager = LevelManager.GetInstance();
 
-                if (levelmanager.TipoHabitacion() == 'P')
+                if (levelmanager != null)
                 {
-                    levelmanager.MatarEnemigo(this.gameObject);
-                    GetComponent<Enemy>().EstaMuerto();
-                }                 
-                else
-                    levelmanager.QuitarEnemigoSala();
-                
+                    if (levelmanager.TipoHabitacion() == 'P')
+                    {
+                        levelmanager.MatarEnemigo(this.gameObject);
+                        GetComponent<Enemy>().EstaMuerto();
+                    }
+                    else
+                        levelmanager.QuitarEnemigoSala();
+                }
+                              
                 Destroy(this.gameObject);
             }                                   
         }           

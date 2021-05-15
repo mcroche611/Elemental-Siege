@@ -16,7 +16,6 @@ public class StateManager : MonoBehaviour
 
         if (escudo != null && escudo.enabled)
         {
-            Debug.Log("hola");
             GetComponentInChildren<Charco>().NoPuedeMojarse();
             escudo.AtaqueEscudo(elementalAtack.Split('_')[0]);
         }
