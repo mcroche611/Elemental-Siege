@@ -83,6 +83,7 @@ GameObject:
   - component: {fileID: 5541998238747887784}
   - component: {fileID: 5541998238747887785}
   - component: {fileID: 5541998238747887790}
+  - component: {fileID: -2755761910554108976}
   m_Layer: 0
   m_Name: MagoFuego
   m_TagString: Untagged
@@ -170,7 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   elemento: Agua
   cantidad: 20
-  animator: {fileID: 0}
+  animator: {fileID: -2755761910554108976}
   puerta: {fileID: 0}
 --- !u!61 &5541998238747887785
 BoxCollider2D:
@@ -219,3 +220,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &-2755761910554108976
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5541998238747887765}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 653e3108266ffaf418d03647ae03cc0f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
