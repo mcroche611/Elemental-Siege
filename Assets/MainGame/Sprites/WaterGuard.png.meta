@@ -1,0 +1,764 @@
+fileFormatVersion: 2
+guid: e7694ec942a889344aac15d487b3d6d8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6271051194872416844
+    second: WaterGuard_0
+  - first:
+      213: 5026546636918343971
+    second: WaterGuard_1
+  - first:
+      213: -5036772623814884346
+    second: WaterGuard_2
+  - first:
+      213: 2794101887515045345
+    second: WaterGuard_3
+  - first:
+      213: 739538327011478794
+    second: WaterGuard_4
+  - first:
+      213: 1669317656486087622
+    second: WaterGuard_5
+  - first:
+      213: 2456182222765159844
+    second: WaterGuard_6
+  - first:
+      213: -1308945905723092303
+    second: WaterGuard_7
+  - first:
+      213: -5891459391449111567
+    second: WaterGuard_8
+  - first:
+      213: -5883367332068851959
+    second: WaterGuard_9
+  - first:
+      213: -7471674534550705894
+    second: WaterGuard_10
+  - first:
+      213: -8906255888036830351
+    second: WaterGuard_11
+  - first:
+      213: 1360174300385166223
+    second: WaterGuard_12
+  - first:
+      213: 7136579830344465021
+    second: WaterGuard_13
+  - first:
+      213: 6957838663777843070
+    second: WaterGuard_14
+  - first:
+      213: -2471570297383206969
+    second: WaterGuard_15
+  - first:
+      213: 265229573401766591
+    second: WaterGuard_16
+  - first:
+      213: -7232621032454308250
+    second: WaterGuard_17
+  - first:
+      213: -3555449401064655544
+    second: WaterGuard_18
+  - first:
+      213: -1709688729252160770
+    second: WaterGuard_19
+  - first:
+      213: -3546696356404982660
+    second: WaterGuard_20
+  - first:
+      213: -3307558476609344862
+    second: WaterGuard_21
+  - first:
+      213: 1940725181634409992
+    second: WaterGuard_22
+  - first:
+      213: -8254818917824433352
+    second: WaterGuard_23
+  - first:
+      213: -5749111880504504660
+    second: WaterGuard_24
+  - first:
+      213: -6841719585310943395
+    second: WaterGuard_25
+  - first:
+      213: -8072582379846858564
+    second: WaterGuard_26
+  - first:
+      213: -1146195172856194537
+    second: WaterGuard_27
+  - first:
+      213: 3213163225221550254
+    second: WaterGuard_28
+  - first:
+      213: -7998394840716258072
+    second: WaterGuard_29
+  - first:
+      213: -8216754172377812835
+    second: WaterGuard_30
+  - first:
+      213: 4173898134370741303
+    second: WaterGuard_31
+  - first:
+      213: 2817462826657681622
+    second: WaterGuard_32
+  - first:
+      213: -1412103555405534833
+    second: WaterGuard_33
+  - first:
+      213: -3583474978347458502
+    second: WaterGuard_34
+  - first:
+      213: 1423128205434037356
+    second: WaterGuard_35
+  - first:
+      213: -681480244062854412
+    second: WaterGuard_36
+  - first:
+      213: 1746947166034242015
+    second: WaterGuard_37
+  - first:
+      213: -6214231703307084519
+    second: WaterGuard_38
+  - first:
+      213: 4936165489523894318
+    second: WaterGuard_39
+  - first:
+      213: -3084905022134099615
+    second: WaterGuard_40
+  - first:
+      213: 4057932458576301796
+    second: WaterGuard_41
+  - first:
+      213: 8221017701765324985
+    second: WaterGuard_42
+  - first:
+      213: 1855417421634216968
+    second: WaterGuard_43
+  - first:
+      213: -7363161663823285117
+    second: WaterGuard_44
+  - first:
+      213: 1175926855306407828
+    second: WaterGuard_45
+  - first:
+      213: -5427360544317820996
+    second: WaterGuard_46
+  - first:
+      213: 7652321185913953365
+    second: WaterGuard_47
+  - first:
+      213: -2259606066083306869
+    second: WaterGuard_48
+  - first:
+      213: 7817601829857424720
+    second: WaterGuard_49
+  - first:
+      213: 3046567973717875150
+    second: WaterGuard_50
+  - first:
+      213: 1296856198216759744
+    second: WaterGuard_51
+  - first:
+      213: 6477487075876695096
+    second: WaterGuard_52
+  - first:
+      213: -3954386271968497466
+    second: WaterGuard_53
+  - first:
+      213: -4945850699327450607
+    second: WaterGuard_54
+  - first:
+      213: 6064817089945208214
+    second: WaterGuard_55
+  - first:
+      213: 6381766621047075406
+    second: WaterGuard_56
+  - first:
+      213: -7915853947561917149
+    second: WaterGuard_57
+  - first:
+      213: 4855007749679940813
+    second: WaterGuard_58
+  - first:
+      213: 2684206018914547285
+    second: WaterGuard_59
+  - first:
+      213: 5286856723787751837
+    second: WaterGuard_60
+  - first:
+      213: -1152814110089143713
+    second: WaterGuard_61
+  - first:
+      213: 3935569353614596062
+    second: WaterGuard_62
+  - first:
+      213: -1723749663714527916
+    second: WaterGuard_63
+  - first:
+      213: 7704144207098981875
+    second: WaterGuard_64
+  - first:
+      213: 4101099033237088333
+    second: WaterGuard_65
+  - first:
+      213: -6110792708549298842
+    second: WaterGuard_66
+  - first:
+      213: -3754082705637038128
+    second: WaterGuard_67
+  - first:
+      213: -792805945201315364
+    second: WaterGuard_68
+  - first:
+      213: 4786378627503058428
+    second: WaterGuard_69
+  - first:
+      213: 8578345169721004019
+    second: WaterGuard_70
+  - first:
+      213: 132948370917351083
+    second: WaterGuard_71
+  - first:
+      213: 2836771271228880092
+    second: WaterGuard_72
+  - first:
+      213: -8201722963806940740
+    second: WaterGuard_73
+  - first:
+      213: 6853512479254008420
+    second: WaterGuard_74
+  - first:
+      213: 2219865954211117259
+    second: WaterGuard_75
+  - first:
+      213: -4380207114346215291
+    second: WaterGuard_76
+  - first:
+      213: -5765240426659747773
+    second: WaterGuard_77
+  - first:
+      213: -6762947279731454159
+    second: WaterGuard_78
+  - first:
+      213: -4125876306903015196
+    second: WaterGuard_79
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: WaterGuard_0
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 473
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4ac8a616df370750800000000000000
+      internalID: 6271051194872416844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterGuard_1
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 473
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 329c374d881e1c540800000000000000
+      internalID: 5026546636918343971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterGuard_2
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 474
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6040a1f0cf9c91ab0800000000000000
+      internalID: -5036772623814884346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterGuard_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 532
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ed2597ecd4a6c620800000000000000
+      internalID: 2794101887515045345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterGuard_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 404
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0d4e4fa03e534a00800000000000000
+      internalID: 739538327011478794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterGuard_5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 404
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cb042c609b9a2710800000000000000
+      internalID: 1669317656486087622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterGuard_6
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 404
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a5fb8bd7bc161220800000000000000
+      internalID: 2456182222765159844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterGuard_7
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 404
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b25c2342a0b5dde0800000000000000
+      internalID: -1308945905723092303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterGuard_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 276
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f36904d5e45d3ea0800000000000000
+      internalID: -5891459391449111567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterGuard_9
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 276
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90ff5e835941a5ea0800000000000000
+      internalID: -5883367332068851959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterGuard_10
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 276
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a19e5c2f8974f4890800000000000000
+      internalID: -7471674534550705894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterGuard_11
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 276
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17365da057f966480800000000000000
+      internalID: -8906255888036830351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterGuard_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 148
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f83c217d15f40e210800000000000000
+      internalID: 1360174300385166223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterGuard_13
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 148
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7a36e26b893a0360800000000000000
+      internalID: 7136579830344465021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterGuard_14
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 148
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e77f4f686653f8060800000000000000
+      internalID: 6957838663777843070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterGuard_15
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 148
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cf3113d8e733bdd0800000000000000
+      internalID: -2471570297383206969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterGuard_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 20
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fba6a8a44e84ea300800000000000000
+      internalID: 265229573401766591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterGuard_17
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 20
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66eba85bd7190ab90800000000000000
+      internalID: -7232621032454308250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterGuard_18
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 20
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8457aa87b9188aec0800000000000000
+      internalID: -3555449401064655544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterGuard_19
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 20
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efa9f68b827f548e0800000000000000
+      internalID: -1709688729252160770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
