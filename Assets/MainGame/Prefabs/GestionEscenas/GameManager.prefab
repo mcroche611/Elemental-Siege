@@ -43,9 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab6ecef15388a3b4fa4f5854fe044fd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  juegoPrincipal: 1
-  restartJuego: 0
   ataque: 25
   bonoAgua: 20
   bonoFuego: 20
   bonoElectricidad: 20
+  valorIniBono: 20

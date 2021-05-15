@@ -27,7 +27,8 @@ public class Health : MonoBehaviour
             if (vida <= 0)
             {
                 Destroy(this.gameObject);
-                LevelManager.GetInstance().PrimeraHabitacion();
+                if (LevelManager.GetInstance() != null)
+                    LevelManager.GetInstance().PrimeraHabitacion();
             }
         }             
     }

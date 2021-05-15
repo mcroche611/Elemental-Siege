@@ -2,13 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
+    static UIManager instance;
     public Sprite fuego, agua, electricidad;
     public Image elementoActual, elemento1, elemento2;
     Vector2 maxBarraDeVida, maxBarraDeMana;
     public GridLayoutGroup barraDeVida, barraDeMana;
+    public Text escenaActual;
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+
+    }
+
 
     void Start()
     {
@@ -18,6 +36,12 @@ public class UIManager : MonoBehaviour
         maxBarraDeMana = barraDeMana.cellSize;
 
         DontDestroyOnLoad(this.gameObject);
+        
+    }
+
+    private void OnLevelWasLoaded(int level)
+    {
+        escenaActual.text = Application.loadedLevelName[1] + "" + Application.loadedLevelName[2];
     }
 
     public void ActualizarVida(float porcentajeVida)

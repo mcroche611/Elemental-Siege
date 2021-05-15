@@ -641,10 +641,7 @@ MonoBehaviour:
   dialogueBox: {fileID: 1988185914}
   dialogueText: {fileID: 2038088832}
   textSpeed: 0.05
-  sentences:
-  - Te he aumentado tu bono de agua
-  - "HASTA LA PR\xD3XIMAAAAA!!!"
-  - '*se va*'
+  numDialogue: 1
 --- !u!114 &1292955267
 MonoBehaviour:
   m_ObjectHideFlags: 0

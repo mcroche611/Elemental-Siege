@@ -348,6 +348,12 @@ PrefabInstance:
       propertyPath: numNivel
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1987805597006922427, guid: 96478fe5aceb67843b6a73ab9a65e31f,
+        type: 3}
+      propertyPath: nasnas
+      value: 
+      objectReference: {fileID: 2017438766814546700, guid: 725254f92dc462d4d85bff8af78954fc,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96478fe5aceb67843b6a73ab9a65e31f, type: 3}
 --- !u!1001 &149794896
@@ -5329,7 +5335,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1063547853
 PrefabInstance:
@@ -7425,7 +7431,7 @@ PrefabInstance:
     - target: {fileID: 768147115195716029, guid: f90c94e822ae51a4994221950c33dbfb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 768147115195716029, guid: f90c94e822ae51a4994221950c33dbfb,
         type: 3}

@@ -9,7 +9,9 @@ public class GameManager : MonoBehaviour
     private static GameManager instance;
     private UIManager theUIManager;
 
-    [SerializeField] float ataque, bonoAgua, bonoFuego, bonoElectricidad;
+    [SerializeField] float ataque, bonoAgua, bonoFuego, bonoElectricidad, valorIniBono;
+
+
 
     GameObject player;
 
@@ -94,5 +96,12 @@ public class GameManager : MonoBehaviour
         if (elemento == "Agua") bonoAgua += cantidad;
         else if (elemento == "Fuego") bonoFuego += cantidad;
         else bonoElectricidad += cantidad;
+    }
+
+    public void ResetBonos()
+    {
+        bonoAgua = valorIniBono;
+        bonoFuego = valorIniBono;
+        bonoElectricidad = valorIniBono;
     }
 }

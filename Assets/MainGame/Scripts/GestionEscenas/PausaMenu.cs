@@ -65,7 +65,10 @@ public class PausaMenu : MonoBehaviour
         SourceManager.GetInstance().bottonSound();
         gamePaused = false;
         Time.timeScale = 1f;
-        LevelManager.GetInstance().FinNivel();
+        if (LevelManager.GetInstance() != null)
+            LevelManager.GetInstance().FinNivel();
+        else Destroy(GameManager.GetInstance().GetPlayer());
+        GameManager.GetInstance().ResetBonos();
         pauseMenu.SetActive(false);
         SceneManager.LoadScene("Menu");
 

@@ -36,6 +36,7 @@ public class Puerta : MonoBehaviour
             }
             else if (levelManager.TipoHabitacion() == 'M')
                 levelManager.Puerta(orientacion);
+
         }
             
         else if (collision.GetComponent<MagoEncerrado>())

@@ -22,8 +22,10 @@ public class LevelManager : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
             if (numNivel == 1)
                 nivel = Nivel1();
-            else if (numNivel == 2)            
-                nivel = Nivel2();            
+            else if (numNivel == 2)
+                nivel = Nivel2();
+            else
+                nivel = Nivel3();
         }
         else
         {
@@ -206,6 +208,45 @@ public class LevelManager : MonoBehaviour
         }
 
         s.sceneNow.x = 6;
+        s.sceneNow.y = 0;
+        s.sceneAfter.x = s.sceneNow.x;
+        s.sceneAfter.y = s.sceneNow.y;
+        s.sceneIni.x = s.sceneNow.x;
+        s.sceneIni.y = s.sceneNow.y;
+
+        return s;
+    }
+
+    private Escena Nivel3()
+    {
+        Escena s;
+
+        s.scenes = new string[1, 2] { { "3P0", "Iblis" } };
+
+
+        s.habitacionDescubierta = new bool[1, 2];
+        int pasillos = 0;
+
+        for (int i = 0; i < s.scenes.GetLength(0); i++)
+        {
+            for (int j = 0; j < s.scenes.GetLength(1); j++)
+            {
+                s.habitacionDescubierta[i, j] = false;
+                char c = s.scenes[i, j][1];
+                if (c == 'P')
+                    pasillos += 1;
+            }
+        }
+
+        s.pasillos = new Pasillo[pasillos];
+
+        for (int i = 0; i < s.pasillos.Length; i++)
+        {
+            s.pasillos[i].enemigos = new Enemigo[50];
+            s.pasillos[i].pc = 0;
+        }
+
+        s.sceneNow.x = 0;
         s.sceneNow.y = 0;
         s.sceneAfter.x = s.sceneNow.x;
         s.sceneAfter.y = s.sceneNow.y;
