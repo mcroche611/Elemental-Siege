@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: magoFuegoSale
+  m_Name: MagoElectroSale
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,13 +20,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -115505791638739589, guid: dee613e65d6dced4c9bc2976a61f81df,
+      value: {fileID: -6012465934139683775, guid: dee613e65d6dced4c9bc2976a61f81df,
         type: 3}
     - time: 0.33333334
-      value: {fileID: -4074753729707433326, guid: dee613e65d6dced4c9bc2976a61f81df,
+      value: {fileID: -6117962757745870293, guid: dee613e65d6dced4c9bc2976a61f81df,
         type: 3}
-    - time: 0.6666667
-      value: {fileID: 7473738251842310938, guid: dee613e65d6dced4c9bc2976a61f81df,
+    - time: 0.65
+      value: {fileID: 5245984888401528492, guid: dee613e65d6dced4c9bc2976a61f81df,
         type: 3}
     attribute: m_Sprite
     path: 
@@ -47,15 +47,15 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -115505791638739589, guid: dee613e65d6dced4c9bc2976a61f81df, type: 3}
-    - {fileID: -4074753729707433326, guid: dee613e65d6dced4c9bc2976a61f81df, type: 3}
-    - {fileID: 7473738251842310938, guid: dee613e65d6dced4c9bc2976a61f81df, type: 3}
+    - {fileID: -6012465934139683775, guid: dee613e65d6dced4c9bc2976a61f81df, type: 3}
+    - {fileID: -6117962757745870293, guid: dee613e65d6dced4c9bc2976a61f81df, type: 3}
+    - {fileID: 5245984888401528492, guid: dee613e65d6dced4c9bc2976a61f81df, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.68333334
+    m_StopTime: 0.6666666
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
