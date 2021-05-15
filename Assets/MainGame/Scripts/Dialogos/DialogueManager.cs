@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.IO;
+using System;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -13,11 +15,12 @@ public class DialogueManager : MonoBehaviour
     TextMeshProUGUI dialogueText;
     [SerializeField]
     float textSpeed = 0.2f; //velocidad con la que se typean las letras
+    [SerializeField] int numDialogue; //número del diálogo a leer
 
     [TextArea(3, 10)] //ampliamos la cantidad de líneas que pueden aparecer en el editor
-    [SerializeField]
 
-    string[] sentences = new string[5]; //array de frases de dialogo
+    //[SerializeField]
+    string[] sentences = new string[8]; //array de frases de dialogo
     int numeroSentence = 0;
 
     static bool dialogueGoingOn; //bool con el propósito de que no se pueda pasar el juego si hay un diálogo
@@ -37,8 +40,22 @@ public class DialogueManager : MonoBehaviour
         dialogueBox.SetActive(false);
 
         dialogueText.text = "";
-   
-        
+
+        SetDialogue();
+    }
+
+    private void SetDialogue()
+    {
+        StreamReader dialogue = new StreamReader("Assets/MainGame/Resources/dialogue.txt");
+        while(!dialogue.EndOfStream)
+        {
+            string s = dialogue.ReadLine();
+            if (s == numDialogue.ToString())
+            {
+                //añadir lineas siguientes hasta el próximo diálogo
+            }
+        }
+        dialogue.Close();
     }
 
     private void Update()
