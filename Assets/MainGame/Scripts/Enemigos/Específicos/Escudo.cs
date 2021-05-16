@@ -15,7 +15,7 @@ public class Escudo : MonoBehaviour
     string shieldType;
 
     [SerializeField]
-    Sprite guardiaNeutro;
+    Sprite guardiaNeutro; //Cambiar sprite de color
 
     //el bonus del jugador de cada ataque elemental
     float bonoAgua, bonoFuego, bonoElectricidad;
