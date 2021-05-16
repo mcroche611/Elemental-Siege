@@ -21,11 +21,11 @@ public class LevelManager : MonoBehaviour
             //Nos aseguramos de que el objeto al que esta asociado este script no se destruira al cambiar de escena
             DontDestroyOnLoad(this.gameObject);
             if (numNivel == 1)
-                nivel = Nivel1();
+                nivel = Nivel(EscenasNivel(numNivel), 4, 0);
             else if (numNivel == 2)
-                nivel = Nivel2();
+                nivel = Nivel(EscenasNivel(numNivel), 6, 0);
             else
-                nivel = Nivel3();
+                nivel = Nivel(EscenasNivel(numNivel), 0, 0);
         }
         else
         {
@@ -112,6 +112,18 @@ public class LevelManager : MonoBehaviour
         public bool vivo;    
     }
 
+    struct Jarron
+    {
+        public string nombre;
+        public bool destruido;
+    }
+
+    struct Jarrones
+    {
+        public Jarron[] jarrones;
+        public int pc;
+    }
+
     struct Pasillo
     {
         public Enemigo[] enemigos;
@@ -123,25 +135,60 @@ public class LevelManager : MonoBehaviour
         public string[,] scenes;
         public bool[,] habitacionDescubierta;
         public Pasillo[] pasillos;
+        public Jarrones[] jarronesEnHabitaciones; 
         public Coor sceneNow;
         public Coor sceneAfter;
         public Coor sceneIni;
     }
 
+    private string[,] EscenasNivel(int n)
+    {
+        string[,] escenas;
 
+        if (n == 1)
+        {
+            escenas = new string[5, 9]  {{ "---","---", "1ME", "1S5", "1P7", "1S6", "1P8", "1S7", "1P9"},
+                                         {"---", "---", "---", "1P5", "---", "1P6", "---", "---", "---"},
+                                         {"---", "---", "---", "1S3", "1P4", "1S4", "---", "---", "---"},
+                                         {"---", "---", "---", "1P3", "---", "1MF", "---", "---", "---"},
+                                         {"1P0", "1S0", "1P1", "1S1", "1P2", "1S2", "1MA", "---", "---"}};
+        }
+        else if (n == 2)
+        {
+            escenas = new string[8, 7]  {{ "---","2S5", "2P6", "2S6", "2P7", "2S7", "2P8"},
+                                         {"---", "---", "---", "2P5", "---", "---", "---"},
+                                         {"---", "---", "---", "2S4", "---", "---", "---"},
+                                         {"---", "---", "---", "SP4", "---", "---", "---"},
+                                         {"---", "2S1", "2P2", "2S2", "2P3", "2S3", "2MA"},
+                                         {"---", "2P1", "---", "2ME", "---", "---", "---"},
+                                         {"2P0", "2S0", "---", "---", "---", "---", "---"},
+                                         {"---", "2MF", "---", "---", "---", "---", "---"}};
+        }
+        else escenas = new string[1, 2] { { "3P0", "Iblis" } };
 
-    private Escena Nivel1()
+        return escenas;
+    }
+
+    
+
+    private Escena Nivel(string[,] escenas, int iniX, int iniY)
     {
         Escena s;
 
-        s.scenes = new string[5, 9]  {{ "---","---", "1ME", "1S5", "1P7", "1S6", "1P8", "1S7", "1P9"},
-                                      {"---", "---", "---", "1P5", "---", "1P6", "---", "---", "---"},
-                                      {"---", "---", "---", "1S3", "1P4", "1S4", "---", "---", "---"},
-                                      {"---", "---", "---", "1P3", "---", "1MF", "---", "---", "---"},
-                                      {"1P0", "1S0", "1P1", "1S1", "1P2", "1S2", "1MA", "---", "---"}};
+        s.scenes = new string[escenas.GetLength(0), escenas.GetLength(1)];
 
-        s.habitacionDescubierta = new bool[5, 9];
+        for (int i = 0; i < s.scenes.GetLength(0); i++)
+        {
+            for (int j = 0; j < s.scenes.GetLength(1); j++)
+            {
+                s.scenes[i, j] = escenas[i, j];
+            }
+        }
+
+        s.habitacionDescubierta = new bool[s.scenes.GetLength(0), s.scenes.GetLength(1)];
+
         int pasillos = 0;
+        int numHabitaciones = 0;
 
         for (int i = 0; i < s.scenes.GetLength(0); i++)
         {
@@ -149,8 +196,12 @@ public class LevelManager : MonoBehaviour
             {           
                 s.habitacionDescubierta[i, j] = false;
                 char c = s.scenes[i, j][1];
-                if (c == 'P')
-                    pasillos += 1;
+                if (c != '-')
+                {
+                    numHabitaciones += 1;
+                    if (c == 'P')
+                        pasillos += 1;
+                }          
             }
         }
 
@@ -162,92 +213,16 @@ public class LevelManager : MonoBehaviour
             s.pasillos[i].pc = 0;
         }
 
-        s.sceneNow.x = 4;
-        s.sceneNow.y = 0;
-        s.sceneAfter.x = s.sceneNow.x;
-        s.sceneAfter.y = s.sceneNow.y;
-        s.sceneIni.x = s.sceneNow.x;
-        s.sceneIni.y = s.sceneNow.y;
+        s.jarronesEnHabitaciones = new Jarrones[numHabitaciones];
 
-        return s;
-    }
-
-    private Escena Nivel2()
-    {
-        Escena s;
-
-        s.scenes = new string[8, 7]  {{ "---","2S5", "2P6", "2S6", "2P7", "2S7", "2P8"},
-                                      {"---", "---", "---", "2P5", "---", "---", "---"},
-                                      {"---", "---", "---", "2S4", "---", "---", "---"},
-                                      {"---", "---", "---", "SP4", "---", "---", "---"},
-                                      {"---", "2S1", "2P2", "2S2", "2P3", "2S3", "2MA"},
-                                      {"---", "2P1", "---", "2ME", "---", "---", "---"},
-                                      {"2P0", "2S0", "---", "---", "---", "---", "---"},
-                                      {"---", "2MF", "---", "---", "---", "---", "---"}};
-
-        s.habitacionDescubierta = new bool[8, 7];
-        int pasillos = 0;
-
-        for (int i = 0; i < s.scenes.GetLength(0); i++)
+        for (int i = 0; i < s.jarronesEnHabitaciones.Length; i++)
         {
-            for (int j = 0; j < s.scenes.GetLength(1); j++)
-            {
-                s.habitacionDescubierta[i, j] = false;
-                char c = s.scenes[i, j][1];
-                if (c == 'P')
-                    pasillos += 1;
-            }
+            s.jarronesEnHabitaciones[i].jarrones = new Jarron[50];
+            s.jarronesEnHabitaciones[i].pc = 0;
         }
 
-        s.pasillos = new Pasillo[pasillos];
-
-        for (int i = 0; i < s.pasillos.Length; i++)
-        {
-            s.pasillos[i].enemigos = new Enemigo[50];
-            s.pasillos[i].pc = 0;
-        }
-
-        s.sceneNow.x = 6;
-        s.sceneNow.y = 0;
-        s.sceneAfter.x = s.sceneNow.x;
-        s.sceneAfter.y = s.sceneNow.y;
-        s.sceneIni.x = s.sceneNow.x;
-        s.sceneIni.y = s.sceneNow.y;
-
-        return s;
-    }
-
-    private Escena Nivel3()
-    {
-        Escena s;
-
-        s.scenes = new string[1, 2] { { "3P0", "Iblis" } };
-
-
-        s.habitacionDescubierta = new bool[1, 2];
-        int pasillos = 0;
-
-        for (int i = 0; i < s.scenes.GetLength(0); i++)
-        {
-            for (int j = 0; j < s.scenes.GetLength(1); j++)
-            {
-                s.habitacionDescubierta[i, j] = false;
-                char c = s.scenes[i, j][1];
-                if (c == 'P')
-                    pasillos += 1;
-            }
-        }
-
-        s.pasillos = new Pasillo[pasillos];
-
-        for (int i = 0; i < s.pasillos.Length; i++)
-        {
-            s.pasillos[i].enemigos = new Enemigo[50];
-            s.pasillos[i].pc = 0;
-        }
-
-        s.sceneNow.x = 0;
-        s.sceneNow.y = 0;
+        s.sceneNow.x = iniX;
+        s.sceneNow.y = iniY;
         s.sceneAfter.x = s.sceneNow.x;
         s.sceneAfter.y = s.sceneNow.y;
         s.sceneIni.x = s.sceneNow.x;
@@ -306,6 +281,16 @@ public class LevelManager : MonoBehaviour
         nivel.pasillos[pasilloActual].pc += 1;
     }
 
+    public void NuevoJarron(string jarron)
+    {
+        int habitacionActual = int.Parse(nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y][2].ToString()); ;
+        if (TipoHabitacion() == 'S')
+            habitacionActual += nivel.pasillos.Length;
+           
+        nivel.jarronesEnHabitaciones[habitacionActual].jarrones[nivel.jarronesEnHabitaciones[habitacionActual].pc].nombre = jarron;
+        nivel.jarronesEnHabitaciones[habitacionActual].jarrones[nivel.jarronesEnHabitaciones[habitacionActual].pc].destruido = false;
+        nivel.jarronesEnHabitaciones[habitacionActual].pc += 1;
+    }
 
     public void IniEnemigo(GameObject enemigo)
     {
@@ -326,6 +311,21 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    public void IniJarron(GameObject jarron)
+    {
+        int habitacionActual = int.Parse(nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y][2].ToString()); ;
+        if (TipoHabitacion() == 'S')
+            habitacionActual += nivel.pasillos.Length;
+        int cont = 0;
+
+        while (nivel.jarronesEnHabitaciones[habitacionActual].jarrones[cont].nombre != jarron.name) cont += 1;
+
+        if (nivel.jarronesEnHabitaciones[habitacionActual].jarrones[cont].destruido)
+        {
+            Destroy(jarron);
+        }
+    }
+
     public void MatarEnemigo(GameObject enemigo)
     {
         int pasilloActual = int.Parse(nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y][2].ToString());
@@ -335,6 +335,19 @@ public class LevelManager : MonoBehaviour
 
         nivel.pasillos[pasilloActual].enemigos[cont].vivo = false;
     }
+
+    public void DestruirJarron(GameObject jarron)
+    {
+        int habitacionActual = int.Parse(nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y][2].ToString()); ;
+        if (TipoHabitacion() == 'S')
+            habitacionActual += nivel.pasillos.Length;
+        int cont = 0;
+
+        while (nivel.jarronesEnHabitaciones[habitacionActual].jarrones[cont].nombre != jarron.name) cont += 1;
+
+        nivel.jarronesEnHabitaciones[habitacionActual].jarrones[cont].destruido = true;
+    }
+
 
     public void ModificarEnemigo(GameObject enemigo, float vida)
     {

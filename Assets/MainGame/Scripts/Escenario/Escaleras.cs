@@ -5,13 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class Escaleras : MonoBehaviour
 {
+    [SerializeField] string escena;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<PlayerController>() != null)
         {
             Destroy(collision.gameObject);
             LevelManager.GetInstance().FinNivel();
-            SceneManager.LoadScene("3P0");
+            SceneManager.LoadScene(escena);
         }
     }
 }

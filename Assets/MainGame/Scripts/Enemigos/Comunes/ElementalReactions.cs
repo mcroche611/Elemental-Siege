@@ -22,7 +22,7 @@ public class ElementalReactions : MonoBehaviour
     public void Electrocargado()
     {
         Instantiate<GameObject>(areaEfectoElectrocaragado, transform.position, transform.rotation);
-        GetComponent<EnemyHealth>().QuitarVida(Formula(bonoAgua, bonoElectricidad, escaladoDeDañoElectrocargado));   
+        GetComponent<EnemyHealth>().QuitarVida(Formula(bonoAgua, bonoElectricidad, escaladoDeDañoElectrocargado));
     }
 
     public void Sobrecargado()
