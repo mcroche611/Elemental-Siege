@@ -14,6 +14,9 @@ public class Escudo : MonoBehaviour
     [SerializeField]
     string shieldType;
 
+    [SerializeField]
+    Sprite guardiaNeutro;
+
     //el bonus del jugador de cada ataque elemental
     float bonoAgua, bonoFuego, bonoElectricidad;
 
@@ -24,12 +27,12 @@ public class Escudo : MonoBehaviour
     private void OnEnable()
     {
         //sacamos los bools al activarse el script para hacerlo menos veces
-        if (shieldType == "Fuego")   
+       /* if (shieldType == "Fuego")   
             GetComponent<SpriteRenderer>().color = Color.red;                 
         else if (shieldType == "Agua")
             GetComponent<SpriteRenderer>().color = Color.blue;                 
         else
-            GetComponent<SpriteRenderer>().color = Color.magenta;
+            GetComponent<SpriteRenderer>().color = Color.magenta;*/
                       
         _barraDeEscudo = barraDeEscudo.GetComponent<RectTransform>();
         maxBarraDeEscudo = _barraDeEscudo.sizeDelta.x;
@@ -44,7 +47,7 @@ public class Escudo : MonoBehaviour
 
     private void OnDisable()
     {
-        GetComponent<SpriteRenderer>().color = Color.yellow; //se le pone otro color al desaparecer       
+        GetComponent<SpriteRenderer>().sprite = guardiaNeutro; //se le pone otro color al desaparecer       
     }
 
     public void AtaqueEscudo(string element)

@@ -532,9 +532,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7901559248793290409}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 7901559247715030861}
   - {fileID: 7284763774167739844}
@@ -582,9 +582,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -827494398444275230, guid: 099f59d2d0088ff40931f7285c53af89,
+  m_Sprite: {fileID: 6624729051845812617, guid: 7f0de526e02e269429a80152f69508f5,
     type: 3}
-  m_Color: {r: 0.46200252, g: 0.13932894, b: 0.9528302, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -722,6 +722,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shieldHealth: 20
   shieldType: Electrico
+  guardiaNeutro: {fileID: 0}
   barraDeEscudo: {fileID: 702480014508426855}
 --- !u!61 &7901559248793290411
 BoxCollider2D:
@@ -740,7 +741,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.34, y: 0.55}
+    oldSize: {x: 2.125, y: 2.625}
     newSize: {x: 0.34, y: 0.55}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -780,7 +781,7 @@ Animator:
   m_GameObject: {fileID: 7901559248793290409}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3bd7d0f84a78b3243a875cb43d076bf7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

@@ -1,0 +1,710 @@
+fileFormatVersion: 2
+guid: 91293b9d05f9a1347bdb7a1c2bf0af8b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2524987502762766138
+    second: FireGuard_1_0
+  - first:
+      213: -532177565147026967
+    second: FireGuard_1_1
+  - first:
+      213: 8004846023255389638
+    second: FireGuard_1_2
+  - first:
+      213: 373378789391103305
+    second: FireGuard_1_3
+  - first:
+      213: 545669510531013925
+    second: FireGuard_1_4
+  - first:
+      213: -7619096111418863282
+    second: FireGuard_1_5
+  - first:
+      213: 5593328536631694284
+    second: FireGuard_1_6
+  - first:
+      213: 6362252222847379939
+    second: FireGuard_1_7
+  - first:
+      213: 8871824097030556522
+    second: FireGuard_1_8
+  - first:
+      213: 3695238550396552287
+    second: FireGuard_1_9
+  - first:
+      213: -1405788471542002232
+    second: FireGuard_1_10
+  - first:
+      213: -6783892165257846107
+    second: FireGuard_1_11
+  - first:
+      213: -8239112889223349071
+    second: FireGuard_1_12
+  - first:
+      213: -3206948744366780873
+    second: FireGuard_1_13
+  - first:
+      213: 8654388394886593243
+    second: FireGuard_1_14
+  - first:
+      213: 8513466104770246406
+    second: FireGuard_1_15
+  - first:
+      213: -8877674215912446461
+    second: FireGuard_1_16
+  - first:
+      213: -6607595904012592438
+    second: FireGuard_1_17
+  - first:
+      213: -1175670777755552848
+    second: FireGuard_1_18
+  - first:
+      213: -6821991366388474046
+    second: FireGuard_1_19
+  - first:
+      213: 4716140772480833933
+    second: FireGuard_1_20
+  - first:
+      213: 8971809879372102400
+    second: FireGuard_1_21
+  - first:
+      213: -1085613296098987143
+    second: FireGuard_1_22
+  - first:
+      213: 3065266169200105618
+    second: FireGuard_1_23
+  - first:
+      213: -1769597189071303863
+    second: FireGuard_1_24
+  - first:
+      213: -8272070615144588925
+    second: FireGuard_1_25
+  - first:
+      213: 4593325974894108755
+    second: FireGuard_1_26
+  - first:
+      213: -8722261942359097336
+    second: FireGuard_1_27
+  - first:
+      213: -2282398338924473389
+    second: FireGuard_1_28
+  - first:
+      213: -3312388748292674582
+    second: FireGuard_1_29
+  - first:
+      213: -6770481004270336135
+    second: FireGuard_1_30
+  - first:
+      213: 6076082728677468933
+    second: FireGuard_1_31
+  - first:
+      213: 8594613048169351507
+    second: FireGuard_1_32
+  - first:
+      213: 2125642342723126465
+    second: FireGuard_1_33
+  - first:
+      213: 101169567823754695
+    second: FireGuard_1_34
+  - first:
+      213: -4081987765527973884
+    second: FireGuard_1_35
+  - first:
+      213: 5977682342755624842
+    second: FireGuard_1_36
+  - first:
+      213: 4838070846193170138
+    second: FireGuard_1_37
+  - first:
+      213: 1880600991052269550
+    second: FireGuard_1_38
+  - first:
+      213: -6337458026913743598
+    second: FireGuard_1_39
+  - first:
+      213: -424564465404894860
+    second: FireGuard_1_40
+  - first:
+      213: 4240303171675466203
+    second: FireGuard_1_41
+  - first:
+      213: 7268595761550869893
+    second: FireGuard_1_42
+  - first:
+      213: 1287427381064021639
+    second: FireGuard_1_43
+  - first:
+      213: -2787927638124594034
+    second: FireGuard_1_44
+  - first:
+      213: -7233173581607550771
+    second: FireGuard_1_45
+  - first:
+      213: 1249753512737138737
+    second: FireGuard_1_46
+  - first:
+      213: 9131229858500529324
+    second: FireGuard_1_47
+  - first:
+      213: 5228390751187407767
+    second: FireGuard_1_48
+  - first:
+      213: -7757098705070496223
+    second: FireGuard_1_49
+  - first:
+      213: 5703092864268448291
+    second: FireGuard_1_50
+  - first:
+      213: 6680337725501055373
+    second: FireGuard_1_51
+  - first:
+      213: 8983927700591246711
+    second: FireGuard_1_52
+  - first:
+      213: -6119437082146657627
+    second: FireGuard_1_53
+  - first:
+      213: 2433899230885640365
+    second: FireGuard_1_54
+  - first:
+      213: -5219604749459503566
+    second: FireGuard_1_55
+  - first:
+      213: -6228705374323877109
+    second: FireGuard_1_56
+  - first:
+      213: 720943905403490389
+    second: FireGuard_1_57
+  - first:
+      213: 8322537066569333552
+    second: FireGuard_1_58
+  - first:
+      213: 8512963527531170272
+    second: FireGuard_1_59
+  - first:
+      213: -8841819292651359033
+    second: FireGuard_1_60
+  - first:
+      213: -6415511799309315737
+    second: FireGuard_1_61
+  - first:
+      213: -9115138896349121518
+    second: FireGuard_1_62
+  - first:
+      213: -3596869007010444612
+    second: FireGuard_1_63
+  - first:
+      213: 961790707832898417
+    second: FireGuard_1_64
+  - first:
+      213: 7073944027627791856
+    second: FireGuard_1_65
+  - first:
+      213: -96438843881738614
+    second: FireGuard_1_66
+  - first:
+      213: -7588380099221685761
+    second: FireGuard_1_67
+  - first:
+      213: 2359124284062844492
+    second: FireGuard_1_68
+  - first:
+      213: 7987874154183438388
+    second: FireGuard_1_69
+  - first:
+      213: 4675525040427482498
+    second: FireGuard_1_70
+  - first:
+      213: -6226080807029472372
+    second: FireGuard_1_71
+  - first:
+      213: -5330224474919269062
+    second: FireGuard_1_72
+  - first:
+      213: -8595704708417200016
+    second: FireGuard_1_73
+  - first:
+      213: -5685870307251600953
+    second: FireGuard_1_74
+  - first:
+      213: -3331058795929635589
+    second: FireGuard_1_75
+  - first:
+      213: -8511756882240473546
+    second: FireGuard_1_76
+  - first:
+      213: 2124924341755486022
+    second: FireGuard_1_77
+  - first:
+      213: 3678906334525609524
+    second: FireGuard_1_78
+  - first:
+      213: -5179298060734952612
+    second: FireGuard_1_79
+  - first:
+      213: -6606386770960608322
+    second: FireGuard_1_80
+  - first:
+      213: -8262571135393918172
+    second: FireGuard_1_81
+  - first:
+      213: 7436880459574886884
+    second: FireGuard_1_82
+  - first:
+      213: -4031929990522275463
+    second: FireGuard_1_83
+  - first:
+      213: 6815808227324765241
+    second: FireGuard_1_84
+  - first:
+      213: -8586489539439097154
+    second: FireGuard_1_85
+  - first:
+      213: -330052075561658191
+    second: FireGuard_1_86
+  - first:
+      213: 3146955717599101694
+    second: FireGuard_1_87
+  - first:
+      213: -2609740577218201379
+    second: FireGuard_1_88
+  - first:
+      213: 3533573325459165365
+    second: FireGuard_1_89
+  - first:
+      213: 2217780367068062901
+    second: FireGuard_1_90
+  - first:
+      213: -3301652916910859482
+    second: FireGuard_1_91
+  - first:
+      213: -892042626685410330
+    second: FireGuard_1_92
+  - first:
+      213: -428537902785432188
+    second: FireGuard_1_93
+  - first:
+      213: 6149548763355696259
+    second: FireGuard_1_94
+  - first:
+      213: -508585205956415039
+    second: FireGuard_1_95
+  - first:
+      213: -3010031600760475622
+    second: FireGuard_1_96
+  - first:
+      213: -7361198938799104542
+    second: FireGuard_1_97
+  - first:
+      213: -869953115292417816
+    second: FireGuard_1_98
+  - first:
+      213: -7927684312749887403
+    second: FireGuard_1_99
+  - first:
+      213: -2312581058120122198
+    second: FireGuard_1_100
+  - first:
+      213: -564842931575102136
+    second: FireGuard_1_101
+  - first:
+      213: 5337092900374460465
+    second: FireGuard_1_102
+  - first:
+      213: -3386925806327015379
+    second: FireGuard_1_103
+  - first:
+      213: -3515249802453670196
+    second: FireGuard_1_104
+  - first:
+      213: 553892164138107486
+    second: FireGuard_1_105
+  - first:
+      213: 4474796529661733380
+    second: FireGuard_1_106
+  - first:
+      213: 1982106980810880017
+    second: FireGuard_1_107
+  - first:
+      213: -8502778473189045907
+    second: FireGuard_1_108
+  - first:
+      213: -5424632678145737509
+    second: FireGuard_1_109
+  - first:
+      213: 6788302123169737657
+    second: FireGuard_1_110
+  - first:
+      213: 2236724753694751641
+    second: FireGuard_1_111
+  - first:
+      213: 1032872046033321833
+    second: FireGuard_1_112
+  - first:
+      213: -7290635118182801913
+    second: FireGuard_1_113
+  - first:
+      213: -8292238017806098273
+    second: FireGuard_1_114
+  - first:
+      213: -6796404451330090158
+    second: FireGuard_1_115
+  - first:
+      213: 6858960506245637424
+    second: FireGuard_1_116
+  - first:
+      213: 2131114915226433957
+    second: FireGuard_1_117
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FireGuard_1_0
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 406
+        width: 68
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c056838e3175fcd0800000000000000
+      internalID: -2524987502762766138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireGuard_1_1
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 405
+        width: 68
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e9aaf7f2535d98f0800000000000000
+      internalID: -532177565147026967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireGuard_1_2
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 405
+        width: 68
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c5f5d1fb0de61f60800000000000000
+      internalID: 8004846023255389638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireGuard_1_3
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 277
+        width: 48
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 945725cd7028e2500800000000000000
+      internalID: 373378789391103305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireGuard_1_4
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 277
+        width: 52
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52d56fb578b929700800000000000000
+      internalID: 545669510531013925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireGuard_1_5
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 277
+        width: 56
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4191515478834690800000000000000
+      internalID: -7619096111418863282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireGuard_1_6
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 149
+        width: 56
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc3dcf95bae7f9d40800000000000000
+      internalID: 5593328536631694284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireGuard_1_7
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 149
+        width: 52
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e9e14220b24b4850800000000000000
+      internalID: 6362252222847379939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireGuard_1_8
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 149
+        width: 48
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6bc145e20d0f1b70800000000000000
+      internalID: 8871824097030556522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireGuard_1_9
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 21
+        width: 68
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5447b422ef184330800000000000000
+      internalID: 3695238550396552287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireGuard_1_10
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 21
+        width: 68
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cd466455d2ad7ce0800000000000000
+      internalID: -1405788471542002232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireGuard_1_11
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 21
+        width: 68
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a2204fa406cad1a0800000000000000
+      internalID: -6783892165257846107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
