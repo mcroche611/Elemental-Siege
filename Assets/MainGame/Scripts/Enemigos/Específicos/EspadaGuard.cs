@@ -7,7 +7,8 @@ public class EspadaGuard : MonoBehaviour
     float attackCoolDown = 1.5f;
     [SerializeField]
     float attackFreeze = 1f; //cuidado con esto para que no salga negativo
-
+    [SerializeField]
+    float attackDuration = 0.4f;
     GameObject guardSword;
 
     bool attackEnabled = true;
@@ -27,7 +28,7 @@ public class EspadaGuard : MonoBehaviour
             guardSword.SetActive(true);   //nada más entrar se activa la espada
 
             Invoke("Unfreeze", attackFreeze); //se le devuelve el movimiento pasado e ataque
-            Invoke("SwordDeactivate", Time.deltaTime); //y se desactiva acabada la duracion del ataque
+            Invoke("SwordDeactivate", attackDuration); //y se desactiva acabada la duracion del ataque
 
             attackEnabled = false;
             Invoke("EnableAttack", attackCoolDown);
@@ -42,7 +43,7 @@ public class EspadaGuard : MonoBehaviour
             guardSword.transform.rotation = Rotation(collision.transform.position);
             guardSword.SetActive(true);    //nada más entrar se activa la espada
 
-            Invoke("SwordDeactivate", Time.deltaTime); //y se desactiva acabada la duracion del ataque
+            Invoke("SwordDeactivate", attackDuration); //y se desactiva acabada la duracion del ataque
 
             attackEnabled = false;
             Invoke("EnableAttack", attackCoolDown);
