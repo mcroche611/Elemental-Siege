@@ -641,7 +641,7 @@ MonoBehaviour:
   dialogueBox: {fileID: 1988185914}
   dialogueText: {fileID: 2038088832}
   textSpeed: 0.05
-  numDialogue: 1
+  numDialogue: 7
 --- !u!114 &1292955267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2991,22 +2991,22 @@ PrefabInstance:
     - target: {fileID: 2041154161083374859, guid: 77380863646efc9498ba780a02a7ed1f,
         type: 3}
       propertyPath: m_Offset.x
-      value: -0.0065289736
+      value: 0.0014775991
       objectReference: {fileID: 0}
     - target: {fileID: 2041154161083374859, guid: 77380863646efc9498ba780a02a7ed1f,
         type: 3}
       propertyPath: m_Size.x
-      value: 1.0202992
+      value: 0.71604896
       objectReference: {fileID: 0}
     - target: {fileID: 2041154161083374859, guid: 77380863646efc9498ba780a02a7ed1f,
         type: 3}
       propertyPath: m_Offset.y
-      value: 0.0065288544
+      value: 0.022542
       objectReference: {fileID: 0}
     - target: {fileID: 2041154161083374859, guid: 77380863646efc9498ba780a02a7ed1f,
         type: 3}
       propertyPath: m_Size.y
-      value: 1.2639389
+      value: 1.0717812
       objectReference: {fileID: 0}
     - target: {fileID: 6469055946937202184, guid: 77380863646efc9498ba780a02a7ed1f,
         type: 3}

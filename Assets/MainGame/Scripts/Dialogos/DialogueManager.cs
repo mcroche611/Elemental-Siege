@@ -52,27 +52,32 @@ public class DialogueManager : MonoBehaviour
         bool inDialogue = false;
         int i = 0;
 
-        StreamReader dialogue = new StreamReader(filePath);
-        while(!dialogue.EndOfStream)
+        if (File.Exists(filePath))
         {
-            string s = dialogue.ReadLine();
-            if (s == num)
+            StreamReader dialogue = new StreamReader(filePath);
+            while (!dialogue.EndOfStream)
             {
-                int numSentences = int.Parse(dialogue.ReadLine());
-                sentences = new string[numSentences];
-                inDialogue = true;
+                string s = dialogue.ReadLine();
+                if (s == num)
+                {
+                    int numSentences = int.Parse(dialogue.ReadLine());
+                    sentences = new string[numSentences];
+                    inDialogue = true;
+                }
+                else if (inDialogue && s != "")
+                {
+                    sentences[i] = s;
+                    i++;
+                }
+                else
+                {
+                    inDialogue = false;
+                }
             }
-            else if (inDialogue && s != "")
-            {
-                sentences[i] = s;
-                i++;
-            }
-            else
-            {
-                inDialogue = false;
-            }
+            dialogue.Close();
         }
-        dialogue.Close();
+        else
+            throw new Exception("Archivo de diálogo no encontrado");
     }
 
     private void Update()
@@ -101,12 +106,19 @@ public class DialogueManager : MonoBehaviour
     //***********************************************
     public void StartDialogue2()
     {
-        dialogueGoingOn = true;
-        dialogueBox.SetActive(true);
-        dialogueText.text = "";
-        Time.timeScale = 0;
-        numeroSentence = 0;
-        StartCoroutine(TypeSentence());
+        if (sentences != null)
+        {
+            dialogueGoingOn = true;
+            dialogueBox.SetActive(true);
+            dialogueText.text = "";
+            Time.timeScale = 0;
+            numeroSentence = 0;
+            StartCoroutine(TypeSentence());
+        }
+        else
+        {
+            Debug.LogWarningFormat("Diálogo de la escena {0} no encontrado.", numDialogue);
+        }
     }
     IEnumerator TypeSentence()
     {

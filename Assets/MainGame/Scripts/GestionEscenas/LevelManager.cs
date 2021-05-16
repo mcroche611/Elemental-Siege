@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class LevelManager : MonoBehaviour
 {
+    const string filePath = "Assets/MainGame/Resources/";
+
     private static LevelManager instance;
 
     public static LevelManager GetInstance()
@@ -20,19 +23,21 @@ public class LevelManager : MonoBehaviour
             instance = this;
             //Nos aseguramos de que el objeto al que esta asociado este script no se destruira al cambiar de escena
             DontDestroyOnLoad(this.gameObject);
-            if (numNivel == 1)
-                nivel = Nivel1();
-            else if (numNivel == 2)
-                nivel = Nivel2();
-            else
-                nivel = Nivel3();
+            nivel = InicializaNivel("nivel" + numNivel);
+
+            ////// Comentado para generalizar en un solo método la carga del nivel
+            //if (numNivel == 1)
+            //    nivel = Nivel1();
+            //else if (numNivel == 2)
+            //    nivel = Nivel2();
+            //else
+            //    nivel = Nivel3();
         }
         else
         {
             //Si ya existe un gameobject con un componente instancia de esta clase (es decir ya hay un GM) no necesitamos uno nuevo
             Destroy(this.gameObject);
         }
-
     }
 
     public int numNivel;
@@ -128,65 +133,95 @@ public class LevelManager : MonoBehaviour
         public Coor sceneIni;
     }
 
-
-
-    private Escena Nivel1()
+    private string[,] CargarNivel(string levelName, out int xPos, out int yPos)
     {
-        Escena s;
+        string fileName = filePath + levelName + ".txt";
+        int maxFil = 0, maxCol = 0;
+        xPos = -1; 
+        yPos = -1;
 
-        s.scenes = new string[5, 9]  {{ "---","---", "1ME", "1S5", "1P7", "1S6", "1P8", "1S7", "1P9"},
-                                      {"---", "---", "---", "1P5", "---", "1P6", "---", "---", "---"},
-                                      {"---", "---", "---", "1S3", "1P4", "1S4", "---", "---", "---"},
-                                      {"---", "---", "---", "1P3", "---", "1MF", "---", "---", "---"},
-                                      //{"1P0", "1S0", "1P1", "1S1", "1P2", "1S2", "1MA", "---", "---"},
-                                      {"1P0", "1MA", "1P1", "1S1", "1P2", "1S2", "1MA", "---", "---"}};
-
-        s.habitacionDescubierta = new bool[5, 9];
-        int pasillos = 0;
-
-        for (int i = 0; i < s.scenes.GetLength(0); i++)
+        if (File.Exists(fileName))
         {
-            for (int j = 0; j < s.scenes.GetLength(1); j++)
-            {           
-                s.habitacionDescubierta[i, j] = false;
-                char c = s.scenes[i, j][1];
-                if (c == 'P')
-                    pasillos += 1;
+            StreamReader dialogue = new StreamReader(fileName);
+            while (!dialogue.EndOfStream)
+            {
+                string s = dialogue.ReadLine();
+                if (s != null)
+                {
+                    maxFil++;
+                    string[] rooms = s.Split(',');
+                    if (rooms.Length > maxCol)
+                    {
+                        maxCol = rooms.Length;
+                    }
+                }
             }
+            dialogue.Close();
+
+            string[,] nivel = new string[maxFil, maxCol];
+
+            int fil = 0;
+
+            dialogue = new StreamReader(fileName);
+            while (!dialogue.EndOfStream)
+            {
+                string s = dialogue.ReadLine();
+                if (s != null)
+                {
+                    string[] rooms = s.Split(',');
+                    for (int col = 0; col < rooms.Length; col++)
+                    {
+                        if (rooms[col][0] == '*')
+                        {
+                            xPos = fil;
+                            yPos = col;
+
+                            nivel[fil, col] = rooms[col].Substring(1);
+                        }
+                        else
+                        {
+                            nivel[fil, col] = rooms[col];
+                        }
+                    }
+                    fil++;
+                }
+            }
+            dialogue.Close();
+
+            if (xPos < 0 || yPos < 0)
+                throw new System.Exception("Habitación inicial no encontrada");
+
+            return nivel;
         }
-
-        s.pasillos = new Pasillo[pasillos];
-
-        for (int i = 0; i < s.pasillos.Length; i++)
-        {
-            s.pasillos[i].enemigos = new Enemigo[50];
-            s.pasillos[i].pc = 0;
-        }
-
-        s.sceneNow.x = 4;
-        s.sceneNow.y = 0;
-        s.sceneAfter.x = s.sceneNow.x;
-        s.sceneAfter.y = s.sceneNow.y;
-        s.sceneIni.x = s.sceneNow.x;
-        s.sceneIni.y = s.sceneNow.y;
-
-        return s;
+        else
+            throw new System.Exception(fileName + " no encontrado");        
     }
 
-    private Escena Nivel2()
+    //////// Comentados por la generalización con el InicializaNivel()
+    //private Escena Nivel1()
+    //{
+    //    return InicializaNivel("nivel1");
+    //}
+
+    //private Escena Nivel2()
+    //{
+    //    return InicializaNivel("nivel2");
+    //}
+
+    //private Escena Nivel3()
+    //{
+    //    return InicializaNivel("nivel3");
+    //}
+
+    private Escena InicializaNivel(string nivel)
     {
+        int xPos, yPos;
+
         Escena s;
 
-        s.scenes = new string[8, 7]  {{ "---","2S5", "2P6", "2S6", "2P7", "2S7", "2P8"},
-                                      {"---", "---", "---", "2P5", "---", "---", "---"},
-                                      {"---", "---", "---", "2S4", "---", "---", "---"},
-                                      {"---", "---", "---", "SP4", "---", "---", "---"},
-                                      {"---", "2S1", "2P2", "2S2", "2P3", "2S3", "2MA"},
-                                      {"---", "2P1", "---", "2ME", "---", "---", "---"},
-                                      {"2P0", "2S0", "---", "---", "---", "---", "---"},
-                                      {"---", "2MF", "---", "---", "---", "---", "---"}};
+        s.scenes = CargarNivel(nivel, out xPos, out yPos);
 
-        s.habitacionDescubierta = new bool[8, 7];
+        s.habitacionDescubierta = new bool[s.scenes.GetLength(0), s.scenes.GetLength(1)];
         int pasillos = 0;
 
         for (int i = 0; i < s.scenes.GetLength(0); i++)
@@ -208,47 +243,8 @@ public class LevelManager : MonoBehaviour
             s.pasillos[i].pc = 0;
         }
 
-        s.sceneNow.x = 6;
-        s.sceneNow.y = 0;
-        s.sceneAfter.x = s.sceneNow.x;
-        s.sceneAfter.y = s.sceneNow.y;
-        s.sceneIni.x = s.sceneNow.x;
-        s.sceneIni.y = s.sceneNow.y;
-
-        return s;
-    }
-
-    private Escena Nivel3()
-    {
-        Escena s;
-
-        s.scenes = new string[1, 2] { { "3P0", "Iblis" } };
-
-
-        s.habitacionDescubierta = new bool[1, 2];
-        int pasillos = 0;
-
-        for (int i = 0; i < s.scenes.GetLength(0); i++)
-        {
-            for (int j = 0; j < s.scenes.GetLength(1); j++)
-            {
-                s.habitacionDescubierta[i, j] = false;
-                char c = s.scenes[i, j][1];
-                if (c == 'P')
-                    pasillos += 1;
-            }
-        }
-
-        s.pasillos = new Pasillo[pasillos];
-
-        for (int i = 0; i < s.pasillos.Length; i++)
-        {
-            s.pasillos[i].enemigos = new Enemigo[50];
-            s.pasillos[i].pc = 0;
-        }
-
-        s.sceneNow.x = 0;
-        s.sceneNow.y = 0;
+        s.sceneNow.x = xPos;
+        s.sceneNow.y = yPos;
         s.sceneAfter.x = s.sceneNow.x;
         s.sceneAfter.y = s.sceneNow.y;
         s.sceneIni.x = s.sceneNow.x;
