@@ -17,10 +17,12 @@ public class DialogueManager : MonoBehaviour
     float textSpeed = 0.2f; //velocidad con la que se typean las letras
     [SerializeField] int numDialogue; //número del diálogo a leer
 
+    const string filePath = "Assets/MainGame/Resources/dialogue.txt";
+
     [TextArea(3, 10)] //ampliamos la cantidad de líneas que pueden aparecer en el editor
 
     //[SerializeField]
-    string[] sentences = new string[8]; //array de frases de dialogo
+    string[] sentences; //array de frases de dialogo
     int numeroSentence = 0;
 
     static bool dialogueGoingOn; //bool con el propósito de que no se pueda pasar el juego si hay un diálogo
@@ -46,13 +48,28 @@ public class DialogueManager : MonoBehaviour
 
     private void SetDialogue()
     {
-        StreamReader dialogue = new StreamReader("Assets/MainGame/Resources/dialogue.txt");
+        string num = "Scene" + numDialogue.ToString();
+        bool inDialogue = false;
+        int i = 0;
+
+        StreamReader dialogue = new StreamReader(filePath);
         while(!dialogue.EndOfStream)
         {
             string s = dialogue.ReadLine();
-            if (s == numDialogue.ToString())
+            if (s == num)
             {
-                //añadir lineas siguientes hasta el próximo diálogo
+                int numSentences = int.Parse(dialogue.ReadLine());
+                sentences = new string[numSentences];
+                inDialogue = true;
+            }
+            else if (inDialogue && s != "")
+            {
+                sentences[i] = s;
+                i++;
+            }
+            else
+            {
+                inDialogue = false;
             }
         }
         dialogue.Close();

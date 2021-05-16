@@ -145,15 +145,29 @@ public class LevelManager : MonoBehaviour
     {
         string[,] escenas;
 
-        if (n == 1)
+        s.scenes = new string[5, 9]  {{ "---","---", "1ME", "1S5", "1P7", "1S6", "1P8", "1S7", "1P9"},
+                                      {"---", "---", "---", "1P5", "---", "1P6", "---", "---", "---"},
+                                      {"---", "---", "---", "1S3", "1P4", "1S4", "---", "---", "---"},
+                                      {"---", "---", "---", "1P3", "---", "1MF", "---", "---", "---"},
+                                      {"1P0", "1S0", "1P1", "1S1", "1P2", "1S2", "1MA", "---", "---"}};
+
+        s.habitacionDescubierta = new bool[5, 9];
+        int pasillos = 0;
+
+        for (int i = 0; i < s.scenes.GetLength(0); i++)
         {
-            escenas = new string[5, 9]  {{ "---","---", "1ME", "1S5", "1P7", "1S6", "1P8", "1S7", "1P9"},
-                                         {"---", "---", "---", "1P5", "---", "1P6", "---", "---", "---"},
-                                         {"---", "---", "---", "1S3", "1P4", "1S4", "---", "---", "---"},
-                                         {"---", "---", "---", "1P3", "---", "1MF", "---", "---", "---"},
-                                         {"1P0", "1S0", "1P1", "1S1", "1P2", "1S2", "1MA", "---", "---"}};
+            for (int j = 0; j < s.scenes.GetLength(1); j++)
+            {           
+                s.habitacionDescubierta[i, j] = false;
+                char c = s.scenes[i, j][1];
+                if (c == 'P')
+                    pasillos += 1;
+            }
         }
-        else if (n == 2)
+
+        s.pasillos = new Pasillo[pasillos];
+
+        for (int i = 0; i < s.pasillos.Length; i++)
         {
             escenas = new string[8, 7]  {{ "---","2S5", "2P6", "2S6", "2P7", "2S7", "2P8"},
                                          {"---", "---", "---", "2P5", "---", "---", "---"},
