@@ -49,9 +49,9 @@ public class Escudo : MonoBehaviour
 
     public void AtaqueEscudo(string element)
     {
-        if (shieldType == "Fuego")
+        if (shieldType == "Fuego") //si el escudo es de fuego
         {
-            if (element == "Agua")
+            if (element == "Agua") //le quita más vida el agua
                 shieldHealth -= bonoAgua;
             else if (element == "Electricidad")
                 shieldHealth -= bonoElectricidad / 4;
