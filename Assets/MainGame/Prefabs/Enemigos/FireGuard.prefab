@@ -1126,6 +1126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 200
+  animator: {fileID: 1130906895418744471}
   barraDeVida: {fileID: 3369534426200078152}
 --- !u!114 &8757333600198723038
 MonoBehaviour:
