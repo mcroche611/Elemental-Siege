@@ -48,21 +48,21 @@ public class PausaMenu : MonoBehaviour
     }
     public void Pause()
     {
-        SourceManager.GetInstance().bottonSound();
+        SoundManager.GetInstance().bottonSound();
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         gamePaused = true;
     }
     public void Resume()
     {
-        SourceManager.GetInstance().bottonSound();
+        SoundManager.GetInstance().bottonSound();
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         gamePaused = false;
     }
     public void MainMenu()
     {
-        SourceManager.GetInstance().bottonSound();
+        SoundManager.GetInstance().bottonSound();
         gamePaused = false;
         Time.timeScale = 1f;
         if (LevelManager.GetInstance() != null)
