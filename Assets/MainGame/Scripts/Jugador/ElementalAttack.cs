@@ -26,11 +26,26 @@ public class ElementalAttack : MonoBehaviour
             string elementoActual = GetComponent<ElementChanger>().ElementoActual();
             Rotation();
             if (elementoActual == "Fuego" && quitaMana.RestaMana(manaFuego))
-                Instantiate<GameObject>(fuego, transform.position, Rotation());        
-            else if (elementoActual == "Electricidad" && quitaMana.RestaMana(manaElectro))
-                Instantiate<GameObject>(electricidad, transform.position, Rotation());
-            else if (quitaMana.RestaMana(manaAgua))
-                Instantiate<GameObject>(agua, transform.position, Rotation());
+            {
+                SoundManager.GetInstance().fireBallSound();
+                Instantiate<GameObject>(fuego, transform.position, Rotation());
+            }
+            else 
+            {
+                if (elementoActual == "Electricidad" && quitaMana.RestaMana(manaElectro))
+                {
+                    SoundManager.GetInstance().electricBallSound();
+                    Instantiate<GameObject>(electricidad, transform.position, Rotation());
+                }
+                else
+                {
+                    if (quitaMana.RestaMana(manaAgua))
+                    {
+                        SoundManager.GetInstance().waterBallSound();
+                        Instantiate<GameObject>(agua, transform.position, Rotation());
+                    }
+                }
+            }
             cont = coolDown;
         }       
         cont -= Time.deltaTime;
