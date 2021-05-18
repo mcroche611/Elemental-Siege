@@ -6,7 +6,7 @@ public class SoundManager : MonoBehaviour
 {
     static SoundManager instance;
     public AudioSource audioSource;
-    [SerializeField] AudioClip physicAttack, fireBall, botton, batDeath, slimeDeath, waterBall, electricBall;
+    [SerializeField] AudioClip physicAttack, fireBall, botton, batDeath, slimeDeath, waterBall, electricBall,enemyDeath;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -60,6 +60,11 @@ public class SoundManager : MonoBehaviour
     public void electricBallSound()
     {
         audioSource.clip = electricBall;
+        audioSource.Play();
+    }
+    public void enemyDeathSound()
+    {
+        audioSource.clip = enemyDeath;
         audioSource.Play();
     }
 }

@@ -12,7 +12,7 @@ public class Slime : MonoBehaviour
 
         Vector2 posicionSlime = transform.position;
         Vector2 tamanoSlime = transform.localScale / 4;
-
+        SoundManager.GetInstance().slimeDeathSound();
         Instantiate<GameObject>(slime, new Vector2(posicionSlime.x + tamanoSlime.x, posicionSlime.y + tamanoSlime.x), transform.rotation);
         Instantiate<GameObject>(slime, new Vector2(posicionSlime.x - tamanoSlime.x, posicionSlime.y + tamanoSlime.x), transform.rotation);
         Instantiate<GameObject>(slime, new Vector2(posicionSlime.x + tamanoSlime.x, posicionSlime.y - tamanoSlime.x), transform.rotation);
