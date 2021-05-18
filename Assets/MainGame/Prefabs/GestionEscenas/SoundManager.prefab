@@ -245,3 +245,4 @@ MonoBehaviour:
   slimeDeath: {fileID: 8300000, guid: 006fb2a4716b4f841ac375279f145482, type: 3}
   waterBall: {fileID: 8300000, guid: 00e0bb6fee44b7d49aaa37f714395c96, type: 3}
   electricBall: {fileID: 8300000, guid: ca6ce76573038c9499dd026b2e442774, type: 3}
+  enemyDeath: {fileID: 8300000, guid: d44f8c293b86e3a40bf846dedfe07a86, type: 3}

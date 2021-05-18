@@ -4,20 +4,26 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] float health;
+    [SerializeField] 
+    float health;
+    [SerializeField]
+    Animator animator;
     float maxHealth;
-
     public GameObject barraDeVida;
     RectTransform _barraDeVida;
     float maxBarraDeVida;
-
+    bool muere = false; //Para controlar la animación de muerte de los enemigos
     private void Start()
     {
         _barraDeVida = barraDeVida.GetComponent<RectTransform>();
         maxBarraDeVida = _barraDeVida.sizeDelta.x;
         maxHealth = health;
+       
     }
-
+    private void Update()
+    {
+        animator.SetBool("muere", muere);
+    }
 
     public void QuitarVida(float cantidad)
     {
@@ -34,7 +40,7 @@ public class EnemyHealth : MonoBehaviour
                 Slime slime = GetComponent<Slime>();
                 if (slime != null)
                     slime.InstanciarSlimes();
-
+                     
                 LevelManager levelmanager = LevelManager.GetInstance();
 
                 if (levelmanager != null)
@@ -47,8 +53,8 @@ public class EnemyHealth : MonoBehaviour
                     else
                         levelmanager.QuitarEnemigoSala();
                 }
-                              
-                Destroy(this.gameObject);
+                muere = true;
+                Invoke("Destruye", 0.5f);
             }                                   
         }           
     }  
@@ -60,5 +66,9 @@ public class EnemyHealth : MonoBehaviour
     public void EnemigoVidaIni(float vida)
     {
         health = vida;
+    }
+    void Destruye()
+    {
+        Destroy(this.gameObject);
     }
 }
