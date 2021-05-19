@@ -13,6 +13,7 @@ public class EnemyHealth : MonoBehaviour
     RectTransform _barraDeVida;
     float maxBarraDeVida;
     bool muere = false; //Para controlar la animación de muerte de los enemigos
+    public AudioSource sonidoDeMorir;
     private void Start()
     {
         _barraDeVida = barraDeVida.GetComponent<RectTransform>();
@@ -53,6 +54,7 @@ public class EnemyHealth : MonoBehaviour
                     else
                         levelmanager.QuitarEnemigoSala();
                 }
+
                 muere = true;
                 Invoke("Destruye", 0.5f);
             }                                   
@@ -69,6 +71,7 @@ public class EnemyHealth : MonoBehaviour
     }
     void Destruye()
     {
+        sonidoDeMorir.Play();
         Destroy(this.gameObject);
     }
 }
