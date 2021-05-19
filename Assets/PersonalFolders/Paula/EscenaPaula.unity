@@ -8199,12 +8199,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1049825633}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &2053381248 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 8533945423430882168, guid: a17ba645228474d48b233094503d7389,
-    type: 3}
-  m_PrefabInstance: {fileID: 4488406339760772606}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2054466332
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8643,32 +8637,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArcherBien
       objectReference: {fileID: 0}
-    - target: {fileID: 1368823715864899937, guid: a17ba645228474d48b233094503d7389,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1368823715864899937, guid: a17ba645228474d48b233094503d7389,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1368823715864899937, guid: a17ba645228474d48b233094503d7389,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1368823715864899937, guid: a17ba645228474d48b233094503d7389,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 5171728975412597029, guid: ca6e1a69aa411b94cb571053ea54b534,
-        type: 3}
-    - target: {fileID: 1368823715864899937, guid: a17ba645228474d48b233094503d7389,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2284860475241333988, guid: a17ba645228474d48b233094503d7389,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8724,21 +8692,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2284860475241333988, guid: a17ba645228474d48b233094503d7389,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2284860475241333988, guid: a17ba645228474d48b233094503d7389,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5296270498837465145, guid: a17ba645228474d48b233094503d7389,
-        type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 2053381248}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a17ba645228474d48b233094503d7389, type: 3}
 --- !u!1001 &8868029586473039238
