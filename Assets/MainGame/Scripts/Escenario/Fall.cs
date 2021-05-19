@@ -24,7 +24,8 @@ public class Fall : MonoBehaviour
             {
                 Health playerHealth = character.GetComponent<Health>();
                 playerHealth.DamageOnFall();
-
+                //producir el sonido de renacer
+                SoundManager.GetInstance().renacerSound();
                 // reestablece el movimiento cuando el jugador termine de caer.
                 character.GetComponentInParent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
                 character.GetComponentInParent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;

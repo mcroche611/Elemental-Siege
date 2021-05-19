@@ -45,6 +45,7 @@ public class Jarron : MonoBehaviour
 
     private void SoltarCorazon()
     {
+        SoundManager.GetInstance().jarronBreakSound();
         if (numeroRandom <= dropProbabilityPercentage)       
             Instantiate<GameObject>(Heartprefab, transform.position, transform.rotation);
         Destroy(this.gameObject);

@@ -8,6 +8,7 @@ public class CorazonVida : MonoBehaviour
     {
         if (collision.GetComponent<PlayerController>() != null) //si detecta al jugador
         {
+            SoundManager.GetInstance().curarSound();//sonido de curar
             collision.GetComponent<Health>().Healing(vidaRegenerada); //lo cura
             Destroy(gameObject); //se destruye
         }
