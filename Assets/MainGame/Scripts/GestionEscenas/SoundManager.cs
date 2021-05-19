@@ -6,7 +6,7 @@ public class SoundManager : MonoBehaviour
 {
     static SoundManager instance;
     public AudioSource audioSource;
-    [SerializeField] AudioClip physicAttack, fireBall, botton, batDeath, slimeDeath, waterBall, electricBall,enemyDeath;
+    [SerializeField] AudioClip physicAttack, fireBall, botton, slimeDeath, waterBall, electricBall, openDoor, closeDoor, iblisDeath, llamarSoldados, jarronBreak, renacer, curar, playerDeath;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -37,11 +37,6 @@ public class SoundManager : MonoBehaviour
         audioSource.clip = botton;
         audioSource.Play();
     }
-    public void batDeathSound()
-    {
-        audioSource.clip = batDeath;
-        audioSource.Play();
-    }
     public void slimeDeathSound()
     {
         audioSource.clip = slimeDeath;
@@ -62,9 +57,44 @@ public class SoundManager : MonoBehaviour
         audioSource.clip = electricBall;
         audioSource.Play();
     }
-    public void enemyDeathSound()
+    public void openDoorSound()
     {
-        audioSource.clip = enemyDeath;
+        audioSource.clip = openDoor;
+        audioSource.Play();
+    }
+    public void closeDoorSound()
+    {
+        audioSource.clip = closeDoor;
+        audioSource.Play();
+    }
+    public void iblisDeathSound()
+    {
+        audioSource.clip = iblisDeath;
+        audioSource.Play();
+    }
+    public void jarronBreakSound()
+    {
+        audioSource.clip = jarronBreak;
+        audioSource.Play();
+    }
+    public void renacerSound()
+    {
+        audioSource.clip = renacer;
+        audioSource.Play();
+    }
+    public void curarSound()
+    {
+        audioSource.clip = curar;
+        audioSource.Play();
+    }
+    public void llamarSoldadosSound()
+    {
+        audioSource.clip = llamarSoldados;
+        audioSource.Play();
+    }
+    public void playerDeathSound()
+    {
+        audioSource.clip = playerDeath;
         audioSource.Play();
     }
 }
