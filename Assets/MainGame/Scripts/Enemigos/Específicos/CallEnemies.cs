@@ -23,6 +23,7 @@ public class CallEnemies : MonoBehaviour
     {
          if (prueba.Health() < vidaMinima) //Esto probablmente se puede hacer mejor.
          {
+            SoundManager.GetInstance().llamarSoldadosSound();
              ActivaSpawnerF();
          }
         else

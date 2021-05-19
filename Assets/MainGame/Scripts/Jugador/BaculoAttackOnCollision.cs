@@ -24,6 +24,8 @@ public class BaculoAttackOnCollision : MonoBehaviour
             Rigidbody2D rbEnemy = collision.GetComponent<Rigidbody2D>(); 
             Vector2 direction = (rbEnemy.transform.position - transform.position).normalized; 
             rbEnemy.AddForce(direction * knock, ForceMode2D.Impulse);
+            //Producir sonido de ataque fisico
+            SoundManager.GetInstance().physicAttackSound();
             //QuitarVida
             helth.QuitarVida(playerAttack);
         }
