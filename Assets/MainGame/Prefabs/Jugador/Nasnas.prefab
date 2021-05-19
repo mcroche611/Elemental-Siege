@@ -195,6 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coolDownSecs: 0.5
   attackFreeze: 0.25
+  deactivationTime: 0.4
 --- !u!114 &2017438766814546698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -473,6 +474,11 @@ PrefabInstance:
         type: 3}
       propertyPath: knock
       value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594273815144287494, guid: 50b8fcfedad7b1749b6be1e144019a23,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8218089456628840902, guid: 50b8fcfedad7b1749b6be1e144019a23,
         type: 3}

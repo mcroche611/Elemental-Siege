@@ -11,6 +11,7 @@ public class Escaleras : MonoBehaviour
     {
         if (collision.GetComponent<PlayerController>() != null)
         {
+            SoundManager.GetInstance().electricBallSound();
             Destroy(collision.gameObject);
             LevelManager.GetInstance().FinNivel();
             SceneManager.LoadScene(escena);
