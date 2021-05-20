@@ -19,7 +19,7 @@ public class EnemyHealth : MonoBehaviour
         _barraDeVida = barraDeVida.GetComponent<RectTransform>();
         maxBarraDeVida = _barraDeVida.sizeDelta.x;
         maxHealth = health;
-       
+        sonidoDeMorir = GetComponent<AudioSource>();
     }
     private void Update()
     {
@@ -38,6 +38,7 @@ public class EnemyHealth : MonoBehaviour
 
             if (health <= 0)
             {
+                sonidoDeMorir.Play();
                 Slime slime = GetComponent<Slime>();
                 if (slime != null)
                     slime.InstanciarSlimes();
@@ -71,7 +72,6 @@ public class EnemyHealth : MonoBehaviour
     }
     void Destruye()
     {
-        sonidoDeMorir.Play();
         Destroy(this.gameObject);
     }
 }
