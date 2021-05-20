@@ -18,7 +18,7 @@ public class Puerta : MonoBehaviour
         if (collision.GetComponent<Health>() && puedeEntrar)
         {
             LevelManager levelManager = LevelManager.GetInstance();
-
+            SoundManager.GetInstance().openDoorSound();
             if (levelManager.TipoHabitacion() == 'P')
             {
                 levelManager.CompletarHabitacion();
@@ -28,6 +28,7 @@ public class Puerta : MonoBehaviour
             {
                 if (levelManager.SalaCompletada())
                 {
+                    SoundManager.GetInstance().closeDoorSound();
                     levelManager.CompletarHabitacion();
                     levelManager.Puerta(orientacion);
                 }
