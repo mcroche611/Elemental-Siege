@@ -241,16 +241,13 @@ MonoBehaviour:
   physicAttack: {fileID: 8300000, guid: 6d713330255b6e44394dceac5751fa00, type: 3}
   fireBall: {fileID: 8300000, guid: 335fc3954b5e0f748aed1c3cb613d413, type: 3}
   botton: {fileID: 8300000, guid: a892515056bd3af46827621f947bc56d, type: 3}
-  batDeath: {fileID: 8300000, guid: 6d713330255b6e44394dceac5751fa00, type: 3}
-  slimeDeath: {fileID: 8300000, guid: 006fb2a4716b4f841ac375279f145482, type: 3}
   waterBall: {fileID: 8300000, guid: 00e0bb6fee44b7d49aaa37f714395c96, type: 3}
   electricBall: {fileID: 8300000, guid: ca6ce76573038c9499dd026b2e442774, type: 3}
-  enemyDeath: {fileID: 8300000, guid: d44f8c293b86e3a40bf846dedfe07a86, type: 3}
-  openDoor: {fileID: 8300000, guid: 8eafa91828a5e724bb88e8963013f572, type: 3}
+  openDoor: {fileID: 8300000, guid: 2d9ff77be99c14c49aba95ee4445e4b4, type: 3}
   closeDoor: {fileID: 8300000, guid: 73ebff0b6964d9347a227025adc3a9eb, type: 3}
-  iblisDeath: {fileID: 8300000, guid: 405b3c6c67df17344a5ecac0c8f09582, type: 3}
   llamarSoldados: {fileID: 8300000, guid: be83d72ca4464b346b7def588bf5f354, type: 3}
   jarronBreak: {fileID: 8300000, guid: a64083518bf761347b9c200902e6a89f, type: 3}
   renacer: {fileID: 8300000, guid: 18b45cba2f23bfa4da8a8e5d02344449, type: 3}
   curar: {fileID: 8300000, guid: 1426451fcb768e7439473647e56ca287, type: 3}
-  playerDeath: {fileID: 8300000, guid: 07e203535a8a94342b7983082b804509, type: 3}
+  playerDeath: {fileID: 8300000, guid: 98e8ad8ac3248d04fbb1822e0c8ab537, type: 3}
+  escalera: {fileID: 8300000, guid: 07e203535a8a94342b7983082b804509, type: 3}

@@ -43,5 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aea9c8949d9edc84ba659d14228dadc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numNivel: 0
+  nasnas: {fileID: 0}
   escaleras: {fileID: 0}
-  nasnas: {fileID: 2017438766814546700, guid: 13db7e7adbb422e4095c16193b4b0ea4, type: 3}

@@ -6,7 +6,7 @@ public class SoundManager : MonoBehaviour
 {
     static SoundManager instance;
     public AudioSource audioSource;
-    [SerializeField] AudioClip physicAttack, fireBall, botton, waterBall, electricBall, openDoor, closeDoor, llamarSoldados, jarronBreak, renacer, curar, playerDeath;
+    [SerializeField] AudioClip physicAttack, fireBall, botton, waterBall, electricBall, openDoor, closeDoor, llamarSoldados, charco, jarronBreak, renacer, curar, playerDeath,escalera;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -85,6 +85,16 @@ public class SoundManager : MonoBehaviour
     public void playerDeathSound()
     {
         audioSource.clip = playerDeath;
+        audioSource.Play();
+    }
+    public void escaleraSound()
+    {
+        audioSource.clip = escalera;
+        audioSource.Play();
+    }
+    public void charcoSound()
+    {
+        audioSource.clip = charco;
         audioSource.Play();
     }
 }
