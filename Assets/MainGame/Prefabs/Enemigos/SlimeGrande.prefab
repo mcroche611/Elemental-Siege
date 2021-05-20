@@ -530,6 +530,7 @@ MonoBehaviour:
   health: 400
   animator: {fileID: 0}
   barraDeVida: {fileID: 4672025978226132994}
+  sonidoDeMorir: {fileID: -7944031089554601582}
 --- !u!114 &8924173619915049530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -621,7 +622,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 006fb2a4716b4f841ac375279f145482, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

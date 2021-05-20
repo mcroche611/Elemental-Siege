@@ -26,6 +26,7 @@ public class Health : MonoBehaviour
             Debug.Log("ReceiveDamage: " + vida);
             if (vida <= 0)
             {
+                SoundManager.GetInstance().playerDeathSound();
                 Destroy(this.gameObject);
                 if (LevelManager.GetInstance() != null)
                     LevelManager.GetInstance().PrimeraHabitacion();

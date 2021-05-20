@@ -27,6 +27,7 @@ public class Charco : MonoBehaviour
 
         if (col == LayerMask.NameToLayer("Charcos") && !pisaCharco)
         {
+            SoundManager.GetInstance().charcoSound();
             CancelInvoke("PuedeMojarse");
             MonoBehaviour state = stateManager.Estado() as MonoBehaviour;
             if (state == mojado)
