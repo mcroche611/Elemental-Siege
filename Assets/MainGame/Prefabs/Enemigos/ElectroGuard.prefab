@@ -1014,7 +1014,7 @@ GameObject:
   - component: {fileID: 7563070098300226788}
   - component: {fileID: 5635570614057264958}
   m_Layer: 10
-  m_Name: ElectroGuard 1
+  m_Name: ElectroGuard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1172,7 +1172,7 @@ MonoBehaviour:
   health: 200
   animator: {fileID: 7563070098300226788}
   barraDeVida: {fileID: 88591309386465137}
-  sonidoDeMorir: {fileID: 0}
+  sonidoDeMorir: {fileID: 5635570614057264958}
 --- !u!114 &2413028356115051680
 MonoBehaviour:
   m_ObjectHideFlags: 0

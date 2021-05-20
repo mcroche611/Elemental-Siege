@@ -680,7 +680,7 @@ GameObject:
   - component: {fileID: 4236125566718323310}
   - component: {fileID: 1492972261095080127}
   m_Layer: 10
-  m_Name: WaterGuard 1
+  m_Name: WaterGuard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -838,7 +838,7 @@ MonoBehaviour:
   health: 200
   animator: {fileID: 4236125566718323310}
   barraDeVida: {fileID: 3833612294118226538}
-  sonidoDeMorir: {fileID: 0}
+  sonidoDeMorir: {fileID: 1492972261095080127}
 --- !u!114 &6911201565509378124
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 7844410482924226811}
   - component: {fileID: 541238932382618224}
   m_Layer: 10
-  m_Name: FireGuard 1
+  m_Name: FireGuard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -195,7 +195,7 @@ MonoBehaviour:
   health: 200
   animator: {fileID: 7844410482924226811}
   barraDeVida: {fileID: 5814609486812535628}
-  sonidoDeMorir: {fileID: 0}
+  sonidoDeMorir: {fileID: 541238932382618224}
 --- !u!114 &1419415181538593320
 MonoBehaviour:
   m_ObjectHideFlags: 0

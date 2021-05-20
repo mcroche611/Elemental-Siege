@@ -127,7 +127,7 @@ MonoBehaviour:
   health: 200
   animator: {fileID: 3575900674587076993}
   barraDeVida: {fileID: 3650532289771413027}
-  sonidoDeMorir: {fileID: 0}
+  sonidoDeMorir: {fileID: 6470285482529096431}
 --- !u!114 &5375475538258994369
 MonoBehaviour:
   m_ObjectHideFlags: 0
