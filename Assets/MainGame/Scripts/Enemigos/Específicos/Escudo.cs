@@ -14,12 +14,16 @@ public class Escudo : MonoBehaviour
     [SerializeField]
     string shieldType;
 
+    [SerializeField]
+    GameObject objetoEscudo;
+
     //el bonus del jugador de cada ataque elemental
     float bonoAgua, bonoFuego, bonoElectricidad;
 
     public GameObject barraDeEscudo;
     RectTransform _barraDeEscudo;
     float maxBarraDeEscudo;
+
 
     private void OnEnable()
     {
@@ -34,14 +38,16 @@ public class Escudo : MonoBehaviour
         _barraDeEscudo = barraDeEscudo.GetComponent<RectTransform>();
         maxBarraDeEscudo = _barraDeEscudo.sizeDelta.x;
         maxShieldHealth = shieldHealth;
+
     }
     void Start()              
     {
         bonoAgua = GameManager.GetInstance().Stat("Agua");
         bonoFuego = GameManager.GetInstance().Stat("Fuego");
         bonoElectricidad = GameManager.GetInstance().Stat("Electricidad");
+     
     }
-
+    
     private void OnDisable()
     {
         //GetComponent<SpriteRenderer>().sprite = guardiaNeutro; //se le pone otro color al desaparecer       
@@ -72,13 +78,21 @@ public class Escudo : MonoBehaviour
         }     
                          
         _barraDeEscudo.sizeDelta = new Vector2((maxBarraDeEscudo) * (shieldHealth / maxShieldHealth), _barraDeEscudo.sizeDelta.y);
+        
         if (shieldHealth <= 0)
-            Invoke("DescativarEscudo", Time.deltaTime);                 
+        {
+            Invoke("DescativarEscudo", Time.deltaTime);
+            
+            Destroy(objetoEscudo);
+            
+        }
+                       
     }
 
     void DescativarEscudo()
     {
         GetComponent<Escudo>().enabled = false;
+        
     }
 
     public void CambioEscudo(string type)
@@ -89,6 +103,7 @@ public class Escudo : MonoBehaviour
     
     public float ShieldHealth() //Devuelve el valor de vida de escudo
     {
+        
         return shieldHealth;
     }
     public string TipoEscudo() //Devuelve el tipo de escudo que se está usando
