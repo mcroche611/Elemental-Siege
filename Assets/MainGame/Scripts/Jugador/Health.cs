@@ -8,14 +8,24 @@ public class Health : MonoBehaviour
     [SerializeField] float maxVida;
     float vida;
 
+    Animator animator;
+    bool playerMuerto = false; //bool para ver si el player se muere
+
     private void Start()
     {
         DontDestroyOnLoad(this.gameObject);
 
         vida = maxVida;
         GameManager.GetInstance().GMActualizarVida(vida / maxVida);
+        animator = GetComponent<Animator>();
+
     }
 
+    private void Update()
+    {
+        animator.SetBool("playerMuerto", playerMuerto);
+
+    }
     public void ReceiveDamage(float damage)
     {
         if (vida > 0)
@@ -27,7 +37,9 @@ public class Health : MonoBehaviour
             if (vida <= 0)
             {
                 SoundManager.GetInstance().playerDeathSound();
-                Destroy(this.gameObject);
+                playerMuerto = true;
+                //Destroy(this.gameObject);
+                Invoke("DestroyPlayer", 0.5f);
                 if (LevelManager.GetInstance() != null)
                     LevelManager.GetInstance().PrimeraHabitacion();
             }
@@ -68,5 +80,11 @@ public class Health : MonoBehaviour
 
             Debug.Log("RespawnOnFall: " + vida);
         }
+    }
+
+    void DestroyPlayer() //para destruirlo con tiempo y que se ponga la animación
+    {
+        Destroy(this.gameObject);
+
     }
 }

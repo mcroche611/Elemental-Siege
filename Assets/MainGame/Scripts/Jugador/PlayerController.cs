@@ -32,7 +32,6 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("seMueve", seMueve);
 
         RunningAnimation();
-        Debug.Log("MOVIMIENTO HORIZONTAL" + Mathf.Abs(Input.GetAxisRaw("Horizontal")));
 
 
 
