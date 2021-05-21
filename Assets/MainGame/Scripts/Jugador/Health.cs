@@ -6,9 +6,10 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] float maxVida;
-    float vida;
-
     Animator animator;
+
+    float vida;
+    
     bool playerMuerto = false; //bool para ver si el player se muere
 
     private void Start()
@@ -38,10 +39,8 @@ public class Health : MonoBehaviour
             {
                 SoundManager.GetInstance().playerDeathSound();
                 playerMuerto = true;
-                //Destroy(this.gameObject);
                 Invoke("DestroyPlayer", 0.5f);
-                if (LevelManager.GetInstance() != null)
-                    LevelManager.GetInstance().PrimeraHabitacion();
+                
             }
         }             
     }
@@ -67,7 +66,8 @@ public class Health : MonoBehaviour
         if (vida <= 0)
         {
             Destroy(this.gameObject);
-            LevelManager.GetInstance().PrimeraHabitacion();
+            if (LevelManager.GetInstance() != null)
+                LevelManager.GetInstance().PrimeraHabitacion();
         }
     }
 
@@ -85,6 +85,7 @@ public class Health : MonoBehaviour
     void DestroyPlayer() //para destruirlo con tiempo y que se ponga la animación
     {
         Destroy(this.gameObject);
-
+        if (LevelManager.GetInstance() != null)
+            LevelManager.GetInstance().PrimeraHabitacion();
     }
 }
