@@ -729,6 +729,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1633000251, guid: 57364908af0f2a848b54f5c65a09ce20, type: 3}
+      propertyPath: jarronBreak
+      value: 
+      objectReference: {fileID: 8300000, guid: 59b68f6b8c1a4ba4aaeb2002c457903a, type: 3}
+    - target: {fileID: 1633000251, guid: 57364908af0f2a848b54f5c65a09ce20, type: 3}
+      propertyPath: archerShoot
+      value: 
+      objectReference: {fileID: 8300000, guid: aa1502b385be6ef41af75c39ee8b33d6, type: 3}
     - target: {fileID: 8835514617297782373, guid: 57364908af0f2a848b54f5c65a09ce20,
         type: 3}
       propertyPath: m_Name
