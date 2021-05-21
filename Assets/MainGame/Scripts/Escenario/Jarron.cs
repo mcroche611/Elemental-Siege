@@ -14,7 +14,6 @@ public class Jarron : MonoBehaviour
     private void Start()
     {
         numeroRandom = Random.Range(1, 100); //numero entre 1 y 100 para que si la probabilidad es 0 no salga drop
-
         LevelManager levelManager = LevelManager.GetInstance();
 
         if (levelManager != null)
@@ -34,6 +33,7 @@ public class Jarron : MonoBehaviour
 
         if (collision.GetComponent<BaculoAttackOnCollision>() != null || collision.GetComponent<ActivateElementOnCollision>() != null)
         {
+            SoundManager.GetInstance().jarronBreakSound();
             animator.enabled = true;            
 
             if (LevelManager.GetInstance() != null)
@@ -45,7 +45,6 @@ public class Jarron : MonoBehaviour
 
     private void SoltarCorazon()
     {
-        SoundManager.GetInstance().jarronBreakSound();
         if (numeroRandom <= dropProbabilityPercentage)       
             Instantiate<GameObject>(Heartprefab, transform.position, transform.rotation);
         Destroy(this.gameObject);
