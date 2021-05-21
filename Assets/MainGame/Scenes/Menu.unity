@@ -798,6 +798,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9106286759512286434, guid: 8960fa33bd3a19f43bcaef01e5fd1455,
+        type: 3}
+      propertyPath: m_text
+      value: Start
+      objectReference: {fileID: 0}
     - target: {fileID: 9106286760185754923, guid: 8960fa33bd3a19f43bcaef01e5fd1455,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -812,6 +817,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: 1P0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9106286760397966722, guid: 8960fa33bd3a19f43bcaef01e5fd1455,
+        type: 3}
+      propertyPath: m_Name
+      value: 'StartButton '
       objectReference: {fileID: 0}
     - target: {fileID: 9106286760471438226, guid: 8960fa33bd3a19f43bcaef01e5fd1455,
         type: 3}
