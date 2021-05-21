@@ -37,6 +37,7 @@ public class Archer : MonoBehaviour
 
     public void ShootArrow(Vector2 posPlayer)
     {
+        SoundManager.GetInstance().archerShootSound();
         float angulo = Mathf.Atan2(posPlayer.y - transform.position.y, posPlayer.x - transform.position.x) * 180 / Mathf.PI;
         Quaternion anguloQuaternion = Quaternion.Euler(new Vector3(0f, 0f, angulo - 90)); //sacamos el angulo en el que hay que disparar 
         Instantiate<GameObject>(prefabFlecha, transform.position, anguloQuaternion); //instanciamos la flecha

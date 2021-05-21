@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55ee6bf33f39aef498751f6eeac13963, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  elemento: Fuego
+  elemento: Electricidad
   cantidad: 20
   animator: {fileID: 5383314747108212080}
   puerta: {fileID: 0}

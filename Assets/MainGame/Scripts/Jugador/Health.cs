@@ -6,11 +6,10 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] float maxVida;
-    float vida;
-
     Animator animator;
-    bool playerMuerto = false; //bool para ver si el player se muere
 
+    float vida;
+    
     private void Start()
     {
         DontDestroyOnLoad(this.gameObject);
@@ -21,11 +20,7 @@ public class Health : MonoBehaviour
 
     }
 
-    private void Update()
-    {
-        animator.SetBool("playerMuerto", playerMuerto);
 
-    }
     public void ReceiveDamage(float damage)
     {
         if (vida > 0)
@@ -37,11 +32,15 @@ public class Health : MonoBehaviour
             if (vida <= 0)
             {
                 SoundManager.GetInstance().playerDeathSound();
-                playerMuerto = true;
-                //Destroy(this.gameObject);
-                Invoke("DestroyPlayer", 0.5f);
-                if (LevelManager.GetInstance() != null)
-                    LevelManager.GetInstance().PrimeraHabitacion();
+                animator.SetBool("playerMuerto", true); //ponemos el bool a true
+                Destroy(GetComponent<Collider2D>()); //para que no le puedan atacar
+                GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll; //para que no pueda moverse
+                Destroy(GetComponent<PhysicalAttack>()); //para que no pueda atacar
+                Destroy(GetComponent<ElementalAttack>()); //para que no haga ataques elementales
+                Destroy(GetComponent<ElementChanger>());
+
+                Invoke("DestroyPlayer", 0.5f); //para que dé tiempo a la animación lo invocamos después
+                
             }
         }             
     }
@@ -67,7 +66,8 @@ public class Health : MonoBehaviour
         if (vida <= 0)
         {
             Destroy(this.gameObject);
-            LevelManager.GetInstance().PrimeraHabitacion();
+            if (LevelManager.GetInstance() != null)
+                LevelManager.GetInstance().PrimeraHabitacion();
         }
     }
 
@@ -85,6 +85,7 @@ public class Health : MonoBehaviour
     void DestroyPlayer() //para destruirlo con tiempo y que se ponga la animación
     {
         Destroy(this.gameObject);
-
+        if (LevelManager.GetInstance() != null)
+            LevelManager.GetInstance().PrimeraHabitacion();
     }
 }

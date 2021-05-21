@@ -81,6 +81,7 @@ public class Escudo : MonoBehaviour
         
         if (shieldHealth <= 0)
         {
+            SoundManager.GetInstance().escudoBreakSound();
             Invoke("DescativarEscudo", Time.deltaTime);
             
             Destroy(objetoEscudo);

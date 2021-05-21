@@ -18,17 +18,17 @@ public class Puerta : MonoBehaviour
         if (collision.GetComponent<Health>() && puedeEntrar)
         {
             LevelManager levelManager = LevelManager.GetInstance();
-            SoundManager.GetInstance().openDoorSound();
             if (levelManager.TipoHabitacion() == 'P')
             {
+                SoundManager.GetInstance().openDoorSound();
                 levelManager.CompletarHabitacion();
                 levelManager.Puerta(orientacion);
             }
             else if (levelManager.TipoHabitacion() == 'S')
             {
+                SoundManager.GetInstance().closeDoorSound();
                 if (levelManager.SalaCompletada())
                 {
-                    SoundManager.GetInstance().closeDoorSound();
                     levelManager.CompletarHabitacion();
                     levelManager.Puerta(orientacion);
                 }

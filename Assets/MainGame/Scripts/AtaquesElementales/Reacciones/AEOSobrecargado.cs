@@ -26,6 +26,7 @@ public class AEOSobrecargado : MonoBehaviour
     //Aquellos enemigos con los que colisione este trigger seran impulsados y se les restara vida
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        SoundManager.GetInstance().explotionSound();
         EnemyMovement enemyMovement = collision.GetComponent<EnemyMovement>();
 
         //Comprueba si aquello con lo que colisiona es un enemigo (solo los enemigos tienen el componente enemy health)
