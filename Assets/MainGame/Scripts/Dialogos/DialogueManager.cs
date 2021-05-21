@@ -16,6 +16,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     float textSpeed = 0.2f; //velocidad con la que se typean las letras
     [SerializeField] int numDialogue; //número del diálogo a leer
+    ActivateButton button;
 
     const string filePath = "Assets/MainGame/Resources/dialogue.txt";
 
@@ -39,11 +40,18 @@ public class DialogueManager : MonoBehaviour
     
     private void Start()
     {
-        dialogueBox.SetActive(false);
+        //dialogueBox.SetActive(false);
+
+        button = GetComponent<ActivateButton>();
 
         dialogueText.text = "";
 
         SetDialogue();
+
+        if (numDialogue == 0)
+        {
+            StartDialogue2();
+        }
     }
 
     private void SetDialogue()
@@ -125,6 +133,10 @@ public class DialogueManager : MonoBehaviour
         foreach (char c in sentences[numeroSentence])
         {
             dialogueText.text += c;
+            if (numDialogue == 0 && (numeroSentence == 0 || numeroSentence == 1))
+                dialogueText.color = Color.blue;
+            else
+                dialogueText.color = Color.black;
             yield return new WaitForSecondsRealtime(textSpeed);
         }
     }
@@ -141,6 +153,11 @@ public class DialogueManager : MonoBehaviour
         {
             dialogueBox.SetActive(false);
             Time.timeScale = 1;
+
+            if (button != null)
+            {
+                button.SetActiveButton();
+            }
             dialogueGoingOn = false;
         }
         
