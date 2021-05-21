@@ -153,102 +153,8 @@ Transform:
   - {fileID: 1607598952}
   - {fileID: 1779181540}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &61629977
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6469055946937202184, guid: 77380863646efc9498ba780a02a7ed1f,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469055946937202184, guid: 77380863646efc9498ba780a02a7ed1f,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469055946937202184, guid: 77380863646efc9498ba780a02a7ed1f,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469055946937202185, guid: 77380863646efc9498ba780a02a7ed1f,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.62
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469055946937202185, guid: 77380863646efc9498ba780a02a7ed1f,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.38
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469055946937202185, guid: 77380863646efc9498ba780a02a7ed1f,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469055946937202185, guid: 77380863646efc9498ba780a02a7ed1f,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469055946937202185, guid: 77380863646efc9498ba780a02a7ed1f,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469055946937202185, guid: 77380863646efc9498ba780a02a7ed1f,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469055946937202185, guid: 77380863646efc9498ba780a02a7ed1f,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469055946937202185, guid: 77380863646efc9498ba780a02a7ed1f,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469055946937202185, guid: 77380863646efc9498ba780a02a7ed1f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469055946937202185, guid: 77380863646efc9498ba780a02a7ed1f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469055946937202185, guid: 77380863646efc9498ba780a02a7ed1f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469055946937202186, guid: 77380863646efc9498ba780a02a7ed1f,
-        type: 3}
-      propertyPath: puerta
-      value: 
-      objectReference: {fileID: 1683944655}
-    - target: {fileID: 6469055946937202186, guid: 77380863646efc9498ba780a02a7ed1f,
-        type: 3}
-      propertyPath: elemento
-      value: Fuego
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469055946937202231, guid: 77380863646efc9498ba780a02a7ed1f,
-        type: 3}
-      propertyPath: m_Name
-      value: MagoEncerrado
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 77380863646efc9498ba780a02a7ed1f, type: 3}
 --- !u!1 &151104212
 GameObject:
   m_ObjectHideFlags: 0
@@ -2066,7 +1972,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &664389251
 PrefabInstance:
@@ -2152,6 +2058,80 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cdfc173bdd64504a968561c22e8a6ad, type: 3}
+--- !u!1001 &939682778
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5541998238747887765, guid: 494731eeb7796ce4c94711e552b4c209,
+        type: 3}
+      propertyPath: m_Name
+      value: MagoFuego
+      objectReference: {fileID: 0}
+    - target: {fileID: 5541998238747887784, guid: 494731eeb7796ce4c94711e552b4c209,
+        type: 3}
+      propertyPath: puerta
+      value: 
+      objectReference: {fileID: 1683944655}
+    - target: {fileID: 5541998238747887787, guid: 494731eeb7796ce4c94711e552b4c209,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.6050663
+      objectReference: {fileID: 0}
+    - target: {fileID: 5541998238747887787, guid: 494731eeb7796ce4c94711e552b4c209,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.2525604
+      objectReference: {fileID: 0}
+    - target: {fileID: 5541998238747887787, guid: 494731eeb7796ce4c94711e552b4c209,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5541998238747887787, guid: 494731eeb7796ce4c94711e552b4c209,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5541998238747887787, guid: 494731eeb7796ce4c94711e552b4c209,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5541998238747887787, guid: 494731eeb7796ce4c94711e552b4c209,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5541998238747887787, guid: 494731eeb7796ce4c94711e552b4c209,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5541998238747887787, guid: 494731eeb7796ce4c94711e552b4c209,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5541998238747887787, guid: 494731eeb7796ce4c94711e552b4c209,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5541998238747887787, guid: 494731eeb7796ce4c94711e552b4c209,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5541998238747887787, guid: 494731eeb7796ce4c94711e552b4c209,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 494731eeb7796ce4c94711e552b4c209, type: 3}
 --- !u!1 &1076996175
 GameObject:
   m_ObjectHideFlags: 0
@@ -2194,7 +2174,7 @@ Transform:
   m_Children:
   - {fileID: 151104213}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1112421458
 GameObject:
@@ -2364,9 +2344,7 @@ MonoBehaviour:
   dialogueBox: {fileID: 1889897448}
   dialogueText: {fileID: 1112421459}
   textSpeed: 0.05
-  sentences:
-  - Te he aumentado tu bono de fuego
-  - Gracias por el testeo, crack
+  numDialogue: 0
 --- !u!114 &1286525505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2440,7 +2418,7 @@ RectTransform:
   m_Children:
   - {fileID: 1889897449}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2505,7 +2483,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1588628158
 PrefabInstance:
@@ -2802,7 +2780,7 @@ PrefabInstance:
     - target: {fileID: 2038102018642861557, guid: ab51cf10ecae6d443804d2dd81334fcf,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2038102018642861557, guid: ab51cf10ecae6d443804d2dd81334fcf,
         type: 3}

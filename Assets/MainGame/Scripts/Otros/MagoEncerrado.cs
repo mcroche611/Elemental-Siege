@@ -28,6 +28,10 @@ public class MagoEncerrado : MonoBehaviour
         if (moverse)
         {
             rb.velocity = puerta.position.normalized * 5;
+            if (rb.velocity.x > 0)
+            {
+                gameObject.GetComponent<SpriteRenderer>().flipX = true;
+            }
         }
             
             
