@@ -76,7 +76,7 @@ GameObject:
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4199202409773636904
 Transform:
   m_ObjectHideFlags: 0
@@ -116,6 +116,7 @@ MonoBehaviour:
   - {fileID: 368602572622577075}
   - {fileID: 7896490624548097645}
   tiempoSpawn: 3
+  beforeSpawn: 0
 --- !u!1 &7048034461106659286
 GameObject:
   m_ObjectHideFlags: 0

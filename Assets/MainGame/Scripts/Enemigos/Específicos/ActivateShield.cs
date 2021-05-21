@@ -8,13 +8,17 @@ public class ActivateShield : MonoBehaviour
     float tiempoCambio=10f; //Cada cuanto tiempo se cambia de un escudo a otro
     Escudo scriptEscudo;
     float contador;
-    float fireHealth;
-    float waterHealth;
-    float electroHealth;
+    [SerializeField]
+    GameObject escudoFisicoAgua;
+    [SerializeField]
+    GameObject escudoFisicoFuego;
+    [SerializeField]
+    GameObject escudoFisicoElectro;
     void Start()
     {
-        scriptEscudo = GetComponent<Escudo>(); //Empieza con el escudo predeterminado de fuego
-        
+        //Empieza con el escudo predeterminado de fuego
+        scriptEscudo = GetComponent<Escudo>();
+        escudoFisicoFuego.SetActive(true);
     }
     private void Update()
     {
@@ -33,7 +37,9 @@ public class ActivateShield : MonoBehaviour
         Debug.Log("Escudo de fuego activado");
         
         scriptEscudo.CambioEscudo("Fuego");
-        
+        escudoFisicoFuego.SetActive(true);
+        escudoFisicoAgua.SetActive(false);
+        escudoFisicoElectro.SetActive(false);
         
         
     }
@@ -42,17 +48,22 @@ public class ActivateShield : MonoBehaviour
        Debug.Log("Escudo de agua activado");
        
        scriptEscudo.CambioEscudo("Agua");
-        
        
+        escudoFisicoAgua.SetActive(true);
+        escudoFisicoElectro.SetActive(false);
+        escudoFisicoFuego.SetActive(false);
 
-   }
+    }
     void CambiaElectro()
     {
         Debug.Log("Escudo de electro activado");
        
         scriptEscudo.CambioEscudo("Electrico");
+        escudoFisicoElectro.SetActive(true);
+        escudoFisicoFuego.SetActive(false);
+        escudoFisicoAgua.SetActive(false);
         
-        
+
 
     }
     void EscudoAleatorio()

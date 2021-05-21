@@ -5,23 +5,23 @@ using UnityEngine;
 public class CallEnemies : MonoBehaviour
 {
     [SerializeField] 
-    GameObject objetoSpawnerF;
+    GameObject objetoSpawnerF; //Objeto que spawnea enemigos fuertes
     [SerializeField]
-    GameObject objetoSpawnerD;
+    GameObject objetoSpawnerD;  //Objeto que spawnea enemigos debiles
     [SerializeField]
     float vidaMinima;
-    //IblisHealth componenteVida;
-    EnemyHealth prueba;
+
+    EnemyHealth vida;
     void Start()
     {
         //Consigue la vida del enemigo y comprueba si es menor a un determinado valor para ver si debe llamar a enemigos fuertes
         //componenteVida = GetComponent<IblisHealth>(); 
-        prueba = GetComponent<EnemyHealth>();
+        vida = GetComponent<EnemyHealth>();
     }
 
     void Update()
     {
-         if (prueba.Health() < vidaMinima) //Esto probablmente se puede hacer mejor.
+         if (vida.Health() < vidaMinima) //Esto probablmente se puede hacer mejor.
          {
             SoundManager.GetInstance().llamarSoldadosSound();
              ActivaSpawnerF();
@@ -61,10 +61,10 @@ public class CallEnemies : MonoBehaviour
         objetoSpawnerF.SetActive(false);
     }
 
-    private void OnDestroy() //destruir spawner cuando se destruya a iblis
+    private void OnDestroy() 
     {
-        Destroy(objetoSpawnerD);
-        Destroy(objetoSpawnerF);
+        DesactivaSpawnerD();
+        DesactivaSpawnerF();
     }
     
 }
