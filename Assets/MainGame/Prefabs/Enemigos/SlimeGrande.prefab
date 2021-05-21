@@ -528,7 +528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 400
-  animator: {fileID: 0}
+  animator: {fileID: 7570654979521617298}
   barraDeVida: {fileID: 4672025978226132994}
   sonidoDeMorir: {fileID: -7944031089554601582}
 --- !u!114 &8924173619915049530

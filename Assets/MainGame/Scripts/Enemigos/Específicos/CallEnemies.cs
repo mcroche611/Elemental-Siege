@@ -49,7 +49,11 @@ public class CallEnemies : MonoBehaviour
     }
     void DesactivaSpawnerD()
     {
-        objetoSpawnerD.SetActive(false);
+        if (objetoSpawnerD != null)
+        {
+            objetoSpawnerD.SetActive(false);
+        }
+        
     }
 
     void ActivaSpawnerF()
@@ -58,7 +62,12 @@ public class CallEnemies : MonoBehaviour
     }
     void DesactivaSpawnerF()
     {
-        objetoSpawnerF.SetActive(false);
+        if (objetoSpawnerD != null)
+        {
+           objetoSpawnerF.SetActive(false);
+        }
+
+       
     }
 
     private void OnDestroy() 

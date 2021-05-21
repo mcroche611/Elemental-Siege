@@ -107,10 +107,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemigosFuertes:
-  - {fileID: 8757333600198723032, guid: 1abf58c509459c544acfe7a7e892d282, type: 3}
-  - {fileID: 4093884336931229606, guid: be9f5adaea3c96847b500a88d9e3ffe7, type: 3}
-  - {fileID: 8186798521541953525, guid: d568732fc33ca054384243967d38bf0e, type: 3}
-  - {fileID: 5897332293793074449, guid: e452b71e748a1654c973a28a86db66ff, type: 3}
+  - {fileID: 277875969091453802, guid: 8a51135a5065da6409bc30dd5d89cc35, type: 3}
+  - {fileID: 6976718386280761648, guid: b10eed6bb9c9d1649958e50dbdcacbda, type: 3}
+  - {fileID: 6031494709036156015, guid: 10066eea5ce20ad45952142c10ebdbe0, type: 3}
+  - {fileID: 2474474574266604277, guid: 66a414f7ac07dc443bc141bbc611b70a, type: 3}
   posiciones:
   - {fileID: 2401322362304097108}
   - {fileID: 253077359893079680}
