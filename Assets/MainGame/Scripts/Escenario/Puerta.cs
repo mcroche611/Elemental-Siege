@@ -11,7 +11,7 @@ public class Puerta : MonoBehaviour
     private void Start()
     {
         orientacion = gameObject.name.Split(' ')[1];
-        Invoke("PuedeEntrar", 0.5f);
+        Invoke("PuedeEntrar", 1f);
 
         LevelManager levelManager = LevelManager.GetInstance();
 
@@ -64,5 +64,11 @@ public class Puerta : MonoBehaviour
     public void CambiarSpritePuerta()
     {
         GetComponent<SpriteRenderer>().sprite = puertaAbierta;
+    }
+
+    public void ImpedirSalida()
+    {
+        puedeEntrar = false;
+        Invoke("PuedeEntrar", 2f);
     }
 }

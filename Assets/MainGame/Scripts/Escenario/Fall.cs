@@ -14,8 +14,6 @@ public class Fall : MonoBehaviour
 
     private void FallSize()
     {
-        Debug.Log("FallSize: Scale: " + character.transform.localScale.x + " OgScale: " + ogScale + " Fall #: " + i);
-
         if (character.transform.localScale.x < ogScale / 10)
         {
             Debug.Log("Size reached min");
@@ -24,12 +22,9 @@ public class Fall : MonoBehaviour
             {
                 Health playerHealth = character.GetComponent<Health>();
                 playerHealth.DamageOnFall();
-                //producir el sonido de renacer
-                SoundManager.GetInstance().renacerSound();
-                // reestablece el movimiento cuando el jugador termine de caer.
                 character.GetComponentInParent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
                 character.GetComponentInParent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
-
+                RoomManager.GetInstance().LlamarImpedirSalida();
                 playerHealth.RespawnOnFall(spawnScale);
             }
             else

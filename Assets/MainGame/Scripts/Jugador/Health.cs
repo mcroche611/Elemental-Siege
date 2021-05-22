@@ -29,14 +29,7 @@ public class Health : MonoBehaviour
             if (vida <= 0)
             {
                 SoundManager.GetInstance().playerDeathSound();
-                animator.SetBool("playerMuerto", true); //ponemos el bool a true
-                Destroy(GetComponent<Collider2D>()); //para que no le puedan atacar
-                GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll; //para que no pueda moverse
-                Destroy(GetComponent<PhysicalAttack>()); //para que no pueda atacar
-                Destroy(GetComponent<ElementalAttack>()); //para que no haga ataques elementales
-                Destroy(GetComponent<ElementChanger>());
-                GameManager.GetInstance().DestroyPauseMenu();
-                Invoke("DestroyPlayer", 0.5f); //para que dé tiempo a la animación lo invocamos después           
+                PlayerMuere();      
             }
         }             
     }
@@ -60,21 +53,16 @@ public class Health : MonoBehaviour
         GameManager.GetInstance().GMActualizarVida(vida / maxVida);
 
         if (vida <= 0)
-        {
-            Destroy(this.gameObject);
-            if (LevelManager.GetInstance() != null)
-                LevelManager.GetInstance().PrimeraHabitacion();
-        }
+            PlayerMuere();      
     }
 
     public void RespawnOnFall(Vector3 playerSpawnScale)
     {
         if (vida > 0)
         {
-            transform.localScale = playerSpawnScale;
+            SoundManager.GetInstance().renacerSound();
             RoomManager.GetInstance().SetUpPlayer(LevelManager.GetInstance().GetOrientacion(), transform);
-
-            Debug.Log("RespawnOnFall: " + vida);
+            transform.localScale = playerSpawnScale;
         }
     }
 
@@ -83,5 +71,17 @@ public class Health : MonoBehaviour
         Destroy(this.gameObject);
         GameManager.GetInstance().GMDestruirCanvas();
         LevelManager.GetInstance().EscenaDeMuerte();
+    }
+
+    private void PlayerMuere()
+    {
+        animator.SetBool("playerMuerto", true); //ponemos el bool a true
+        Destroy(GetComponent<Collider2D>()); //para que no le puedan atacar
+        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll; //para que no pueda moverse
+        Destroy(GetComponent<PhysicalAttack>()); //para que no pueda atacar
+        Destroy(GetComponent<ElementalAttack>()); //para que no haga ataques elementales
+        Destroy(GetComponent<ElementChanger>());
+        GameManager.GetInstance().DestroyPauseMenu();
+        Invoke("DestroyPlayer", 0.5f); //para que dé tiempo a la animación lo invocamos después  
     }
 }

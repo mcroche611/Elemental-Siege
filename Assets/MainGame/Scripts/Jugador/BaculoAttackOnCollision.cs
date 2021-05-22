@@ -6,11 +6,25 @@ public class BaculoAttackOnCollision : MonoBehaviour
 {
     [SerializeField] float knock;
     [SerializeField] float tiempoAturdimiento;
+
     float playerAttack;
+    BoxCollider2D boxCollider;
+
+
+    private void Awake()
+    {
+        boxCollider = GetComponent<BoxCollider2D>();
+    }
 
     private void Start()
     {
         playerAttack = GameManager.GetInstance().Stat("");
+    }
+
+    private void OnEnable()
+    {
+        boxCollider.enabled = true;
+        Invoke("DesactivarEspada", 0.1f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -34,4 +48,13 @@ public class BaculoAttackOnCollision : MonoBehaviour
             helth.QuitarVida(playerAttack);
         }
     }
+
+
+
+    private void DesactivarEspada()
+    {
+        boxCollider.enabled = false;
+    }
+
+
 }

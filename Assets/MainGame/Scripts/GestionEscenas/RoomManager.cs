@@ -53,5 +53,12 @@ public class RoomManager : MonoBehaviour
         }
     }
 
+    public void LlamarImpedirSalida()
+    {
+        for (int i = 0; i < puertas.Length; i++)
+        {
+            puertas[i].GetComponent<Puerta>().ImpedirSalida();
+        }
+    }
 }
 
