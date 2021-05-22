@@ -940,7 +940,7 @@ GameObject:
   - component: {fileID: 793676854269475294}
   - component: {fileID: 2334321118790603530}
   - component: {fileID: 1138011253698778011}
-  m_Layer: 19
+  m_Layer: 21
   m_Name: Centro
   m_TagString: Centro
   m_Icon: {fileID: 0}

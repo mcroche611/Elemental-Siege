@@ -55,9 +55,12 @@ public class EnemyHealth : MonoBehaviour
                     else
                         levelmanager.QuitarEnemigoSala();
                 }
-
-                muere = true;
-                Invoke("Destruye", 0.5f);
+                if (slime == null)
+                {
+                    muere = true;
+                    Invoke("Destruye", 0.5f);
+                }
+                else Destroy(this.gameObject);
             }                                   
         }           
     }  

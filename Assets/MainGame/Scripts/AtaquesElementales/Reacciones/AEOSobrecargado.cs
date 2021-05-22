@@ -29,7 +29,7 @@ public class AEOSobrecargado : MonoBehaviour
     {
         SoundManager.GetInstance().explotionSound();
         EnemyHealth health = collision.GetComponent<EnemyHealth>();
-        ;
+        
 
         //Comprueba si aquello con lo que colisiona es un enemigo (solo los enemigos tienen el componente enemy health)
         if (health != null && collision.gameObject != enemigoGolpeado) 
