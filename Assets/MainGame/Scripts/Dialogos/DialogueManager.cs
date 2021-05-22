@@ -50,7 +50,7 @@ public class DialogueManager : MonoBehaviour
 
         if (numDialogue == 0)
         {
-            StartDialogue2();
+            StartDialogue();
         }
     }
 
@@ -90,17 +90,17 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("space")) //si el jugador pulsa espacio
         {
             
-            if (dialogueText.text == sentences[numeroSentence])
+            if (dialogueText.text == sentences[numeroSentence]) //y el texto ya se ha terminado de poner
             {
-                NextSentence();
+                NextSentence(); //pasa a la siguiente
             }
-            else
+            else //si no ha terminado la línea de diálogo
             {
-                StopAllCoroutines();
-                dialogueText.text = sentences[numeroSentence];
+                StopAllCoroutines(); //para de escribir letra a letra
+                dialogueText.text = sentences[numeroSentence]; //completa el texto
             }
             
         }
@@ -108,11 +108,7 @@ public class DialogueManager : MonoBehaviour
     }
    
     
-
-
-    //VERSIÓN 2 DEL SCRIPT DE DIÁLOGO, CON COROUTINES.
-    //***********************************************
-    public void StartDialogue2()
+    public void StartDialogue()
     {
         if (sentences != null)
         {
@@ -151,6 +147,7 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
+            dialogueGoingOn = false;
             dialogueBox.SetActive(false);
             Time.timeScale = 1;
 
@@ -158,7 +155,6 @@ public class DialogueManager : MonoBehaviour
             {
                 button.SetActiveButton();
             }
-            dialogueGoingOn = false;
         }
         
     }

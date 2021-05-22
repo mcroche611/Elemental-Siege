@@ -9,7 +9,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (collision.GetComponent<PlayerController>())
         {
-            DialogueManager.GetInstance().StartDialogue2();
+            DialogueManager.GetInstance().StartDialogue();
             Debug.Log("ENTRADO AL TRIGGER");
             Destroy(gameObject);
         }

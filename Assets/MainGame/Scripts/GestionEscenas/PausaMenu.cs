@@ -38,7 +38,7 @@ public class PausaMenu : MonoBehaviour
         {
             if (Time.timeScale == 1f)
                 Pause();
-            else
+            else if (DialogueManager.GetInstance().DialogueGoing() == false)
                 Resume();
         }
     }
