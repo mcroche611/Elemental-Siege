@@ -21,34 +21,38 @@ public class ElementalAttack : MonoBehaviour
 
     private void Update()
     {
-        if (cont <= 0 && Input.GetMouseButtonDown(1))
+        if (Time.timeScale == 1f)
         {
-            string elementoActual = GetComponent<ElementChanger>().ElementoActual();
-            Rotation();
-            if (elementoActual == "Fuego" && quitaMana.RestaMana(manaFuego))
+            if (cont <= 0 && Input.GetMouseButtonDown(1))
             {
-                SoundManager.GetInstance().fireBallSound();
-                Instantiate<GameObject>(fuego, transform.position, Rotation());
-            }
-            else 
-            {
-                if (elementoActual == "Electricidad" && quitaMana.RestaMana(manaElectro))
+                string elementoActual = GetComponent<ElementChanger>().ElementoActual();
+                Rotation();
+                if (elementoActual == "Fuego" && quitaMana.RestaMana(manaFuego))
                 {
-                    SoundManager.GetInstance().electricBallSound();
-                    Instantiate<GameObject>(electricidad, transform.position, Rotation());
+                    SoundManager.GetInstance().fireBallSound();
+                    Instantiate<GameObject>(fuego, transform.position, Rotation());
                 }
                 else
                 {
-                    if (quitaMana.RestaMana(manaAgua))
+                    if (elementoActual == "Electricidad" && quitaMana.RestaMana(manaElectro))
                     {
-                        SoundManager.GetInstance().waterBallSound();
-                        Instantiate<GameObject>(agua, transform.position, Rotation());
+                        SoundManager.GetInstance().electricBallSound();
+                        Instantiate<GameObject>(electricidad, transform.position, Rotation());
+                    }
+                    else
+                    {
+                        if (quitaMana.RestaMana(manaAgua))
+                        {
+                            SoundManager.GetInstance().waterBallSound();
+                            Instantiate<GameObject>(agua, transform.position, Rotation());
+                        }
                     }
                 }
+                cont = coolDown;
             }
-            cont = coolDown;
-        }       
-        cont -= Time.deltaTime;
+            cont -= Time.deltaTime;
+        }
+       
     }
 
     private Quaternion Rotation()

@@ -12,19 +12,22 @@ public class ElementChanger : MonoBehaviour
     
     void Update()
     {
-        float input = Input.GetAxis("Elementos");
-        float input2 = Input.GetAxis("Mouse ScrollWheel");
-
-        if (cont <= 0 && (input != 0 || input2 != 0))
+        if (Time.timeScale == 1f)
         {
-            if (input > 0 || input2 > 0)
-                elementoActual = (elementoActual + 1) % 3;
-            else elementoActual = (elementoActual + 2) % 3;
-            Debug.Log("Elemento seleccionado: " + elementos[elementoActual]);
-            GameManager.GetInstance().GMActualizarElementos(elementos[elementoActual]);
-            cont = coolDown;
-        }
-        cont -= Time.deltaTime;
+            float input = Input.GetAxis("Elementos");
+            float input2 = Input.GetAxis("Mouse ScrollWheel");
+
+            if (cont <= 0 && (input != 0 || input2 != 0))
+            {
+                if (input > 0 || input2 > 0)
+                    elementoActual = (elementoActual + 1) % 3;
+                else elementoActual = (elementoActual + 2) % 3;
+                Debug.Log("Elemento seleccionado: " + elementos[elementoActual]);
+                GameManager.GetInstance().GMActualizarElementos(elementos[elementoActual]);
+                cont = coolDown;
+            }
+            cont -= Time.deltaTime;
+        }      
     }
 
     public string ElementoActual() { return elementos[elementoActual]; }

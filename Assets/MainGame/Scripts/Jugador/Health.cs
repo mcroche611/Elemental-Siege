@@ -84,4 +84,9 @@ public class Health : MonoBehaviour
         GameManager.GetInstance().DestroyPauseMenu();
         Invoke("DestroyPlayer", 0.5f); //para que dé tiempo a la animación lo invocamos después  
     }
+
+    public Transform InfoTransform()
+    {
+        return transform;
+    }
 }

@@ -23,21 +23,22 @@ public class PhysicalAttack : MonoBehaviour
 
     void Update()
     {
-        animator.SetBool("playerAtaca", playerAtaca);
-
-        if (Input.GetMouseButtonDown(0) && coolDown <= 0)
+        if (Time.timeScale == 1f)
         {
-            playerAtaca = true;
-            staffChild.SetActive(true);
-            staffChild.transform.position = transform.position;
-            staffChild.transform.rotation = Rotation();
-            Invoke("StaffDeactivate", deactivationTime);
-            GetComponent<PlayerController>().Knockback(attackFreeze);
-            coolDown = coolDownSecs;
-        }
-        else coolDown -= Time.deltaTime;
+            animator.SetBool("playerAtaca", playerAtaca);
 
-
+            if (Input.GetMouseButtonDown(0) && coolDown <= 0)
+            {
+                playerAtaca = true;
+                staffChild.SetActive(true);
+                staffChild.transform.position = transform.position;
+                staffChild.transform.rotation = Rotation();
+                Invoke("StaffDeactivate", deactivationTime);
+                GetComponent<PlayerController>().Knockback(attackFreeze);
+                coolDown = coolDownSecs;
+            }
+            else coolDown -= Time.deltaTime;
+        }       
     }
 
     private Quaternion Rotation()

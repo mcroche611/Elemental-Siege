@@ -74,4 +74,9 @@ public class EnemyHealth : MonoBehaviour
     {
         Destroy(this.gameObject);
     }
+
+    public Transform InfoTransform()
+    {
+        return transform;
+    }
 }

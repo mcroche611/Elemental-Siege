@@ -29,29 +29,29 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        animator.SetBool("seMueve", seMueve);
-
-        RunningAnimation();
-
-
-
-        if (aturdido <= 0)
+        if (Time.timeScale == 1f)
         {
-            //Input de movimiento de cuatro direccones y movimiento en diagonal
-            vel = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
-            //Velocidad de Movimiento
-            rb.velocity = new Vector2(vel.x * velocity, vel.y * velocity);
-            if (rb.velocity.x < 0) //si en el eje de laas x está yendo a la izquierda, hacemos flip al sprite
+            animator.SetBool("seMueve", seMueve);
+            RunningAnimation();
+
+            if (aturdido <= 0)
             {
-                gameObject.GetComponent<SpriteRenderer>().flipX = true;
+                //Input de movimiento de cuatro direccones y movimiento en diagonal
+                vel = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
+                //Velocidad de Movimiento
+                rb.velocity = new Vector2(vel.x * velocity, vel.y * velocity);
+                if (rb.velocity.x < 0) //si en el eje de laas x está yendo a la izquierda, hacemos flip al sprite
+                {
+                    gameObject.GetComponent<SpriteRenderer>().flipX = true;
+                }
+                else if (rb.velocity.x > 0) //no ponemos un else porque si no también se cambia al ir en vertical
+                {
+                    gameObject.GetComponent<SpriteRenderer>().flipX = false;
+                }
             }
-            else if (rb.velocity.x > 0) //no ponemos un else porque si no también se cambia al ir en vertical
-            {
-                gameObject.GetComponent<SpriteRenderer>().flipX = false;
-            }
-        }
-        else
-            aturdido -= Time.deltaTime;
+            else
+                aturdido -= Time.deltaTime;
+        }      
     }
 
     public void Ralentizado(float porcentaje)
