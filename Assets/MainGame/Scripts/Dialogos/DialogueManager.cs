@@ -33,7 +33,7 @@ public class DialogueManager : MonoBehaviour
     {
         instance = this;
     }
-    public static DialogueManager GetInstance() //Para conseguir la referencia a dialogue manager haciendo gameManager.getInstance()
+    public static DialogueManager GetInstance() //Para conseguir la referencia a dialogue manager haciendo DialogueManager.getInstance()
     {
         return instance;
     }
