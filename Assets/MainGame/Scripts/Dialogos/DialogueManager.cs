@@ -108,48 +108,48 @@ public class DialogueManager : MonoBehaviour
     }
    
     
-    public void StartDialogue()
+    public void StartDialogue() //Para empezar el diálogo
     {
         if (sentences != null)
         {
             dialogueGoingOn = true;
-            dialogueBox.SetActive(true);
+            dialogueBox.SetActive(true); //se activa la caja de diálogo y se inicializa todo
             dialogueText.text = "";
-            Time.timeScale = 0;
+            Time.timeScale = 0; //se pausa el juego
             numeroSentence = 0;
-            StartCoroutine(TypeSentence());
+            StartCoroutine(TypeSentence()); //empieza a escribir la primera frase
         }
         else
         {
             Debug.LogWarningFormat("Diálogo de la escena {0} no encontrado.", numDialogue);
         }
     }
-    IEnumerator TypeSentence()
+    IEnumerator TypeSentence() //Corutina para que el diálogo se muestre letra por letra
     {
-        foreach (char c in sentences[numeroSentence])
+        foreach (char c in sentences[numeroSentence]) //por cada letra en la frase
         {
-            dialogueText.text += c;
-            if (numDialogue == 0 && (numeroSentence == 0 || numeroSentence == 1))
+            dialogueText.text += c; //se van sumando letras al texto
+            if (numDialogue == 0 && (numeroSentence == 0 || numeroSentence == 1)) //estética
                 dialogueText.color = Color.blue;
             else
                 dialogueText.color = Color.black;
-            yield return new WaitForSecondsRealtime(textSpeed);
+            yield return new WaitForSecondsRealtime(textSpeed); //se espera en tiempo real para pasar a escribir la siguiente letra
         }
     }
 
-    void NextSentence()
+    void NextSentence() //Para pasar a la siguiente línea del diálogo
     {
-        if(numeroSentence < (sentences.Length-1))
+        if(numeroSentence < (sentences.Length-1)) //si la frase todavía está dentro del array de frases
         {
-        numeroSentence++;
-        dialogueText.text = "";
-        StartCoroutine(TypeSentence());
+        numeroSentence++; //pasa a la siguiente
+        dialogueText.text = ""; //la caja de diálogo se pone sin texto
+        StartCoroutine(TypeSentence()); //empieza a escribir la nueva frase
         }
-        else
+        else //si ya no hay más frases
         {
-            dialogueGoingOn = false;
-            dialogueBox.SetActive(false);
-            Time.timeScale = 1;
+            dialogueGoingOn = false; 
+            dialogueBox.SetActive(false); //se desactiva la caja de diálogo
+            Time.timeScale = 1; //se quita la pausa
 
             if (button != null)
             {
@@ -159,7 +159,7 @@ public class DialogueManager : MonoBehaviour
         
     }
 
-    public bool DialogueGoing()
+    public bool DialogueGoing() //devuelve si hay un diálogo actuando o no
     {
         return dialogueGoingOn;
     }
