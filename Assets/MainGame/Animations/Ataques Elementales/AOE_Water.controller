@@ -57,16 +57,7 @@ AnimatorController:
   m_Name: AOE_Water
   serializedVersion: 5
   m_AnimatorParameters: []
-  m_AnimatorLayers:
-  - serializedVersion: 5
-    m_Name: Base Layer
-    m_StateMachine: {fileID: -8194246580654083867}
-    m_Mask: {fileID: 0}
-    m_Motions: []
-    m_Behaviours: []
-    m_BlendingMode: 0
-    m_SyncedLayerIndex: -1
-    m_DefaultWeight: 0
-    m_IKPass: 0
-    m_SyncedLayerAffectsTiming: 0
-    m_Controller: {fileID: 9100000}
+  m_AnimatorLayers: [{serializedVersion: 5, m_Name: Base Layer, m_StateMachine: {
+        fileID: -8194246580654083867}, m_Mask: {fileID: 0}, m_Motions: [], m_Behaviours: [],
+      m_BlendingMode: 0, m_SyncedLayerIndex: -1, m_DefaultWeight: 0, m_IKPass: 0,
+      m_SyncedLayerAffectsTiming: 0, m_Controller: {fileID: 9100000}}]

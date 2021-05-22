@@ -99,7 +99,10 @@ public class Fall : MonoBehaviour
                 playerHealth.RespawnOnFall(spawnScale);
             }
             else
-                GetComponentInParent<EnemyHealth>().QuitarVida(99999);
+            {
+                
+                GetComponentInParent<EnemyHealth>().QuitarVida(999999);
+            }              
         }
         else
         {
@@ -112,7 +115,10 @@ public class Fall : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Precipicio"))
-        {       
+        {
+            Slime slime = GetComponentInParent<Slime>();
+            if (slime != null)
+                Destroy(slime);
             GetComponentInParent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
             FallSize();
         }
