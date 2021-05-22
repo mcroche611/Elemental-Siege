@@ -21,7 +21,8 @@ public class AEOSobrecargado : MonoBehaviour
     void Start() 
     {
         transform.localScale = new Vector2(diametro, diametro);
-        Destroy(gameObject, Time.deltaTime);
+        Destroy(GetComponent<Collider2D>(), Time.deltaTime);
+        Destroy(gameObject, 0.2f);
     }
     //Aquellos enemigos con los que colisione este trigger seran impulsados y se les restara vida
     private void OnTriggerEnter2D(Collider2D collision)
