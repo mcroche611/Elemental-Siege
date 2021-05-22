@@ -9,7 +9,8 @@ public class AEOElectrocargado : MonoBehaviour
     void Start()
     {
         transform.localScale = new Vector2(diametro, diametro);
-        Destroy(gameObject, Time.deltaTime);
+        Destroy(GetComponent<Collider2D>(), Time.deltaTime);
+        Destroy(gameObject, 0.2f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
