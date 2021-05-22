@@ -144,10 +144,7 @@ public class EnemyMovement : MonoBehaviour
 
     public void Knockback(float tiempoAturdimiento)
     {
-        if (gameObject.name != "ArcherBien")
-        {
-            rb.velocity = new Vector2(0f, 0f);
-            aturdido = tiempoAturdimiento;
-        }       
+        rb.velocity = new Vector2(0f, 0f);
+        aturdido = tiempoAturdimiento;
     }
 }

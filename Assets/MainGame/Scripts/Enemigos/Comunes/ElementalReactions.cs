@@ -36,9 +36,15 @@ public class ElementalReactions : MonoBehaviour
         
         GetComponent<EnemyHealth>().QuitarVida(damage);
 
-        explosion.GetComponent<AEOSobrecargado>().Knockback(out float knock, out float tiempoAturdimiento);
-        GetComponent<EnemyMovement>().Knockback(tiempoAturdimiento);
-        GetComponent<Rigidbody2D>().AddForce(direccionBola.normalized * knock, ForceMode2D.Impulse);      
+        
+        EnemyMovement enemyMovement = GetComponent<EnemyMovement>();
+        if (enemyMovement != null)
+        {
+            explosion.GetComponent<AEOSobrecargado>().Knockback(out float knock, out float tiempoAturdimiento);
+            GetComponent<EnemyMovement>().Knockback(tiempoAturdimiento);
+            GetComponent<Rigidbody2D>().AddForce(direccionBola.normalized * knock, ForceMode2D.Impulse);
+        }
+                  
     }
 
     public void VapolizadoDebil()

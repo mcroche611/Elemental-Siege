@@ -16,14 +16,18 @@ public class BaculoAttackOnCollision : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         EnemyHealth helth = collision.GetComponent<EnemyHealth>();
+        EnemyMovement enemyMovement = collision.GetComponent<EnemyMovement>();
 
         if (helth != null)
         {
             //Knockback
-            collision.GetComponent<EnemyMovement>().Knockback(tiempoAturdimiento);
-            Rigidbody2D rbEnemy = collision.GetComponent<Rigidbody2D>(); 
-            Vector2 direction = (rbEnemy.transform.position - transform.position).normalized; 
-            rbEnemy.AddForce(direction * knock, ForceMode2D.Impulse);
+            if (enemyMovement != null)
+            {
+                collision.GetComponent<EnemyMovement>().Knockback(tiempoAturdimiento);
+                Rigidbody2D rbEnemy = collision.GetComponent<Rigidbody2D>();
+                Vector2 direction = (rbEnemy.transform.position - transform.position).normalized;
+                rbEnemy.AddForce(direction * knock, ForceMode2D.Impulse);
+            }         
             //Producir sonido de ataque fisico
             SoundManager.GetInstance().physicAttackSound();
             //QuitarVida

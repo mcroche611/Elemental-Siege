@@ -27,19 +27,24 @@ public class AEOSobrecargado : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         SoundManager.GetInstance().explotionSound();
-        EnemyMovement enemyMovement = collision.GetComponent<EnemyMovement>();
+        EnemyHealth health = collision.GetComponent<EnemyHealth>();
+        ;
 
         //Comprueba si aquello con lo que colisiona es un enemigo (solo los enemigos tienen el componente enemy health)
-        if (enemyMovement != null && collision.gameObject != enemigoGolpeado) 
+        if (health != null && collision.gameObject != enemigoGolpeado) 
         {       
             Vector2 direction = (collision.transform.position - transform.position);
             //la explosion afecta más a los enemigos que estén más cerca de la explosión
             float relacionDistancia = 1 - direction.magnitude / diametro;
             //Daño
-            collision.GetComponent<EnemyHealth>().QuitarVida(maxDamage * relacionDistancia);
+            health.QuitarVida(maxDamage * relacionDistancia);
             //Knockback
-            collision.GetComponent<EnemyMovement>().Knockback(tiempoAturdimiento);
-            collision.GetComponent<Rigidbody2D>().AddForce(direction.normalized * knock * relacionDistancia, ForceMode2D.Impulse);
+            EnemyMovement enemyMovement = collision.GetComponent<EnemyMovement>();
+            if (enemyMovement != null)
+            {
+                enemyMovement.Knockback(tiempoAturdimiento);
+                collision.GetComponent<Rigidbody2D>().AddForce(direction.normalized * knock * relacionDistancia, ForceMode2D.Impulse);
+            }            
         }
     }
 

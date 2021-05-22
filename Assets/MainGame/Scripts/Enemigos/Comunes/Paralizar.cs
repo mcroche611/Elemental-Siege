@@ -8,6 +8,8 @@ public class Paralizar : MonoBehaviour
     EnemyAttackOnCollision ataque;
     [SerializeField]
     Animator animator;
+    Rigidbody2D rb;
+
     public void Paraliza()
     {
         animator.enabled = false;
@@ -27,16 +29,21 @@ public class Paralizar : MonoBehaviour
                     ataqueEspada.paralizado = true;
             }                      
         }
-            
-        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;     
+
+        rb = GetComponent<Rigidbody2D>();
+        if (rb != null)
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;     
         Invoke("ParalizaAcaba", tiempoParalización);
     }
 
     void ParalizaAcaba()
     {
         animator.enabled = true;
-        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+        if (rb != null)
+        {
+            rb.constraints = RigidbodyConstraints2D.None;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        }      
         if (ataque)
             ataque.paralizado = false;
         else
