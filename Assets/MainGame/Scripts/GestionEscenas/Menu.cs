@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Menu : MonoBehaviour
 {
-    //Método público para cambiar de escena
+    public GameObject creditos;
     public void ChangeScene(string sceneName)
     {
         SoundManager.GetInstance().bottonSound();
@@ -18,5 +18,21 @@ public class Menu : MonoBehaviour
         Application.Quit();
     }
 
+    public void Retry()
+    {
+        LevelManager.GetInstance().PrimeraHabitacion();
+    }
 
+    public void BackToMenu()
+    {
+        GameManager.GetInstance().ResetBonos();
+        LevelManager.GetInstance().FinNivel();
+        ChangeScene("Menu");
+    }
+
+    public void OcultarMostrarCreditos(bool b)
+    {
+
+        creditos.SetActive(b);
+    }
 }

@@ -43,5 +43,15 @@ public class RoomManager : MonoBehaviour
         return playerTf;
     }
     
+    public void AbrirPuertas()
+    {
+        SoundManager.GetInstance().openDoorSound();
+
+        for (int i = 0; i < puertas.Length; i++)
+        {
+            puertas[i].GetComponent<Puerta>().CambiarSpritePuerta();
+        }
+    }
+
 }
 

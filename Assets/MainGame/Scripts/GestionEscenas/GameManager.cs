@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 using UnityEngine;
 using System;
 
@@ -11,9 +10,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] float ataque, bonoAgua, bonoFuego, bonoElectricidad, valorIniBono;
 
-
-
     GameObject player;
+    GameObject pauseMenu;
 
     public void SetUIManager(UIManager uim)
     {
@@ -74,6 +72,16 @@ public class GameManager : MonoBehaviour
             return null;
     }
 
+    public void SetPauseMenu(GameObject pauseMenuGO)
+    {
+        pauseMenu = pauseMenuGO;
+    }
+
+    public void DestroyPauseMenu()
+    {
+        Destroy(pauseMenu);
+    }
+
     //Actualización UI 
     public void GMActualizarVida(float porcentajeVida)
     {
@@ -90,6 +98,15 @@ public class GameManager : MonoBehaviour
         theUIManager.ActualizarElementos(elemento);
     }
 
+    public void GMDestruirCanvas()
+    {
+        theUIManager.DestruirCanvas();
+    }
+
+    public void GMOcultarMostrarCanvas(bool b)
+    {
+        theUIManager.OcultarMostrarCanvas(b);
+    }
 
     public void AumentarBono(string elemento, float cantidad)
     {

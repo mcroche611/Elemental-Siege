@@ -61,40 +61,48 @@ public class LevelManager : MonoBehaviour
 
     private void OnLevelWasLoaded(int level)
     {
-        if (!iniPlayer)
+        if (level != 44)
         {
-            if (!haMuerto)
+            if (!iniPlayer)
             {
-                RoomManager.GetInstance().SetUpCamera(player.transform);
-                RoomManager.GetInstance().SetUpPlayer(orientacionUltimaPuerta, player.transform);
-                nivel.sceneAfter.x = nivel.sceneNow.x;
-                nivel.sceneAfter.y = nivel.sceneNow.y;
-                enemigosEnSala = 0;
-            }
-            else
-            {
-                for (int i = 0; i < nivel.scenes.GetLength(0); i++)
+                if (!haMuerto)
                 {
-                    for (int j = 0; j < nivel.scenes.GetLength(1); j++)
+                    RoomManager.GetInstance().SetUpCamera(player.transform);
+                    RoomManager.GetInstance().SetUpPlayer(orientacionUltimaPuerta, player.transform);
+                    nivel.sceneAfter.x = nivel.sceneNow.x;
+                    nivel.sceneAfter.y = nivel.sceneNow.y;
+                    enemigosEnSala = 0;
+                }
+                else
+                {
+                    for (int i = 0; i < nivel.scenes.GetLength(0); i++)
                     {
-                        char c = nivel.scenes[i, j][1];
-                        if (c == 'P' || c == 'S')
-                            nivel.habitacionDescubierta[i, j] = false;
+                        for (int j = 0; j < nivel.scenes.GetLength(1); j++)
+                        {
+                            char c = nivel.scenes[i, j][1];
+                            if (c == 'P' || c == 'S')
+                                nivel.habitacionDescubierta[i, j] = false;
+                        }
                     }
+                    for (int i = 0; i < nivel.pasillos.Length; i++)
+                    {
+                        nivel.pasillos[i].enemigos = new Enemigo[50];
+                        nivel.pasillos[i].pc = 0;
+                    }
+                    for (int i = 0; i < nivel.jarronesEnHabitaciones.Length; i++)
+                    {
+                        nivel.jarronesEnHabitaciones[i].jarrones = new Jarron[50];
+                        nivel.jarronesEnHabitaciones[i].pc = 0;
+                    }
+                    nivel.sceneNow.x = nivel.sceneIni.x;
+                    nivel.sceneNow.y = nivel.sceneIni.y;
+                    nivel.sceneAfter.x = nivel.sceneNow.x;
+                    nivel.sceneAfter.y = nivel.sceneNow.y;
+                    enemigosEnSala = 0;
+                    player = (GameObject)Instantiate(nasnas, posEscaleras, nasnas.transform.rotation);
+                    RoomManager.GetInstance().SetUpCamera(player.transform);
+                    haMuerto = false;
                 }
-                for (int i = 0; i < nivel.pasillos.Length; i++)
-                {
-                    nivel.pasillos[i].enemigos = new Enemigo[50];
-                    nivel.pasillos[i].pc = 0;
-                }
-                nivel.sceneNow.x = nivel.sceneIni.x;
-                nivel.sceneNow.y = nivel.sceneIni.y;
-                nivel.sceneAfter.x = nivel.sceneNow.x;
-                nivel.sceneAfter.y = nivel.sceneNow.y;
-                enemigosEnSala = 0;
-                player = (GameObject)Instantiate(nasnas, posEscaleras, nasnas.transform.rotation);
-                RoomManager.GetInstance().SetUpCamera(player.transform);
-                haMuerto = false;
             }
         }
     }
@@ -507,6 +515,9 @@ public class LevelManager : MonoBehaviour
     public void QuitarEnemigoSala()
     {
         enemigosEnSala -= 1;
+
+        if (SalaCompletada())
+            RoomManager.GetInstance().AbrirPuertas();
     }
 
     public bool SalaCompletada()
@@ -531,5 +542,8 @@ public class LevelManager : MonoBehaviour
         Destroy(player);
     }
 
-
+    public void EscenaDeMuerte()
+    {
+        SceneManager.LoadScene("EscenaMuerte");
+    }
 }

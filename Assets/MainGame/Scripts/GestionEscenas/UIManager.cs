@@ -24,9 +24,7 @@ public class UIManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-
     }
-
 
     void Start()
     {
@@ -75,7 +73,16 @@ public class UIManager : MonoBehaviour
             elementoActual.sprite = electricidad;
             elemento1.sprite = agua;
             elemento2.sprite = fuego;
-        }
-        
+        }     
+    }
+
+    public void DestruirCanvas()
+    {
+        Destroy(this.gameObject);
+    }
+
+    public void OcultarMostrarCanvas(bool b)
+    {
+        this.gameObject.SetActive(b);
     }
 }

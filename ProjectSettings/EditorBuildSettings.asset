@@ -144,9 +144,9 @@ EditorBuildSettings:
     path: Assets/MainGame/Scenes/Nivel2/2S7.unity
     guid: 14687c92fcc30ab42bb6e9f5e665abc5
   - enabled: 0
-    path: Assets/MainGame/Scenes/Build/Bats.unity
-    guid: 7c53bb24660c04d40b91f23d4c2ac581
-  - enabled: 1
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/MainGame/Scenes/Build/Prueba2.unity
     guid: 728bf8d0397ed704e9dee9a7628fdc17
   - enabled: 1
@@ -156,9 +156,12 @@ EditorBuildSettings:
     path: Assets/MainGame/Scenes/Nivel3/3P0.unity
     guid: 5595ab99d92f80a47ac99c009a5f5f1d
   - enabled: 0
-    path: Assets/MainGame/Scenes/Build/GuardaElemental.unity
-    guid: 6ce12f2440a8e4241ad4f05326f4b85a
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/MainGame/Scenes/Build/Slime.unity
-    guid: f0506cdcb7df2f445bc981d04ce2ffea
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/MainGame/Scenes/EscenaMuerte.unity
+    guid: 6e379d290b1b6e642b1e74433780ee6a
   m_configObjects: {}

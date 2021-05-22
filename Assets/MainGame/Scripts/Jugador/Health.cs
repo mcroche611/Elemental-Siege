@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Health : MonoBehaviour
 {
@@ -38,9 +35,8 @@ public class Health : MonoBehaviour
                 Destroy(GetComponent<PhysicalAttack>()); //para que no pueda atacar
                 Destroy(GetComponent<ElementalAttack>()); //para que no haga ataques elementales
                 Destroy(GetComponent<ElementChanger>());
-
-                Invoke("DestroyPlayer", 0.5f); //para que dé tiempo a la animación lo invocamos después
-                
+                GameManager.GetInstance().DestroyPauseMenu();
+                Invoke("DestroyPlayer", 0.5f); //para que dé tiempo a la animación lo invocamos después           
             }
         }             
     }
@@ -85,7 +81,7 @@ public class Health : MonoBehaviour
     void DestroyPlayer() //para destruirlo con tiempo y que se ponga la animación
     {
         Destroy(this.gameObject);
-        if (LevelManager.GetInstance() != null)
-            LevelManager.GetInstance().PrimeraHabitacion();
+        GameManager.GetInstance().GMDestruirCanvas();
+        LevelManager.GetInstance().EscenaDeMuerte();
     }
 }
