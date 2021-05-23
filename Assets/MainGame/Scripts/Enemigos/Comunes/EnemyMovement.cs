@@ -13,7 +13,6 @@ public class EnemyMovement : MonoBehaviour
 
     float aturdido;
     float iniSpeed;
-    bool seMueve=false; //Variable para controlar la animación del enemigo paso de Idle a correr
     Transform playerTf;
     Rigidbody2D rb;
     EnemyTrigger trigger;
@@ -39,7 +38,7 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
-        animator.SetBool("seMueve", seMueve);
+        
         // Recibe del componente trigger si el jugador está en el área del enemigo
         if (trigger.DetectPlayer())
         {
@@ -81,8 +80,10 @@ public class EnemyMovement : MonoBehaviour
     }
 
     void ChasePlayer()
-    {
-        seMueve = true;
+    {   
+        
+        animator.SetBool("seMueve", true);
+        
         Vector2 trayectoria = playerTf.position - transform.position;
 
         vel = trayectoria.normalized;
@@ -90,7 +91,8 @@ public class EnemyMovement : MonoBehaviour
 
     private void StopChasingPlayer()
     {
-        seMueve = false;
+        
+        animator.SetBool("seMueve", false);
         vel.x = 0;
         vel.y = 0;
     }

@@ -12,7 +12,6 @@ public class EnemyHealth : MonoBehaviour
     public GameObject barraDeVida;
     RectTransform _barraDeVida;
     float maxBarraDeVida;
-    bool muere = false; //Para controlar la animación de muerte de los enemigos
     public AudioSource sonidoDeMorir;
     private void Start()
     {
@@ -20,10 +19,6 @@ public class EnemyHealth : MonoBehaviour
         maxBarraDeVida = _barraDeVida.sizeDelta.x;
         maxHealth = health;
         sonidoDeMorir = GetComponent<AudioSource>();
-    }
-    private void Update()
-    {
-        animator.SetBool("muere", muere);
     }
 
     public void QuitarVida(float cantidad)
@@ -57,7 +52,8 @@ public class EnemyHealth : MonoBehaviour
                 }
                 if (slime == null)
                 {
-                    muere = true;
+
+                    animator.SetBool("muere", true);
                     Invoke("Destruye", 0.5f);
                 }
                 else Destroy(this.gameObject);

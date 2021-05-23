@@ -4604,12 +4604,12 @@ PrefabInstance:
     - target: {fileID: 4596555385443438035, guid: 88b29cbf55e51cd48aa641cc06c87a0c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.478119
+      value: -0.17
       objectReference: {fileID: 0}
     - target: {fileID: 4596555385443438035, guid: 88b29cbf55e51cd48aa641cc06c87a0c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.08333783
+      value: 0.71
       objectReference: {fileID: 0}
     - target: {fileID: 4596555385443438035, guid: 88b29cbf55e51cd48aa641cc06c87a0c,
         type: 3}
@@ -8770,6 +8770,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SpawnerDebiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 4199202409773636906, guid: 7add5f6cdcd4de94fa5f2378b04e623e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7add5f6cdcd4de94fa5f2378b04e623e, type: 3}

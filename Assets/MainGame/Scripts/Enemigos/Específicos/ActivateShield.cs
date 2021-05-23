@@ -27,14 +27,13 @@ public class ActivateShield : MonoBehaviour
         {
             contador = 0;
             scriptEscudo.enabled = false;
-            //GuardaEscudo();
             EscudoAleatorio();
             scriptEscudo.enabled = true;
         }
     }
     void CambiaFuego()
     {
-        Debug.Log("Escudo de fuego activado");
+        
         
         scriptEscudo.CambioEscudo("Fuego");
         escudoFisicoFuego.SetActive(true);
@@ -45,7 +44,7 @@ public class ActivateShield : MonoBehaviour
     }
    void CambiaAgua()
    {
-       Debug.Log("Escudo de agua activado");
+       
        
        scriptEscudo.CambioEscudo("Agua");
        
@@ -56,7 +55,7 @@ public class ActivateShield : MonoBehaviour
     }
     void CambiaElectro()
     {
-        Debug.Log("Escudo de electro activado");
+        
        
         scriptEscudo.CambioEscudo("Electrico");
         escudoFisicoElectro.SetActive(true);
@@ -95,30 +94,5 @@ public class ActivateShield : MonoBehaviour
         }
         Debug.Log("Cambio a escudo: " + rnd);
     }
-     /*
-    void GuardaEscudo()
-     {
-        float shieldLeft = scriptEscudo.ShieldHealth();
-        string tipoEscudo = scriptEscudo.TipoEscudo();
-
-        switch (tipoEscudo)
-        {
-            case "Fuego":
-                fireHealth = shieldLeft;
-                Debug.Log("fireHealth: " + fireHealth);
-                break;
-
-            case "Agua":
-                waterHealth = shieldLeft;
-                Debug.Log("waterHealth: " + fireHealth);
-                break;
-
-            case "Electrico":
-                electroHealth = shieldLeft;
-                Debug.Log("electroHealth: " + fireHealth);
-                break;
-        }
-
-
-     }*/
+     
 }
