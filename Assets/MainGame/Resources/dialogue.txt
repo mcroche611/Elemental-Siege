@@ -8,49 +8,42 @@ You might have magic, but Iblis has sworn that it will only be used for our bene
 None of you will ever escape this fortress.
 
 Scene1
-3
-You're the only one who has willingly stepped in the dhiib's prison, I've never seen someone make it this far 
+8
+Thank you for freeing me!
+You're the only one who has willingly stepped in the dhiib's prison, I've never seen someone make it this far. 
+However, even our powers can't defeat them...
+Once they catch you it's only a matter of time before you're too weak to even use them. 
+It's best if you turn back while you're free, those of us who are here can’t use our powers anymore.
+But, if you're so stubborn that you still want to keep going, we can lend you the power we have left.
 Maybe you can defeat Iblis, but you'll need all the help you can get. 
-Here, have my powers of ____ to help you free all of us.
+Here, have my WATER powers to help you free all of us jinn. I wish you luck
 
 Scene2
-4
-Who are you? 
-… What do you mean you're here to help? 
-Even our powers can't defeat them! Once they catch you it's only a matter of time before you're too weak to even use them. 
-It's best if you turn back while you're free, though, if you're so stubborn that you want to keep going, I'll lend you my powers to help you.
+5
+You freed me!!! Are you seriously hoping to defeat Iblis? 
+… He didn’t always hate us, the dhiib used to admire our powers 
+and we counted on each other for skill and strength respectively, 
+but Iblis grew jealous, and you know what power does to all creatures… 
+Maybe without Iblis our land will finally know peace again. 
+From how far you've gotten, I can see that you have the courage necessary to fight this battle, not a lot of us still do. 
+I don’t know whether you’ll succeed, but for the sake of all the jinn,
+I’ll offer you whatever protection I can with my FIRE powers, 
+may all of our powers protect you.
+
 
 Scene3
-4
-So you're fighting back… 
-From how far you've gotten, I can see that your power is not meek, there are still a lot of guards you'll have to fight before you can free us, 
-but if you've gotten this far, I trust you to dethrone Iblis once and for all, and free all of us jinn. 
-Take my powers with you, you're gonna need them.
-
-Scene4
-3
-You!!! Are you seriously hoping to defeat Iblis? 
-… He didn’t always hate us, the dhiib used to admire our powers and we counted on each other for skill and strength respectively, but Iblis grew jealous, and you know what power does to all creatures… 
-Maybe without Iblis our land will finally know peace again. I offer you whatever protection I can, may all of our powers protect you.
-
-Scene5
-3
-I see that you have the courage necessary to fight this battle, not a lot of us still do. 
-Those of us who are here can’t use our powers anymore, but we can give them away to help you. 
-I don’t know whether you’ll succeed, but for the sake of all the jinn, I’ll give you my powers.
-
-Scene6
 8
 How have you gotten here? 
 It’s been quite a long time since I saw any other jinn, have you been captured? 
 … So you’ve found a way to break in, and you’ve gotten this far. 
 Perhaps you have a chance, but don’t let him fool you. He’s powerful, but he’s not invincible. 
-I’d know, I used to call him a friend before I got my powers and he grew fearful, and jealous… 
-That’s when he started seeking to make our power his own, by imprisoning so we’ll do his bidding only. 
+I’d know, I used to call him a friend, but that was before I got my powers and he grew fearful and jealous of them...
+That’s when he started seeking to make our power his own, by imprisoning jinn so we’ll do his bidding only. 
 He took my village and me and decided that he wanted more, maybe if we’d had someone as strong as you before, we wouldn’t have fallen. 
-Now, you’re very close to defeating him, take my power and put an end to his reign!
+Now, you’re very close to defeating him, take my ELECTRIC power and put an end to his reign!
 
-Scene7
+
+Scene4
 6
 You’ve been causing quite the wreckage in my own fortress, 
 do you seriously think you alone can succeed in stripping me of my power? 

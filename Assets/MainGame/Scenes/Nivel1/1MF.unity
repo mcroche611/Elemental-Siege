@@ -2344,7 +2344,7 @@ MonoBehaviour:
   dialogueBox: {fileID: 1889897448}
   dialogueText: {fileID: 1112421459}
   textSpeed: 0.05
-  numDialogue: 0
+  numDialogue: 2
 --- !u!114 &1286525505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2436,7 +2436,7 @@ GameObject:
   - component: {fileID: 1388597842}
   - component: {fileID: 1388597841}
   m_Layer: 20
-  m_Name: Backgrond
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
