@@ -2777,7 +2777,7 @@ PrefabInstance:
     - target: {fileID: 1122445219217946375, guid: aa09aabdd49d3114da1aae4205a1dc69,
         type: 3}
       propertyPath: numDialogue
-      value: 7
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa09aabdd49d3114da1aae4205a1dc69, type: 3}
