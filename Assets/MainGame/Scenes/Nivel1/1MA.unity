@@ -2779,6 +2779,11 @@ PrefabInstance:
       propertyPath: numDialogue
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1122445219551780101, guid: aa09aabdd49d3114da1aae4205a1dc69,
+        type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa09aabdd49d3114da1aae4205a1dc69, type: 3}
 --- !u!1001 &6469055946930777576

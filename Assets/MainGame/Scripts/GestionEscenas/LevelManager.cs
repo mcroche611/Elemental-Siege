@@ -527,6 +527,7 @@ public class LevelManager : MonoBehaviour
 
             if (GetHabitación() == "Iblis")
             {
+                GameManager.GetInstance().GMOcultarMostrarCanvas(false);
                 DialogueManager.GetInstance().StartDialogue();
             }
         }    

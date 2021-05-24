@@ -34,8 +34,11 @@ public class RoomManager : MonoBehaviour
             cont += 1;
         }
 
-        player.position = puertas[cont].transform.position;
-        playerTf = player;
+        if (player != null)
+        {
+            player.position = puertas[cont].transform.position;
+            playerTf = player;
+        }
     }
 
     public Transform GetPlayerTransform()
