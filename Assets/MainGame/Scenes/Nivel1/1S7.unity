@@ -4628,7 +4628,7 @@ Transform:
   m_Children:
   - {fileID: 109512869}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1850988105
 PrefabInstance:
@@ -4721,7 +4721,7 @@ GameObject:
   - component: {fileID: 1958789778}
   - component: {fileID: 1958789777}
   m_Layer: 20
-  m_Name: Backgrond
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
