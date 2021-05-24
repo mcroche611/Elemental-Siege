@@ -156,7 +156,6 @@ public class DialogueManager : MonoBehaviour
                 button.SetActiveButton();
             }
         }
-        
     }
 
     public bool DialogueGoing() //devuelve si hay un diálogo actuando o no

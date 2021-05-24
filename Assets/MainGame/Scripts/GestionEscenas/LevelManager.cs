@@ -392,6 +392,11 @@ public class LevelManager : MonoBehaviour
         return nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y][1];
     }
 
+    public string GetHabitación()
+    {
+        return nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y];
+    }
+
     public void Puerta(string orientacion)
     {
         if (orientacion == "Este")
@@ -517,7 +522,14 @@ public class LevelManager : MonoBehaviour
         enemigosEnSala -= 1;
 
         if (SalaCompletada())
+        {
             RoomManager.GetInstance().AbrirPuertas();
+
+            if (GetHabitación() == "Iblis")
+            {
+                DialogueManager.GetInstance().StartDialogue();
+            }
+        }    
     }
 
     public bool SalaCompletada()
