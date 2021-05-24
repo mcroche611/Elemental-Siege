@@ -43,6 +43,7 @@ public class MagoEncerrado : MonoBehaviour
         {
             LevelManager.GetInstance().CompletarHabitacion();
             GameManager.GetInstance().AumentarBono(elemento, cantidad);
+            SoundManager.GetInstance().powerUpSound();
             rb = GetComponent<Rigidbody2D>();
             moverse = true;          
             haHablado = true;

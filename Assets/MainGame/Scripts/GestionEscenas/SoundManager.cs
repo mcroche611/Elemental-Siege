@@ -8,7 +8,7 @@ public class SoundManager : MonoBehaviour
     public AudioSource audioSource;
     [SerializeField]
     AudioClip physicAttack, fireBall, botton, explotion, waterBall, electricBall, jarronBreak,
-        openDoor, archerShoot, closeDoor, llamarSoldados, charco, renacer, curar, playerDeath, escalera, escudoBreak;
+        openDoor, archerShoot, closeDoor, llamarSoldados, charco, renacer, curar, playerDeath, escalera, escudoBreak, powerUp;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -112,6 +112,11 @@ public class SoundManager : MonoBehaviour
     public void escudoBreakSound()
     {
         audioSource.clip = escudoBreak;
+        audioSource.Play();
+    }
+    public void powerUpSound()
+    {
+        audioSource.clip = powerUp;
         audioSource.Play();
     }
 }
