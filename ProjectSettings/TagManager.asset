@@ -48,3 +48,6 @@ TagManager:
   - name: TileMapEncima
     uniqueID: 2680535205
     locked: 0
+  - name: Top
+    uniqueID: 1000022639
+    locked: 0

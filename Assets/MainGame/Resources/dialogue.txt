@@ -45,18 +45,27 @@ Now, you’re very close to defeating him, take my ELECTRIC power and put an end
 
 Scene4
 6
-You’ve been causing quite the wreckage in my own fortress, 
-do you seriously think you alone can succeed in stripping me of my power? 
+You’ve been causing quite the wreckage in my own fortress.
+Do you seriously think you alone can succeed in stripping me of my power? 
 You jinn think that your powers give you the right to disrupt the order of nature, thinking that you can look down on all of us. 
 But I was destined to be above you, I’ll show you that all of you are no more than bugs under my feet. 
 You think just because you’ve defeated my weakling minions, you have a chance at defeating me? 
-If you insist on seeking your death, I won’t stop you from tasting your own defeat once and for all.
+If you insist on seeking your death, I won’t stop you from tasting your own defeat once and for all!
 
 Scene5
 6
+How could this happen? 
+Your powers are weak and you are alone!
+I've stolen everything from you! 
+How can you still have power?
+In the end, all my efforts have been for nothing,
+but the dhiib won't always live in your shadow!!!
+
+Scene6
+6
 After finally defeating the boss of the dhiib that were ruling over the land, 
-every jinn has been freed and harmony has been restored.
-With Iblis defeated, most of the dhiib have either scattered across far-away lands or 
-gone back to living peacefully with the jinn, no longer blinded by senseless hate.
-While not all that was broken can be restored, the jinn can now once again 
-use their powers to repair their villages and walk free.
+every jinn was freed and harmony was restored.
+With Iblis defeated, most of the dhiib either scattered across far-away lands or went back to living peacefully with the jinn.
+No longer blinded by senseless hate, and content this time with helping the jinn mend the wounds of Iblis' conquest.
+While not all that was broken could be restored so easily, 
+the jinn and the dhiib who remained still strive to repair their villages and maintain the peace that Nasnas brought.

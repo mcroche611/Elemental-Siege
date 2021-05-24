@@ -32,7 +32,6 @@ public class Menu : MonoBehaviour
 
     public void OcultarMostrarCreditos(bool b)
     {
-
         creditos.SetActive(b);
     }
 }
