@@ -528,7 +528,7 @@ GameObject:
   - component: {fileID: 1183549489}
   - component: {fileID: 1183549488}
   m_Layer: 20
-  m_Name: Backgrond
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -972,7 +972,7 @@ Transform:
   m_Children:
   - {fileID: 1046009063}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1537396727
 MonoBehaviour:
@@ -1033,7 +1033,7 @@ Transform:
   m_Children:
   - {fileID: 1938705774}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1938705773
 GameObject:
