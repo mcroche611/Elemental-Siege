@@ -19,7 +19,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] int numDialogue; //número del diálogo a leer
     ActivateButton button;
 
-    const string filePath = "Assets/Resources/dialogue.txt";
+    const string filePath = "/Resources/dialogue.txt";
 
     [TextArea(3, 10)] //ampliamos la cantidad de líneas que pueden aparecer en el editor
 
@@ -61,9 +61,11 @@ public class DialogueManager : MonoBehaviour
         bool inDialogue = false;
         int i = 0;
 
-        if (File.Exists(filePath))
+        string fullPath = Application.dataPath + filePath;
+        Debug.Log("Dialogue path: " + fullPath);
+        if (File.Exists(fullPath))
         {
-            StreamReader dialogue = new StreamReader(filePath);
+            StreamReader dialogue = new StreamReader(fullPath);
             while (!dialogue.EndOfStream)
             {
                 string s = dialogue.ReadLine();

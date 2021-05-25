@@ -6,7 +6,7 @@ using System.IO;
 
 public class LevelManager : MonoBehaviour
 {
-    const string filePath = "Assets/Resources/";
+    const string filePath = "/Resources/";
 
     private static LevelManager instance;
 
@@ -156,7 +156,11 @@ public class LevelManager : MonoBehaviour
 
     private string[,] CargarNivel(string levelName, out int xPos, out int yPos)
     {
-        string fileName = filePath + levelName + ".txt";
+        
+        
+        string fileName = Application.dataPath + filePath + levelName + ".txt";
+        Debug.Log("Level file path: " + fileName);
+
         int maxFil = 0, maxCol = 0;
         xPos = -1; 
         yPos = -1;
