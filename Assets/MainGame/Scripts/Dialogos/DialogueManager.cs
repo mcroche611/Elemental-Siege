@@ -54,22 +54,27 @@ public class DialogueManager : MonoBehaviour
             StartDialogue();
         }
     }
-
+    
     private void SetDialogue()
     {
         string num = "Scene" + numDialogue.ToString();
         bool inDialogue = false;
         int i = 0;
 
-        string fullPath = Application.dataPath + filePath;
-        Debug.Log("Dialogue path: " + fullPath);
-        if (File.Exists(fullPath))
+        TextAsset textFile = Resources.Load<TextAsset>("dialogue");
+          
+        if (textFile != null)
         {
-            StreamReader dialogue = new StreamReader(fullPath);
-            while (!dialogue.EndOfStream)
+            StringReader dialogue = new StringReader(textFile.text);
+            bool endOfFile = false;
+            while (!endOfFile)
             {
                 string s = dialogue.ReadLine();
-                if (s == num)
+                if (s == null)
+                {
+                    endOfFile = true;
+                }
+                else if (s == num)
                 {
                     int numSentences = int.Parse(dialogue.ReadLine());
                     sentences = new string[numSentences];
