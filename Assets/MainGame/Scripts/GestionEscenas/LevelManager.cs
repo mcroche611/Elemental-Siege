@@ -6,7 +6,7 @@ using System.IO;
 
 public class LevelManager : MonoBehaviour
 {
-    const string filePath = "Assets/MainGame/Resources/";
+    const string filePath = "Assets/Resources/";
 
     private static LevelManager instance;
 
