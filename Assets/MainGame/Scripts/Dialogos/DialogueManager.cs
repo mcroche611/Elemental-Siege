@@ -19,7 +19,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] int numDialogue; //número del diálogo a leer
     ActivateButton button;
 
-    const string filePath = "Assets/MainGame/Resources/dialogue.txt";
+    const string filePath = "Assets/Resources/dialogue.txt";
 
     [TextArea(3, 10)] //ampliamos la cantidad de líneas que pueden aparecer en el editor
 
