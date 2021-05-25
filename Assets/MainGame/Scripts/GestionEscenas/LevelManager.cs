@@ -61,7 +61,7 @@ public class LevelManager : MonoBehaviour
 
     private void OnLevelWasLoaded(int level)
     {
-        if (level != 44)
+        if (level != 1)
         {
             if (!iniPlayer)
             {
