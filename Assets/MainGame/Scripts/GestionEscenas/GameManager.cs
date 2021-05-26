@@ -110,9 +110,12 @@ public class GameManager : MonoBehaviour
 
     public void AumentarBono(string elemento, float cantidad)
     {
-        if (elemento == "Agua") bonoAgua += cantidad;
-        else if (elemento == "Fuego") bonoFuego += cantidad;
-        else bonoElectricidad += cantidad;
+        if (elemento == "Agua") 
+            bonoAgua += cantidad;
+        else if (elemento == "Fuego") 
+            bonoFuego += cantidad;
+        else if (elemento == "Electricidad") 
+            bonoElectricidad += cantidad;
     }
 
     public void ResetBonos()

@@ -453,6 +453,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 983077845822048388, guid: 8960fa33bd3a19f43bcaef01e5fd1455,
+        type: 3}
+      propertyPath: m_Name
+      value: Creditos
+      objectReference: {fileID: 0}
     - target: {fileID: 9106286759512286434, guid: 8960fa33bd3a19f43bcaef01e5fd1455,
         type: 3}
       propertyPath: m_text
@@ -471,7 +476,7 @@ PrefabInstance:
     - target: {fileID: 9106286760325857140, guid: 8960fa33bd3a19f43bcaef01e5fd1455,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: 1P0
+      value: Prologue
       objectReference: {fileID: 0}
     - target: {fileID: 9106286760397966722, guid: 8960fa33bd3a19f43bcaef01e5fd1455,
         type: 3}
@@ -482,6 +487,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MenuCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 9106286760471438228, guid: 8960fa33bd3a19f43bcaef01e5fd1455,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9106286760471438230, guid: 8960fa33bd3a19f43bcaef01e5fd1455,
         type: 3}

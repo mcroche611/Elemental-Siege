@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using System.IO;
 using System;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] int numDialogue; //número del diálogo a leer
     ActivateButton button;
 
-    const string filePath = "Assets/MainGame/Resources/dialogue.txt";
+    const string filePath = "/Resources/dialogue.txt";
 
     [TextArea(3, 10)] //ampliamos la cantidad de líneas que pueden aparecer en el editor
 
@@ -53,20 +54,27 @@ public class DialogueManager : MonoBehaviour
             StartDialogue();
         }
     }
-
+    
     private void SetDialogue()
     {
         string num = "Scene" + numDialogue.ToString();
         bool inDialogue = false;
         int i = 0;
 
-        if (File.Exists(filePath))
+        TextAsset textFile = Resources.Load<TextAsset>("dialogue");
+          
+        if (textFile != null)
         {
-            StreamReader dialogue = new StreamReader(filePath);
-            while (!dialogue.EndOfStream)
+            StringReader dialogue = new StringReader(textFile.text);
+            bool endOfFile = false;
+            while (!endOfFile)
             {
                 string s = dialogue.ReadLine();
-                if (s == num)
+                if (s == null)
+                {
+                    endOfFile = true;
+                }
+                else if (s == num)
                 {
                     int numSentences = int.Parse(dialogue.ReadLine());
                     sentences = new string[numSentences];
@@ -155,8 +163,17 @@ public class DialogueManager : MonoBehaviour
             {
                 button.SetActiveButton();
             }
+
+            //if (LevelManager.GetInstance().GetHabitación() == "Iblis")
+            //{
+            //    SceneManager.LoadScene("Epilogue");
+            //}
+
+            //if (LevelManager.GetInstance().GetHabitación() == "Epilogue")
+            //{
+            //    SceneManager.LoadScene("Menu");
+            //}
         }
-        
     }
 
     public bool DialogueGoing() //devuelve si hay un diálogo actuando o no

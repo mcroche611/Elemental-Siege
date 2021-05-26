@@ -6,7 +6,7 @@ using System.IO;
 
 public class LevelManager : MonoBehaviour
 {
-    const string filePath = "/Resources/";
+    const string filePath = "Assets/MainGame/Resources/";
 
     private static LevelManager instance;
 
@@ -61,48 +61,40 @@ public class LevelManager : MonoBehaviour
 
     private void OnLevelWasLoaded(int level)
     {
-        if (level != 1)
+        if (!iniPlayer)
         {
-            if (!iniPlayer)
+            if (!haMuerto)
             {
-                if (!haMuerto)
+                RoomManager.GetInstance().SetUpCamera(player.transform);
+                RoomManager.GetInstance().SetUpPlayer(orientacionUltimaPuerta, player.transform);
+                nivel.sceneAfter.x = nivel.sceneNow.x;
+                nivel.sceneAfter.y = nivel.sceneNow.y;
+                enemigosEnSala = 0;
+            }
+            else
+            {
+                for (int i = 0; i < nivel.scenes.GetLength(0); i++)
                 {
-                    RoomManager.GetInstance().SetUpCamera(player.transform);
-                    RoomManager.GetInstance().SetUpPlayer(orientacionUltimaPuerta, player.transform);
-                    nivel.sceneAfter.x = nivel.sceneNow.x;
-                    nivel.sceneAfter.y = nivel.sceneNow.y;
-                    enemigosEnSala = 0;
+                    for (int j = 0; j < nivel.scenes.GetLength(1); j++)
+                    {
+                        char c = nivel.scenes[i, j][1];
+                        if (c == 'P' || c == 'S')
+                            nivel.habitacionDescubierta[i, j] = false;
+                    }
                 }
-                else
+                for (int i = 0; i < nivel.pasillos.Length; i++)
                 {
-                    for (int i = 0; i < nivel.scenes.GetLength(0); i++)
-                    {
-                        for (int j = 0; j < nivel.scenes.GetLength(1); j++)
-                        {
-                            char c = nivel.scenes[i, j][1];
-                            if (c == 'P' || c == 'S')
-                                nivel.habitacionDescubierta[i, j] = false;
-                        }
-                    }
-                    for (int i = 0; i < nivel.pasillos.Length; i++)
-                    {
-                        nivel.pasillos[i].enemigos = new Enemigo[50];
-                        nivel.pasillos[i].pc = 0;
-                    }
-                    for (int i = 0; i < nivel.jarronesEnHabitaciones.Length; i++)
-                    {
-                        nivel.jarronesEnHabitaciones[i].jarrones = new Jarron[50];
-                        nivel.jarronesEnHabitaciones[i].pc = 0;
-                    }
-                    nivel.sceneNow.x = nivel.sceneIni.x;
-                    nivel.sceneNow.y = nivel.sceneIni.y;
-                    nivel.sceneAfter.x = nivel.sceneNow.x;
-                    nivel.sceneAfter.y = nivel.sceneNow.y;
-                    enemigosEnSala = 0;
-                    player = (GameObject)Instantiate(nasnas, posEscaleras, nasnas.transform.rotation);
-                    RoomManager.GetInstance().SetUpCamera(player.transform);
-                    haMuerto = false;
+                    nivel.pasillos[i].enemigos = new Enemigo[50];
+                    nivel.pasillos[i].pc = 0;
                 }
+                nivel.sceneNow.x = nivel.sceneIni.x;
+                nivel.sceneNow.y = nivel.sceneIni.y;
+                nivel.sceneAfter.x = nivel.sceneNow.x;
+                nivel.sceneAfter.y = nivel.sceneNow.y;
+                enemigosEnSala = 0;
+                player = (GameObject)Instantiate(nasnas, posEscaleras, nasnas.transform.rotation);
+                RoomManager.GetInstance().SetUpCamera(player.transform);
+                haMuerto = false;
             }
         }
     }
@@ -153,23 +145,20 @@ public class LevelManager : MonoBehaviour
         public Coor sceneAfter;
         public Coor sceneIni;
     }
-    
+
     private string[,] CargarNivel(string levelName, out int xPos, out int yPos)
     {
-        TextAsset textFile = Resources.Load<TextAsset>(levelName);
-
+        string fileName = filePath + levelName + ".txt";
         int maxFil = 0, maxCol = 0;
         xPos = -1; 
         yPos = -1;
 
-        if (textFile != null)
+        if (File.Exists(fileName))
         {
-            StringReader dialogue = new StringReader(textFile.text);
-            bool endOfStream = false;
-            while (!endOfStream)
+            StreamReader dialogue = new StreamReader(fileName);
+            while (!dialogue.EndOfStream)
             {
                 string s = dialogue.ReadLine();
-
                 if (s != null)
                 {
                     maxFil++;
@@ -179,10 +168,6 @@ public class LevelManager : MonoBehaviour
                         maxCol = rooms.Length;
                     }
                 }
-                else
-                {
-                    endOfStream = true;
-                }
             }
             dialogue.Close();
 
@@ -190,9 +175,8 @@ public class LevelManager : MonoBehaviour
 
             int fil = 0;
 
-            dialogue = new StringReader(textFile.text);
-            endOfStream = false;
-            while (!endOfStream)
+            dialogue = new StreamReader(fileName);
+            while (!dialogue.EndOfStream)
             {
                 string s = dialogue.ReadLine();
                 if (s != null)
@@ -214,10 +198,6 @@ public class LevelManager : MonoBehaviour
                     }
                     fil++;
                 }
-                else
-                {
-                    endOfStream = true;
-                }
             }
             dialogue.Close();
 
@@ -227,7 +207,7 @@ public class LevelManager : MonoBehaviour
             return nivel;
         }
         else
-            throw new System.Exception(levelName + " no encontrado");        
+            throw new System.Exception(fileName + " no encontrado");        
     }
 
     //////// Comentados por la generalización con el InicializaNivel()
@@ -248,28 +228,23 @@ public class LevelManager : MonoBehaviour
 
     private Escena InicializaNivel(string nivel)
     {
-        int iniX, iniY;
+        int xPos, yPos;
 
         Escena s;
 
-        s.scenes = CargarNivel(nivel, out iniX, out iniY);
+        s.scenes = CargarNivel(nivel, out xPos, out yPos);
 
         s.habitacionDescubierta = new bool[s.scenes.GetLength(0), s.scenes.GetLength(1)];
         int pasillos = 0;
-        int numHabitaciones = 0;
 
         for (int i = 0; i < s.scenes.GetLength(0); i++)
         {
             for (int j = 0; j < s.scenes.GetLength(1); j++)
-            {           
+            {
                 s.habitacionDescubierta[i, j] = false;
                 char c = s.scenes[i, j][1];
-                if (c != '-')
-                {
-                    numHabitaciones += 1;
-                    if (c == 'P')
-                        pasillos += 1;
-                }          
+                if (c == 'P')
+                    pasillos += 1;
             }
         }
 
@@ -281,95 +256,8 @@ public class LevelManager : MonoBehaviour
             s.pasillos[i].pc = 0;
         }
 
-        s.jarronesEnHabitaciones = new Jarrones[numHabitaciones];
-
-        for (int i = 0; i < s.jarronesEnHabitaciones.Length; i++)
-        {
-            s.jarronesEnHabitaciones[i].jarrones = new Jarron[50];
-            s.jarronesEnHabitaciones[i].pc = 0;
-        }
-
-        s.sceneNow.x = iniX;
-        s.sceneNow.y = iniY;
-        s.sceneAfter.x = s.sceneNow.x;
-        s.sceneAfter.y = s.sceneNow.y;
-        s.sceneIni.x = s.sceneNow.x;
-        s.sceneIni.y = s.sceneNow.y;
-
-        return s;
-    }
-
-    // No hace falta porque es mejor leer los niveles desde los archivos
-    private string[,] EscenasNivel(int n)
-    {
-        string[,] escenas;
-
-        if (n == 1)
-        {
-            escenas = new string[5, 9]  {{ "---","---", "1ME", "1S5", "1P7", "1S6", "1P8", "1S7", "1P9"},
-                                         {"---", "---", "---", "1P5", "---", "1P6", "---", "---", "---"},
-                                         {"---", "---", "---", "1S3", "1P4", "1S4", "---", "---", "---"},
-                                         {"---", "---", "---", "1P3", "---", "1MF", "---", "---", "---"},
-                                         {"1P0", "1S0", "1P1", "1S1", "1P2", "1S2", "1MA", "---", "---"}};
-        }
-        else if (n == 2)
-        {
-            escenas = new string[8, 7]  {{ "---","2S5", "2P6", "2S6", "2P7", "2S7", "2P8"},
-                                         {"---", "---", "---", "2P5", "---", "---", "---"},
-                                         {"---", "---", "---", "2S4", "---", "---", "---"},
-                                         {"---", "---", "---", "SP4", "---", "---", "---"},
-                                         {"---", "2S1", "2P2", "2S2", "2P3", "2S3", "2MA"},
-                                         {"---", "2P1", "---", "2ME", "---", "---", "---"},
-                                         {"2P0", "2S0", "---", "---", "---", "---", "---"},
-                                         {"---", "2MF", "---", "---", "---", "---", "---"}};
-        }
-        else escenas = new string[1, 2] { { "3P0", "Iblis" } };
-
-        return escenas;
-    }
-
-    // No hace falta pq InicializaNivel y CargaNivel ya lo hacen y desde el archivo, que es mejor
-    private Escena Nivel(string[,] escenas, int iniX, int iniY)
-    {
-        Escena s;
-
-        s.scenes = new string[escenas.GetLength(0), escenas.GetLength(1)];
-
-        for (int i = 0; i < s.scenes.GetLength(0); i++)
-        {
-            for (int j = 0; j < s.scenes.GetLength(1); j++)
-            {
-                s.scenes[i, j] = escenas[i, j];
-            }
-        }
-
-        s.habitacionDescubierta = new bool[s.scenes.GetLength(0), s.scenes.GetLength(1)];
-
-        int pasillos = 0;
-        int numHabitaciones = 0;
-
-        for (int i = 0; i < s.scenes.GetLength(0); i++)
-        {
-            for (int j = 0; j < s.scenes.GetLength(1); j++)
-            {
-                s.habitacionDescubierta[i, j] = false;
-                char c = s.scenes[i, j][1];
-                if (c != '-')
-                {
-                    numHabitaciones += 1;
-                    if (c == 'P')
-                        pasillos += 1;
-                }
-            }
-        }
-
-        s.pasillos = new Pasillo[pasillos];
-
-        for (int i = 0; i < s.pasillos.Length; i++)
-        {
-            s.pasillos[i].enemigos = new Enemigo[50];
-            s.pasillos[i].pc = 0;
-        }
+        s.sceneNow.x = xPos;
+        s.sceneNow.y = yPos;
 
         s.jarronesEnHabitaciones = new Jarrones[numHabitaciones];
 
@@ -378,9 +266,6 @@ public class LevelManager : MonoBehaviour
             s.jarronesEnHabitaciones[i].jarrones = new Jarron[50];
             s.jarronesEnHabitaciones[i].pc = 0;
         }
-
-        s.sceneNow.x = iniX;
-        s.sceneNow.y = iniY;
         s.sceneAfter.x = s.sceneNow.x;
         s.sceneAfter.y = s.sceneNow.y;
         s.sceneIni.x = s.sceneNow.x;
@@ -402,11 +287,6 @@ public class LevelManager : MonoBehaviour
     public char TipoHabitacion()
     {
         return nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y][1];
-    }
-
-    public string GetHabitación()
-    {
-        return nivel.scenes[nivel.sceneNow.x, nivel.sceneNow.y];
     }
 
     public void Puerta(string orientacion)
@@ -532,17 +412,6 @@ public class LevelManager : MonoBehaviour
     public void QuitarEnemigoSala()
     {
         enemigosEnSala -= 1;
-
-        if (SalaCompletada())
-        {
-            RoomManager.GetInstance().AbrirPuertas();
-
-            if (GetHabitación() == "Iblis")
-            {
-                GameManager.GetInstance().GMOcultarMostrarCanvas(false);
-                DialogueManager.GetInstance().StartDialogue();
-            }
-        }    
     }
 
     public bool SalaCompletada()
@@ -565,10 +434,5 @@ public class LevelManager : MonoBehaviour
     {
         Destroy(this.gameObject);
         Destroy(player);
-    }
-
-    public void EscenaDeMuerte()
-    {
-        SceneManager.LoadScene("EscenaMuerte");
     }
 }
