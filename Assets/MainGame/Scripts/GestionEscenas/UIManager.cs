@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -11,7 +10,7 @@ public class UIManager : MonoBehaviour
     public Image elementoActual, elemento1, elemento2;
     Vector2 maxBarraDeVida, maxBarraDeMana;
     public GridLayoutGroup barraDeVida, barraDeMana;
-    public Text escenaActual;
+    
 
     void Awake()
     {
@@ -37,11 +36,7 @@ public class UIManager : MonoBehaviour
         
     }
 
-    private void OnLevelWasLoaded(int level)
-    {
-        escenaActual.text = Application.loadedLevelName[1] + "" + Application.loadedLevelName[2];
-    }
-
+    
     public void ActualizarVida(float porcentajeVida)
     {
         barraDeVida.cellSize = new Vector2(porcentajeVida * maxBarraDeVida.x, maxBarraDeVida.y);     
