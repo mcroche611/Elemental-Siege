@@ -6019,6 +6019,26 @@ PrefabInstance:
       propertyPath: numDialogue
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1122445219309262521, guid: aa09aabdd49d3114da1aae4205a1dc69,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122445219309262521, guid: aa09aabdd49d3114da1aae4205a1dc69,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122445219309262521, guid: aa09aabdd49d3114da1aae4205a1dc69,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122445219309262521, guid: aa09aabdd49d3114da1aae4205a1dc69,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
     - target: {fileID: 1122445219551780101, guid: aa09aabdd49d3114da1aae4205a1dc69,
         type: 3}
       propertyPath: m_TextStyleHashCode

@@ -138,9 +138,9 @@ public class DialogueManager : MonoBehaviour
         {
             dialogueText.text += c; //se van sumando letras al texto
             if (numDialogue == 0 && (numeroSentence == 0 || numeroSentence == 1)) //estética
-                dialogueText.color = Color.blue;
+                dialogueText.color = Color.cyan;
             else
-                dialogueText.color = Color.black;
+                dialogueText.color = Color.white;
             yield return new WaitForSecondsRealtime(textSpeed); //se espera en tiempo real para pasar a escribir la siguiente letra
         }
     }

@@ -218,6 +218,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: MagoFuego
       objectReference: {fileID: 0}
+    - target: {fileID: 5541998238747887786, guid: 494731eeb7796ce4c94711e552b4c209,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1614432091
+      objectReference: {fileID: 0}
+    - target: {fileID: 5541998238747887786, guid: 494731eeb7796ce4c94711e552b4c209,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5541998238747887787, guid: 494731eeb7796ce4c94711e552b4c209,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -326,6 +336,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 458314057007803728, guid: 5cf5d6e3f4d940f4eaa54e8b84385107,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1614432091
+      objectReference: {fileID: 0}
+    - target: {fileID: 458314057007803728, guid: 5cf5d6e3f4d940f4eaa54e8b84385107,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 458314057007803729, guid: 5cf5d6e3f4d940f4eaa54e8b84385107,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2510,7 +2530,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1125033714
@@ -2863,6 +2883,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6469055946937202184, guid: 77380863646efc9498ba780a02a7ed1f,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1614432091
+      objectReference: {fileID: 0}
+    - target: {fileID: 6469055946937202184, guid: 77380863646efc9498ba780a02a7ed1f,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6469055946937202185, guid: 77380863646efc9498ba780a02a7ed1f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3141,7 +3171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.78431374}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
