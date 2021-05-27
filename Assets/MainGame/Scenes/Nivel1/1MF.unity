@@ -4910,6 +4910,17 @@ PrefabInstance:
       propertyPath: m_TextStyleHashCode
       value: -1183493901
       objectReference: {fileID: 0}
+    - target: {fileID: 1122445219551780101, guid: aa09aabdd49d3114da1aae4205a1dc69,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: ca18b66e8abe5274f8b5139daf1a000a,
+        type: 2}
+    - target: {fileID: 1122445219551780101, guid: aa09aabdd49d3114da1aae4205a1dc69,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa09aabdd49d3114da1aae4205a1dc69, type: 3}
 --- !u!1001 &939682778
