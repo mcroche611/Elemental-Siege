@@ -1200,7 +1200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d972487b5417edd488319bb1740f0d8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 1000
   animator: {fileID: -1174612362895376968}
   barraDeVida: {fileID: 6259473756955539197}
   sonidoDeMorir: {fileID: 7316193607284956639}
@@ -1216,7 +1216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eba461726ccb69c449450f339ffc2de0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 2
   animator: {fileID: -1174612362895376968}
 --- !u!114 &4929916465995409035
 MonoBehaviour:
@@ -1231,7 +1231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knock: 4.5
-  damage: 15
+  damage: 30
   attackCoolDown: 0.25
   tiempoAturdimiento: 0.25
   paralizado: 0
@@ -1347,7 +1347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a79c47d4b86a4f44905dd99cd0bf363, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shieldHealth: 100
+  shieldHealth: 200
   shieldType: Fuego
   objetoEscudo: {fileID: 1490509087}
   barraDeEscudo: {fileID: 8847336422148475853}
