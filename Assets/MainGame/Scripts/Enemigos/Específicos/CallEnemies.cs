@@ -18,12 +18,10 @@ public class CallEnemies : MonoBehaviour
         //componenteVida = GetComponent<IblisHealth>(); 
         vida = GetComponent<EnemyHealth>();
     }
-
     void Update()
     {
          if (vida.Health() < vidaMinima) //Esto probablmente se puede hacer mejor.
          {
-            SoundManager.GetInstance().llamarSoldadosSound();
              ActivaSpawnerF();
          }
         else
@@ -32,10 +30,7 @@ public class CallEnemies : MonoBehaviour
         }
         /*if (Input.GetKeyDown("space"))
         {
-          
-            
             ActivaSpawnerF();
-
         }*/
         /*if (Input.GetKeyDown(KeyCode.M))
         {
@@ -52,10 +47,8 @@ public class CallEnemies : MonoBehaviour
         if (objetoSpawnerD != null)
         {
             objetoSpawnerD.SetActive(false);
-        }
-        
+        }  
     }
-
     void ActivaSpawnerF()
     {
         objetoSpawnerF.SetActive(true);
@@ -66,10 +59,7 @@ public class CallEnemies : MonoBehaviour
         {
            objetoSpawnerF.SetActive(false);
         }
-
-       
     }
-
     private void OnDestroy() 
     {
         DesactivaSpawnerD();
