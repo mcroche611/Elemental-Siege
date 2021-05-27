@@ -1282,6 +1282,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4202363075750542437, guid: e1050de394ca7284fbd47b388d274311,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4202363075750542439, guid: e1050de394ca7284fbd47b388d274311,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7037,6 +7042,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2947758179279678012, guid: aaf708db6e3a17c46bac30436cb5cae4,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4269055033828037942, guid: aaf708db6e3a17c46bac30436cb5cae4,
         type: 3}
       propertyPath: m_LocalPosition.x

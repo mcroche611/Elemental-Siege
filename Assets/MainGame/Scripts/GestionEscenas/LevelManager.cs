@@ -6,7 +6,7 @@ using System.IO;
 
 public class LevelManager : MonoBehaviour
 {
-    const string filePath = "Assets/MainGame/Resources/";
+    const string filePath = "/Resources/";
 
     private static LevelManager instance;
 
@@ -153,20 +153,23 @@ public class LevelManager : MonoBehaviour
         public Coor sceneAfter;
         public Coor sceneIni;
     }
-
+    
     private string[,] CargarNivel(string levelName, out int xPos, out int yPos)
     {
-        string fileName = filePath + levelName + ".txt";
+        TextAsset textFile = Resources.Load<TextAsset>(levelName);
+
         int maxFil = 0, maxCol = 0;
         xPos = -1; 
         yPos = -1;
 
-        if (File.Exists(fileName))
+        if (textFile != null)
         {
-            StreamReader dialogue = new StreamReader(fileName);
-            while (!dialogue.EndOfStream)
+            StringReader dialogue = new StringReader(textFile.text);
+            bool endOfStream = false;
+            while (!endOfStream)
             {
                 string s = dialogue.ReadLine();
+
                 if (s != null)
                 {
                     maxFil++;
@@ -176,6 +179,10 @@ public class LevelManager : MonoBehaviour
                         maxCol = rooms.Length;
                     }
                 }
+                else
+                {
+                    endOfStream = true;
+                }
             }
             dialogue.Close();
 
@@ -183,8 +190,9 @@ public class LevelManager : MonoBehaviour
 
             int fil = 0;
 
-            dialogue = new StreamReader(fileName);
-            while (!dialogue.EndOfStream)
+            dialogue = new StringReader(textFile.text);
+            endOfStream = false;
+            while (!endOfStream)
             {
                 string s = dialogue.ReadLine();
                 if (s != null)
@@ -206,6 +214,10 @@ public class LevelManager : MonoBehaviour
                     }
                     fil++;
                 }
+                else
+                {
+                    endOfStream = true;
+                }
             }
             dialogue.Close();
 
@@ -215,7 +227,7 @@ public class LevelManager : MonoBehaviour
             return nivel;
         }
         else
-            throw new System.Exception(fileName + " no encontrado");        
+            throw new System.Exception(levelName + " no encontrado");        
     }
 
     //////// Comentados por la generalización con el InicializaNivel()

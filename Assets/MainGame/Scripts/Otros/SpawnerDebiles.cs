@@ -13,7 +13,11 @@ public class SpawnerDebiles : MonoBehaviour
     [SerializeField]
     float beforeSpawn;
     int posIniD; //Indice que recorre el array de enemigos debiles
-
+    public AudioSource llamerSoldados;
+    private void Start()
+    {
+        llamerSoldados = GetComponent<AudioSource>();
+    }
     private void OnEnable()
     {
         //La primera posicion es la 0
@@ -28,10 +32,8 @@ public class SpawnerDebiles : MonoBehaviour
     void SpawnDebiles()
     {
         //se encarga de crear enemigos en una deteminada posicion hija del GO SpawnerDebiles
-
+        llamerSoldados.Play();
         Instantiate<GameObject>(enemigosDebiles[posIniD], posiciones[1].position, transform.rotation);
-        Debug.Log("Posini: " + posIniD);
-
         if (posIniD < enemigosDebiles.Length - 1) //controlamos que el indice no se salga de los limites del array
         {
             posIniD++;
