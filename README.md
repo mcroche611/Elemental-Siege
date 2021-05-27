@@ -4,6 +4,8 @@
 Durante la partida juegarás como un jinn, un mago con poderes elementales, que ha sido encarcelado como parte de su plan para infiltrarse la llamada "Corte Elemental".
 Utilizarás tus poderes elementales para escapar de tu celda y derrotar al enemigo final de la historia, un malvado villano que quiere el monopolio de los elementos y está encarcelando a todos los jinn, a los que sólo tú podrás salvar.
 
+![bannertitulo](https://user-images.githubusercontent.com/82317485/119855251-09d1e800-bf12-11eb-9869-c6345f28d8d0.jpg)
+
 Se trata de un proyecto desarrollado en Unity utilizando lenguaje C#.
 
 ### Documentos guardados en el repositorio
