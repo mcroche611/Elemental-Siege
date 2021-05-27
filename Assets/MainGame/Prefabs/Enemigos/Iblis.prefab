@@ -1142,7 +1142,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9159750794916082355}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d0b64dbf234578449cbf4f142d01cb2, type: 3}
   m_Name: 
@@ -1156,7 +1156,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9159750794916082355}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c99fdcaeed3e2cb4088b07884363ffe0, type: 3}
   m_Name: 
@@ -1169,7 +1169,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9159750794916082355}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac955c720d9729440a982af07f4633bd, type: 3}
   m_Name: 
@@ -1314,10 +1314,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a59274e675b5b0478563ae2c1938156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objetoSpawnerF: {fileID: 4384261681563158041, guid: 59071cce319b88a4bb8f5fb1bbaa5ad8,
-    type: 3}
-  objetoSpawnerD: {fileID: 4199202409773636906, guid: 7add5f6cdcd4de94fa5f2378b04e623e,
-    type: 3}
+  objetoSpawnerF: {fileID: 0}
+  objetoSpawnerD: {fileID: 0}
   vidaMinima: 70
 --- !u!114 &8401098958903840655
 MonoBehaviour:
