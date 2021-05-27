@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b49cef25ec2f1324985bda1b28096f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 8
+  velocity: 5
 --- !u!114 &2017438766814546711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxMana: 300
-  manaRegSpeed: 0.1
+  manaRegSpeed: 0.08
 --- !u!114 &2017438766814546710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coolDownSecs: 0.5
   attackFreeze: 0.25
-  deactivationTime: 0.4
+  deactivationTime: 0.3
 --- !u!114 &2017438766814546698
 MonoBehaviour:
   m_ObjectHideFlags: 0
