@@ -13119,6 +13119,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1122445219551780101, guid: aa09aabdd49d3114da1aae4205a1dc69,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: ca18b66e8abe5274f8b5139daf1a000a,
+        type: 2}
+    - target: {fileID: 1122445219551780101, guid: aa09aabdd49d3114da1aae4205a1dc69,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa09aabdd49d3114da1aae4205a1dc69, type: 3}
 --- !u!1 &793233304 stripped
@@ -13902,25 +13913,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3618800334333009446, guid: 88b29cbf55e51cd48aa641cc06c87a0c,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4383696094593385225, guid: 88b29cbf55e51cd48aa641cc06c87a0c,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 4596555385443438035, guid: 88b29cbf55e51cd48aa641cc06c87a0c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.66
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4596555385443438035, guid: 88b29cbf55e51cd48aa641cc06c87a0c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.89
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 4596555385443438035, guid: 88b29cbf55e51cd48aa641cc06c87a0c,
         type: 3}
@@ -13967,55 +13968,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5608785142000543567, guid: 88b29cbf55e51cd48aa641cc06c87a0c,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7354890562564822637, guid: 88b29cbf55e51cd48aa641cc06c87a0c,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8280494733155801327, guid: 88b29cbf55e51cd48aa641cc06c87a0c,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8401098958903840655, guid: 88b29cbf55e51cd48aa641cc06c87a0c,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8576501545933276612, guid: 88b29cbf55e51cd48aa641cc06c87a0c,
-        type: 3}
-      propertyPath: health
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 9159750794916082354, guid: 88b29cbf55e51cd48aa641cc06c87a0c,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9159750794916082354, guid: 88b29cbf55e51cd48aa641cc06c87a0c,
-        type: 3}
-      propertyPath: objetoSpawnerD
-      value: 
-      objectReference: {fileID: 1333558487}
     - target: {fileID: 9159750794916082354, guid: 88b29cbf55e51cd48aa641cc06c87a0c,
         type: 3}
       propertyPath: objetoSpawnerF
       value: 
       objectReference: {fileID: 1389217186}
+    - target: {fileID: 9159750794916082354, guid: 88b29cbf55e51cd48aa641cc06c87a0c,
+        type: 3}
+      propertyPath: objetoSpawnerD
+      value: 
+      objectReference: {fileID: 1333558487}
     - target: {fileID: 9159750794916082355, guid: 88b29cbf55e51cd48aa641cc06c87a0c,
         type: 3}
       propertyPath: m_Name
       value: Iblis
-      objectReference: {fileID: 0}
-    - target: {fileID: 9159750794916082355, guid: 88b29cbf55e51cd48aa641cc06c87a0c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88b29cbf55e51cd48aa641cc06c87a0c, type: 3}
@@ -15284,7 +15250,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: EXIT DUNGEON
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 0}
+  m_fontAsset: {fileID: 11400000, guid: ca18b66e8abe5274f8b5139daf1a000a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
