@@ -40,8 +40,7 @@ public class Puerta : MonoBehaviour
                     levelManager.CompletarHabitacion();
                     levelManager.Puerta(orientacion);
                 }
-                else
-                    Debug.Log("Tienes que matar a todos los enemigos para salir de la sala");
+                
             }
             else if (levelManager.TipoHabitacion() == 'M')
             {

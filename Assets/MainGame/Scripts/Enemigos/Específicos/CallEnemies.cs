@@ -15,32 +15,20 @@ public class CallEnemies : MonoBehaviour
     void Start()
     {
         //Consigue la vida del enemigo y comprueba si es menor a un determinado valor para ver si debe llamar a enemigos fuertes
-        //componenteVida = GetComponent<IblisHealth>(); 
+       
         vida = GetComponent<EnemyHealth>();
     }
     void Update()
     {
-         if (vida.Health() < vidaMinima) //Esto probablmente se puede hacer mejor.
-         {
-             ActivaSpawnerF();
-         }
+        if (vida.Health() < vidaMinima) 
+        {
+            ActivaSpawnerF();
+        }
         else
         {
             DesactivaSpawnerF();
         }
-        /*if (Input.GetKeyDown("space"))
-        {
-            ActivaSpawnerF();
-        }*/
-        /*if (Input.GetKeyDown(KeyCode.M))
-        {
-            //DesactivaSpawnerD();
-            DesactivaSpawnerF();
-        }*/
-    }
-    void ActivaSpawnerD()
-    {
-        objetoSpawnerD.SetActive(true);
+        
     }
     void DesactivaSpawnerD()
     {

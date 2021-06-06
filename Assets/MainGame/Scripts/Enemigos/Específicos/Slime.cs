@@ -8,7 +8,7 @@ public class Slime : MonoBehaviour
     
     public void InstanciarSlimes()
     {
-        Debug.Log("Hola");
+        
 
         Vector2 posicionSlime = transform.position;
         Vector2 tamanoSlime = transform.localScale / 4;

@@ -23,7 +23,7 @@ public class ActivateShield : MonoBehaviour
     private void Update()
     {
         contador += Time.deltaTime;
-        if (contador>=tiempoCambio && scriptEscudo.ShieldHealth()>0)
+        if (contador>=tiempoCambio && scriptEscudo.ShieldHealth()>0) //Comprueba si ha pasado el tiempo necesario para cambiar de escudo
         {
             contador = 0;
             scriptEscudo.enabled = false;
@@ -33,7 +33,7 @@ public class ActivateShield : MonoBehaviour
     }
     void CambiaFuego()
     {
-        
+        //Desactiva los otros escudos y activa el de fuego
         
         scriptEscudo.CambioEscudo("Fuego");
         escudoFisicoFuego.SetActive(true);
@@ -44,10 +44,9 @@ public class ActivateShield : MonoBehaviour
     }
    void CambiaAgua()
    {
-       
-       
-       scriptEscudo.CambioEscudo("Agua");
-       
+        //Desactiva los otros escudos y activa el de agua
+
+        scriptEscudo.CambioEscudo("Agua");
         escudoFisicoAgua.SetActive(true);
         escudoFisicoElectro.SetActive(false);
         escudoFisicoFuego.SetActive(false);
@@ -55,8 +54,8 @@ public class ActivateShield : MonoBehaviour
     }
     void CambiaElectro()
     {
-        
-       
+        //Desactiva los otros escudos y activa el de electro
+
         scriptEscudo.CambioEscudo("Electrico");
         escudoFisicoElectro.SetActive(true);
         escudoFisicoFuego.SetActive(false);
@@ -92,7 +91,7 @@ public class ActivateShield : MonoBehaviour
                 break;
 
         }
-        Debug.Log("Cambio a escudo: " + rnd);
+       
     }
      
 }

@@ -164,15 +164,6 @@ public class DialogueManager : MonoBehaviour
                 button.SetActiveButton();
             }
 
-            //if (LevelManager.GetInstance().GetHabitación() == "Iblis")
-            //{
-            //    SceneManager.LoadScene("Epilogue");
-            //}
-
-            //if (LevelManager.GetInstance().GetHabitación() == "Epilogue")
-            //{
-            //    SceneManager.LoadScene("Menu");
-            //}
         }
     }
 

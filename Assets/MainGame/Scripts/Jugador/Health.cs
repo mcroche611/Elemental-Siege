@@ -25,7 +25,6 @@ public class Health : MonoBehaviour
             vida -= damage;
             GameManager.GetInstance().GMActualizarVida(vida / maxVida);
 
-            Debug.Log("ReceiveDamage: " + vida);
             if (vida <= 0)
             {
                 SoundManager.GetInstance().playerDeathSound();

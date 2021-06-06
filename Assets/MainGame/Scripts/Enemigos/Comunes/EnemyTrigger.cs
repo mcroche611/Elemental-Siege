@@ -16,7 +16,7 @@ public class EnemyTrigger : MonoBehaviour
     {
         if (collision.GetComponent<PlayerController>() != null)
         {
-            Debug.Log("EnemyTrigger: Player Detected");
+          
             playerDetected = true;
         }
 

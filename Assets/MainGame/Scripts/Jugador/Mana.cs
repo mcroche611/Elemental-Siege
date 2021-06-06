@@ -31,7 +31,6 @@ public class Mana : MonoBehaviour
             GameManager.GetInstance().GMActualizarMana((float) mana / (float) maxMana);
         }
 
-        Debug.Log("Mana: " + mana);
         return manaSuficiente;
         
         
